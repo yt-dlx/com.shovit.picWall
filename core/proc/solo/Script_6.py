@@ -124,6 +124,7 @@ def main():
     directories = get_directories(os.path.join(".", "output"))
     for directory in directories:
         process_directory(directory, "min", remote_files, tracker_data)
+    for directory in directories:
         process_directory(directory, "max", remote_files, tracker_data)
     print(f"{Fore.GREEN}INFO:{Style.RESET_ALL} All directories processed successfully.")
 if __name__ == "__main__":
