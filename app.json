@@ -1,10 +1,10 @@
 {
   "expo": {
-    "version": "1.0.0",
+    "version": "0.0.0",
     "slug": "picWall",
-    "owner": "picwall",
+    "owner": "shovit",
     "name": "picWall",
-    "scheme": "picwall",
+    "scheme": "shovit",
     "orientation": "portrait",
     "newArchEnabled": true,
     "userInterfaceStyle": "automatic",

@@ -1,6 +1,10 @@
 {
-  "version": "1.0.0",
+  "version": "0.0.0",
   "name": "picwall",
+  "author": {
+    "name": "shovit",
+    "email": "picwalldev@gmail.com"
+  },
   "main": "expo-router/entry",
   "scripts": {
     "version": "node -e \"const fs = require('fs'); const updateVersion = (file, versionPath) => { let json = JSON.parse(fs.readFileSync(file, 'utf-8')); let versionParts = versionPath.split('.'); let version = versionParts.reduce((o, k) => o[k], json); let [major, minor, patch] = version.split('.').map(Number); version = [(major + 1), 0, 0].join('.'); versionParts.reduce((o, k, i, a) => i === a.length - 1 ? o[k] = version : o[k], json); fs.writeFileSync(file, JSON.stringify(json, null, 2)); }; updateVersion('./package.json', 'version'); updateVersion('./app.json', 'expo.version');\"",
