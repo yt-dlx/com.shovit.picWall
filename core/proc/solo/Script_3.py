@@ -8,7 +8,7 @@ import os
 init(strip=False, convert=False, autoreset=True)
 input_base_path = os.path.join(".", "input")
 output_base_path = os.path.join(".", "upscaled")
-tracking_file_path = os.path.join(".", "resume.json")
+tracking_file_path = os.path.join(".", "upscaled.json")
 model_path = os.path.join("..", "..", "include", "real-esrgan", "models")
 engine_path = os.path.join("..", "..", "include", "real-esrgan", "engine.exe")
 if not os.path.exists(input_base_path):
