@@ -1,0 +1,14 @@
+Follow These Rules:
+    - Give Me Entire Updated Code
+    - Use Print Width 300 Formatting
+    - No Need Of Imports Unless I Say
+    - No Need Of Comments And Explanations
+    - Use The Comment Divider Design As Usual
+
+Requirements:
+    - 
+
+<en-GB>
+- Closed Beta Version 1.0.0
+- Feedback: https://forms.gle/18Sp9tdVEMic6SnE6
+</en-GB>

@@ -1,0 +1,88 @@
+{
+  "expo": {
+    "version": "3.0.0",
+    "slug": "picWall",
+    "owner": "picwall",
+    "name": "picWall",
+    "scheme": "picwall",
+    "orientation": "portrait",
+    "newArchEnabled": true,
+    "userInterfaceStyle": "automatic",
+    "icon": "./src/assets/images/logo.jpg",
+    "experiments": {
+      "typedRoutes": true
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.shovit.picWall",
+      "infoPlist": {
+        "NSPhotoLibraryAddUsageDescription": "picWall: needs permission to save photos to your library.",
+        "NSPhotoLibraryUsageDescription": "picWall: requires access to your photo library to save images."
+      }
+    },
+    "web": {
+      "output": "static",
+      "bundler": "metro",
+      "favicon": "./src/assets/images/logo.jpg"
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "c0746ad4-9f1f-43ce-a452-8748d25c8be9"
+      }
+    },
+    "android": {
+      "package": "com.shovit.picWall",
+      "adaptiveIcon": {
+        "backgroundColor": "#101010",
+        "foregroundImage": "./src/assets/images/logo.jpg"
+      },
+      "permissions": [
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "SET_WALLPAPER "
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#101010",
+          "image": "./src/assets/images/logo.jpg"
+        }
+      ],
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./src/assets/fonts/AbrilFatface-Regular.ttf",
+            "./src/assets/fonts/PlayfairDisplay-Black.ttf",
+            "./src/assets/fonts/PlayfairDisplay-BlackItalic.ttf",
+            "./src/assets/fonts/PlayfairDisplay-Bold.ttf",
+            "./src/assets/fonts/PlayfairDisplay-BoldItalic.ttf",
+            "./src/assets/fonts/PlayfairDisplay-ExtraBold.ttf",
+            "./src/assets/fonts/PlayfairDisplay-ExtraBoldItalic.ttf",
+            "./src/assets/fonts/PlayfairDisplay-Italic.ttf",
+            "./src/assets/fonts/PlayfairDisplay-Medium.ttf",
+            "./src/assets/fonts/PlayfairDisplay-MediumItalic.ttf",
+            "./src/assets/fonts/PlayfairDisplay-Regular.ttf",
+            "./src/assets/fonts/PlayfairDisplay-SemiBold.ttf",
+            "./src/assets/fonts/PlayfairDisplay-SemiBoldItalic.ttf"
+          ]
+        }
+      ],
+      [
+        "react-native-google-mobile-ads",
+        {
+          "androidAppId": "ca-app-pub-8756720176445763~5769468515",
+          "iosAppId": "ca-app-pub-8756720176445763~7056593476"
+        }
+      ]
+    ]
+  }
+}
