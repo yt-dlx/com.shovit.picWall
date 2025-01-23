@@ -1,6 +1,6 @@
 {
   "expo": {
-    "version": "8.0.0",
+    "version": "1.0.0",
     "slug": "picWall",
     "owner": "picwall",
     "name": "picWall",
@@ -28,9 +28,6 @@
     "extra": {
       "router": {
         "origin": false
-      },
-      "eas": {
-        "projectId": "c0746ad4-9f1f-43ce-a452-8748d25c8be9"
       }
     },
     "android": {
@@ -39,11 +36,7 @@
         "backgroundColor": "#101010",
         "foregroundImage": "./src/assets/images/logo.jpg"
       },
-      "permissions": [
-        "READ_EXTERNAL_STORAGE",
-        "WRITE_EXTERNAL_STORAGE",
-        "SET_WALLPAPER "
-      ]
+      "permissions": ["READ_EXTERNAL_STORAGE", "WRITE_EXTERNAL_STORAGE", "SET_WALLPAPER "]
     },
     "plugins": [
       "expo-router",
