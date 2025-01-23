@@ -28,7 +28,7 @@ for root, _, files in os.walk(input_base_path):
     if os.path.abspath(root).startswith(os.path.abspath(output_base_path)):
         continue
     for file in files:
-        if file.lower().endswith((".jpg", ".jpeg", ".png")):
+        if file.lower().endswith((".jpg")):
             input_image_path = os.path.join(root, file)
             relative_path = os.path.relpath(root, input_base_path)
             output_dir = os.path.join(output_base_path, relative_path)

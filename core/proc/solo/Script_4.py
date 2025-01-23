@@ -19,12 +19,12 @@ def add_watermark_to_image(input_path, output_max_path, output_min_path, logo_pa
         position = ((image.size[0] - logo.size[0]) // 2, (image.size[1] - logo.size[1]) // 2)
         watermark.paste(logo, position, logo)
         watermarked_image = Image.alpha_composite(image, watermark).convert("RGB")
-        watermarked_image.save(output_max_path, format=original_format, quality=90, optimize=True)
+        watermarked_image.save(output_max_path, format=original_format, quality=80, optimize=True)
         print(f"{Fore.GREEN}INFO:{Style.RESET_ALL} Saved Watermarked Image (max): {output_max_path}")
         aspect_ratio = image.width / image.height
         resized_size = portrait_size if aspect_ratio < 1 else landscape_size
         resized_image = watermarked_image.resize(resized_size, Image.LANCZOS)
-        resized_image.save(output_min_path, format=original_format, quality=90, optimize=True)
+        resized_image.save(output_min_path, format=original_format, quality=80, optimize=True)
         print(f"{Fore.GREEN}INFO:{Style.RESET_ALL} Saved Watermarked Image (min): {output_min_path}")
     except Exception as e:
         logger.error(f"Failed to process {input_path}: {e}")

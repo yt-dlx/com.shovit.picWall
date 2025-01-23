@@ -53,7 +53,7 @@ def process_images_in_folder(base_path, branch_name, folder_name):
         for root, _, files in os.walk(subfolder_path):
             for file_name in files:
                 file_path = os.path.join(root, file_name)
-                if os.path.isfile(file_path) and file_name.lower().endswith((".jpg", ".jpeg", ".png")):
+                if os.path.isfile(file_path) and file_name.lower().endswith((".jpg")):
                     try:
                         print(f"{Fore.GREEN}INFO:{Style.RESET_ALL} Processing file: {file_path}")
                         image_data = create_image_data(file_path, branch_name, folder_name, subfolder)
