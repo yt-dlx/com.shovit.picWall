@@ -11,7 +11,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { BlurView } from "@react-native-community/blur";
 import { EnvironmentEntry, ImageMetadata } from "@/types/database";
 import { createPreviewLink, createDownloadLink } from "@/utils/linker";
-import { useEffect, useRef, useCallback, useState, memo, FC } from "react";
+import { useEffect, useRef, useCallback, useState, memo, FC, useMemo } from "react";
 import { FontAwesome5, MaterialCommunityIcons } from "@expo/vector-icons";
 import { SubImagesProps, CardProps, CategoryButtonProps } from "@/types/components";
 import { Easing, useSharedValue, useAnimatedStyle, withTiming, withRepeat } from "react-native-reanimated";
@@ -64,7 +64,7 @@ function generateCategories(apiData: Record<string, any>) {
 }
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
-const CategoryModal: FC<CategoryModalProps> = ({ isVisible, onClose, onSelectCategory, rawCategoriesArray }) => {
+const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSelectCategory, rawCategoriesArray }) => {
   const [activeParent, setActiveParent] = useState<ParentKey | "Combined">(rawCategoriesArray.find((cat) => cat.name !== "Combined")?.name || "Combined");
   const [currentIndices, setCurrentIndices] = useState<Record<string, number>>({});
   const [selectedSubcategory, setSelectedSubcategory] = useState<string | null>(null);
@@ -94,6 +94,7 @@ const CategoryModal: FC<CategoryModalProps> = ({ isVisible, onClose, onSelectCat
     });
     setPreviewLinks(newLinks);
   }, [rawCategoriesArray]);
+
   useEffect(() => {
     if (!isVisible) return;
     const intervals: NodeJS.Timeout[] = [];
@@ -105,10 +106,13 @@ const CategoryModal: FC<CategoryModalProps> = ({ isVisible, onClose, onSelectCat
     });
     return () => intervals.forEach(clearInterval);
   }, [isVisible, previewLinks]);
+
   useEffect(() => {
     if (isVisible) generatePreviewLinks();
   }, [isVisible, generatePreviewLinks]);
+
   if (!isVisible) return null;
+
   return (
     <Modal visible transparent animationType="slide" onRequestClose={onClose}>
       <View style={{ flex: 1, justifyContent: "flex-end" }}>
@@ -259,7 +263,8 @@ const CategoryModal: FC<CategoryModalProps> = ({ isVisible, onClose, onSelectCat
       </View>
     </Modal>
   );
-};
+});
+CategoryModal.displayName = "CategoryModal";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
 const SearchBar: FC<{ onSearch: (text: string) => void }> = memo(({ onSearch }) => {
@@ -308,15 +313,15 @@ const SubImages: FC<SubImagesProps> = memo(({ images, onImagePress }) => (
               />
               <Text
                 style={{
-                  position: "absolute",
-                  bottom: 4,
                   right: 4,
-                  paddingHorizontal: 8,
+                  bottom: 4,
                   fontSize: 10,
+                  borderRadius: 15,
+                  position: "absolute",
+                  paddingHorizontal: 8,
                   fontFamily: "Kurale",
                   color: colorize("#0C0C0C", 1.0),
                   backgroundColor: colorize(image.primary, 1.0),
-                  borderRadius: 15
                 }}
               >
                 {image.primary.toUpperCase()}
@@ -545,15 +550,15 @@ EnvironmentItem.displayName = "EnvironmentItem";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
 export default function HomePage(): JSX.Element {
-  const [error, setError] = useState<string>("");
-  const [isLoading, setIsLoading] = useState(true);
-  const [searchQuery, setSearchQuery] = useState<string>("");
-  const [selectedChild, setSelectedChild] = useState<string>("");
-  const [filteredData, setFilteredData] = useState<EnvironmentEntry[]>([]);
-  const [rawCategoriesArray, setRawCategoriesArray] = useState<Category[]>([]);
-  const [shuffleDB, setShuffleDB] = useState<Record<string, EnvironmentEntry>>({});
   const [selectedParent, setSelectedParent] = useState<ParentKey | "Combined">("Combined");
-  const mixedCount = Object.keys(shuffleDB).length;
+  const [shuffleDB, setShuffleDB] = useState<Record<string, EnvironmentEntry>>({});
+  const [rawCategoriesArray, setRawCategoriesArray] = useState<Category[]>([]);
+  const mixedCount = useMemo(() => Object.keys(shuffleDB).length, [shuffleDB]);
+  const [filteredData, setFilteredData] = useState<EnvironmentEntry[]>([]);
+  const [selectedChild, setSelectedChild] = useState<string>("");
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string>("");
   useEffect(() => {
     const loadData = async () => {
       try {
