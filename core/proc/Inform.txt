@@ -1,0 +1,8 @@
+- give me entire updated code
+- use print width 300 for code formatting
+- use the comment divider design as usual
+- no need of extra comments or explanations
+
+- please refactor the code to use pure tailwindcss
+- please use inline styles for <image> <blurview>
+- please use inline style for font and color based things
