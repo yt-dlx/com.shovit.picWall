@@ -46,7 +46,6 @@ interface HeaderComponentProps {
 }
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function generateCategories(apiData: Record<string, any>) {
   let shuffleDB: Record<string, EnvironmentEntry> = {};
   const categoriesArray: Category[] = [{ name: "Combined", subcategories: [], database: {} }];
