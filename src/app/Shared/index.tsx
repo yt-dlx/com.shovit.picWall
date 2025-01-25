@@ -1,6 +1,5 @@
 /* ============================================================================================================================== */
 // src/app/Shared/index.tsx
-/* eslint-disable @typescript-eslint/no-require-imports */
 /* ============================================================================================================================== */
 import { Image } from "expo-image";
 import useAd from "@/hooks/useAd";
@@ -24,7 +23,7 @@ interface ParsedData {
 }
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
-export default function AdmobPage(): JSX.Element {
+export default function SharedPage(): JSX.Element {
   const router = useRouter();
   const params = useLocalSearchParams();
   const [adError, setAdError] = useState(false);

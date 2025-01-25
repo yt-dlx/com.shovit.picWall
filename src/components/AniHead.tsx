@@ -1,13 +1,13 @@
 /* ============================================================================================ */
 // src/utils/HeaderAnimated.tsx
-/* eslint-disable @typescript-eslint/no-require-imports */
 /* ============================================================================================ */
+import { clsx } from "clsx";
 import imageSets from "@/utils/static";
+import colorize from "@/utils/colorize";
 import React, { useEffect } from "react";
-import Colorizer from "@/utils/colorize";
-import { Text, View, Image } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-import { ScrollingSlotProps } from "@/types/components";
+import { Text, View, Image, Platform } from "react-native";
+import type { ScrollingSlotProps } from "@/types/components";
 import Animated, { useSharedValue, useAnimatedStyle, withTiming, withRepeat, withSequence, withDelay, FadeInDown } from "react-native-reanimated";
 /* ============================================================================================ */
 /* ============================================================================================ */
@@ -22,10 +22,16 @@ const ScrollingSlot: React.FC<ScrollingSlotProps> = ({ images, reverse, delay })
   }, [scrollValue, totalHeight, reverse, delay, opacity]);
   const animatedStyle = useAnimatedStyle(() => ({ transform: [{ translateY: -scrollValue.value % totalHeight }], opacity: opacity.value }));
   return (
-    <View style={{ flex: 1, overflow: "hidden", padding: 4 }}>
-      <Animated.View style={[animatedStyle, { flexDirection: "column" }]}>
-        {images.concat(images).map((uri: string, idx: number) => (
-          <Image alt="image-placeholder" key={idx} source={{ uri }} style={{ width: "100%", height: imageHeight, borderRadius: 12, marginBottom: 4 }} resizeMode="cover" blurRadius={1.5} />
+    <View className={clsx("flex-1 overflow-hidden p-1", { "web:shadow-xl": Platform.OS === "web" })}>
+      <Animated.View className="flex-col" style={animatedStyle}>
+        {images.concat(images).map((uri, idx) => (
+          <Image
+            key={idx}
+            alt="image-placeholder"
+            source={{ uri }}
+            className="w-full rounded-xl mb-1"
+            style={{ height: imageHeight, ...Platform.select({ android: { elevation: 8 }, ios: { shadowColor: colorize("#000", 0.2), shadowRadius: 8 } }) }}
+          />
         ))}
       </Animated.View>
     </View>
@@ -40,13 +46,13 @@ const AnimatedTitle: React.FC = () => {
   }, [scale]);
   const animatedStyle = useAnimatedStyle(() => ({ transform: [{ scale: scale.value }] }));
   return (
-    <Animated.View style={[animatedStyle, { alignItems: "center", marginTop: 40 }]}>
-      <View style={{ backgroundColor: Colorizer("#0C0C0C", 0.6), borderRadius: 9999, padding: 4 }}>
+    <Animated.View style={animatedStyle} className="items-center mt-10">
+      <View className="rounded-full p-1" style={{ backgroundColor: colorize("#0C0C0C", 0.6), ...Platform.select({ web: { boxShadow: "0 8px 24px -4px rgba(0,0,0,0.4)" } }) }}>
         <Image
-          resizeMode="contain"
           alt="image-placeholder"
           source={require("@/assets/images/logo.jpg")}
-          style={{ width: 96, height: 96, borderRadius: 9999, borderWidth: 2, borderColor: Colorizer("#FFFFFF", 1.0) }}
+          className="w-24 h-24 rounded-full border-2"
+          style={{ borderColor: colorize(Platform.select({ ios: "#FFF", android: "#FAFAFA", web: "#F8F9FC" }) ?? "#FFFFFF", 1) }}
         />
       </View>
     </Animated.View>
@@ -56,22 +62,33 @@ const AnimatedTitle: React.FC = () => {
 /* ============================================================================================ */
 export default function HAnimated(): JSX.Element {
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <View style={{ flexDirection: "row", overflow: "hidden", borderRadius: 12, height: 300, position: "relative" }}>
+    <View className="flex-1 items-center justify-center ios:bg-[#fefefe] android:bg-[#fafafa] web:bg-gray-100">
+      <View className="flex-row overflow-hidden rounded-xl relative" style={{ height: 300 }}>
         {imageSets.map((images, slotIndex) => (
-          <ScrollingSlot key={slotIndex} images={images} reverse={slotIndex % 2 === 0} delay={slotIndex * 200} />
+          <ScrollingSlot key={slotIndex} {...{ images, reverse: slotIndex % 2 === 0, delay: slotIndex * 200 }} />
         ))}
-        <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center", borderRadius: 8, overflow: "hidden" }}>
-          <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: Colorizer("#0C0C0C", 0.5) }} />
-          <View style={{ position: "absolute", justifyContent: "center", alignItems: "center", margin: 8, padding: 4 }}>
-            <View style={{ flexDirection: "row", marginBottom: 4 }}>
+        <View className="absolute inset-0 justify-center items-center rounded overflow-hidden">
+          <View style={{ backgroundColor: colorize(Platform.select({ ios: "#0C0C0C", android: "#1A1A1A", web: "#020617" }) ?? "#0C0C0C", 0.5) }} className="absolute inset-0" />
+          <View className="m-2 p-1 absolute justify-center items-center">
+            <View className="flex-row mb-1">
               <AnimatedTitle />
             </View>
-            <Text style={{ fontFamily: "Jersey", fontSize: 65, marginTop: 15, color: Colorizer("#FFFFFF", 1.0), lineHeight: 52 }}> picWall </Text>
-            <Animated.View style={{ alignSelf: "center" }} entering={FadeInDown.delay(600).duration(1500).springify()}>
-              <View style={{ backgroundColor: Colorizer("#0C0C0C", 0.6), borderRadius: 9999, paddingHorizontal: 12, paddingVertical: 4 }}>
-                <Text style={{ fontFamily: "Kurale", color: Colorizer("#FFFFFF", 1.0), fontSize: 12, textAlign: "center" }}>
-                  Crafted with <AntDesign name="heart" size={10} color={Colorizer("#FF000D", 1.0)} /> in India. All rights reserved
+            <Text
+              className="web:font-bold"
+              style={{
+                lineHeight: 52,
+                fontFamily: "Jersey",
+                color: colorize("#FFFFFF", 1),
+                fontSize: Platform.select({ ios: 65, android: 60, web: 72 }),
+                ...Platform.select({ web: { textShadow: "0 2px 8px rgba(0,0,0,0.3)" } })
+              }}
+            >
+              picWall
+            </Text>
+            <Animated.View entering={FadeInDown.delay(600).duration(1500).springify()}>
+              <View className="rounded-full px-3 py-1" style={{ backgroundColor: colorize("#0C0C0C", 0.6), ...Platform.select({ web: { boxShadow: "0 4px 12px -2px rgba(0,0,0,0.25)" } }) }}>
+                <Text className="text-xs web:text-sm" style={{ fontFamily: "Kurale", color: colorize("#FFFFFF", 1), ...Platform.select({ android: { includeFontPadding: false } }) }}>
+                  Crafted with <AntDesign name="heart" size={10} color={colorize("#FF000D", 1)} /> in India. All rights reserved
                 </Text>
               </View>
             </Animated.View>

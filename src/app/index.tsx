@@ -1,6 +1,5 @@
 /* ============================================================================================================================== */
 // src/app/index.tsx
-/* eslint-disable @typescript-eslint/no-require-imports */
 /* ============================================================================================================================== */
 import { Link } from "expo-router";
 import { Image } from "expo-image";
@@ -15,7 +14,6 @@ import { Text, View, TouchableOpacity, Linking } from "react-native";
 import { FC, JSX, memo, useEffect, useState, useMemo } from "react";
 import Animated, { useSharedValue, useAnimatedStyle, withTiming, withRepeat, withSequence, withSpring, Easing, FadeIn, FadeInDown, withDelay } from "react-native-reanimated";
 /* ============================================================================================================================== */
-// Version Check Hook
 /* ============================================================================================================================== */
 const useVersionCheck = () => {
   const [serverVersion, setServerVersion] = useState("");
@@ -46,7 +44,6 @@ const useVersionCheck = () => {
   return { updateRequired, currentVersion, serverVersion };
 };
 /* ============================================================================================================================== */
-// Update Dialog Component
 /* ============================================================================================================================== */
 const UpdateDialog: FC<{ serverVersion: string; currentVersion: string }> = ({ currentVersion, serverVersion }) => {
   const scale = useSharedValue(0.8);
@@ -85,7 +82,6 @@ const UpdateDialog: FC<{ serverVersion: string; currentVersion: string }> = ({ c
   );
 };
 /* ============================================================================================================================== */
-// Optimized Scrolling Slot Component
 /* ============================================================================================================================== */
 const ScrollingSlot = memo<ScrollingSlotProps>(({ images, delay }) => {
   const imageHeight = 200;
@@ -111,7 +107,6 @@ const ScrollingSlot = memo<ScrollingSlotProps>(({ images, delay }) => {
 });
 ScrollingSlot.displayName = "ScrollingSlot";
 /* ============================================================================================================================== */
-// Animated Title Component
 /* ============================================================================================================================== */
 const AnimatedTitle = memo(() => {
   const scale = useSharedValue(0.5);
@@ -135,7 +130,6 @@ const AnimatedTitle = memo(() => {
 });
 AnimatedTitle.displayName = "AnimatedTitle";
 /* ============================================================================================================================== */
-// Developer Message Modal
 /* ============================================================================================================================== */
 const DevMsgModal = memo<{ visible: boolean; onClose: () => void }>(({ visible, onClose }) => {
   const [countdown, setCountdown] = useState(__DEV__ ? 0 : 2);
@@ -181,7 +175,6 @@ const DevMsgModal = memo<{ visible: boolean; onClose: () => void }>(({ visible, 
 });
 DevMsgModal.displayName = "DevMsgModal";
 /* ============================================================================================================================== */
-// Main Page Component
 /* ============================================================================================================================== */
 export default function BasePage(): JSX.Element {
   const buttonGlow = useSharedValue(0);
