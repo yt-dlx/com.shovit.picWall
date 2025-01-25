@@ -10,9 +10,9 @@ import { ImageMetadata } from "@/types/database";
 import { useLocalSearchParams } from "expo-router";
 import * as MediaLibrary from "expo-media-library";
 import { LinearGradient } from "expo-linear-gradient";
-import React, { useState, useEffect, useRef } from "react";
 import { setWallpaper, TYPE_SCREEN } from "rn-wallpapers";
 import { createPreviewLink, createDownloadLink } from "@/utils/linker";
+import React, { useState, useEffect, useRef, memo, useMemo, useCallback } from "react";
 import { FontAwesome5, MaterialIcons, Ionicons, FontAwesome6 } from "@expo/vector-icons";
 import { View, Text, Dimensions, StatusBar, ActivityIndicator, TouchableOpacity, Alert, Modal, Animated, Easing, ScrollView } from "react-native";
 /* ============================================================================================================================== */
@@ -46,7 +46,7 @@ interface FullScreenViewProps {
 }
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
-const SuccessModal: React.FC<{ visible: boolean; message: string; onClose: () => void }> = ({ visible, message, onClose }) => {
+const SuccessModal: React.FC<{ visible: boolean; message: string; onClose: () => void }> = memo(({ visible, message, onClose }) => {
   const [modalAnim] = useState(new Animated.Value(0));
   useEffect(() => {
     if (visible) Animated.timing(modalAnim, { toValue: 1, duration: 300, useNativeDriver: true }).start();
@@ -71,10 +71,11 @@ const SuccessModal: React.FC<{ visible: boolean; message: string; onClose: () =>
       </Animated.View>
     </View>
   );
-};
+});
+SuccessModal.displayName = "SuccessModal";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
-const ErrorModal: React.FC<{ visible: boolean; message: string; onClose: () => void }> = ({ visible, message, onClose }) => {
+const ErrorModal: React.FC<{ visible: boolean; message: string; onClose: () => void }> = memo(({ visible, message, onClose }) => {
   const [modalAnim] = useState(new Animated.Value(0));
   useEffect(() => {
     if (visible) Animated.timing(modalAnim, { toValue: 1, duration: 300, useNativeDriver: true }).start();
@@ -99,54 +100,58 @@ const ErrorModal: React.FC<{ visible: boolean; message: string; onClose: () => v
       </Animated.View>
     </View>
   );
-};
+});
+ErrorModal.displayName = "ErrorModal";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
-const DownloadingModal: React.FC<{ visible: boolean; percentage: number; downloadRate: number; eta: number; primaryColor: string }> = ({ visible, percentage, downloadRate, eta, primaryColor }) => {
-  const [progressAnim] = useState(new Animated.Value(percentage / 100));
-  useEffect(() => {
-    Animated.timing(progressAnim, { toValue: percentage / 100, duration: 500, easing: Easing.linear, useNativeDriver: false }).start();
-  }, [percentage, progressAnim]);
-  const widthInterpolated = progressAnim.interpolate({ inputRange: [0, 1], outputRange: ["0%", "100%"] });
-  const formatBytes = (bytes: number) => {
-    if (bytes === 0) return "0 Bytes";
-    const k = 1024;
-    const sizes = ["Bytes", "KB", "MB", "GB", "TB"];
-    const i = Math.floor(Math.log(bytes) / Math.log(k));
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
-  };
-  const formatTime = (seconds: number) => {
-    const m = Math.floor(seconds / 60);
-    const s = Math.floor(seconds % 60);
-    return `${m}m ${s}s`;
-  };
-  if (!visible) return null;
-  return (
-    <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center" }}>
-      <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#0C0C0C", 0.5) }} />
-      <View style={{ width: "80%", borderRadius: 24, padding: 20, borderWidth: 4, backgroundColor: colorize("#0C0C0C", 1.0), borderColor: colorize(primaryColor, 1.0) }}>
-        <View style={{ alignItems: "center" }}>
-          <MaterialIcons name="cloud-download" size={50} color={colorize(primaryColor, 1.0)} />
-          <Text style={{ marginTop: 10, fontSize: 48, fontFamily: "Kurale", color: colorize(primaryColor, 1.0) }}> Downloading... </Text>
-          <Text style={{ marginTop: 16, fontSize: 30, fontFamily: "Kurale", color: colorize(primaryColor, 1.0) }}> {percentage.toFixed(1)}% </Text>
-          <View style={{ width: "100%", height: 12, borderRadius: 9999, overflow: "hidden", marginTop: 16, backgroundColor: colorize("#242424", 1.0) }}>
-            <Animated.View style={{ width: widthInterpolated, backgroundColor: colorize(primaryColor, 1.0), height: "100%" }} />
-          </View>
-          <View style={{ flexDirection: "row", justifyContent: "space-between", width: "100%", marginTop: 16 }}>
-            <Text style={{ fontSize: 18, fontFamily: "Kurale", color: colorize(primaryColor, 1.0) }}> {formatBytes(downloadRate)}/s </Text>
-            <Text style={{ fontSize: 18, fontFamily: "Kurale", color: colorize(primaryColor, 1.0) }}> ETA: {formatTime(eta)} </Text>
+const DownloadingModal: React.FC<{ visible: boolean; percentage: number; downloadRate: number; eta: number; primaryColor: string }> = memo(
+  ({ visible, percentage, downloadRate, eta, primaryColor }) => {
+    const [progressAnim] = useState(new Animated.Value(percentage / 100));
+    useEffect(() => {
+      Animated.timing(progressAnim, { toValue: percentage / 100, duration: 500, easing: Easing.linear, useNativeDriver: false }).start();
+    }, [percentage, progressAnim]);
+    const widthInterpolated = progressAnim.interpolate({ inputRange: [0, 1], outputRange: ["0%", "100%"] });
+    const formatBytes = useCallback((bytes: number) => {
+      if (bytes === 0) return "0 Bytes";
+      const k = 1024;
+      const sizes = ["Bytes", "KB", "MB", "GB", "TB"];
+      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
+    }, []);
+    const formatTime = useCallback((seconds: number) => {
+      const m = Math.floor(seconds / 60);
+      const s = Math.floor(seconds % 60);
+      return `${m}m ${s}s`;
+    }, []);
+    if (!visible) return null;
+    return (
+      <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center" }}>
+        <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#0C0C0C", 0.5) }} />
+        <View style={{ width: "80%", borderRadius: 24, padding: 20, borderWidth: 4, backgroundColor: colorize("#0C0C0C", 1.0), borderColor: colorize(primaryColor, 1.0) }}>
+          <View style={{ alignItems: "center" }}>
+            <MaterialIcons name="cloud-download" size={50} color={colorize(primaryColor, 1.0)} />
+            <Text style={{ marginTop: 10, fontSize: 48, fontFamily: "Kurale", color: colorize(primaryColor, 1.0) }}> Downloading... </Text>
+            <Text style={{ marginTop: 16, fontSize: 30, fontFamily: "Kurale", color: colorize(primaryColor, 1.0) }}> {percentage.toFixed(1)}% </Text>
+            <View style={{ width: "100%", height: 12, borderRadius: 9999, overflow: "hidden", marginTop: 16, backgroundColor: colorize("#242424", 1.0) }}>
+              <Animated.View style={{ width: widthInterpolated, backgroundColor: colorize(primaryColor, 1.0), height: "100%" }} />
+            </View>
+            <View style={{ flexDirection: "row", justifyContent: "space-between", width: "100%", marginTop: 16 }}>
+              <Text style={{ fontSize: 18, fontFamily: "Kurale", color: colorize(primaryColor, 1.0) }}> {formatBytes(downloadRate)}/s </Text>
+              <Text style={{ fontSize: 18, fontFamily: "Kurale", color: colorize(primaryColor, 1.0) }}> ETA: {formatTime(eta)} </Text>
+            </View>
           </View>
         </View>
       </View>
-    </View>
-  );
-};
+    );
+  }
+);
+DownloadingModal.displayName = "DownloadingModal";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
-const PreviewImage: React.FC<{ selectedImage: ImageMetadata; screenWidth: number; onViewFullScreen: () => void }> = ({ selectedImage, screenWidth, onViewFullScreen }) => {
+const PreviewImage: React.FC<{ selectedImage: ImageMetadata; screenWidth: number; onViewFullScreen: () => void }> = memo(({ selectedImage, screenWidth, onViewFullScreen }) => {
   const [imageLoading, setImageLoading] = useState(true);
   const aspectRatio = selectedImage.width / selectedImage.height;
-  const imageHeight = (screenWidth / aspectRatio) * 0.7;
+  const imageHeight = useMemo(() => (screenWidth / aspectRatio) * 0.7, [screenWidth, aspectRatio]);
   const scaleValue = useRef(new Animated.Value(1.1)).current;
   useEffect(() => {
     const animation = Animated.sequence([
@@ -155,8 +160,8 @@ const PreviewImage: React.FC<{ selectedImage: ImageMetadata; screenWidth: number
     ]);
     Animated.loop(animation).start();
   }, [scaleValue]);
-  const lowResLink = createPreviewLink(selectedImage);
-  const highResLink = lowResLink.replace("min", "max");
+  const lowResLink = useMemo(() => createPreviewLink(selectedImage), [selectedImage]);
+  const highResLink = useMemo(() => lowResLink.replace("min", "max"), [lowResLink]);
   return (
     <View style={{ position: "relative" }}>
       {imageLoading && (
@@ -206,10 +211,11 @@ const PreviewImage: React.FC<{ selectedImage: ImageMetadata; screenWidth: number
       </TouchableOpacity>
     </View>
   );
-};
+});
+PreviewImage.displayName = "PreviewImage";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
-const DownloadButton: React.FC<DownloadButtonProps> = ({ onDownload, colors }) => {
+const DownloadButton: React.FC<DownloadButtonProps> = memo(({ onDownload, colors }) => {
   const scaleValue = useRef(new Animated.Value(1)).current;
   useEffect(() => {
     const pulse = Animated.loop(
@@ -230,16 +236,23 @@ const DownloadButton: React.FC<DownloadButtonProps> = ({ onDownload, colors }) =
       </Animated.View>
     </TouchableOpacity>
   );
-};
-const OtherImages: React.FC<OtherImagesProps> = ({ otherImages, setCurrentIndex, primaryColor, tertiaryColor, currentIndex }) => {
-  const uniqueFileNames = new Set<string>();
-  const uniqueImages = otherImages.filter((item) => {
-    if (!item || !item.img) return false;
-    const { img } = item;
-    if (uniqueFileNames.has(img.original_file_name) || img.original_file_name === otherImages[currentIndex]?.img?.original_file_name) return false;
-    uniqueFileNames.add(img.original_file_name);
-    return true;
-  });
+});
+DownloadButton.displayName = "DownloadButton";
+/* ============================================================================================================================== */
+/* ============================================================================================================================== */
+const OtherImages: React.FC<OtherImagesProps> = memo(({ otherImages, setCurrentIndex, primaryColor, tertiaryColor, currentIndex }) => {
+  const uniqueFileNames = useMemo(() => new Set<string>(), []);
+  const uniqueImages = useMemo(
+    () =>
+      otherImages.filter((item) => {
+        if (!item || !item.img) return false;
+        const { img } = item;
+        if (uniqueFileNames.has(img.original_file_name) || img.original_file_name === otherImages[currentIndex]?.img?.original_file_name) return false;
+        uniqueFileNames.add(img.original_file_name);
+        return true;
+      }),
+    [otherImages, currentIndex, uniqueFileNames]
+  );
   return (
     <View style={{ padding: 4, marginVertical: 8, borderRadius: 16, backgroundColor: colorize(primaryColor, 0.2) }}>
       <View style={{ padding: 4, borderRadius: 16, backgroundColor: colorize(tertiaryColor, 0.2) }}>
@@ -265,8 +278,11 @@ const OtherImages: React.FC<OtherImagesProps> = ({ otherImages, setCurrentIndex,
       </View>
     </View>
   );
-};
-const WallModal: React.FC<WallModalProps> = ({ visible, onComplete, onCancel, wallType, primaryColor }) => {
+});
+OtherImages.displayName = "OtherImages";
+/* ============================================================================================================================== */
+/* ============================================================================================================================== */
+const WallModal: React.FC<WallModalProps> = memo(({ visible, onComplete, onCancel, wallType, primaryColor }) => {
   const [modalAnim] = useState(new Animated.Value(0));
   const countdownRef = useRef<NodeJS.Timeout>();
   const [countdown, setCountdown] = useState(3);
@@ -322,24 +338,25 @@ const WallModal: React.FC<WallModalProps> = ({ visible, onComplete, onCancel, wa
       </Animated.View>
     </View>
   );
-};
+});
+WallModal.displayName = "WallModal";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
-const FullScreenView: React.FC<FullScreenViewProps> = ({ isFullScreen, setIsFullScreen, selectedImage, selectedIndex, data, environment_title }) => {
+const FullScreenView: React.FC<FullScreenViewProps> = memo(({ isFullScreen, setIsFullScreen, selectedImage, selectedIndex, data, environment_title }) => {
   const [showWallModal, setShowWallModal] = useState(false);
   const [wallType, setWallType] = useState<"HOME" | "LOCK" | "BOTH">("HOME");
-  const saveCurrentState = async () => {
+  const saveCurrentState = useCallback(async () => {
     const { setLastState } = useAppState.getState();
     const stateToSave = { selectedIndex, data, environment_title };
     setLastState(stateToSave);
-  };
-  const handleWallpaperSet = async () => {
+  }, [selectedIndex, data, environment_title]);
+  const handleWallpaperSet = useCallback(async () => {
     await saveCurrentState();
     const lowResLink = createPreviewLink(selectedImage);
     const highResLink = lowResLink.replace("min", "max");
     await setWallpaper({ uri: highResLink }, TYPE_SCREEN[wallType]);
     setShowWallModal(false);
-  };
+  }, [saveCurrentState, selectedImage, wallType]);
   return (
     <Modal visible={isFullScreen} transparent={false} onRequestClose={() => setIsFullScreen(false)} presentationStyle="fullScreen" statusBarTranslucent>
       <View style={{ flex: 1, backgroundColor: colorize("#0C0C0C", 1.0) }}>
@@ -408,14 +425,15 @@ const FullScreenView: React.FC<FullScreenViewProps> = ({ isFullScreen, setIsFull
       </View>
     </Modal>
   );
-};
+});
+FullScreenView.displayName = "FullScreenView";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
 export default function ImagePage(): JSX.Element {
   const params = useLocalSearchParams();
   const [eta, setEta] = useState<number>(0);
   const rawDataString = params.data as string;
-  const Sanitized = JSON.parse(rawDataString);
+  const Sanitized = useMemo(() => JSON.parse(rawDataString), [rawDataString]);
   const downloadStartTime = useRef<number>(0);
   const [alertVisible, setAlertVisible] = useState(false);
   const [isFullScreen, setIsFullScreen] = useState(false);
@@ -428,15 +446,15 @@ export default function ImagePage(): JSX.Element {
     const parsedIndex = parseInt(Sanitized.selectedIndex);
     return !isNaN(parsedIndex) ? parsedIndex : 0;
   });
-  const selectedImage = Sanitized.data[currentIndex] as ImageMetadata;
-  const environmentTitle = Sanitized.environment_title as string;
-  const showAlert = (title: string, message: string, iconName: "error" | "checkmark-done-circle") => {
+  const selectedImage = useMemo(() => Sanitized.data[currentIndex] as ImageMetadata, [Sanitized.data, currentIndex]);
+  const environmentTitle = useMemo(() => Sanitized.environment_title as string, [Sanitized.environment_title]);
+  const showAlert = useCallback((title: string, message: string, iconName: "error" | "checkmark-done-circle") => {
     setAlertMessage(message);
     setAlertIcon(iconName);
     setAlertVisible(true);
-  };
-  const hideAlert = () => setAlertVisible(false);
-  const downloadAndSaveImage = async () => {
+  }, []);
+  const hideAlert = useCallback(() => setAlertVisible(false), []);
+  const downloadAndSaveImage = useCallback(async () => {
     try {
       const { status } = await MediaLibrary.requestPermissionsAsync();
       if (status !== "granted") {
@@ -478,10 +496,10 @@ export default function ImagePage(): JSX.Element {
       setIsDownloading(false);
       showAlert("Error", "An error occurred while downloading or saving the image." + error, "error");
     }
-  };
-  const allImages = Sanitized.data as ImageMetadata[];
-  const allImagesWithIndex = allImages.map((img, idx) => ({ img, idx }));
-  const otherImages = allImagesWithIndex.filter((item) => item.idx !== currentIndex);
+  }, [selectedImage, showAlert]);
+  const allImages = useMemo(() => Sanitized.data as ImageMetadata[], [Sanitized.data]);
+  const allImagesWithIndex = useMemo(() => allImages.map((img, idx) => ({ img, idx })), [allImages]);
+  const otherImages = useMemo(() => allImagesWithIndex.filter((item) => item.idx !== currentIndex), [allImagesWithIndex, currentIndex]);
   return (
     <View style={{ flex: 1, backgroundColor: colorize("#0C0C0C", 1.0) }}>
       <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
