@@ -96,10 +96,10 @@ const ScrollingSlot = memo<ScrollingSlotProps>(({ images, delay }) => {
   }, [delay, opacity, scale, scrollValue, totalHeight]);
   const animatedStyle = useAnimatedStyle(() => ({ transform: [{ translateY: -scrollValue.value % totalHeight }, { scale: scale.value }], opacity: opacity.value }));
   return (
-    <View style={{ flex: 1, overflow: "hidden", padding: 4 }}>
+    <View style={{ flex: 1, overflow: "hidden", padding: 2 }}>
       <Animated.View style={animatedStyle} shouldRasterizeIOS renderToHardwareTextureAndroid>
         {images.concat(images).map((uri, idx) => (
-          <Image alt="image-placeholder" source={uri} key={`${uri}-${idx}`} contentFit="cover" cachePolicy="disk" style={{ height: 200, borderRadius: 15, width: "100%", margin: 4 }} />
+          <Image alt="image-placeholder" source={uri} key={`${uri}-${idx}`} contentFit="cover" cachePolicy="disk" style={{ height: 200, borderRadius: 15, width: "100%", marginBottom: 4 }} />
         ))}
       </Animated.View>
     </View>
@@ -131,65 +131,14 @@ const AnimatedTitle = memo(() => {
 AnimatedTitle.displayName = "AnimatedTitle";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
-const DevMsgModal = memo<{ visible: boolean; onClose: () => void }>(({ visible, onClose }) => {
-  const [countdown, setCountdown] = useState(__DEV__ ? 0 : 2);
-  const opacity = useSharedValue(0);
-  const scale = useSharedValue(0.8);
-  useEffect(() => {
-    if (visible) {
-      scale.value = withTiming(1, { duration: 300 });
-      opacity.value = withTiming(1, { duration: 300 });
-      const timer = setInterval(() => {
-        setCountdown((prev) => prev - 1);
-      }, 1000);
-      return () => clearInterval(timer);
-    } else {
-      opacity.value = withTiming(0, { duration: 300 });
-      scale.value = withTiming(0.8, { duration: 300 });
-    }
-  }, [opacity, scale, visible]);
-  const backdropStyle = useAnimatedStyle(() => ({ opacity: opacity.value * 0.9 }));
-  const modalStyle = useAnimatedStyle(() => ({ opacity: opacity.value, transform: [{ scale: scale.value }] }));
-  if (!visible) return null;
-  return (
-    <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center", zIndex: 1000 }}>
-      <Animated.View style={[backdropStyle, { position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#0C0C0C", 1.0) }]} />
-      <Animated.View style={[modalStyle, { borderRadius: 24, padding: 48, borderWidth: 4, backgroundColor: colorize("#0C0C0C", 1.0), borderColor: colorize("#FFFFFF", 1.0) }]}>
-        <View style={{ alignItems: "center" }}>
-          <Text style={{ margin: 24, fontSize: 30, fontFamily: "Kurale", color: colorize("#FFFFFF", 1.0) }}> 👋🏻 Hello From Dev </Text>
-          <Text style={{ fontSize: 24, textDecorationLine: "underline", marginTop: 32, fontFamily: "Kurale", color: colorize("#FFFFFF", 1.0) }}> We Hate Ads (💀) !! </Text>
-          <Text style={{ padding: 8, fontSize: 20, marginBottom: 16, fontFamily: "Kurale", color: colorize("#FFFFFF", 1.0) }}>
-            However It&apos;s The Only Free Way To Provide You AI-Generated Wallpapers Everyday. Hope You Understand 💘
-          </Text>
-          <TouchableOpacity
-            style={{ marginTop: 10, paddingHorizontal: 20, paddingVertical: 8, borderRadius: 16, overflow: "hidden", backgroundColor: colorize("#FFFFFF", 1.0) }}
-            onPress={onClose}
-            disabled={countdown > 0}
-          >
-            <Text style={{ fontSize: 18, fontFamily: "Kurale", color: colorize("#0C0C0C", 1.0) }}> {countdown > 0 ? `Please Read: ${countdown}s` : "I understand!"} </Text>
-          </TouchableOpacity>
-        </View>
-      </Animated.View>
-    </View>
-  );
-});
-DevMsgModal.displayName = "DevMsgModal";
-/* ============================================================================================================================== */
-/* ============================================================================================================================== */
 export default function BasePage(): JSX.Element {
   const buttonGlow = useSharedValue(0);
   const buttonScale = useSharedValue(1);
   const buttonRotate = useSharedValue(0);
-  const [showModal, setShowModal] = useState(true);
   const { updateRequired, currentVersion, serverVersion } = useVersionCheck();
   useEffect(() => {
     buttonGlow.value = withRepeat(withSequence(withTiming(1, { duration: 2000 }), withTiming(0, { duration: 2000 })), -1, true);
   }, [buttonGlow]);
-  const buttonAnimatedStyle = useAnimatedStyle(() => ({
-    transform: [{ scale: buttonScale.value }, { rotate: `${buttonRotate.value}deg` }],
-    shadowOpacity: 0.3 + buttonGlow.value * 0.3,
-    shadowRadius: 8 + buttonGlow.value * 4
-  }));
   const onPressIn = () => {
     buttonScale.value = withSpring(0.94, { damping: 15, stiffness: 90 });
     buttonRotate.value = withSpring(-2, { damping: 15, stiffness: 90 });
@@ -201,7 +150,6 @@ export default function BasePage(): JSX.Element {
   if (updateRequired) return <UpdateDialog currentVersion={currentVersion} serverVersion={serverVersion} />;
   return (
     <View style={{ flex: 1, backgroundColor: colorize("#0C0C0C", 1.0) }}>
-      <DevMsgModal visible={showModal} onClose={() => setShowModal(false)} />
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center", position: "relative" }}>
         <View style={{ flexDirection: "row", height: "100%", overflow: "hidden", position: "relative" }}>
           {imageSets.map((images, slotIndex) => (
@@ -216,7 +164,7 @@ export default function BasePage(): JSX.Element {
             <AnimatedTitle />
             <Animated.View entering={FadeInDown.delay(600).duration(1500).springify()}>
               <View>
-                <Text style={{ fontSize: 80, fontFamily: "Jersey", color: colorize("#FFFFFF", 1.0), textAlign: "center" }}>picWall</Text>
+                <Text style={{ fontSize: 100, fontFamily: "Jersey", color: colorize("#FFFFFF", 1.0), textAlign: "center" }}>picWall</Text>
                 <Animated.View style={{ alignSelf: "center" }} entering={FadeInDown.delay(600).duration(1500).springify()}>
                   <View style={{ borderRadius: 9999, paddingHorizontal: 12, paddingVertical: 4, backgroundColor: colorize("#0C0C0C", 0.6) }}>
                     <Text style={{ fontFamily: "Kurale", color: colorize("#FFFFFF", 1.0), fontSize: 12, textAlign: "center" }}>
@@ -227,16 +175,16 @@ export default function BasePage(): JSX.Element {
               </View>
               <Link href="./Home" asChild>
                 <TouchableOpacity onPressIn={onPressIn} onPressOut={onPressOut} style={{ marginTop: 180, borderRadius: 50, overflow: "hidden" }}>
-                  <Animated.View style={[buttonAnimatedStyle, { shadowColor: colorize("#0C0C0C", 1.0), shadowOffset: { width: 0, height: 4 } }]}>
-                    <View style={{ paddingVertical: 16, flexDirection: "row", alignItems: "center", justifyContent: "center", backgroundColor: colorize("#FFFFFF", 1.0) }}>
-                      <FontAwesome5 name="camera-retro" size={32} color={colorize("#0C0C0C", 1.0)} style={{ marginRight: 12 }} />
-                      <Text style={{ fontSize: 20, fontFamily: "Kurale", color: colorize("#0C0C0C", 1.0) }}> Let&apos;s Explore Wallpapers </Text>
+                  <View style={[{ shadowColor: colorize("#0C0C0C", 1.0), shadowOffset: { width: 0, height: 4 } }]}>
+                    <View style={{ paddingVertical: 10, flexDirection: "row", alignItems: "center", justifyContent: "center", backgroundColor: colorize("#FFFFFF", 1.0) }}>
+                      <FontAwesome5 name="camera-retro" size={32} color={colorize("#0C0C0C", 1.0)} />
+                      <Text style={{ fontSize: 35, fontFamily: "Jersey", color: colorize("#0C0C0C", 1.0) }}> Let&apos;s Explore </Text>
                     </View>
-                  </Animated.View>
+                  </View>
                 </TouchableOpacity>
               </Link>
               <Animated.View entering={FadeIn.delay(1200).duration(1500)} style={{ marginTop: 10, paddingHorizontal: 20, alignItems: "center" }}>
-                <Text style={{ fontFamily: "Kurale", color: colorize("#FF000D", 0.8), fontSize: 15, textAlign: "center", marginBottom: 4 }}>Perfect AI Wallpapers, Every Day!</Text>
+                <Text style={{ fontFamily: "Jersey", color: colorize("#FFFFFF", 0.8), fontSize: 15, textAlign: "center", marginBottom: 4 }}>Perfect AI Wallpapers, Every Day!</Text>
                 <Text style={{ fontFamily: "Kurale", color: colorize("#FFFFFF", 0.6), fontSize: 10, textAlign: "center", maxWidth: 300 }}>
                   Transform your screens with stunning, AI-curated wallpapers tailored to your style. Explore breathtaking collections, share your favorite moments, and discover awe-inspiring
                   photographs from around the globe. Start your journey today – where every wallpaper tells a story!
