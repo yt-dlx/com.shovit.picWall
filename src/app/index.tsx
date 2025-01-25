@@ -1,6 +1,7 @@
 /* ============================================================================================================================== */
 // src/app/index.tsx
 /* ============================================================================================================================== */
+import clsx from "clsx";
 import { Link } from "expo-router";
 import { Image } from "expo-image";
 import colorize from "@/utils/colorize";
@@ -53,29 +54,40 @@ const UpdateDialog: FC<{ serverVersion: string; currentVersion: string }> = ({ c
     opacity.value = withTiming(1, { duration: 300 });
   }, [opacity, scale]);
   return (
-    <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center", padding: 16, zIndex: 1000 }}>
-      <Animated.View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#0C0C0C", 1.0) }} />
-      <View style={{ borderRadius: 9999, padding: 4, backgroundColor: colorize("#0C0C0C", 0.8), justifyContent: "center", alignItems: "center" }}>
+    <View className={clsx("absolute", "top-0", "left-0", "right-0", "bottom-0", "justify-center", "items-center", "p-4", "z-[1000]")}>
+      <Animated.View style={{ backgroundColor: colorize("#0C0C0C", 1.0) }} className={clsx("absolute", "top-0", "left-0", "right-0", "bottom-0")} />
+      <View style={{ backgroundColor: colorize("#0C0C0C", 0.8) }} className={clsx("rounded-full", "p-1", "justify-center", "items-center")}>
         <Image
           cachePolicy="disk"
           contentFit="contain"
           alt="image-placeholder"
           source={require("@/assets/images/logo.jpg")}
-          style={{ width: 150, height: 150, borderWidth: 1, borderRadius: 9999, borderColor: colorize("#FFFFFF", 1.0) }}
+          style={{ width: 150, height: 150, borderRadius: 9999, borderWidth: 1, borderColor: colorize("#FFFFFF", 1.0) }}
         />
       </View>
-      <View style={{ alignItems: "center" }}>
-        <Text style={{ margin: 24, fontSize: 36, fontFamily: "Jersey", color: colorize("#FFFFFF", 1.0) }}> Update Required </Text>
-        <View style={{ marginBottom: 16, alignItems: "center" }}>
-          <Text style={{ fontSize: 18, fontFamily: "Kurale", color: colorize("#FFFFFF", 0.8) }}> - Current Version: {currentVersion} </Text>
-          <Text style={{ fontSize: 18, fontFamily: "Kurale", color: colorize("#FFFFFF", 0.8) }}> - Latest Version: {serverVersion} </Text>
+      <View className={clsx("items-center")}>
+        <Text style={{ fontFamily: "Jersey", color: colorize("#FFFFFF", 1.0) }} className={clsx("text-4xl", "m-6")}>
+          Update Required
+        </Text>
+        <View className={clsx("mb-4", "items-center")}>
+          <Text style={{ fontFamily: "Kurale", color: colorize("#FFFFFF", 0.8) }} className={clsx("text-lg")}>
+            - Current Version: {currentVersion}
+          </Text>
+          <Text style={{ fontFamily: "Kurale", color: colorize("#FFFFFF", 0.8) }} className={clsx("text-lg")}>
+            - Latest Version: {serverVersion}
+          </Text>
         </View>
-        <Text style={{ paddingHorizontal: 8, fontSize: 20, marginBottom: 16, fontFamily: "Kurale", color: colorize("#FFFFFF", 1.0) }}>Please update the app to continue using picWall</Text>
+        <Text style={{ fontFamily: "Kurale", color: colorize("#FFFFFF", 1.0) }} className={clsx("text-xl", "px-2", "mb-4")}>
+          Please update the app to continue using picWall
+        </Text>
         <TouchableOpacity
-          style={{ marginTop: 10, paddingHorizontal: 20, paddingVertical: 8, borderRadius: 16, overflow: "hidden", backgroundColor: colorize("#FFFFFF", 1.0) }}
+          style={{ backgroundColor: colorize("#FFFFFF", 1.0) }}
+          className={clsx("mt-2", "px-5", "py-2", "rounded-2xl", "overflow-hidden")}
           onPress={() => Linking.openURL("market://details?id=com.shovit.picWall")}
         >
-          <Text style={{ fontSize: 20, fontFamily: "Kurale", color: colorize("#0C0C0C", 1.0) }}> Update Now </Text>
+          <Text style={{ fontFamily: "Kurale", color: colorize("#0C0C0C", 1.0) }} className={clsx("text-xl")}>
+            Update Now
+          </Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -96,10 +108,17 @@ const ScrollingSlot = memo<ScrollingSlotProps>(({ images, delay }) => {
   }, [delay, opacity, scale, scrollValue, totalHeight]);
   const animatedStyle = useAnimatedStyle(() => ({ transform: [{ translateY: -scrollValue.value % totalHeight }, { scale: scale.value }], opacity: opacity.value }));
   return (
-    <View style={{ flex: 1, overflow: "hidden", padding: 4 }}>
-      <Animated.View style={animatedStyle} shouldRasterizeIOS renderToHardwareTextureAndroid>
+    <View className={clsx("flex-1", "overflow-hidden", "p-0.5")}>
+      <Animated.View style={animatedStyle} className={clsx("flex-col")} shouldRasterizeIOS renderToHardwareTextureAndroid>
         {images.concat(images).map((uri, idx) => (
-          <Image alt="image-placeholder" source={uri} key={`${uri}-${idx}`} contentFit="cover" cachePolicy="disk" style={{ height: 200, borderRadius: 15, width: "100%", margin: 4 }} />
+          <Image
+            source={uri}
+            contentFit="cover"
+            cachePolicy="disk"
+            key={`${uri}-${idx}`}
+            alt="image-placeholder"
+            style={{ width: "100%", height: imageHeight, borderRadius: 12, marginBottom: 4, backgroundColor: colorize("#1A1A1A", 0.4) }}
+          />
         ))}
       </Animated.View>
     </View>
@@ -116,13 +135,13 @@ const AnimatedTitle = memo(() => {
   const animatedStyle = useAnimatedStyle(() => ({ transform: [{ scale: scale.value }] }));
   return (
     <Animated.View style={animatedStyle}>
-      <View style={{ borderRadius: 9999, padding: 4, backgroundColor: colorize("#0C0C0C", 0.8), justifyContent: "center", alignItems: "center" }}>
+      <View style={{ backgroundColor: colorize("#0C0C0C", 0.8) }} className={clsx("rounded-full", "p-1", "justify-center", "items-center")}>
         <Image
           cachePolicy="disk"
           contentFit="contain"
           alt="image-placeholder"
           source={require("@/assets/images/logo.jpg")}
-          style={{ width: 150, height: 150, borderWidth: 1, borderRadius: 9999, borderColor: colorize("#FFFFFF", 1.0) }}
+          style={{ width: 150, height: 150, borderRadius: 9999, borderWidth: 1, borderColor: colorize("#FFFFFF", 1.0) }}
         />
       </View>
     </Animated.View>
@@ -152,21 +171,23 @@ const DevMsgModal = memo<{ visible: boolean; onClose: () => void }>(({ visible, 
   const modalStyle = useAnimatedStyle(() => ({ opacity: opacity.value, transform: [{ scale: scale.value }] }));
   if (!visible) return null;
   return (
-    <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center", zIndex: 1000 }}>
-      <Animated.View style={[backdropStyle, { position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#0C0C0C", 1.0) }]} />
-      <Animated.View style={[modalStyle, { borderRadius: 24, padding: 48, borderWidth: 4, backgroundColor: colorize("#0C0C0C", 1.0), borderColor: colorize("#FFFFFF", 1.0) }]}>
-        <View style={{ alignItems: "center" }}>
-          <Text style={{ margin: 24, fontSize: 30, fontFamily: "Kurale", color: colorize("#FFFFFF", 1.0) }}> 👋🏻 Hello From Dev </Text>
-          <Text style={{ fontSize: 24, textDecorationLine: "underline", marginTop: 32, fontFamily: "Kurale", color: colorize("#FFFFFF", 1.0) }}> We Hate Ads (💀) !! </Text>
-          <Text style={{ padding: 8, fontSize: 20, marginBottom: 16, fontFamily: "Kurale", color: colorize("#FFFFFF", 1.0) }}>
+    <View className={clsx("absolute", "top-0", "left-0", "right-0", "bottom-0", "justify-center", "items-center", "z-[1000]")}>
+      <Animated.View style={backdropStyle} className={clsx("absolute", "top-0", "left-0", "right-0", "bottom-0")} />
+      <Animated.View style={[modalStyle, { backgroundColor: colorize("#0C0C0C", 1.0), borderColor: colorize("#FFFFFF", 1.0) }]} className={clsx("rounded-3xl", "p-12", "border-4")}>
+        <View className={clsx("items-center")}>
+          <Text style={{ fontFamily: "Kurale", color: colorize("#FFFFFF", 1.0) }} className={clsx("text-3xl", "m-6")}>
+            👋🏻 Hello From Dev
+          </Text>
+          <Text style={{ fontFamily: "Kurale", color: colorize("#FFFFFF", 1.0) }} className={clsx("text-2xl", "underline", "mt-8")}>
+            We Hate Ads (💀) !!
+          </Text>
+          <Text style={{ fontFamily: "Kurale", color: colorize("#FFFFFF", 1.0) }} className={clsx("text-lg", "p-2", "mb-4")}>
             However It&apos;s The Only Free Way To Provide You AI-Generated Wallpapers Everyday. Hope You Understand 💘
           </Text>
-          <TouchableOpacity
-            style={{ marginTop: 10, paddingHorizontal: 20, paddingVertical: 8, borderRadius: 16, overflow: "hidden", backgroundColor: colorize("#FFFFFF", 1.0) }}
-            onPress={onClose}
-            disabled={countdown > 0}
-          >
-            <Text style={{ fontSize: 18, fontFamily: "Kurale", color: colorize("#0C0C0C", 1.0) }}> {countdown > 0 ? `Please Read: ${countdown}s` : "I understand!"} </Text>
+          <TouchableOpacity style={{ backgroundColor: colorize("#FFFFFF", 1.0) }} className={clsx("mt-2", "px-5", "py-2", "rounded-2xl", "overflow-hidden")} onPress={onClose} disabled={countdown > 0}>
+            <Text style={{ fontFamily: "Kurale", color: colorize("#0C0C0C", 1.0) }} className={clsx("text-base")}>
+              {countdown > 0 ? `Please Read: ${countdown}s` : "I understand!"}
+            </Text>
           </TouchableOpacity>
         </View>
       </Animated.View>
@@ -200,44 +221,50 @@ export default function BasePage(): JSX.Element {
   };
   if (updateRequired) return <UpdateDialog currentVersion={currentVersion} serverVersion={serverVersion} />;
   return (
-    <View style={{ flex: 1, backgroundColor: colorize("#0C0C0C", 1.0) }}>
+    <View style={{ backgroundColor: colorize("#0C0C0C", 1.0) }} className={clsx("flex-1")}>
       <DevMsgModal visible={showModal} onClose={() => setShowModal(false)} />
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center", position: "relative" }}>
-        <View style={{ flexDirection: "row", height: "100%", overflow: "hidden", position: "relative" }}>
+      <View className={clsx("flex-1", "justify-center", "items-center", "relative")}>
+        <View className={clsx("flex-row", "h-full", "overflow-hidden", "relative")}>
           {imageSets.map((images, slotIndex) => (
             <ScrollingSlot key={slotIndex} images={images} delay={slotIndex * 400} reverse={false} />
           ))}
           <LinearGradient
             colors={[colorize("#0C0C0C", 1.0), colorize("#0C0C0C", 0.4), colorize("#0C0C0C", 0.1), colorize("#0C0C0C", 0.4), colorize("#0C0C0C", 1.0)]}
-            style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}
             locations={[0, 0.2, 0.4, 0.5, 1]}
+            className={clsx("absolute", "top-0", "left-0", "right-0", "bottom-0")}
           />
-          <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center", marginTop: 56 }}>
+          <View className={clsx("absolute", "top-0", "left-0", "right-0", "bottom-0", "justify-center", "items-center", "mt-14")}>
             <AnimatedTitle />
             <Animated.View entering={FadeInDown.delay(600).duration(1500).springify()}>
               <View>
-                <Text style={{ fontSize: 80, fontFamily: "Jersey", color: colorize("#FFFFFF", 1.0), textAlign: "center" }}>picWall</Text>
-                <Animated.View style={{ alignSelf: "center" }} entering={FadeInDown.delay(600).duration(1500).springify()}>
-                  <View style={{ borderRadius: 9999, paddingHorizontal: 12, paddingVertical: 4, backgroundColor: colorize("#0C0C0C", 0.6) }}>
-                    <Text style={{ fontFamily: "Kurale", color: colorize("#FFFFFF", 1.0), fontSize: 12, textAlign: "center" }}>
+                <Text style={{ fontFamily: "Jersey", color: colorize("#FFFFFF", 1.0) }} className={clsx("text-8xl", "text-center")}>
+                  picWall
+                </Text>
+                <Animated.View entering={FadeInDown.delay(600).duration(1500).springify()} className={clsx("self-center")}>
+                  <View style={{ backgroundColor: colorize("#0C0C0C", 0.6) }} className={clsx("rounded-full", "px-3", "py-1")}>
+                    <Text style={{ fontFamily: "Kurale", color: colorize("#FFFFFF", 1.0) }} className={clsx("text-xs", "text-center")}>
                       Crafted with <AntDesign name="heart" size={12} color={colorize("#FF000D", 1.0)} /> in India. All rights reserved
                     </Text>
                   </View>
                 </Animated.View>
               </View>
               <Link href="./Home" asChild>
-                <TouchableOpacity onPressIn={onPressIn} onPressOut={onPressOut} style={{ marginTop: 180, borderRadius: 50, overflow: "hidden" }}>
+                <TouchableOpacity onPressIn={onPressIn} onPressOut={onPressOut} className={clsx("mt-40", "rounded-[50px]", "overflow-hidden")}>
                   <Animated.View style={[buttonAnimatedStyle, { shadowColor: colorize("#0C0C0C", 1.0), shadowOffset: { width: 0, height: 4 } }]}>
-                    <View style={{ paddingVertical: 16, flexDirection: "row", alignItems: "center", justifyContent: "center", backgroundColor: colorize("#FFFFFF", 1.0) }}>
-                      <FontAwesome5 name="camera-retro" size={32} color={colorize("#0C0C0C", 1.0)} style={{ marginRight: 12 }} />
-                      <Text style={{ fontSize: 20, fontFamily: "Kurale", color: colorize("#0C0C0C", 1.0) }}> Let&apos;s Explore Wallpapers </Text>
+                    <View style={{ backgroundColor: colorize("#FFFFFF", 1.0) }} className={clsx("py-4", "flex-row", "items-center", "justify-center")}>
+                      <FontAwesome5 name="camera-retro" size={32} color={colorize("#0C0C0C", 1.0)} className={clsx("mr-3")} />
+                      <Text style={{ fontFamily: "Kurale", color: colorize("#0C0C0C", 1.0) }} className={clsx("text-lg")}>
+                        Let&apos;s Explore Wallpapers
+                      </Text>
                     </View>
                   </Animated.View>
                 </TouchableOpacity>
               </Link>
-              <Animated.View entering={FadeIn.delay(1200).duration(1500)} style={{ marginTop: 10, paddingHorizontal: 20, alignItems: "center" }}>
-                <Text style={{ fontFamily: "Kurale", color: colorize("#FF000D", 0.8), fontSize: 15, textAlign: "center", marginBottom: 4 }}>Perfect AI Wallpapers, Every Day!</Text>
-                <Text style={{ fontFamily: "Kurale", color: colorize("#FFFFFF", 0.6), fontSize: 10, textAlign: "center", maxWidth: 300 }}>
+              <Animated.View entering={FadeIn.delay(1200).duration(1500)} className={clsx("mt-2", "px-5", "items-center")}>
+                <Text style={{ fontFamily: "Kurale", color: colorize("#FF000D", 0.8) }} className={clsx("text-sm", "text-center", "mb-1")}>
+                  Perfect AI Wallpapers, Every Day!
+                </Text>
+                <Text style={{ fontFamily: "Kurale", color: colorize("#FFFFFF", 0.6) }} className={clsx("text-[10px]", "text-center", "max-w-[300px]")}>
                   Transform your screens with stunning, AI-curated wallpapers tailored to your style. Explore breathtaking collections, share your favorite moments, and discover awe-inspiring
                   photographs from around the globe. Start your journey today – where every wallpaper tells a story!
                 </Text>
@@ -250,3 +277,5 @@ export default function BasePage(): JSX.Element {
     </View>
   );
 }
+/* ============================================================================================================================== */
+/* ============================================================================================================================== */
