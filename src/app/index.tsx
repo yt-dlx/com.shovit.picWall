@@ -10,8 +10,8 @@ import Footer from "@/components/Footer";
 import { LinearGradient } from "expo-linear-gradient";
 import { ScrollingSlotProps } from "@/types/components";
 import { AntDesign, FontAwesome5 } from "@expo/vector-icons";
+import { FC, memo, useEffect, useState, useMemo } from "react";
 import { Text, View, TouchableOpacity, Linking } from "react-native";
-import { FC, JSX, memo, useEffect, useState, useMemo } from "react";
 import Animated, { useSharedValue, useAnimatedStyle, withTiming, withRepeat, withSequence, withSpring, Easing, FadeIn, FadeInDown, withDelay } from "react-native-reanimated";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
@@ -41,11 +41,11 @@ const useVersionCheck = () => {
     const interval = setInterval(checkVersion, 300000);
     return () => clearInterval(interval);
   }, []);
-  return { updateRequired, currentVersion, serverVersion };
+  return useMemo(() => ({ updateRequired, currentVersion, serverVersion }), [updateRequired, currentVersion, serverVersion]);
 };
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
-const UpdateDialog: FC<{ serverVersion: string; currentVersion: string }> = ({ currentVersion, serverVersion }) => {
+const UpdateDialog: FC<{ serverVersion: string; currentVersion: string }> = memo(({ currentVersion, serverVersion }) => {
   const scale = useSharedValue(0.8);
   const opacity = useSharedValue(0);
   useEffect(() => {
@@ -80,7 +80,8 @@ const UpdateDialog: FC<{ serverVersion: string; currentVersion: string }> = ({ c
       </View>
     </View>
   );
-};
+});
+UpdateDialog.displayName = "UpdateDialog";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
 const ScrollingSlot = memo<ScrollingSlotProps>(({ images, delay }) => {
@@ -131,7 +132,7 @@ const AnimatedTitle = memo(() => {
 AnimatedTitle.displayName = "AnimatedTitle";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
-export default function BasePage(): JSX.Element {
+const BasePage = memo(() => {
   const buttonGlow = useSharedValue(0);
   const buttonScale = useSharedValue(1);
   const buttonRotate = useSharedValue(0);
@@ -197,4 +198,6 @@ export default function BasePage(): JSX.Element {
       <Footer />
     </View>
   );
-}
+});
+BasePage.displayName = "BasePage";
+export default BasePage;

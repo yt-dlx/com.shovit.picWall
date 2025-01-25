@@ -2,19 +2,19 @@
 // src/utils/HeaderAnimated.tsx
 /* ============================================================================================ */
 import imageSets from "@/utils/static";
-import React, { useEffect } from "react";
 import Colorizer from "@/utils/colorize";
 import { Text, View, Image } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
+import React, { useEffect, memo, useMemo } from "react";
 import { ScrollingSlotProps } from "@/types/components";
 import Animated, { useSharedValue, useAnimatedStyle, withTiming, withRepeat, withSequence, withDelay, FadeInDown } from "react-native-reanimated";
 /* ============================================================================================ */
 /* ============================================================================================ */
-const ScrollingSlot: React.FC<ScrollingSlotProps> = ({ images, reverse, delay }) => {
+const ScrollingSlot: React.FC<ScrollingSlotProps> = memo(({ images, reverse, delay }) => {
   const imageHeight = 200;
-  const totalHeight = images.length * imageHeight;
-  const scrollValue = useSharedValue(0);
   const opacity = useSharedValue(0);
+  const scrollValue = useSharedValue(0);
+  const totalHeight = useMemo(() => images.length * imageHeight, [images]);
   useEffect(() => {
     opacity.value = withDelay(delay, withTiming(1, { duration: 1000 }));
     scrollValue.value = withDelay(delay, withRepeat(withTiming(totalHeight, { duration: 10000 }), -1, reverse));
@@ -29,10 +29,11 @@ const ScrollingSlot: React.FC<ScrollingSlotProps> = ({ images, reverse, delay })
       </Animated.View>
     </View>
   );
-};
+});
+ScrollingSlot.displayName = "ScrollingSlot";
 /* ============================================================================================ */
 /* ============================================================================================ */
-const AnimatedTitle: React.FC = () => {
+const AnimatedTitle: React.FC = memo(() => {
   const scale = useSharedValue(0.95);
   useEffect(() => {
     scale.value = withRepeat(withSequence(withTiming(1.05, { duration: 2000 }), withTiming(0.95, { duration: 2000 })), -1, true);
@@ -50,14 +51,16 @@ const AnimatedTitle: React.FC = () => {
       </View>
     </Animated.View>
   );
-};
+});
+AnimatedTitle.displayName = "AnimatedTitle";
 /* ============================================================================================ */
 /* ============================================================================================ */
-export default function HAnimated(): JSX.Element {
+const HAnimated: React.FC = memo(() => {
+  const imageSetsMemo = useMemo(() => imageSets, []);
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <View style={{ flexDirection: "row", overflow: "hidden", borderRadius: 12, height: 300, position: "relative" }}>
-        {imageSets.map((images, slotIndex) => (
+        {imageSetsMemo.map((images, slotIndex) => (
           <ScrollingSlot key={slotIndex} images={images} reverse={slotIndex % 2 === 0} delay={slotIndex * 200} />
         ))}
         <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center", borderRadius: 8, overflow: "hidden" }}>
@@ -79,6 +82,8 @@ export default function HAnimated(): JSX.Element {
       </View>
     </View>
   );
-}
+});
+HAnimated.displayName = "HAnimated";
+export default HAnimated;
 /* ============================================================================================ */
 /* ============================================================================================ */
