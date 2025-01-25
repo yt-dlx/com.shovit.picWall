@@ -2,6 +2,7 @@
 // src/app/_layout.tsx
 /* eslint-disable @typescript-eslint/no-require-imports */
 /* ============================================================================================================================== */
+import "../../global.css";
 import React from "react";
 import { useFonts } from "expo-font";
 import colorize from "@/utils/colorize";
