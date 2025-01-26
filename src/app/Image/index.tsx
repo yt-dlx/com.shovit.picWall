@@ -59,8 +59,8 @@ const SuccessModal: React.FC<{ visible: boolean; message: string; onClose: () =>
   if (!visible) return null;
   return (
     <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center" }}>
-      <Animated.View style={[{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#171819", 0.5) }, backdropStyle]} />
-      <Animated.View style={[{ width: "80%", borderRadius: 24, padding: 20, borderWidth: 4, backgroundColor: colorize("#171819", 1.0), borderColor: colorize("#25BE8B", 1.0) }, modalStyle]}>
+      <Animated.View style={[{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#000000", 0.5) }, backdropStyle]} />
+      <Animated.View style={[{ width: "80%", borderRadius: 24, padding: 20, borderWidth: 4, backgroundColor: colorize("#000000", 1.0), borderColor: colorize("#25BE8B", 1.0) }, modalStyle]}>
         <View style={{ alignItems: "center" }}>
           <Ionicons name="checkmark-done-circle" size={50} color={colorize("#25BE8B", 1.0)} />
           <Text style={{ marginTop: 10, fontSize: 48, fontFamily: "Kurale", color: colorize("#25BE8B", 1.0) }}> Success </Text>
@@ -92,8 +92,8 @@ const ErrorModal: React.FC<{ visible: boolean; message: string; onClose: () => v
   if (!visible) return null;
   return (
     <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center" }}>
-      <Animated.View style={[{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#171819", 0.5) }, backdropStyle]} />
-      <Animated.View style={[{ width: "80%", borderRadius: 24, padding: 20, borderWidth: 4, backgroundColor: colorize("#171819", 1.0), borderColor: colorize("#F4F4F5", 1.0) }, modalStyle]}>
+      <Animated.View style={[{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#000000", 0.5) }, backdropStyle]} />
+      <Animated.View style={[{ width: "80%", borderRadius: 24, padding: 20, borderWidth: 4, backgroundColor: colorize("#000000", 1.0), borderColor: colorize("#F4F4F5", 1.0) }, modalStyle]}>
         <View style={{ alignItems: "center" }}>
           <MaterialIcons name="error" size={50} color={colorize("#F4F4F5", 1.0)} />
           <Text style={{ marginTop: 10, fontSize: 48, fontFamily: "Kurale", color: colorize("#F4F4F5", 1.0) }}> Error </Text>
@@ -135,8 +135,8 @@ const DownloadingModal: React.FC<{ visible: boolean; percentage: number; downloa
     if (!visible) return null;
     return (
       <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center" }}>
-        <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#171819", 0.5) }} />
-        <View style={{ width: "80%", borderRadius: 24, padding: 20, borderWidth: 4, backgroundColor: colorize("#171819", 1.0), borderColor: colorize(primaryColor, 1.0) }}>
+        <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#000000", 0.5) }} />
+        <View style={{ width: "80%", borderRadius: 24, padding: 20, borderWidth: 4, backgroundColor: colorize("#000000", 1.0), borderColor: colorize(primaryColor, 1.0) }}>
           <View style={{ alignItems: "center" }}>
             <MaterialIcons name="cloud-download" size={50} color={colorize(primaryColor, 1.0)} />
             <Text style={{ marginTop: 10, fontSize: 48, fontFamily: "Kurale", color: colorize(primaryColor, 1.0) }}> Downloading... </Text>
@@ -174,7 +174,7 @@ const PreviewImage: React.FC<{ selectedImage: ImageMetadata; screenWidth: number
   return (
     <View style={{ position: "relative" }}>
       {imageLoading && (
-        <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center", backgroundColor: colorize("#171819", 1.0), zIndex: 40 }}>
+        <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center", backgroundColor: colorize("#000000", 1.0), zIndex: 40 }}>
           <ActivityIndicator size="large" color={colorize(selectedImage.primary, 1.0)} accessibilityLabel="Loading image" />
           <Text style={{ marginTop: 10, fontFamily: "Kurale", color: colorize(selectedImage.primary, 1.0) }}> Loading HD Image Preview... </Text>
         </View>
@@ -328,8 +328,8 @@ const WallModal: React.FC<WallModalProps> = memo(({ visible, onComplete, onCance
   if (!visible) return null;
   return (
     <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center" }}>
-      <Animated.View style={[{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#171819", 0.5) }, backdropStyle]} />
-      <Animated.View style={[{ width: "80%", borderRadius: 24, padding: 20, borderWidth: 4, backgroundColor: colorize("#171819", 1.0), borderColor: colorize(primaryColor, 1.0) }, modalStyle]}>
+      <Animated.View style={[{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#000000", 0.5) }, backdropStyle]} />
+      <Animated.View style={[{ width: "80%", borderRadius: 24, padding: 20, borderWidth: 4, backgroundColor: colorize("#000000", 1.0), borderColor: colorize(primaryColor, 1.0) }, modalStyle]}>
         <View style={{ alignItems: "center" }}>
           <MaterialIcons name="warning" size={50} color={colorize(primaryColor, 1.0)} />
           <Text style={{ marginTop: 10, fontSize: 48, fontFamily: "Kurale", color: colorize(primaryColor, 1.0) }}>
@@ -374,7 +374,7 @@ const FullScreenView: React.FC<FullScreenViewProps> = memo(({ isFullScreen, setI
   }, [saveCurrentState, selectedImage, wallType]);
   return (
     <Modal visible={isFullScreen} transparent={false} onRequestClose={() => setIsFullScreen(false)} presentationStyle="fullScreen" statusBarTranslucent>
-      <View style={{ flex: 1, backgroundColor: colorize("#171819", 1.0) }}>
+      <View style={{ flex: 1, backgroundColor: colorize("#000000", 1.0) }}>
         <ScrollView horizontal contentContainerStyle={{ flexGrow: 1, justifyContent: "center", alignItems: "center" }} showsHorizontalScrollIndicator={false}>
           <Image
             contentFit="fill"
@@ -519,11 +519,11 @@ export default function ImagePage(): JSX.Element {
   const allImagesWithIndex = useMemo(() => allImages.map((img, idx) => ({ img, idx })), [allImages]);
   const otherImages = useMemo(() => allImagesWithIndex.filter((item) => item.idx !== currentIndex), [allImagesWithIndex, currentIndex]);
   return (
-    <View style={{ flex: 1, backgroundColor: colorize("#171819", 1.0) }}>
+    <View style={{ flex: 1, backgroundColor: colorize("#000000", 1.0) }}>
       <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
       <ScrollView style={{ flex: 1 }}>
         <PreviewImage selectedImage={selectedImage} screenWidth={screenWidth} onViewFullScreen={() => setIsFullScreen(true)} />
-        <View style={{ padding: 16, borderWidth: 2, backgroundColor: colorize("#171819", 1.0) }}>
+        <View style={{ padding: 16, borderWidth: 2, backgroundColor: colorize("#000000", 1.0) }}>
           <Text style={{ marginBottom: 8, fontSize: 30, textAlign: "center", fontFamily: "Kurale", color: colorize(selectedImage.primary, 1.0) }}>
             {selectedImage.original_file_name.replace(".jpg", "")}
           </Text>

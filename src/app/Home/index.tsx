@@ -5,8 +5,8 @@ import { Link } from "expo-router";
 import { Image } from "expo-image";
 import colorize from "@/utils/colorize";
 import Footer from "@/components/Footer";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { fetchAllData } from "@/utils/sercon";
-import { Ionicons } from "@expo/vector-icons";
 import AniHead from "@/components/AniHead";
 import { LinearGradient } from "expo-linear-gradient";
 import { BlurView } from "@react-native-community/blur";
@@ -16,7 +16,7 @@ import { FontAwesome5, MaterialCommunityIcons } from "@expo/vector-icons";
 import { useEffect, useRef, useCallback, useState, memo, FC, useMemo } from "react";
 import { SubImagesProps, CardProps, CategoryButtonProps } from "@/types/components";
 import { Easing, useSharedValue, useAnimatedStyle, withTiming, withRepeat } from "react-native-reanimated";
-import { Animated, View, Text, TouchableOpacity, FlatList, StatusBar, ScrollView, TextInput, Modal, ActivityIndicator, StyleSheet, Platform, Dimensions } from "react-native";
+import { Animated, View, Text, TouchableOpacity, FlatList, StatusBar, ScrollView, TextInput, Modal, ActivityIndicator, StyleSheet, Platform } from "react-native";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
 type ParentKey = string;
@@ -70,7 +70,6 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
   const [currentIndices, setCurrentIndices] = useState<Record<string, number>>({});
   const [selectedSubcategory, setSelectedSubcategory] = useState<string | null>(null);
   const [previewLinks, setPreviewLinks] = useState<Record<string, string[]>>({});
-  const scaleAnim = useRef(new Animated.Value(1)).current;
   const generatePreviewLinks = useCallback(() => {
     const newLinks: Record<string, string[]> = {};
     rawCategoriesArray.forEach((cat) => {
@@ -101,10 +100,7 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
     const intervals: NodeJS.Timeout[] = [];
     Object.keys(previewLinks).forEach((key) => {
       const interval = setInterval(() => {
-        setCurrentIndices((prev) => ({
-          ...prev,
-          [key]: ((prev[key] || 0) + 1) % (previewLinks[key]?.length || 1)
-        }));
+        setCurrentIndices((prev) => ({ ...prev, [key]: ((prev[key] || 0) + 1) % (previewLinks[key]?.length || 1) }));
       }, 2000);
       intervals.push(interval);
     });
@@ -113,91 +109,54 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
   useEffect(() => {
     if (isVisible) generatePreviewLinks();
   }, [isVisible, generatePreviewLinks]);
-  const handleCategoryPress = (categoryName: string) => {
-    setActiveParent(categoryName);
-    setSelectedSubcategory(null);
-    Animated.spring(scaleAnim, { toValue: 1.1, friction: 3, useNativeDriver: true }).start(() => {
-      Animated.spring(scaleAnim, { toValue: 1, friction: 3, useNativeDriver: true }).start();
-    });
-  };
   if (!isVisible) return null;
   return (
     <Modal visible transparent animationType="slide" onRequestClose={onClose}>
       <View style={{ flex: 1, justifyContent: "flex-end" }}>
-        <View style={{ height: "100%", flexDirection: "row" }}>
+        <View style={{ height: "100%" }}>
           <BlurView
             blurType="dark"
             blurAmount={80}
             style={{ position: "absolute", top: 0, left: 0, bottom: 0, right: 0 }}
-            overlayColor={Platform.OS === "android" ? colorize("#171819", 0.0) : colorize("#171819", 0.0)}
+            overlayColor={Platform.OS === "android" ? colorize("#000000", 0.0) : colorize("#000000", 0.0)}
           />
-          {/* Left Panel (30% width) */}
-          <View
-            style={{
-              width: "30%",
-              backgroundColor: colorize("#171819", 0.9),
-              borderRightWidth: 1,
-              borderRightColor: colorize("#F4F4F5", 0.1)
-            }}
-          >
-            <View
-              style={{
-                padding: 10,
-                backgroundColor: colorize("#171819", 0.8),
-                borderBottomWidth: 1,
-                borderBottomColor: colorize("#F4F4F5", 0.1)
-              }}
-            >
-              <Text
-                style={{
-                  fontFamily: "Jersey",
-                  fontSize: 28,
-                  color: colorize("#F4F4F5", 1.0),
-                  textAlign: "center"
-                }}
-              >
-                All Categories
-              </Text>
+          <View style={{ flex: 1, backgroundColor: colorize("#000000", 0.9), overflow: "hidden" }}>
+            <View style={{ padding: 10, flexDirection: "row", alignItems: "center", justifyContent: "center", backgroundColor: colorize("#000000", 0.9) }}>
+              <Text style={{ fontFamily: "Jersey", fontSize: 30, color: colorize("#F4F4F5", 1.0) }}> Categories and Styles</Text>
             </View>
-            <ScrollView contentContainerStyle={{ paddingVertical: 10 }} showsVerticalScrollIndicator={false}>
-              {rawCategoriesArray
-                .filter((cat) => cat.name !== "Combined")
-                .map((category) => {
-                  const currentIndex = currentIndices[category.name] || 0;
-                  const images = previewLinks[category.name] || [];
-                  return (
-                    <Animated.View key={category.name} style={{ transform: [{ scale: scaleAnim }] }}>
+            <View style={{ height: 150, backgroundColor: colorize("#000000", 0.9) }}>
+              <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: 2 }}>
+                {rawCategoriesArray
+                  .filter((cat) => cat.name !== "Combined")
+                  .map((category) => {
+                    const currentIndex = currentIndices[category.name] || 0;
+                    const images = previewLinks[category.name] || [];
+                    return (
                       <TouchableOpacity
-                        onPress={() => handleCategoryPress(category.name)}
-                        style={{
-                          height: Dimensions.get("window").width * 0.3 * (16 / 9),
-                          marginHorizontal: 8,
-                          marginVertical: 4,
-                          overflow: "hidden",
-                          opacity: activeParent === category.name ? 1 : 0.5,
-                          borderWidth: 2,
-                          borderColor: activeParent === category.name ? colorize("#F4F4F5", 1.0) : "transparent",
-                          borderRadius: 8
+                        key={category.name}
+                        onPress={() => {
+                          setActiveParent(category.name);
+                          setSelectedSubcategory(null);
                         }}
+                        style={{
+                          width: 100,
+                          height: 150,
+                          marginRight: 4,
+                          borderRadius: 10,
+                          overflow: "hidden",
+                          borderColor: colorize("#F4F4F5", 1.0),
+                          opacity: activeParent === category.name ? 1 : 0.8,
+                          borderWidth: activeParent === category.name ? 2 : 0
+                        }}
+                        accessibilityLabel={`Select ${category.name} category`}
                       >
-                        {images.length > 0 && (
-                          <Image
-                            alt="Category preview"
-                            source={{ uri: images[currentIndex] }}
-                            style={{
-                              width: "100%",
-                              height: "100%",
-                              aspectRatio: 9 / 16
-                            }}
-                            contentFit="cover"
-                          />
-                        )}
+                        {images.length > 0 && <Image alt="Category preview" source={{ uri: images[currentIndex] }} style={{ width: "100%", height: "100%" }} contentFit="cover" />}
                         <LinearGradient
                           end={{ x: 0.5, y: 0 }}
                           start={{ x: 0.5, y: 1 }}
                           locations={[0, 0.2, 0.4]}
                           style={{ position: "absolute", top: 0, right: 0, bottom: 0, left: 0 }}
-                          colors={[colorize("#171819", 0.9), colorize("#171819", 0.7), "transparent"]}
+                          colors={[colorize("#000000", 0.9), colorize("#000000", 0.7), "transparent"]}
                         />
                         <Text
                           style={{
@@ -211,135 +170,84 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                             fontFamily: "Kurale",
                             color: colorize("#F4F4F5", 1.0),
                             textShadowOffset: { width: 1, height: 1 },
-                            textShadowColor: colorize("#171819", 0.9)
+                            textShadowColor: colorize("#000000", 0.9)
                           }}
                         >
                           {category.name}
                         </Text>
                       </TouchableOpacity>
-                    </Animated.View>
-                  );
-                })}
-            </ScrollView>
-          </View>
-          {/* Right Panel (70% width) */}
-          <View
-            style={{
-              width: "70%",
-              backgroundColor: colorize("#171819", 0.85),
-              paddingTop: 10
-            }}
-          >
-            <ScrollView contentContainerStyle={{ padding: 10 }}>
-              <Text
-                style={{
-                  fontSize: 20,
-                  marginBottom: 15,
-                  fontFamily: "Jersey",
-                  color: colorize("#F4F4F5", 1.0),
-                  textAlign: "center"
-                }}
-              >
-                {activeParent} Environments
-              </Text>
-              <View
-                style={{
-                  flexDirection: "row",
-                  flexWrap: "wrap",
-                  justifyContent: "space-between",
-                  gap: 10
-                }}
-              >
-                {rawCategoriesArray
-                  .find((c) => c.name === activeParent)
-                  ?.subcategories.sort((a, b) => (a === "Combined" ? -1 : b === "Combined" ? 1 : 0))
-                  .map((child) => {
-                    const key = `${activeParent}-${child}`;
-                    const currentIndex = currentIndices[key] || 0;
-                    const images = previewLinks[key] || [];
-                    const isMixed = child === "Combined";
-                    const activeCat = rawCategoriesArray.find((c) => c.name === activeParent);
-                    let displayName = child;
-                    let count = 0;
-                    if (isMixed && activeCat) {
-                      count = activeCat.subcategories
-                        .filter((s) => s !== "Combined")
-                        .reduce((acc, sub) => {
-                          const subDB = activeCat.database[sub];
-                          return acc + (subDB ? Object.keys(subDB).length : 0);
-                        }, 0);
-                      displayName = `All (${count})`;
-                    }
-                    return (
-                      <TouchableOpacity
-                        key={child}
-                        onPress={() => {
-                          setSelectedSubcategory(child);
-                          onSelectCategory(activeParent, child === "Combined" ? "Combined" : child);
-                          onClose();
-                        }}
-                        style={{ width: "48%" }}
-                      >
-                        <Animated.View
-                          style={{
-                            elevation: 4,
-                            aspectRatio: 9 / 16,
-                            borderWidth: 2,
-                            borderRadius: 15,
-                            overflow: "hidden",
-                            borderColor: selectedSubcategory === child ? colorize("#F4F4F5", 1.0) : colorize("#171819", 1.0),
-                            backgroundColor: selectedSubcategory === child ? colorize("#F4F4F5", 1.0) : colorize("#171819", 1.0),
-                            transform: [{ scale: selectedSubcategory === child ? 1.05 : 1 }]
-                          }}
-                        >
-                          <Text
-                            style={{
-                              fontSize: 16,
-                              marginBottom: 4,
-                              textAlign: "center",
-                              fontFamily: "Kurale",
-                              color: selectedSubcategory === child ? colorize("#171819", 1.0) : colorize("#F4F4F5", 1.0)
-                            }}
-                          >
-                            {displayName}
-                          </Text>
-                          {child === "Combined" ? (
-                            <Image
-                              alt="Combined category preview"
-                              source={require("@/assets/images/Combined.gif")}
-                              style={{
-                                width: "100%",
-                                height: "100%",
-                                aspectRatio: 9 / 16
-                              }}
-                              contentFit="cover"
-                            />
-                          ) : (
-                            images.length > 0 && (
-                              <Image
-                                alt="Subcategory preview"
-                                source={{ uri: images[currentIndex] }}
-                                style={{
-                                  width: "100%",
-                                  height: "100%",
-                                  aspectRatio: 9 / 16
-                                }}
-                                contentFit="cover"
-                              />
-                            )
-                          )}
-                          <Ionicons
-                            name="checkmark-circle"
-                            size={24}
-                            color={selectedSubcategory === child ? colorize("#171819", 1.0) : "transparent"}
-                            style={{ position: "absolute", top: 8, right: 8 }}
-                          />
-                        </Animated.View>
-                      </TouchableOpacity>
                     );
                   })}
-              </View>
-            </ScrollView>
+              </ScrollView>
+            </View>
+            <View style={{ flex: 1, marginTop: 10 }}>
+              <ScrollView contentContainerStyle={{ padding: 10 }}>
+                <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "space-between" }}>
+                  {rawCategoriesArray
+                    .find((c) => c.name === activeParent)
+                    ?.subcategories.sort((a, b) => (a === "Combined" ? -1 : b === "Combined" ? 1 : 0))
+                    .map((child) => {
+                      const key = `${activeParent}-${child}`;
+                      const currentIndex = currentIndices[key] || 0;
+                      const images = previewLinks[key] || [];
+                      const isMixed = child === "Combined";
+                      const activeCat = rawCategoriesArray.find((c) => c.name === activeParent);
+                      let displayName = child;
+                      let count = 0;
+                      if (isMixed && activeCat) {
+                        count = activeCat.subcategories
+                          .filter((s) => s !== "Combined")
+                          .reduce((acc, sub) => {
+                            const subDB = activeCat.database[sub];
+                            return acc + (subDB ? Object.keys(subDB).length : 0);
+                          }, 0);
+                        displayName = `All (${count})`;
+                      }
+                      return (
+                        <TouchableOpacity
+                          key={child}
+                          onPress={() => {
+                            setSelectedSubcategory(child);
+                            onSelectCategory(activeParent, child === "Combined" ? "Combined" : child);
+                            onClose();
+                          }}
+                          style={{ width: "50%" }}
+                          accessibilityLabel={`Select ${child} subcategory`}
+                        >
+                          <View
+                            style={{
+                              elevation: 4,
+                              aspectRatio: 1,
+                              borderWidth: 2,
+                              borderRadius: 15,
+                              overflow: "hidden",
+                              borderColor: selectedSubcategory === child ? colorize("#F4F4F5", 1.0) : colorize("#000000", 1.0),
+                              backgroundColor: selectedSubcategory === child ? colorize("#F4F4F5", 1.0) : colorize("#000000", 1.0)
+                            }}
+                          >
+                            <Text
+                              style={{
+                                fontSize: 16,
+                                marginBottom: 4,
+                                textAlign: "center",
+                                fontFamily: "Kurale",
+                                color: selectedSubcategory === child ? colorize("#000000", 1.0) : colorize("#F4F4F5", 1.0)
+                              }}
+                            >
+                              {displayName}
+                            </Text>
+                            {child === "Combined" ? (
+                              <Image alt="Combined category preview" source={require("@/assets/images/Combined.gif")} style={{ width: "100%", height: "100%" }} contentFit="cover" />
+                            ) : (
+                              images.length > 0 && <Image alt="Subcategory preview" source={{ uri: images[currentIndex] }} style={{ width: "100%", height: "100%" }} contentFit="cover" />
+                            )}
+                          </View>
+                        </TouchableOpacity>
+                      );
+                    })}
+                </View>
+              </ScrollView>
+            </View>
           </View>
         </View>
       </View>
@@ -403,7 +311,7 @@ const SubImages: FC<SubImagesProps> = memo(({ images, onImagePress }) => (
                   position: "absolute",
                   paddingHorizontal: 8,
                   fontFamily: "Kurale",
-                  color: colorize("#171819", 1.0),
+                  color: colorize("#000000", 1.0),
                   backgroundColor: colorize(image.primary, 1.0)
                 }}
               >
@@ -449,7 +357,7 @@ const Card: FC<CardProps> = memo(({ data }) => {
     return () => clearInterval(interval);
   }, [currentIndex, data.images.length, animateTransition]);
   return (
-    <View style={{ position: "relative", margin: 1, borderRadius: 15, overflow: "hidden", shadowColor: "#171819", shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.4, shadowRadius: 3 }}>
+    <View style={{ position: "relative", margin: 1, borderRadius: 15, overflow: "hidden", shadowColor: "#000000", shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.4, shadowRadius: 3 }}>
       <Link href={{ pathname: "/Shared", params: { data: JSON.stringify({ environment_title: data.environment_title, selectedIndex: currentIndex, data: data.images }) } }} asChild>
         <TouchableOpacity accessibilityLabel="View full wallpaper">
           <Animated.View style={{ opacity: fadeAnim, transform: [{ scale: scaleAnim }] }}>
@@ -464,7 +372,7 @@ const Card: FC<CardProps> = memo(({ data }) => {
                 style={{ width: "100%", height: "100%" }}
               />
               {loading && (
-                <View style={[StyleSheet.absoluteFill, { backgroundColor: colorize("#171819", 0.2) }]} className="flex items-center justify-center">
+                <View style={[StyleSheet.absoluteFill, { backgroundColor: colorize("#000000", 0.2) }]} className="flex items-center justify-center">
                   <ActivityIndicator size="large" color={colorize("#F4F4F5", 1.0)} accessibilityLabel="Loading image" />
                 </View>
               )}
@@ -478,7 +386,7 @@ const Card: FC<CardProps> = memo(({ data }) => {
                   flexDirection: "row",
                   alignItems: "center",
                   paddingHorizontal: 6,
-                  backgroundColor: colorize("#171819", 0.9)
+                  backgroundColor: colorize("#000000", 0.9)
                 }}
               >
                 <MaterialCommunityIcons name="movie-filter" size={16} color={colorize("#FF000D", 1.0)} style={{ marginRight: 4 }} />
@@ -500,7 +408,7 @@ const Card: FC<CardProps> = memo(({ data }) => {
             </View>
           </Animated.View>
           <View style={{ position: "absolute", top: "35%", right: 8, padding: 4, transform: [{ translateY: -70 }], borderRadius: 15 }}>
-            <View style={[StyleSheet.absoluteFillObject, { borderRadius: 15, overflow: "hidden", backgroundColor: colorize("#171819", 0.8) }]} />
+            <View style={[StyleSheet.absoluteFillObject, { borderRadius: 15, overflow: "hidden", backgroundColor: colorize("#000000", 0.8) }]} />
             {data.images.slice(0, 3).map((img, idx) => (
               <TouchableOpacity key={idx} onPress={() => animateTransition(idx)} style={{ marginBottom: idx < 2 ? 2 : 0 }} accessibilityLabel="Select thumbnail">
                 <Image
@@ -565,7 +473,7 @@ const CategoryButton: FC<CategoryButtonExtendedProps> = memo(({ category, onPres
           style={{ width: "100%", height: "100%", borderRadius: 15 }}
           source={category === "Combined" ? require("@/assets/images/Shuffle.gif") : { uri: currentImage }}
         />
-        <LinearGradient colors={[colorize("#171819", 0.7), colorize("#171819", 0.7)]} style={{ position: "absolute", width: "100%", height: "100%", borderRadius: 15 }} />
+        <LinearGradient colors={[colorize("#000000", 0.7), colorize("#000000", 0.7)]} style={{ position: "absolute", width: "100%", height: "100%", borderRadius: 15 }} />
         <View style={{ width: "100%", height: "100%", borderRadius: 15, position: "absolute", alignItems: "center", flexDirection: "row", justifyContent: "center" }}>
           <MaterialCommunityIcons name={category === "Categories" ? "image-filter-vintage" : "dice-multiple"} size={20} color={colorize("#F4F4F5", 1.0)} style={{ marginRight: 4 }} />
           <Text style={{ fontFamily: "Kurale", color: colorize("#F4F4F5", 1.0), fontSize: 18, textAlign: "center" }}> {category === "Combined" ? `All (${count})` : category} </Text>
@@ -760,20 +668,20 @@ export default function HomePage(): JSX.Element {
   }, [searchQuery]);
   if (isLoading) {
     return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: colorize("#171819", 1.0) }}>
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: colorize("#000000", 1.0) }}>
         <ActivityIndicator size="large" color={colorize("#F4F4F5", 1.0)} accessibilityLabel="Loading content" />
       </View>
     );
   }
   if (error) {
     return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: colorize("#171819", 1.0) }}>
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: colorize("#000000", 1.0) }}>
         <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 16, fontFamily: "Kurale" }}>{error}</Text>
       </View>
     );
   }
   return (
-    <View style={{ backgroundColor: colorize("#171819", 1.0), flex: 1, position: "relative" }}>
+    <View style={{ backgroundColor: colorize("#000000", 1.0), flex: 1, position: "relative" }}>
       <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
       <FlatList
         windowSize={2}

@@ -41,7 +41,7 @@ const AnimatedTitle: React.FC = memo(() => {
   const animatedStyle = useAnimatedStyle(() => ({ transform: [{ scale: scale.value }] }));
   return (
     <Animated.View style={[animatedStyle, { alignItems: "center", marginTop: 40 }]}>
-      <View style={{ backgroundColor: Colorizer("#171819", 0.6), borderRadius: 9999, padding: 4 }}>
+      <View style={{ backgroundColor: Colorizer("#000000", 0.6), borderRadius: 9999, padding: 4 }}>
         <Image
           resizeMode="contain"
           alt="App logo"
@@ -64,14 +64,14 @@ const HAnimated: React.FC = memo(() => {
           <ScrollingSlot key={slotIndex} images={images} reverse={slotIndex % 2 === 0} delay={slotIndex * 200} />
         ))}
         <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center", borderRadius: 8, overflow: "hidden" }}>
-          <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: Colorizer("#171819", 0.5) }} />
+          <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: Colorizer("#000000", 0.5) }} />
           <View style={{ position: "absolute", justifyContent: "center", alignItems: "center", margin: 8, padding: 4 }}>
             <View style={{ flexDirection: "row", marginBottom: 4 }}>
               <AnimatedTitle />
             </View>
             <Text style={{ fontFamily: "Jersey", fontSize: 65, marginTop: 15, color: Colorizer("#F4F4F5", 1.0), lineHeight: 52 }}> picWall </Text>
             <Animated.View style={{ alignSelf: "center" }} entering={FadeInDown.delay(600).duration(1500).springify()}>
-              <View style={{ backgroundColor: Colorizer("#171819", 0.6), borderRadius: 9999, paddingHorizontal: 12, paddingVertical: 4 }}>
+              <View style={{ backgroundColor: Colorizer("#000000", 0.6), borderRadius: 9999, paddingHorizontal: 12, paddingVertical: 4 }}>
                 <Text style={{ fontFamily: "Kurale", color: Colorizer("#F4F4F5", 1.0), fontSize: 12, textAlign: "center" }}>
                   Crafted with <AntDesign name="heart" size={10} color={Colorizer("#FF000D", 1.0)} /> in India. All rights reserved
                 </Text>
