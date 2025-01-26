@@ -118,13 +118,13 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
             blurType="dark"
             blurAmount={80}
             style={{ position: "absolute", top: 0, left: 0, bottom: 0, right: 0 }}
-            overlayColor={Platform.OS === "android" ? colorize("#000000", 0.0) : colorize("#000000", 0.0)}
+            overlayColor={Platform.OS === "android" ? colorize("#171819", 0.0) : colorize("#171819", 0.0)}
           />
-          <View style={{ flex: 1, backgroundColor: colorize("#000000", 0.9), overflow: "hidden" }}>
-            <View style={{ padding: 10, flexDirection: "row", alignItems: "center", justifyContent: "center", backgroundColor: colorize("#000000", 0.9) }}>
-              <Text style={{ fontFamily: "Jersey", fontSize: 30, color: colorize("#F4F4F5", 1.0) }}> Categories and Styles</Text>
+          <View style={{ flex: 1, backgroundColor: colorize("#171819", 0.9), overflow: "hidden" }}>
+            <View style={{ padding: 10, flexDirection: "row", alignItems: "center", justifyContent: "center", backgroundColor: colorize("#171819", 0.9) }}>
+              <Text style={{ fontFamily: "Zoika", fontSize: 30, color: colorize("#F4F4F5", 1.0) }}> Categories and Styles</Text>
             </View>
-            <View style={{ height: 150, backgroundColor: colorize("#000000", 0.9) }}>
+            <View style={{ height: 150, backgroundColor: colorize("#171819", 0.9) }}>
               <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: 2 }}>
                 {rawCategoriesArray
                   .filter((cat) => cat.name !== "Combined")
@@ -156,7 +156,7 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                           start={{ x: 0.5, y: 1 }}
                           locations={[0, 0.2, 0.4]}
                           style={{ position: "absolute", top: 0, right: 0, bottom: 0, left: 0 }}
-                          colors={[colorize("#000000", 0.9), colorize("#000000", 0.7), "transparent"]}
+                          colors={[colorize("#171819", 0.9), colorize("#171819", 0.7), "transparent"]}
                         />
                         <Text
                           style={{
@@ -170,7 +170,7 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                             fontFamily: "Kurale",
                             color: colorize("#F4F4F5", 1.0),
                             textShadowOffset: { width: 1, height: 1 },
-                            textShadowColor: colorize("#000000", 0.9)
+                            textShadowColor: colorize("#171819", 0.9)
                           }}
                         >
                           {category.name}
@@ -221,8 +221,8 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                               borderWidth: 2,
                               borderRadius: 15,
                               overflow: "hidden",
-                              borderColor: selectedSubcategory === child ? colorize("#F4F4F5", 1.0) : colorize("#000000", 1.0),
-                              backgroundColor: selectedSubcategory === child ? colorize("#F4F4F5", 1.0) : colorize("#000000", 1.0)
+                              borderColor: selectedSubcategory === child ? colorize("#F4F4F5", 1.0) : colorize("#171819", 1.0),
+                              backgroundColor: selectedSubcategory === child ? colorize("#F4F4F5", 1.0) : colorize("#171819", 1.0)
                             }}
                           >
                             <Text
@@ -231,7 +231,7 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                                 marginBottom: 4,
                                 textAlign: "center",
                                 fontFamily: "Kurale",
-                                color: selectedSubcategory === child ? colorize("#000000", 1.0) : colorize("#F4F4F5", 1.0)
+                                color: selectedSubcategory === child ? colorize("#171819", 1.0) : colorize("#F4F4F5", 1.0)
                               }}
                             >
                               {displayName}
@@ -272,7 +272,7 @@ const SearchBar: FC<{ onSearch: (text: string) => void }> = memo(({ onSearch }) 
           onChangeText={handleSearch}
           placeholder="Search by image name..."
           placeholderTextColor={colorize("#F4F4F5", 0.6)}
-          style={{ flex: 1, marginLeft: 8, fontSize: 16, fontFamily: "Jersey", color: colorize("#F4F4F5", 1.0) }}
+          style={{ flex: 1, marginLeft: 8, fontSize: 16, fontFamily: "Zoika", color: colorize("#F4F4F5", 1.0) }}
           accessibilityLabel="Search wallpapers"
         />
         {searchText.length > 0 && (
@@ -311,7 +311,7 @@ const SubImages: FC<SubImagesProps> = memo(({ images, onImagePress }) => (
                   position: "absolute",
                   paddingHorizontal: 8,
                   fontFamily: "Kurale",
-                  color: colorize("#000000", 1.0),
+                  color: colorize("#171819", 1.0),
                   backgroundColor: colorize(image.primary, 1.0)
                 }}
               >
@@ -357,7 +357,7 @@ const Card: FC<CardProps> = memo(({ data }) => {
     return () => clearInterval(interval);
   }, [currentIndex, data.images.length, animateTransition]);
   return (
-    <View style={{ position: "relative", margin: 1, borderRadius: 15, overflow: "hidden", shadowColor: "#000000", shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.4, shadowRadius: 3 }}>
+    <View style={{ position: "relative", margin: 1, borderRadius: 15, overflow: "hidden", shadowColor: "#171819", shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.4, shadowRadius: 3 }}>
       <Link href={{ pathname: "/Shared", params: { data: JSON.stringify({ environment_title: data.environment_title, selectedIndex: currentIndex, data: data.images }) } }} asChild>
         <TouchableOpacity accessibilityLabel="View full wallpaper">
           <Animated.View style={{ opacity: fadeAnim, transform: [{ scale: scaleAnim }] }}>
@@ -372,7 +372,7 @@ const Card: FC<CardProps> = memo(({ data }) => {
                 style={{ width: "100%", height: "100%" }}
               />
               {loading && (
-                <View style={[StyleSheet.absoluteFill, { backgroundColor: colorize("#000000", 0.2) }]} className="flex items-center justify-center">
+                <View style={[StyleSheet.absoluteFill, { backgroundColor: colorize("#171819", 0.2) }]} className="flex items-center justify-center">
                   <ActivityIndicator size="large" color={colorize("#F4F4F5", 1.0)} accessibilityLabel="Loading image" />
                 </View>
               )}
@@ -386,7 +386,7 @@ const Card: FC<CardProps> = memo(({ data }) => {
                   flexDirection: "row",
                   alignItems: "center",
                   paddingHorizontal: 6,
-                  backgroundColor: colorize("#000000", 0.9)
+                  backgroundColor: colorize("#171819", 0.9)
                 }}
               >
                 <MaterialCommunityIcons name="movie-filter" size={16} color={colorize("#FF000D", 1.0)} style={{ marginRight: 4 }} />
@@ -408,7 +408,7 @@ const Card: FC<CardProps> = memo(({ data }) => {
             </View>
           </Animated.View>
           <View style={{ position: "absolute", top: "35%", right: 8, padding: 4, transform: [{ translateY: -70 }], borderRadius: 15 }}>
-            <View style={[StyleSheet.absoluteFillObject, { borderRadius: 15, overflow: "hidden", backgroundColor: colorize("#000000", 0.8) }]} />
+            <View style={[StyleSheet.absoluteFillObject, { borderRadius: 15, overflow: "hidden", backgroundColor: colorize("#171819", 0.8) }]} />
             {data.images.slice(0, 3).map((img, idx) => (
               <TouchableOpacity key={idx} onPress={() => animateTransition(idx)} style={{ marginBottom: idx < 2 ? 2 : 0 }} accessibilityLabel="Select thumbnail">
                 <Image
@@ -473,7 +473,7 @@ const CategoryButton: FC<CategoryButtonExtendedProps> = memo(({ category, onPres
           style={{ width: "100%", height: "100%", borderRadius: 15 }}
           source={category === "Combined" ? require("@/assets/images/Shuffle.gif") : { uri: currentImage }}
         />
-        <LinearGradient colors={[colorize("#000000", 0.7), colorize("#000000", 0.7)]} style={{ position: "absolute", width: "100%", height: "100%", borderRadius: 15 }} />
+        <LinearGradient colors={[colorize("#171819", 0.7), colorize("#171819", 0.7)]} style={{ position: "absolute", width: "100%", height: "100%", borderRadius: 15 }} />
         <View style={{ width: "100%", height: "100%", borderRadius: 15, position: "absolute", alignItems: "center", flexDirection: "row", justifyContent: "center" }}>
           <MaterialCommunityIcons name={category === "Categories" ? "image-filter-vintage" : "dice-multiple"} size={20} color={colorize("#F4F4F5", 1.0)} style={{ marginRight: 4 }} />
           <Text style={{ fontFamily: "Kurale", color: colorize("#F4F4F5", 1.0), fontSize: 18, textAlign: "center" }}> {category === "Combined" ? `All (${count})` : category} </Text>
@@ -508,7 +508,7 @@ const HeaderComponent: FC<HeaderComponentProps> = memo(({ selectedCategory, onSe
           <Animated.View style={leftIconStyle}>
             <FontAwesome5 name="caret-left" size={24} color={colorize("#F4F4F5", 1.0)} />
           </Animated.View>
-          <Text style={{ fontFamily: "Jersey", fontSize: 30, color: colorize("#F4F4F5", 1.0), textAlign: "center", marginHorizontal: 10 }}> Explore AI Generated Wallpapers </Text>
+          <Text style={{ fontFamily: "Zoika", fontSize: 30, color: colorize("#F4F4F5", 1.0), textAlign: "center", marginHorizontal: 10 }}> Explore AI Generated Wallpapers </Text>
           <Animated.View style={rightIconStyle}>
             <FontAwesome5 name="caret-right" size={24} color={colorize("#F4F4F5", 1.0)} />
           </Animated.View>
@@ -668,20 +668,20 @@ export default function HomePage(): JSX.Element {
   }, [searchQuery]);
   if (isLoading) {
     return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: colorize("#000000", 1.0) }}>
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: colorize("#171819", 1.0) }}>
         <ActivityIndicator size="large" color={colorize("#F4F4F5", 1.0)} accessibilityLabel="Loading content" />
       </View>
     );
   }
   if (error) {
     return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: colorize("#000000", 1.0) }}>
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: colorize("#171819", 1.0) }}>
         <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 16, fontFamily: "Kurale" }}>{error}</Text>
       </View>
     );
   }
   return (
-    <View style={{ backgroundColor: colorize("#000000", 1.0), flex: 1, position: "relative" }}>
+    <View style={{ backgroundColor: colorize("#171819", 1.0), flex: 1, position: "relative" }}>
       <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
       <FlatList
         windowSize={2}
