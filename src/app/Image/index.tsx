@@ -256,25 +256,21 @@ DownloadButton.displayName = "DownloadButton";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
 const OtherImages: React.FC<OtherImagesProps> = memo(({ otherImages, setCurrentIndex, primaryColor, tertiaryColor, currentIndex }) => {
-  const uniqueFileNames = useMemo(() => new Set<string>(), []);
-  const uniqueImages = useMemo(
-    () =>
-      otherImages.filter((item) => {
-        if (!item || !item.img) return false;
-        const { img } = item;
-        if (uniqueFileNames.has(img.original_file_name) || img.original_file_name === otherImages[currentIndex]?.img?.original_file_name) return false;
-        uniqueFileNames.add(img.original_file_name);
-        return true;
-      }),
-    [otherImages, currentIndex, uniqueFileNames]
-  );
+  const uniqueImages = useMemo(() => {
+    const uniqueFileNames = new Set<string>();
+    return otherImages.filter(({ img, idx }) => {
+      if (!img) return false;
+      if (idx === currentIndex || uniqueFileNames.has(img.original_file_name)) return false;
+      uniqueFileNames.add(img.original_file_name);
+      return true;
+    });
+  }, [otherImages, currentIndex]);
   return (
     <View style={{ padding: 4, marginVertical: 8, borderRadius: 16, backgroundColor: colorize(primaryColor, 0.2) }}>
       <View style={{ padding: 4, borderRadius: 16, backgroundColor: colorize(tertiaryColor, 0.2) }}>
         <Text style={{ marginLeft: 8, fontSize: 20, fontFamily: "Kurale", color: colorize("#F4F4F5", 1.0) }}> Other Wallpapers: </Text>
         <View style={{ flexDirection: "row", flexWrap: "wrap", marginVertical: 4 }}>
           {uniqueImages.map(({ img, idx }) => {
-            if (!img) return null;
             const lowResLink = createPreviewLink(img);
             return (
               <TouchableOpacity
