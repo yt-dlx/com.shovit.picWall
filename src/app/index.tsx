@@ -22,7 +22,7 @@ const useVersionCheck = () => {
   useEffect(() => {
     const checkVersion = async () => {
       try {
-        const response = await fetch(__DEV__ ? "http://192.168.23.98:3000/api/version" : "https://picwall-server.netlify.app/api/version", {
+        const response = await fetch("https://picwall-server.netlify.app/api/version", {
           headers: { "Content-Type": "application/json", "Cache-Control": "no-cache" }
         });
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);

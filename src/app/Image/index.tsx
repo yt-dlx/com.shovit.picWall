@@ -26,6 +26,7 @@ interface OtherImagesProps {
   tertiaryColor: string;
   primaryColor: string;
   currentIndex: number;
+  selectedFileName: string;
   setCurrentIndex: (index: number) => void;
   otherImages: { img: ImageMetadata; idx: number }[];
 }
@@ -239,32 +240,33 @@ const DownloadButton: React.FC<DownloadButtonProps> = memo(({ onDownload, colors
   }, [scaleValue]);
   return (
     <TouchableOpacity
-      onPress={onDownload}
       activeOpacity={0.8}
-      style={{ marginTop: 8, borderRadius: 16, overflow: "hidden", backgroundColor: colorize(colors.primary, 0.4), minHeight: 44 }}
+      onPress={onDownload}
       accessibilityLabel="Download wallpaper"
+      style={{ marginTop: 8, borderRadius: 16, overflow: "hidden", backgroundColor: colorize(colors.primary, 0.4), minHeight: 44 }}
     >
-      <Animated.View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", padding: 12, transform: [{ scale: scaleValue }] }}>
+      <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", padding: 12 }}>
         <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 18, fontFamily: "Kurale" }}> Download Wallpaper </Text>
         <FontAwesome5 name="download" size={15} color={colorize("#F4F4F5", 1.0)} style={{ marginHorizontal: 8 }} />
         <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 18, fontFamily: "Kurale" }}> (Highest Quality) </Text>
-      </Animated.View>
+      </View>
     </TouchableOpacity>
   );
 });
 DownloadButton.displayName = "DownloadButton";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
-const OtherImages: React.FC<OtherImagesProps> = memo(({ otherImages, setCurrentIndex, primaryColor, tertiaryColor, currentIndex }) => {
+const OtherImages: React.FC<OtherImagesProps> = memo(({ otherImages, setCurrentIndex, primaryColor, tertiaryColor, currentIndex, selectedFileName }) => {
   const uniqueImages = useMemo(() => {
     const uniqueFileNames = new Set<string>();
     return otherImages.filter(({ img, idx }) => {
       if (!img) return false;
-      if (idx === currentIndex || uniqueFileNames.has(img.original_file_name)) return false;
+      if (img.original_file_name === selectedFileName || uniqueFileNames.has(img.original_file_name)) return false;
       uniqueFileNames.add(img.original_file_name);
       return true;
     });
-  }, [otherImages, currentIndex]);
+  }, [otherImages, selectedFileName]); // Filter by filename and index
+
   return (
     <View style={{ padding: 4, marginVertical: 8, borderRadius: 16, backgroundColor: colorize(primaryColor, 0.2) }}>
       <View style={{ padding: 4, borderRadius: 16, backgroundColor: colorize(tertiaryColor, 0.2) }}>
@@ -521,7 +523,7 @@ export default function ImagePage(): JSX.Element {
       <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
       <ScrollView style={{ flex: 1 }}>
         <PreviewImage selectedImage={selectedImage} screenWidth={screenWidth} onViewFullScreen={() => setIsFullScreen(true)} />
-        <View style={{ padding: 16, borderWidth: 2, borderRadius: 24, borderColor: colorize(selectedImage.primary, 1.0), backgroundColor: colorize("#171819", 1.0) }}>
+        <View style={{ padding: 16, borderWidth: 2, backgroundColor: colorize("#171819", 1.0) }}>
           <Text style={{ marginBottom: 8, fontSize: 30, textAlign: "center", fontFamily: "Kurale", color: colorize(selectedImage.primary, 1.0) }}>
             {selectedImage.original_file_name.replace(".jpg", "")}
           </Text>
@@ -539,7 +541,14 @@ export default function ImagePage(): JSX.Element {
             </View>
           ))}
           <DownloadButton onDownload={downloadAndSaveImage} colors={{ primary: selectedImage.primary, secondary: selectedImage.primary, tertiary: selectedImage.primary }} />
-          <OtherImages otherImages={otherImages} currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} primaryColor={selectedImage.primary} tertiaryColor={selectedImage.tertiary} />
+          <OtherImages
+            otherImages={otherImages}
+            currentIndex={currentIndex}
+            setCurrentIndex={setCurrentIndex}
+            primaryColor={selectedImage.primary}
+            tertiaryColor={selectedImage.tertiary}
+            selectedFileName={selectedImage.original_file_name} // Pass the selected image's filename
+          />
         </View>
         <Footer />
       </ScrollView>
