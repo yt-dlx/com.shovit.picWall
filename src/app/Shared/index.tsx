@@ -89,7 +89,7 @@ export default function SharedPage(): JSX.Element {
             paddingTop: height / 8,
             paddingBottom: height / 8,
             paddingHorizontal: width / 4,
-            backgroundColor: colorize("#1B1C1D", 0.9)
+            backgroundColor: colorize("#171819", 0.9)
           }}
         >
           {selectedImage && (
@@ -102,7 +102,7 @@ export default function SharedPage(): JSX.Element {
                 marginBottom: 24,
                 overflow: "hidden",
                 position: "relative",
-                borderColor: colorize("#FFFFFF", 1.0),
+                borderColor: colorize("#F4F4F5", 1.0),
                 backgroundColor: colorize("#000000", 1.0)
               }}
             >
@@ -116,31 +116,31 @@ export default function SharedPage(): JSX.Element {
               />
               {!imageLoaded && (
                 <Animated.View style={{ position: "absolute", top: "50%", left: "50%", transform: [{ translateX: -12 }, { translateY: -12 }], opacity: opacity }}>
-                  <FontAwesome6 name="download" size={24} color={colorize("#FFFFFF", 1.0)} />
+                  <FontAwesome6 name="download" size={24} color={colorize("#F4F4F5", 1.0)} />
                 </Animated.View>
               )}
             </View>
           )}
-          {!imageLoaded && <ActivityIndicator size="large" color={colorize("#FFFFFF", 1.0)} accessibilityLabel="Loading image" />}
+          {!imageLoaded && <ActivityIndicator size="large" color={colorize("#F4F4F5", 1.0)} accessibilityLabel="Loading image" />}
           {adError && (
             <View style={{ marginTop: 16, alignItems: "center" }}>
               <Text style={{ color: colorize("#FF0000", 1.0), textAlign: "center", marginBottom: 8, fontFamily: "Kurale" }}> Reward not received. Please try again. </Text>
               <TouchableOpacity
                 onPress={handleTryAgain}
-                style={{ backgroundColor: colorize("#FFFFFF", 1.0), paddingVertical: 12, paddingHorizontal: 24, borderRadius: 8, minWidth: 120, minHeight: 44 }}
+                style={{ backgroundColor: colorize("#F4F4F5", 1.0), paddingVertical: 12, paddingHorizontal: 24, borderRadius: 8, minWidth: 120, minHeight: 44 }}
                 accessibilityLabel="Try again"
               >
-                <Text style={{ color: colorize("#1B1C1D", 1.0), fontFamily: "Kurale", textAlign: "center" }}>Try Again</Text>
+                <Text style={{ color: colorize("#171819", 1.0), fontFamily: "Kurale", textAlign: "center" }}>Try Again</Text>
               </TouchableOpacity>
             </View>
           )}
           {!adError && (
             <View style={{ marginTop: 24, alignItems: "center" }}>
-              <Text style={{ color: colorize("#FFFFFF", 1.0), fontSize: 18, textAlign: "center", marginBottom: 16, fontFamily: "Kurale" }}> Preparing Your Experience </Text>
-              <Text style={{ color: colorize("#FFFFFF", 1.0), fontSize: 14, textAlign: "center", fontFamily: "Kurale" }}>
+              <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 18, textAlign: "center", marginBottom: 16, fontFamily: "Kurale" }}> Preparing Your Experience </Text>
+              <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 14, textAlign: "center", fontFamily: "Kurale" }}>
                 After watching the ad, you&apos;ll be redirected to your selected content.
               </Text>
-              <Text style={{ color: colorize("#FFFFFF", 1.0), fontSize: 18, textAlign: "center", marginTop: 16, fontFamily: "Kurale" }}>Redirecting in {countdown} seconds...</Text>
+              <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 18, textAlign: "center", marginTop: 16, fontFamily: "Kurale" }}>Redirecting in {countdown} seconds...</Text>
             </View>
           )}
         </View>
