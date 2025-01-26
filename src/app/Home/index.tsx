@@ -123,7 +123,7 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
             style={{ position: "absolute", top: 0, left: 0, bottom: 0, right: 0 }}
             overlayColor={Platform.OS === "android" ? colorize("#0C0C0C", 0.0) : colorize("#0C0C0C", 0.0)}
           />
-          <View style={{ flex: 1, backgroundColor: colorize("#0C0C0C", 0.8), overflow: "hidden" }}>
+          <View style={{ flex: 1, backgroundColor: colorize("#0C0C0C", 0.9), overflow: "hidden" }}>
             <View
               style={{
                 padding: 10,
@@ -161,26 +161,28 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                           borderColor: colorize("#FFFFFF", 1.0),
                           borderWidth: activeParent === category.name ? 4 : 0
                         }}
+                        accessibilityLabel={`Select ${category.name} category`}
                       >
-                        {images.length > 0 && <Image alt="image-placeholder" source={{ uri: images[currentIndex] }} style={{ width: "100%", height: "100%" }} contentFit="cover" />}
+                        {images.length > 0 && <Image alt="Category preview" source={{ uri: images[currentIndex] }} style={{ width: "100%", height: "100%" }} contentFit="cover" />}
                         <LinearGradient
                           end={{ x: 0.5, y: 0 }}
                           start={{ x: 0.5, y: 1 }}
                           locations={[0, 0.2, 0.4]}
                           style={{ position: "absolute", top: 0, right: 0, bottom: 0, left: 0 }}
-                          colors={[colorize("#0C0C0C", 1.0), colorize("#0C0C0C", 1.0), "transparent"]}
+                          colors={[colorize("#0C0C0C", 0.9), colorize("#0C0C0C", 0.7), "transparent"]}
                         />
                         <Text
                           style={{
                             left: 8,
                             right: 8,
                             bottom: 8,
-                            fontSize: 12,
+                            fontSize: 14,
                             textAlign: "center",
                             position: "absolute",
-                            textShadowRadius: 2,
+                            textShadowRadius: 4,
                             fontFamily: "Kurale",
                             color: colorize("#FFFFFF", 1.0),
+                            textShadowColor: colorize("#0C0C0C", 0.9),
                             textShadowOffset: { width: 1, height: 1 }
                           }}
                         >
@@ -223,6 +225,7 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                             onClose();
                           }}
                           style={{ width: "49%", marginBottom: 10 }}
+                          accessibilityLabel={`Select ${child} subcategory`}
                         >
                           <View
                             style={{
@@ -247,9 +250,9 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                               {displayName}
                             </Text>
                             {child === "Combined" ? (
-                              <Image alt="image-placeholder" source={require("@/assets/images/Combined.gif")} style={{ width: "100%", height: "100%" }} contentFit="cover" />
+                              <Image alt="Combined category preview" source={require("@/assets/images/Combined.gif")} style={{ width: "100%", height: "100%" }} contentFit="cover" />
                             ) : (
-                              images.length > 0 && <Image alt="image-placeholder" source={{ uri: images[currentIndex] }} style={{ width: "100%", height: "100%" }} contentFit="cover" />
+                              images.length > 0 && <Image alt="Subcategory preview" source={{ uri: images[currentIndex] }} style={{ width: "100%", height: "100%" }} contentFit="cover" />
                             )}
                           </View>
                         </TouchableOpacity>
@@ -275,18 +278,19 @@ const SearchBar: FC<{ onSearch: (text: string) => void }> = memo(({ onSearch }) 
   };
   return (
     <View style={{ marginTop: 5 }}>
-      <View style={{ flexDirection: "row", alignItems: "center", backgroundColor: colorize("#242424", 1.0), borderRadius: 15, paddingHorizontal: 12, height: 30 }}>
-        <FontAwesome5 name="search" size={16} color={colorize("#FFFFFF", 0.6)} />
+      <View style={{ flexDirection: "row", alignItems: "center", backgroundColor: colorize("#242424", 1.0), borderRadius: 15, paddingHorizontal: 12, height: 44 }}>
+        <FontAwesome5 name="search" size={16} color={colorize("#FFFFFF", 0.8)} />
         <TextInput
           value={searchText}
           onChangeText={handleSearch}
           placeholder="Search by image name..."
           placeholderTextColor={colorize("#FFFFFF", 0.6)}
-          style={{ flex: 1, marginLeft: 8, fontFamily: "Jersey", color: colorize("#FFFFFF", 1.0) }}
+          style={{ flex: 1, marginLeft: 8, fontSize: 16, fontFamily: "Jersey", color: colorize("#FFFFFF", 1.0) }}
+          accessibilityLabel="Search wallpapers"
         />
         {searchText.length > 0 && (
-          <TouchableOpacity onPress={() => handleSearch("")}>
-            <FontAwesome5 name="times" size={16} color={colorize("#FFFFFF", 0.6)} />
+          <TouchableOpacity onPress={() => handleSearch("")} style={{ padding: 8 }} accessibilityLabel="Clear search">
+            <FontAwesome5 name="times" size={16} color={colorize("#FFFFFF", 0.8)} />
           </TouchableOpacity>
         )}
       </View>
@@ -302,12 +306,12 @@ const SubImages: FC<SubImagesProps> = memo(({ images, onImagePress }) => (
       const fullDataIndex = images.allData.findIndex((img) => img.original_file_name === image.original_file_name);
       return (
         <Link key={index} href={{ pathname: "/Shared", params: { data: JSON.stringify({ environment_title: images.environment_title, selectedIndex: fullDataIndex, data: images.allData }) } }} asChild>
-          <TouchableOpacity onPress={() => onImagePress(image.previewLink as string, fullDataIndex)} style={{ flex: 1 }}>
+          <TouchableOpacity onPress={() => onImagePress(image.previewLink as string, fullDataIndex)} style={{ flex: 1, padding: 4 }} accessibilityLabel="View wallpaper details">
             <View style={{ position: "relative" }}>
               <Image
                 contentFit="cover"
                 cachePolicy="disk"
-                alt="image-placeholder"
+                alt="Wallpaper preview"
                 source={{ uri: image.previewLink as string }}
                 style={{ height: 60, width: "100%", borderWidth: 1, borderColor: colorize("#FFFFFF", 0.5), borderRadius: 15 }}
               />
@@ -315,13 +319,13 @@ const SubImages: FC<SubImagesProps> = memo(({ images, onImagePress }) => (
                 style={{
                   right: 4,
                   bottom: 4,
-                  fontSize: 10,
+                  fontSize: 12,
                   borderRadius: 15,
                   position: "absolute",
                   paddingHorizontal: 8,
                   fontFamily: "Kurale",
                   color: colorize("#0C0C0C", 1.0),
-                  backgroundColor: colorize(image.primary, 1.0),
+                  backgroundColor: colorize(image.primary, 1.0)
                 }}
               >
                 {image.primary.toUpperCase()}
@@ -368,13 +372,13 @@ const Card: FC<CardProps> = memo(({ data }) => {
   return (
     <View style={{ position: "relative", margin: 1, borderRadius: 15, overflow: "hidden", shadowColor: "#0C0C0C", shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.4, shadowRadius: 3 }}>
       <Link href={{ pathname: "/Shared", params: { data: JSON.stringify({ environment_title: data.environment_title, selectedIndex: currentIndex, data: data.images }) } }} asChild>
-        <TouchableOpacity>
+        <TouchableOpacity accessibilityLabel="View full wallpaper">
           <Animated.View style={{ opacity: fadeAnim, transform: [{ scale: scaleAnim }] }}>
             <View style={{ position: "relative", width: "100%", height: 400, overflow: "hidden" }}>
               <Image
                 contentFit="cover"
                 cachePolicy="disk"
-                alt="image-placeholder"
+                alt="Wallpaper image"
                 source={{ uri: currentImage }}
                 onLoad={() => setLoading(false)}
                 onLoadStart={() => setLoading(true)}
@@ -382,7 +386,7 @@ const Card: FC<CardProps> = memo(({ data }) => {
               />
               {loading && (
                 <View style={[StyleSheet.absoluteFill, { backgroundColor: colorize("#0C0C0C", 0.2) }]} className="flex items-center justify-center">
-                  <ActivityIndicator size="large" color={colorize("#FFFFFF", 1.0)} />
+                  <ActivityIndicator size="large" color={colorize("#FFFFFF", 1.0)} accessibilityLabel="Loading image" />
                 </View>
               )}
               <View
@@ -395,11 +399,11 @@ const Card: FC<CardProps> = memo(({ data }) => {
                   flexDirection: "row",
                   alignItems: "center",
                   paddingHorizontal: 6,
-                  backgroundColor: colorize("#0C0C0C", 0.8)
+                  backgroundColor: colorize("#0C0C0C", 0.9)
                 }}
               >
                 <MaterialCommunityIcons name="movie-filter" size={16} color={colorize("#FF000D", 1.0)} style={{ marginRight: 4 }} />
-                <Text style={{ color: "#FFFFFF", fontSize: 10, fontFamily: "Kurale" }}>Freemium (Watch an Ad)</Text>
+                <Text style={{ color: "#FFFFFF", fontSize: 12, fontFamily: "Kurale" }}>Freemium (Watch an Ad)</Text>
               </View>
               <View style={{ position: "absolute", bottom: -2, left: 0, right: 0 }}>
                 <View style={[StyleSheet.absoluteFill, { backgroundColor: colorize(data.images[currentIndex].primary, 1.0) }]} />
@@ -409,7 +413,7 @@ const Card: FC<CardProps> = memo(({ data }) => {
                       {data.images[currentIndex].original_file_name.replace(/_/g, " ").replace(".jpg", "")}
                     </Text>
                     <View style={{ paddingHorizontal: 6, paddingVertical: 2 }}>
-                      <Text style={{ fontSize: 10, color: colorize("#FFFFFF", 1.0), fontFamily: "Kurale" }}> {data.images[currentIndex].primary} </Text>
+                      <Text style={{ fontSize: 12, color: colorize("#FFFFFF", 1.0), fontFamily: "Kurale" }}> {data.images[currentIndex].primary} </Text>
                     </View>
                   </View>
                 </View>
@@ -419,9 +423,9 @@ const Card: FC<CardProps> = memo(({ data }) => {
           <View style={{ position: "absolute", top: "35%", right: 8, padding: 4, transform: [{ translateY: -70 }], borderRadius: 15 }}>
             <View style={[StyleSheet.absoluteFillObject, { borderRadius: 15, overflow: "hidden", backgroundColor: colorize("#0C0C0C", 0.8) }]} />
             {data.images.slice(0, 3).map((img, idx) => (
-              <TouchableOpacity key={idx} onPress={() => animateTransition(idx)} style={{ marginBottom: idx < 2 ? 2 : 0 }}>
+              <TouchableOpacity key={idx} onPress={() => animateTransition(idx)} style={{ marginBottom: idx < 2 ? 2 : 0 }} accessibilityLabel="Select thumbnail">
                 <Image
-                  alt="image-placeholder"
+                  alt="Wallpaper thumbnail"
                   source={{ uri: img.previewLink }}
                   style={{
                     width: 60,
@@ -474,18 +478,18 @@ const CategoryButton: FC<CategoryButtonExtendedProps> = memo(({ category, onPres
     updateShuffleImage();
   }, [updateShuffleImage]);
   return (
-    <TouchableOpacity onPress={() => onPress()} style={{ flex: 1, height: 60, margin: 4, borderRadius: 15, overflow: "hidden" }}>
+    <TouchableOpacity onPress={() => onPress()} style={{ flex: 1, height: 60, margin: 4, borderRadius: 15, overflow: "hidden", minWidth: 120 }} accessibilityLabel={`Browse ${category}`}>
       <View style={{ borderRadius: 15, overflow: "hidden", width: "100%", height: "100%" }}>
         <Image
           contentFit="cover"
-          alt="image-placeholder"
+          alt="Category background"
           style={{ width: "100%", height: "100%", borderRadius: 15 }}
           source={category === "Combined" ? require("@/assets/images/Shuffle.gif") : { uri: currentImage }}
         />
-        <LinearGradient colors={[colorize("#0C0C0C", 0.5), colorize("#0C0C0C", 0.5)]} style={{ position: "absolute", width: "100%", height: "100%", borderRadius: 15 }} />
+        <LinearGradient colors={[colorize("#0C0C0C", 0.7), colorize("#0C0C0C", 0.7)]} style={{ position: "absolute", width: "100%", height: "100%", borderRadius: 15 }} />
         <View style={{ width: "100%", height: "100%", borderRadius: 15, position: "absolute", alignItems: "center", flexDirection: "row", justifyContent: "center" }}>
           <MaterialCommunityIcons name={category === "Categories" ? "image-filter-vintage" : "dice-multiple"} size={20} color={colorize("#FFFFFF", 1.0)} style={{ marginRight: 4 }} />
-          <Text style={{ fontFamily: "Kurale", color: colorize("#FFFFFF", 1.0), fontSize: 20, textAlign: "center" }}> {category === "Combined" ? `All (${count})` : category} </Text>
+          <Text style={{ fontFamily: "Kurale", color: colorize("#FFFFFF", 1.0), fontSize: 18, textAlign: "center" }}> {category === "Combined" ? `All (${count})` : category} </Text>
         </View>
       </View>
     </TouchableOpacity>
@@ -668,8 +672,8 @@ export default function HomePage(): JSX.Element {
     if (searchQuery) {
       return (
         <View style={{ padding: 20, alignItems: "center" }}>
-          <Text style={{ fontFamily: "Kurale", color: colorize("#FFFFFF", 0.8), fontSize: 16, textAlign: "center" }}> No images found matching &quot;{searchQuery}&quot;. </Text>
-          <Text style={{ fontFamily: "Kurale", color: colorize("#FFFFFF", 0.8), fontSize: 16, textAlign: "center" }}> You may request images from &quot;Account&quot; Section. </Text>
+          <Text style={{ fontFamily: "Kurale", color: colorize("#FFFFFF", 1.0), fontSize: 16, textAlign: "center" }}> No images found matching &quot;{searchQuery}&quot;. </Text>
+          <Text style={{ fontFamily: "Kurale", color: colorize("#FFFFFF", 1.0), fontSize: 16, textAlign: "center" }}> You may request images from &quot;Account&quot; Section. </Text>
         </View>
       );
     }
@@ -678,14 +682,14 @@ export default function HomePage(): JSX.Element {
   if (isLoading) {
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: colorize("#0C0C0C", 1.0) }}>
-        <ActivityIndicator size="large" color={colorize("#FFFFFF", 1.0)} />
+        <ActivityIndicator size="large" color={colorize("#FFFFFF", 1.0)} accessibilityLabel="Loading content" />
       </View>
     );
   }
   if (error) {
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: colorize("#0C0C0C", 1.0) }}>
-        <Text style={{ color: "white", fontSize: 16 }}>{error}</Text>
+        <Text style={{ color: colorize("#FFFFFF", 1.0), fontSize: 16, fontFamily: "Kurale" }}>{error}</Text>
       </View>
     );
   }

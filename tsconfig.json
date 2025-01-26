@@ -1,5 +1,5 @@
 {
-  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts", "nativewind-env.d.ts"],
+  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts", "nativewind-env.d.ts", "../server/src/database/styles/Geometry - Cinematic.ts"],
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true,

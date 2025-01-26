@@ -7,7 +7,7 @@ import colorize from "@/utils/colorize";
 import React, { useEffect, useState, useRef } from "react";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
-import { View, Text, ActivityIndicator, Dimensions, Button, StatusBar, Animated } from "react-native";
+import { View, Text, ActivityIndicator, Dimensions, StatusBar, Animated, TouchableOpacity } from "react-native";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
 const { width, height } = Dimensions.get("screen");
@@ -73,7 +73,13 @@ export default function SharedPage(): JSX.Element {
   return (
     <View style={{ flex: 1 }}>
       <StatusBar hidden />
-      <Image alt="image-placeholder" source={require("@/assets/images/admob.jpg")} style={{ position: "absolute", width, height, top: 0, left: 0 }} contentFit="cover" />
+      <Image
+        accessibilityLabel="Advertisement background"
+        alt="Advertisement background"
+        source={require("@/assets/images/admob.jpg")}
+        style={{ position: "absolute", width, height, top: 0, left: 0 }}
+        contentFit="cover"
+      />
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center", padding: 24 }}>
         <View
           style={{
@@ -100,7 +106,14 @@ export default function SharedPage(): JSX.Element {
                 backgroundColor: colorize("#000000", 1.0)
               }}
             >
-              <Image alt="image-placeholder" source={{ uri: selectedImage }} style={{ width: "100%", height: "100%" }} contentFit="cover" onLoadEnd={() => setImageLoaded(true)} />
+              <Image
+                alt="Selected wallpaper preview"
+                accessibilityLabel="Selected wallpaper preview"
+                source={{ uri: selectedImage }}
+                style={{ width: "100%", height: "100%" }}
+                contentFit="cover"
+                onLoadEnd={() => setImageLoaded(true)}
+              />
               {!imageLoaded && (
                 <Animated.View style={{ position: "absolute", top: "50%", left: "50%", transform: [{ translateX: -12 }, { translateY: -12 }], opacity: opacity }}>
                   <FontAwesome6 name="download" size={24} color={colorize("#FFFFFF", 1.0)} />
@@ -108,17 +121,23 @@ export default function SharedPage(): JSX.Element {
               )}
             </View>
           )}
-          {!imageLoaded && <ActivityIndicator size="large" color={colorize("#FFFFFF", 1.0)} />}
+          {!imageLoaded && <ActivityIndicator size="large" color={colorize("#FFFFFF", 1.0)} accessibilityLabel="Loading image" />}
           {adError && (
             <View style={{ marginTop: 16, alignItems: "center" }}>
               <Text style={{ color: colorize("#FF0000", 1.0), textAlign: "center", marginBottom: 8, fontFamily: "Kurale" }}> Reward not received. Please try again. </Text>
-              <Button title="Try Again" onPress={handleTryAgain} />
+              <TouchableOpacity
+                onPress={handleTryAgain}
+                style={{ backgroundColor: colorize("#FFFFFF", 1.0), paddingVertical: 12, paddingHorizontal: 24, borderRadius: 8, minWidth: 120, minHeight: 44 }}
+                accessibilityLabel="Try again"
+              >
+                <Text style={{ color: colorize("#0C0C0C", 1.0), fontFamily: "Kurale", textAlign: "center" }}>Try Again</Text>
+              </TouchableOpacity>
             </View>
           )}
           {!adError && (
             <View style={{ marginTop: 24, alignItems: "center" }}>
               <Text style={{ color: colorize("#FFFFFF", 1.0), fontSize: 18, textAlign: "center", marginBottom: 16, fontFamily: "Kurale" }}> Preparing Your Experience </Text>
-              <Text style={{ color: colorize("#FFFFFF", 0.6), fontSize: 14, textAlign: "center", fontFamily: "Kurale" }}>
+              <Text style={{ color: colorize("#FFFFFF", 1.0), fontSize: 14, textAlign: "center", fontFamily: "Kurale" }}>
                 After watching the ad, you&apos;ll be redirected to your selected content.
               </Text>
               <Text style={{ color: colorize("#FFFFFF", 1.0), fontSize: 18, textAlign: "center", marginTop: 16, fontFamily: "Kurale" }}>Redirecting in {countdown} seconds...</Text>

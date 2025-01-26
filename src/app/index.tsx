@@ -59,7 +59,7 @@ const UpdateDialog: FC<{ serverVersion: string; currentVersion: string }> = memo
         <Image
           cachePolicy="disk"
           contentFit="contain"
-          alt="image-placeholder"
+          accessibilityLabel="App logo"
           source={require("@/assets/images/logo.jpg")}
           style={{ width: 150, height: 150, borderWidth: 1, borderRadius: 9999, borderColor: colorize("#FFFFFF", 1.0) }}
         />
@@ -67,13 +67,14 @@ const UpdateDialog: FC<{ serverVersion: string; currentVersion: string }> = memo
       <View style={{ alignItems: "center" }}>
         <Text style={{ margin: 24, fontSize: 36, fontFamily: "Jersey", color: colorize("#FFFFFF", 1.0) }}> Update Required </Text>
         <View style={{ marginBottom: 16, alignItems: "center" }}>
-          <Text style={{ fontSize: 18, fontFamily: "Kurale", color: colorize("#FFFFFF", 0.8) }}> - Current Version: {currentVersion} </Text>
-          <Text style={{ fontSize: 18, fontFamily: "Kurale", color: colorize("#FFFFFF", 0.8) }}> - Latest Version: {serverVersion} </Text>
+          <Text style={{ fontSize: 18, fontFamily: "Kurale", color: colorize("#FFFFFF", 1.0) }}> - Current Version: {currentVersion} </Text>
+          <Text style={{ fontSize: 18, fontFamily: "Kurale", color: colorize("#FFFFFF", 1.0) }}> - Latest Version: {serverVersion} </Text>
         </View>
         <Text style={{ paddingHorizontal: 8, fontSize: 20, marginBottom: 16, fontFamily: "Kurale", color: colorize("#FFFFFF", 1.0) }}>Please update the app to continue using picWall</Text>
         <TouchableOpacity
-          style={{ marginTop: 10, paddingHorizontal: 20, paddingVertical: 8, borderRadius: 16, overflow: "hidden", backgroundColor: colorize("#FFFFFF", 1.0) }}
+          style={{ marginTop: 10, paddingHorizontal: 32, paddingVertical: 16, borderRadius: 16, overflow: "hidden", backgroundColor: colorize("#FFFFFF", 1.0), minWidth: 200, minHeight: 44 }}
           onPress={() => Linking.openURL("market://details?id=com.shovit.picWall")}
+          accessibilityLabel="Update application"
         >
           <Text style={{ fontSize: 20, fontFamily: "Kurale", color: colorize("#0C0C0C", 1.0) }}> Update Now </Text>
         </TouchableOpacity>
@@ -100,7 +101,7 @@ const ScrollingSlot = memo<ScrollingSlotProps>(({ images, delay }) => {
     <View style={{ flex: 1, overflow: "hidden", padding: 2 }}>
       <Animated.View style={animatedStyle} shouldRasterizeIOS renderToHardwareTextureAndroid>
         {images.concat(images).map((uri, idx) => (
-          <Image alt="image-placeholder" source={uri} key={`${uri}-${idx}`} contentFit="cover" cachePolicy="disk" style={{ height: 200, borderRadius: 15, width: "100%", marginBottom: 4 }} />
+          <Image alt="Wallpaper image" source={uri} key={`${uri}-${idx}`} contentFit="cover" cachePolicy="disk" style={{ height: 200, borderRadius: 15, width: "100%", marginBottom: 4 }} />
         ))}
       </Animated.View>
     </View>
@@ -121,7 +122,7 @@ const AnimatedTitle = memo(() => {
         <Image
           cachePolicy="disk"
           contentFit="contain"
-          alt="image-placeholder"
+          accessibilityLabel="App logo"
           source={require("@/assets/images/logo.jpg")}
           style={{ width: 150, height: 150, borderWidth: 1, borderRadius: 9999, borderColor: colorize("#FFFFFF", 1.0) }}
         />
@@ -167,7 +168,7 @@ const BasePage = memo(() => {
               <View>
                 <Text style={{ fontSize: 100, fontFamily: "Jersey", color: colorize("#FFFFFF", 1.0), textAlign: "center" }}>picWall</Text>
                 <Animated.View style={{ alignSelf: "center" }} entering={FadeInDown.delay(600).duration(1500).springify()}>
-                  <View style={{ borderRadius: 9999, paddingHorizontal: 12, paddingVertical: 4, backgroundColor: colorize("#0C0C0C", 0.6) }}>
+                  <View style={{ borderRadius: 9999, paddingHorizontal: 12, paddingVertical: 4, backgroundColor: colorize("#0C0C0C", 0.9) }}>
                     <Text style={{ fontFamily: "Kurale", color: colorize("#FFFFFF", 1.0), fontSize: 12, textAlign: "center" }}>
                       Crafted with <AntDesign name="heart" size={12} color={colorize("#FF000D", 1.0)} /> in India. All rights reserved
                     </Text>
@@ -175,9 +176,14 @@ const BasePage = memo(() => {
                 </Animated.View>
               </View>
               <Link href="./Home" asChild>
-                <TouchableOpacity onPressIn={onPressIn} onPressOut={onPressOut} style={{ marginTop: 180, borderRadius: 50, overflow: "hidden" }}>
+                <TouchableOpacity
+                  onPressIn={onPressIn}
+                  onPressOut={onPressOut}
+                  style={{ marginTop: 180, borderRadius: 50, overflow: "hidden", minWidth: 240, minHeight: 60 }}
+                  accessibilityLabel="Navigate to Home screen"
+                >
                   <View style={[{ shadowColor: colorize("#0C0C0C", 1.0), shadowOffset: { width: 0, height: 4 } }]}>
-                    <View style={{ paddingVertical: 10, flexDirection: "row", alignItems: "center", justifyContent: "center", backgroundColor: colorize("#FFFFFF", 1.0) }}>
+                    <View style={{ paddingVertical: 16, flexDirection: "row", alignItems: "center", justifyContent: "center", backgroundColor: colorize("#FFFFFF", 1.0) }}>
                       <FontAwesome5 name="camera-retro" size={32} color={colorize("#0C0C0C", 1.0)} />
                       <Text style={{ fontSize: 35, fontFamily: "Jersey", color: colorize("#0C0C0C", 1.0) }}> Let&apos;s Explore </Text>
                     </View>
@@ -185,8 +191,8 @@ const BasePage = memo(() => {
                 </TouchableOpacity>
               </Link>
               <Animated.View entering={FadeIn.delay(1200).duration(1500)} style={{ marginTop: 10, paddingHorizontal: 20, alignItems: "center" }}>
-                <Text style={{ fontFamily: "Jersey", color: colorize("#FFFFFF", 0.8), fontSize: 15, textAlign: "center", marginBottom: 4 }}>Perfect AI Wallpapers, Every Day!</Text>
-                <Text style={{ fontFamily: "Kurale", color: colorize("#FFFFFF", 0.6), fontSize: 10, textAlign: "center", maxWidth: 300 }}>
+                <Text style={{ fontFamily: "Jersey", color: colorize("#FFFFFF", 1.0), fontSize: 15, textAlign: "center", marginBottom: 4 }}>Perfect AI Wallpapers, Every Day!</Text>
+                <Text style={{ fontFamily: "Kurale", color: colorize("#FFFFFF", 0.9), fontSize: 10, textAlign: "center", maxWidth: 300 }}>
                   Transform your screens with stunning, AI-curated wallpapers tailored to your style. Explore breathtaking collections, share your favorite moments, and discover awe-inspiring
                   photographs from around the globe. Start your journey today – where every wallpaper tells a story!
                 </Text>

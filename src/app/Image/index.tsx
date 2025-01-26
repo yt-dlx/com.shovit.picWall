@@ -64,7 +64,11 @@ const SuccessModal: React.FC<{ visible: boolean; message: string; onClose: () =>
           <Ionicons name="checkmark-done-circle" size={50} color={colorize("#25BE8B", 1.0)} />
           <Text style={{ marginTop: 10, fontSize: 48, fontFamily: "Kurale", color: colorize("#25BE8B", 1.0) }}> Success </Text>
           <Text style={{ marginVertical: 10, textAlign: "center", fontSize: 18, fontFamily: "Kurale", color: colorize("#25BE8B", 1.0) }}> {message} </Text>
-          <TouchableOpacity style={{ marginTop: 10, paddingHorizontal: 20, paddingVertical: 8, borderRadius: 16, overflow: "hidden", backgroundColor: colorize("#25BE8B", 0.4) }} onPress={onClose}>
+          <TouchableOpacity
+            style={{ marginTop: 10, paddingHorizontal: 20, paddingVertical: 12, borderRadius: 16, overflow: "hidden", backgroundColor: colorize("#25BE8B", 0.4), minWidth: 120, minHeight: 44 }}
+            onPress={onClose}
+            accessibilityLabel="Close success modal"
+          >
             <Text style={{ color: colorize("#FFFFFF", 1.0), fontSize: 18, fontFamily: "Kurale" }}> OK </Text>
           </TouchableOpacity>
         </View>
@@ -93,7 +97,11 @@ const ErrorModal: React.FC<{ visible: boolean; message: string; onClose: () => v
           <MaterialIcons name="error" size={50} color={colorize("#FFFFFF", 1.0)} />
           <Text style={{ marginTop: 10, fontSize: 48, fontFamily: "Kurale", color: colorize("#FFFFFF", 1.0) }}> Error </Text>
           <Text style={{ marginVertical: 10, textAlign: "center", fontSize: 18, fontFamily: "Kurale", color: colorize("#FFFFFF", 1.0) }}> {message} </Text>
-          <TouchableOpacity style={{ marginTop: 10, paddingHorizontal: 20, paddingVertical: 8, borderRadius: 16, overflow: "hidden", backgroundColor: colorize("#FFFFFF", 0.4) }} onPress={onClose}>
+          <TouchableOpacity
+            style={{ marginTop: 10, paddingHorizontal: 20, paddingVertical: 12, borderRadius: 16, overflow: "hidden", backgroundColor: colorize("#FFFFFF", 0.4), minWidth: 120, minHeight: 44 }}
+            onPress={onClose}
+            accessibilityLabel="Close error modal"
+          >
             <Text style={{ color: colorize("#FFFFFF", 1.0), fontSize: 18, fontFamily: "Kurale" }}> OK </Text>
           </TouchableOpacity>
         </View>
@@ -166,7 +174,7 @@ const PreviewImage: React.FC<{ selectedImage: ImageMetadata; screenWidth: number
     <View style={{ position: "relative" }}>
       {imageLoading && (
         <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center", backgroundColor: colorize("#0C0C0C", 1.0), zIndex: 40 }}>
-          <ActivityIndicator size="large" color={colorize(selectedImage.primary, 1.0)} />
+          <ActivityIndicator size="large" color={colorize(selectedImage.primary, 1.0)} accessibilityLabel="Loading image" />
           <Text style={{ marginTop: 10, fontFamily: "Kurale", color: colorize(selectedImage.primary, 1.0) }}> Loading HD Image Preview... </Text>
         </View>
       )}
@@ -174,7 +182,7 @@ const PreviewImage: React.FC<{ selectedImage: ImageMetadata; screenWidth: number
         <Image
           contentFit="cover"
           cachePolicy="disk"
-          alt="image-placeholder"
+          alt="Wallpaper preview"
           source={{ uri: highResLink }}
           onLoadStart={() => setImageLoading(true)}
           onLoadEnd={() => setImageLoading(false)}
@@ -194,7 +202,7 @@ const PreviewImage: React.FC<{ selectedImage: ImageMetadata; screenWidth: number
           left: 16,
           right: 16,
           paddingHorizontal: 16,
-          paddingVertical: 8,
+          paddingVertical: 12,
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "center",
@@ -202,8 +210,10 @@ const PreviewImage: React.FC<{ selectedImage: ImageMetadata; screenWidth: number
           borderColor: colorize(selectedImage.primary, 1.0),
           borderRadius: 20,
           borderWidth: 2,
-          zIndex: 50
+          zIndex: 50,
+          minHeight: 44
         }}
+        accessibilityLabel="Set as wallpaper"
       >
         <Text style={{ color: colorize("#FFFFFF", 1.0), fontSize: 18, fontFamily: "Kurale" }}> Set as Wallpaper </Text>
         <FontAwesome6 name="mobile-button" size={15} color={colorize("#FFFFFF", 1.0)} style={{ marginHorizontal: 4 }} />
@@ -228,7 +238,12 @@ const DownloadButton: React.FC<DownloadButtonProps> = memo(({ onDownload, colors
     return () => pulse.stop();
   }, [scaleValue]);
   return (
-    <TouchableOpacity onPress={onDownload} activeOpacity={0.8} style={{ marginTop: 8, borderRadius: 16, overflow: "hidden", backgroundColor: colorize(colors.primary, 0.4) }}>
+    <TouchableOpacity
+      onPress={onDownload}
+      activeOpacity={0.8}
+      style={{ marginTop: 8, borderRadius: 16, overflow: "hidden", backgroundColor: colorize(colors.primary, 0.4), minHeight: 44 }}
+      accessibilityLabel="Download wallpaper"
+    >
       <Animated.View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", padding: 12, transform: [{ scale: scaleValue }] }}>
         <Text style={{ color: colorize("#FFFFFF", 1.0), fontSize: 18, fontFamily: "Kurale" }}> Download Wallpaper </Text>
         <FontAwesome5 name="download" size={15} color={colorize("#FFFFFF", 1.0)} style={{ marginHorizontal: 8 }} />
@@ -266,8 +281,9 @@ const OtherImages: React.FC<OtherImagesProps> = memo(({ otherImages, setCurrentI
                 key={idx}
                 style={{ position: "relative", borderRadius: 10, overflow: "hidden", marginHorizontal: 2, flex: 1, aspectRatio: 9 / 16, borderWidth: 1, borderColor: colorize(primaryColor, 1.0) }}
                 onPress={() => setCurrentIndex(idx)}
+                accessibilityLabel={`Select wallpaper ${img.original_file_name}`}
               >
-                <Image alt="image-placeholder" source={{ uri: lowResLink }} style={{ width: "100%", height: "100%" }} contentFit="cover" />
+                <Image alt="Wallpaper thumbnail" source={{ uri: lowResLink }} style={{ width: "100%", height: "100%" }} contentFit="cover" />
                 <View style={{ position: "absolute", top: 4, left: 4, backgroundColor: colorize("#000000", 0.5), paddingHorizontal: 4, paddingVertical: 4, borderRadius: 8 }}>
                   <Text style={{ color: colorize("#FFFFFF", 1.0), fontSize: 12, fontFamily: "Kurale" }}> {img.original_file_name.replace(".jpg", "")} </Text>
                 </View>
@@ -326,11 +342,12 @@ const WallModal: React.FC<WallModalProps> = memo(({ visible, onComplete, onCance
           </Text>
           <Text style={{ marginVertical: 16, fontSize: 48, fontFamily: "Kurale", color: colorize(primaryColor, 1.0) }}> {countdown} </Text>
           <TouchableOpacity
-            style={{ marginTop: 10, paddingHorizontal: 20, paddingVertical: 8, borderRadius: 16, overflow: "hidden", backgroundColor: colorize(primaryColor, 0.4) }}
+            style={{ marginTop: 10, paddingHorizontal: 20, paddingVertical: 12, borderRadius: 16, overflow: "hidden", backgroundColor: colorize(primaryColor, 0.4), minWidth: 120, minHeight: 44 }}
             onPress={() => {
               clearInterval(countdownRef.current);
               onCancel();
             }}
+            accessibilityLabel="Cancel wallpaper setting"
           >
             <Text style={{ color: colorize("#FFFFFF", 1.0), fontSize: 18, fontFamily: "Kurale" }}> Cancel </Text>
           </TouchableOpacity>
@@ -363,7 +380,7 @@ const FullScreenView: React.FC<FullScreenViewProps> = memo(({ isFullScreen, setI
         <ScrollView horizontal contentContainerStyle={{ flexGrow: 1, justifyContent: "center", alignItems: "center" }} showsHorizontalScrollIndicator={false}>
           <Image
             contentFit="fill"
-            alt="image-placeholder"
+            alt="Wallpaper full view"
             source={{ uri: createPreviewLink(selectedImage).replace("min", "max") }}
             style={{ height: "100%", width: (Dimensions.get("window").height * 9) / 16 }}
           />
@@ -381,6 +398,7 @@ const FullScreenView: React.FC<FullScreenViewProps> = memo(({ isFullScreen, setI
                 setWallType("LOCK");
                 setShowWallModal(true);
               }}
+              accessibilityLabel="Set lockscreen wallpaper"
             >
               <Ionicons name="image" size={20} color={colorize("#FFFFFF", 1.0)} style={{ marginRight: 10 }} />
               <Text style={{ fontSize: 12, color: "#FFFFFF", fontFamily: "Kurale" }}>Set LockScreen</Text>
@@ -398,6 +416,7 @@ const FullScreenView: React.FC<FullScreenViewProps> = memo(({ isFullScreen, setI
                 setWallType("HOME");
                 setShowWallModal(true);
               }}
+              accessibilityLabel="Set homescreen wallpaper"
             >
               <Ionicons name="image" size={20} color={colorize("#FFFFFF", 1.0)} style={{ marginRight: 10 }} />
               <Text style={{ fontSize: 12, color: "#FFFFFF", fontFamily: "Kurale" }}>Set HomeScreen</Text>
@@ -415,6 +434,7 @@ const FullScreenView: React.FC<FullScreenViewProps> = memo(({ isFullScreen, setI
                 setWallType("BOTH");
                 setShowWallModal(true);
               }}
+              accessibilityLabel="Set both screens wallpaper"
             >
               <Ionicons name="image" size={20} color={colorize("#FFFFFF", 1.0)} style={{ marginRight: 10 }} />
               <Text style={{ fontSize: 12, color: "#FFFFFF", fontFamily: "Kurale" }}>Set BothScreens</Text>
