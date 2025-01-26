@@ -8,7 +8,7 @@ import { AntDesign } from "@expo/vector-icons";
 /* ============================================================================================ */
 /* ============================================================================================ */
 const Footer: React.FC = memo(() => (
-  <View style={{ position: "relative", width: "100%", padding: 8, backgroundColor: Colorizer("#0C0C0C", 1.0) }}>
+  <View style={{ position: "relative", width: "100%", padding: 8, backgroundColor: Colorizer("#1B1C1D", 1.0) }}>
     <Text style={{ textAlign: "center", fontSize: 14, fontFamily: "Kurale", color: Colorizer("#FFFFFF", 1.0) }}>
       Crafted with <AntDesign name="heart" size={15} color={Colorizer("#FF000D", 1.0)} /> in India. All rights reserved
     </Text>

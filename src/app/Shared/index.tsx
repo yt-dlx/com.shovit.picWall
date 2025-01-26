@@ -89,7 +89,7 @@ export default function SharedPage(): JSX.Element {
             paddingTop: height / 8,
             paddingBottom: height / 8,
             paddingHorizontal: width / 4,
-            backgroundColor: colorize("#0C0C0C", 0.9)
+            backgroundColor: colorize("#1B1C1D", 0.9)
           }}
         >
           {selectedImage && (
@@ -130,7 +130,7 @@ export default function SharedPage(): JSX.Element {
                 style={{ backgroundColor: colorize("#FFFFFF", 1.0), paddingVertical: 12, paddingHorizontal: 24, borderRadius: 8, minWidth: 120, minHeight: 44 }}
                 accessibilityLabel="Try again"
               >
-                <Text style={{ color: colorize("#0C0C0C", 1.0), fontFamily: "Kurale", textAlign: "center" }}>Try Again</Text>
+                <Text style={{ color: colorize("#1B1C1D", 1.0), fontFamily: "Kurale", textAlign: "center" }}>Try Again</Text>
               </TouchableOpacity>
             </View>
           )}
