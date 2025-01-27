@@ -11,14 +11,14 @@ Loop {
         break
     }
     MouseMove, %firstButtonX%, %firstButtonY%
-    Sleep, 50
+    Sleep, 100
     Click
-    Sleep, 50
+    Sleep, 100
     MouseMove, %secondButtonX%, %secondButtonY%
-    Sleep, 50
+    Sleep, 100
     Click
     clickCount++
-    Sleep, 50
+    Sleep, 100
     if (clickCount >= 400) {
         MsgBox, Downloaded 400 Files. Exiting.
         break
