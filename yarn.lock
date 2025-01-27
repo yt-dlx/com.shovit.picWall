@@ -6721,6 +6721,11 @@ react-native-scroll-indicator@^0.1.0:
   resolved "https://registry.yarnpkg.com/react-native-scroll-indicator/-/react-native-scroll-indicator-0.1.0.tgz#1b8281d88f15932338ccb8a4b9792142c796408c"
   integrity sha512-fErMTBZe/aNZgKW1QYKXvQnsnODqBkQ7j/2K89DkimUqUgJAv+mltsj05JUXTu8sJBJznoFXwmW+3h2/Dcfbog==
 
+react-native-size-matters@^0.4.2:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/react-native-size-matters/-/react-native-size-matters-0.4.2.tgz#4348bdd6fc47383f60326d58ad69870c998a5f9a"
+  integrity sha512-DKE3f/sdcozd24oASgkP1iGg+YU3HoajRa5k3a4wkRzpiqREq8SGX12Y5zBgAt/8IivLQoTMYkyQu1/Giuy+zQ==
+
 react-native-svg@^15.11.1:
   version "15.11.1"
   resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-15.11.1.tgz#8152459a7a4d40b02e9ac8270f9b0692b3216715"
