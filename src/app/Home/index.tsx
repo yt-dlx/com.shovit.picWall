@@ -121,7 +121,7 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
           />
           <View style={{ flex: 1, backgroundColor: colorize("#111111", 0.9), overflow: "hidden" }}>
             <View style={{ padding: 10, flexDirection: "row", alignItems: "center", justifyContent: "center", backgroundColor: colorize("#111111", 0.9) }}>
-              <Text style={{ fontFamily: "Zoika", fontSize: 30, color: colorize("#F4F4F5", 1.0) }}> Categories and Styles</Text>
+              <Text style={{ fontFamily: "Kurale", fontSize: 30, color: colorize("#F4F4F5", 1.0) }}> Categories and Styles</Text>
             </View>
             <View style={{ height: 150, backgroundColor: colorize("#111111", 0.9) }}>
               <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: 2 }}>
@@ -271,7 +271,7 @@ const SearchBar: FC<{ onSearch: (text: string) => void }> = memo(({ onSearch }) 
           onChangeText={handleSearch}
           placeholder="Search by image name..."
           placeholderTextColor={colorize("#F4F4F5", 0.6)}
-          style={{ flex: 1, marginLeft: 8, fontSize: 16, fontFamily: "Zoika", color: colorize("#F4F4F5", 1.0) }}
+          style={{ flex: 1, marginLeft: 8, fontSize: 16, fontFamily: "Kurale", color: colorize("#F4F4F5", 1.0) }}
           accessibilityLabel="Search wallpapers"
         />
         {searchText.length > 0 && (
@@ -507,7 +507,7 @@ const HeaderComponent: FC<HeaderComponentProps> = memo(({ selectedCategory, onSe
           <Animated.View style={leftIconStyle}>
             <FontAwesome5 name="caret-left" size={24} color={colorize("#F4F4F5", 1.0)} />
           </Animated.View>
-          <Text style={{ fontFamily: "Zoika", fontSize: 30, color: colorize("#F4F4F5", 1.0), textAlign: "center", marginHorizontal: 10 }}> Explore AI Generated Wallpapers </Text>
+          <Text style={{ fontFamily: "Kurale", fontSize: 30, color: colorize("#F4F4F5", 1.0), textAlign: "center", marginHorizontal: 10 }}> Explore AI Generated Wallpapers </Text>
           <Animated.View style={rightIconStyle}>
             <FontAwesome5 name="caret-right" size={24} color={colorize("#F4F4F5", 1.0)} />
           </Animated.View>

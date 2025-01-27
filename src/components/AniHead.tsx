@@ -58,8 +58,8 @@ const AnimatedTitle: React.FC = memo(() => {
     <Animated.View style={[animatedStyle, { alignItems: "center", marginTop: hp(5) }]}>
       <View style={{ backgroundColor: colorize("#111111", 0.6), borderRadius: wp(50), padding: wp(1) }}>
         <Image
-          resizeMode="contain"
           alt="App logo"
+          resizeMode="contain"
           source={require("@/assets/images/logo.jpg")}
           style={{ width: wp(24), height: wp(24), borderRadius: wp(50), borderWidth: wp(0.5), borderColor: colorize("#F4F4F5", 1.0) }}
         />
@@ -85,7 +85,7 @@ const HAnimated: React.FC = memo(() => {
             <View style={{ flexDirection: "row", marginBottom: hp(0.5) }}>
               <AnimatedTitle />
             </View>
-            <Text style={{ fontFamily: "Zoika", fontSize: rf(60), marginTop: hp(2), color: colorize("#F4F4F5", 1.0), lineHeight: rf(52) }}> picWall </Text>
+            <Text style={{ fontFamily: "Kurale", fontSize: rf(50), marginTop: hp(2), color: colorize("#F4F4F5", 1.0), lineHeight: rf(52) }}> picWall </Text>
             <Animated.View style={{ alignSelf: "center" }} entering={FadeInDown.delay(600).duration(1500).springify()}>
               <View style={{ backgroundColor: colorize("#111111", 0.6), borderRadius: wp(50), paddingHorizontal: wp(3), paddingVertical: hp(0.5) }}>
                 <Text style={{ fontFamily: "Kurale", color: colorize("#F4F4F5", 1.0), fontSize: rf(12), textAlign: "center" }}>

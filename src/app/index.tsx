@@ -13,28 +13,24 @@ import { AntDesign, FontAwesome5 } from "@expo/vector-icons";
 import { FC, memo, useEffect, useState, useMemo } from "react";
 import { Text, View, TouchableOpacity, Linking, useWindowDimensions } from "react-native";
 import Animated, { useSharedValue, useAnimatedStyle, withTiming, withRepeat, withSequence, withSpring, Easing, FadeIn, FadeInDown, withDelay } from "react-native-reanimated";
-
-// Responsive Styles Hook
+/* ============================================================================================================================== */
+/* ============================================================================================================================== */
 const useResponsiveStyles = () => {
   const { width, height } = useWindowDimensions();
-
-  const wp = (percentage: number) => (width * percentage) / 100; // Width percentage
-  const hp = (percentage: number) => (height * percentage) / 100; // Height percentage
+  const wp = (percentage: number) => (width * percentage) / 100;
+  const hp = (percentage: number) => (height * percentage) / 100;
   const rf = (size: number, factor = 0.5) => {
-    const ratio = (size * width) / 390; // 390 is the base width (design size)
-    return size + (ratio - size) * factor; // Responsive font size
+    const ratio = (size * width) / 390;
+    return size + (ratio - size) * factor;
   };
-
   return { wp, hp, rf };
 };
-
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
 const useVersionCheck = () => {
   const [serverVersion, setServerVersion] = useState("");
   const [currentVersion, setCurrentVersion] = useState("");
   const [updateRequired, setUpdateRequired] = useState(false);
-
   useEffect(() => {
     const checkVersion = async () => {
       try {
@@ -57,22 +53,18 @@ const useVersionCheck = () => {
     const interval = setInterval(checkVersion, 300000);
     return () => clearInterval(interval);
   }, []);
-
   return useMemo(() => ({ updateRequired, currentVersion, serverVersion }), [updateRequired, currentVersion, serverVersion]);
 };
-
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
 const UpdateDialog: FC<{ serverVersion: string; currentVersion: string }> = memo(({ currentVersion, serverVersion }) => {
   const { wp, hp, rf } = useResponsiveStyles();
   const scale = useSharedValue(0.8);
   const opacity = useSharedValue(0);
-
   useEffect(() => {
     scale.value = withTiming(1, { duration: 300 });
     opacity.value = withTiming(1, { duration: 300 });
   }, [opacity, scale]);
-
   return (
     <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center", padding: wp(4), zIndex: 1000 }}>
       <Animated.View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#111111", 1.0) }} />
@@ -86,7 +78,7 @@ const UpdateDialog: FC<{ serverVersion: string; currentVersion: string }> = memo
         />
       </View>
       <View style={{ alignItems: "center" }}>
-        <Text style={{ margin: wp(6), fontSize: rf(36), fontFamily: "Zoika", color: colorize("#F4F4F5", 1.0) }}>Update Required</Text>
+        <Text style={{ margin: wp(6), fontSize: rf(36), fontFamily: "Kurale", color: colorize("#F4F4F5", 1.0) }}>Update Required</Text>
         <View style={{ marginBottom: hp(2), alignItems: "center" }}>
           <Text style={{ fontSize: rf(18), fontFamily: "Kurale", color: colorize("#F4F4F5", 1.0) }}>- Current Version: {currentVersion}</Text>
           <Text style={{ fontSize: rf(18), fontFamily: "Kurale", color: colorize("#F4F4F5", 1.0) }}>- Latest Version: {serverVersion}</Text>
@@ -198,7 +190,7 @@ const EntryPage = memo(() => {
             <AnimatedTitle />
             <Animated.View entering={FadeInDown.delay(600).duration(1500).springify()}>
               <View>
-                <Text style={{ fontSize: rf(80), fontFamily: "Zoika", color: colorize("#F4F4F5", 1.0), textAlign: "center" }}>picWall</Text>
+                <Text style={{ fontSize: rf(80), fontFamily: "Kurale", color: colorize("#F4F4F5", 1.0), textAlign: "center" }}>picWall</Text>
                 <Animated.View style={{ alignSelf: "center" }} entering={FadeInDown.delay(600).duration(1500).springify()}>
                   <View style={{ borderRadius: wp(50), paddingHorizontal: wp(3), paddingVertical: hp(0.5), backgroundColor: colorize("#111111", 0.9) }}>
                     <Text style={{ fontFamily: "Kurale", color: colorize("#F4F4F5", 1.0), fontSize: rf(12), textAlign: "center" }}>
@@ -212,7 +204,7 @@ const EntryPage = memo(() => {
                   <View style={{ shadowColor: colorize("#111111", 1.0), shadowOffset: { width: 0, height: hp(0.5) } }}>
                     <View style={{ paddingVertical: hp(2), flexDirection: "row", alignItems: "center", justifyContent: "center", backgroundColor: colorize("#F4F4F5", 1.0) }}>
                       <FontAwesome5 name="camera-retro" size={rf(32)} color={colorize("#111111", 1.0)} />
-                      <Text style={{ fontSize: rf(30), fontFamily: "Zoika", color: colorize("#111111", 1.0) }}>Let's Explore</Text>
+                      <Text style={{ fontSize: rf(30), fontFamily: "Kurale", color: colorize("#111111", 1.0) }}>Let's Explore</Text>
                     </View>
                   </View>
                 </TouchableOpacity>
