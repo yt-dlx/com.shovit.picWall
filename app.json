@@ -36,14 +36,10 @@
     "android": {
       "package": "com.shovit.picWall",
       "adaptiveIcon": {
-        "backgroundColor": "#171819",
+        "backgroundColor": "#111111",
         "foregroundImage": "./src/assets/images/logo.jpg"
       },
-      "permissions": [
-        "READ_EXTERNAL_STORAGE",
-        "WRITE_EXTERNAL_STORAGE",
-        "SET_WALLPAPER "
-      ]
+      "permissions": ["READ_EXTERNAL_STORAGE", "WRITE_EXTERNAL_STORAGE", "SET_WALLPAPER "]
     },
     "plugins": [
       "expo-router",
@@ -52,17 +48,14 @@
         {
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#171819",
+          "backgroundColor": "#111111",
           "image": "./src/assets/images/logo.jpg"
         }
       ],
       [
         "expo-font",
         {
-          "fonts": [
-            "./src/assets/fonts/Zoika.ttf",
-            "./src/assets/fonts/Kurale.ttf"
-          ]
+          "fonts": ["./src/assets/fonts/Zoika.ttf", "./src/assets/fonts/Kurale.ttf"]
         }
       ],
       [

@@ -35,13 +35,13 @@ export default function RootLayout() {
   }, [loaded, error, router]);
   if (!loaded && !error) return null;
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: colorize("#171819", 1.0) }}>
-      <StatusBar backgroundColor="#171819" barStyle="light-content" />
+    <SafeAreaView style={{ flex: 1, backgroundColor: colorize("#111111", 1.0) }}>
+      <StatusBar backgroundColor="#111111" barStyle="light-content" />
       <LinearGradient
-        colors={[colorize("#171819", 1.0), colorize("#171819", 0.8), colorize("#171819", 0.6), colorize("#171819", 0.4), colorize("#171819", 0.2), "transparent"]}
+        colors={[colorize("#111111", 1.0), colorize("#111111", 0.8), colorize("#111111", 0.6), colorize("#111111", 0.4), colorize("#111111", 0.2), "transparent"]}
         style={{ position: "absolute", top: 0, left: 0, right: 0, height: 100, zIndex: 50 }}
       />
-      <View style={{ flex: 1, backgroundColor: colorize("#171819", 1.0) }} className="capitalize">
+      <View style={{ flex: 1, backgroundColor: colorize("#111111", 1.0) }} className="capitalize">
         <Stack screenOptions={{ headerShown: false }} />
       </View>
     </SafeAreaView>
