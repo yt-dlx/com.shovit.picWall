@@ -64,6 +64,7 @@
     "react-native-google-mobile-ads": "^14.8.1",
     "react-native-linear-gradient": "^2.8.3",
     "react-native-reanimated": "^3.16.7",
+    "react-native-safe-area-context": "^5.1.0",
     "react-native-screens": "~4.4.0",
     "react-native-scroll-indicator": "^0.1.0",
     "react-native-size-matters": "^0.4.2",

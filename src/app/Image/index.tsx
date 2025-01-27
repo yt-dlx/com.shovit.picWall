@@ -265,7 +265,7 @@ const OtherImages: React.FC<OtherImagesProps> = memo(({ otherImages, setCurrentI
       uniqueFileNames.add(img.original_file_name);
       return true;
     });
-  }, [otherImages, selectedFileName]); // Filter by filename and index
+  }, [otherImages, selectedFileName]);
 
   return (
     <View style={{ padding: 4, marginVertical: 8, borderRadius: 16, backgroundColor: colorize(primaryColor, 0.2) }}>
@@ -547,7 +547,7 @@ export default function ImagePage(): JSX.Element {
             setCurrentIndex={setCurrentIndex}
             primaryColor={selectedImage.primary}
             tertiaryColor={selectedImage.tertiary}
-            selectedFileName={selectedImage.original_file_name} // Pass the selected image's filename
+            selectedFileName={selectedImage.original_file_name}
           />
         </View>
         <Footer />
