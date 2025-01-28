@@ -107,12 +107,12 @@ export default function SharedPage(): JSX.Element {
               }}
             >
               <Image
-                alt="Selected wallpaper preview"
-                accessibilityLabel="Selected wallpaper preview"
-                source={{ uri: selectedImage }}
-                style={{ width: "100%", height: "100%" }}
                 contentFit="cover"
+                source={{ uri: selectedImage }}
                 onLoadEnd={() => setImageLoaded(true)}
+                style={{ width: "100%", height: "100%" }}
+                accessibilityLabel="Selected wallpaper preview"
+                alt={`SelectedWallpaperPreview${selectedImage}`}
               />
               {!imageLoaded && (
                 <Animated.View style={{ position: "absolute", top: "50%", left: "50%", transform: [{ translateX: -12 }, { translateY: -12 }], opacity: opacity }}>

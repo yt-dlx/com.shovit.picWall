@@ -149,7 +149,9 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                         }}
                         accessibilityLabel={`Select ${category.name} category`}
                       >
-                        {images.length > 0 && <Image alt="Category preview" source={{ uri: images[currentIndex] }} style={{ width: "100%", height: "100%" }} contentFit="cover" />}
+                        {images.length > 0 && (
+                          <Image alt={`CategoryPreview${images[currentIndex]}`} source={{ uri: images[currentIndex] }} style={{ width: "100%", height: "100%" }} contentFit="cover" />
+                        )}
                         <LinearGradient
                           end={{ x: 0.5, y: 0 }}
                           start={{ x: 0.5, y: 1 }}
@@ -236,9 +238,11 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                               {displayName}
                             </Text>
                             {child === "Combined" ? (
-                              <Image alt="Combined category preview" source={require("@/assets/images/Combined.gif")} style={{ width: "100%", height: "100%" }} contentFit="cover" />
+                              <Image alt="CombinedCategoryPreview" source={require("@/assets/images/Combined.gif")} style={{ width: "100%", height: "100%" }} contentFit="cover" />
                             ) : (
-                              images.length > 0 && <Image alt="Subcategory preview" source={{ uri: images[currentIndex] }} style={{ width: "100%", height: "100%" }} contentFit="cover" />
+                              images.length > 0 && (
+                                <Image alt={`SubcategoryPreview${images[currentIndex]}`} source={{ uri: images[currentIndex] }} style={{ width: "100%", height: "100%" }} contentFit="cover" />
+                              )
                             )}
                           </View>
                         </TouchableOpacity>
@@ -297,8 +301,8 @@ const SubImages: FC<SubImagesProps> = memo(({ images, onImagePress }) => (
               <Image
                 contentFit="cover"
                 cachePolicy="disk"
-                alt="Wallpaper preview"
                 source={{ uri: image.previewLink as string }}
+                alt={`WallpaperPreview${image.previewLink}`}
                 style={{ height: 60, width: "100%", borderWidth: 1, borderColor: colorize("#F4F4F5", 0.5), borderRadius: 15 }}
               />
               <Text
@@ -364,10 +368,10 @@ const Card: FC<CardProps> = memo(({ data }) => {
               <Image
                 contentFit="cover"
                 cachePolicy="disk"
-                alt="Wallpaper image"
                 source={{ uri: currentImage }}
                 onLoad={() => setLoading(false)}
                 onLoadStart={() => setLoading(true)}
+                alt={`WallpaperImage${currentImage}`}
                 style={{ width: "100%", height: "100%" }}
               />
               {loading && (
@@ -411,8 +415,8 @@ const Card: FC<CardProps> = memo(({ data }) => {
             {data.images.slice(0, 3).map((img, idx) => (
               <TouchableOpacity key={idx} onPress={() => animateTransition(idx)} style={{ marginBottom: idx < 2 ? 2 : 0 }} accessibilityLabel="Select thumbnail">
                 <Image
-                  alt="Wallpaper thumbnail"
                   source={{ uri: img.previewLink }}
+                  alt={`WallpaperThumbnail${img.previewLink}`}
                   style={{
                     width: 60,
                     height: 80,
@@ -468,7 +472,7 @@ const CategoryButton: FC<CategoryButtonExtendedProps> = memo(({ category, onPres
       <View style={{ borderRadius: 15, overflow: "hidden", width: "100%", height: "100%" }}>
         <Image
           contentFit="cover"
-          alt="Category background"
+          alt={`CategoryBackground${currentImage}`}
           style={{ width: "100%", height: "100%", borderRadius: 15 }}
           source={category === "Combined" ? require("@/assets/images/Shuffle.gif") : { uri: currentImage }}
         />

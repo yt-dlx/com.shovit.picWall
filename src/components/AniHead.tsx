@@ -58,7 +58,7 @@ const AnimatedTitle: React.FC = memo(() => {
     <Animated.View style={[animatedStyle, { alignItems: "center", marginTop: hp(5) }]}>
       <View style={{ backgroundColor: colorize("#111111", 0.6), borderRadius: wp(50), padding: wp(1) }}>
         <Image
-          alt="App logo"
+          alt="picWallLogo"
           resizeMode="contain"
           source={require("@/assets/images/logo.jpg")}
           style={{ width: wp(24), height: wp(24), borderRadius: wp(50), borderWidth: wp(0.5), borderColor: colorize("#F4F4F5", 1.0) }}

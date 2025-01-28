@@ -183,8 +183,8 @@ const PreviewImage: React.FC<{ selectedImage: ImageMetadata; screenWidth: number
         <Image
           contentFit="cover"
           cachePolicy="disk"
-          alt="Wallpaper preview"
           source={{ uri: highResLink }}
+          alt={`WallpaperPreview${highResLink}`}
           onLoadStart={() => setImageLoading(true)}
           onLoadEnd={() => setImageLoading(false)}
           style={{ width: "100%", height: "100%", borderTopLeftRadius: 20, borderTopRightRadius: 20 }}
@@ -279,7 +279,7 @@ const OtherImages: React.FC<OtherImagesProps> = memo(({ otherImages, setCurrentI
                 onPress={() => setCurrentIndex(idx)}
                 accessibilityLabel={`Select wallpaper ${img.original_file_name}`}
               >
-                <Image alt="Wallpaper thumbnail" source={{ uri: lowResLink }} style={{ width: "100%", height: "100%" }} contentFit="cover" />
+                <Image alt={`WallpaperThumbnail${lowResLink}`} source={{ uri: lowResLink }} style={{ width: "100%", height: "100%" }} contentFit="cover" />
                 <View style={{ position: "absolute", top: 4, left: 4, backgroundColor: colorize("#171819", 0.5), paddingHorizontal: 4, paddingVertical: 4, borderRadius: 8 }}>
                   <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 12, fontFamily: "Kurale" }}> {img.original_file_name.replace(".jpg", "")} </Text>
                 </View>
@@ -376,7 +376,7 @@ const FullScreenView: React.FC<FullScreenViewProps> = memo(({ isFullScreen, setI
         <ScrollView horizontal contentContainerStyle={{ flexGrow: 1, justifyContent: "center", alignItems: "center" }} showsHorizontalScrollIndicator={false}>
           <Image
             contentFit="fill"
-            alt="Wallpaper full view"
+            alt={`WallpaperFullView${createPreviewLink(selectedImage)}`}
             source={{ uri: createPreviewLink(selectedImage).replace("min", "max") }}
             style={{ height: "100%", width: (Dimensions.get("window").height * 9) / 16 }}
           />

@@ -72,7 +72,7 @@ const UpdateDialog: FC<{ serverVersion: string; currentVersion: string }> = memo
         <Image
           cachePolicy="disk"
           contentFit="contain"
-          accessibilityLabel="App logo"
+          accessibilityLabel="picWallLogo"
           source={require("@/assets/images/logo.jpg")}
           style={{ width: wp(40), height: wp(40), borderWidth: wp(0.3), borderRadius: wp(50), borderColor: colorize("#F4F4F5", 1.0) }}
         />
