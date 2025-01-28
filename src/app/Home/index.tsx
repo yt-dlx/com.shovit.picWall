@@ -119,11 +119,11 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
             style={{ position: "absolute", top: 0, left: 0, bottom: 0, right: 0 }}
             overlayColor={Platform.OS === "android" ? colorize("#111111", 0.0) : colorize("#111111", 0.0)}
           />
-          <View style={{ flex: 1, backgroundColor: colorize("#111111", 0.9), overflow: "hidden" }}>
-            <View style={{ padding: 10, flexDirection: "row", alignItems: "center", justifyContent: "center", backgroundColor: colorize("#111111", 0.9) }}>
-              <Text style={{ fontFamily: "Oswald", fontSize: 30, color: colorize("#F4F4F5", 1.0) }}> Categories and Styles</Text>
+          <View style={{ flex: 1, backgroundColor: colorize("#111111", 0.6), overflow: "hidden" }}>
+            <View style={{ padding: 20, flexDirection: "row", alignItems: "center", justifyContent: "center", backgroundColor: colorize("#111111", 0.6) }}>
+              <Text style={{ fontFamily: "Lobster", fontSize: 40, textDecorationLine: "underline", color: colorize("#F4F4F5", 1.0) }}> Categories + Styles</Text>
             </View>
-            <View style={{ height: 150, backgroundColor: colorize("#111111", 0.9) }}>
+            <View style={{ height: 200, backgroundColor: colorize("#111111", 0.6) }}>
               <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: 2 }}>
                 {rawCategoriesArray
                   .filter((cat) => cat.name !== "Combined")
@@ -138,8 +138,8 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                           setSelectedSubcategory(null);
                         }}
                         style={{
-                          width: 100,
-                          height: 150,
+                          width: 120,
+                          height: 200,
                           marginRight: 4,
                           borderRadius: 10,
                           overflow: "hidden",
@@ -157,7 +157,7 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                           start={{ x: 0.5, y: 1 }}
                           locations={[0, 0.2, 0.4]}
                           style={{ position: "absolute", top: 0, right: 0, bottom: 0, left: 0 }}
-                          colors={[colorize("#111111", 0.9), colorize("#111111", 0.7), "transparent"]}
+                          colors={[colorize("#111111", 0.6), colorize("#111111", 0.7), "transparent"]}
                         />
                         <Text
                           style={{
@@ -171,7 +171,7 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                             fontFamily: "Oswald",
                             color: colorize("#F4F4F5", 1.0),
                             textShadowOffset: { width: 1, height: 1 },
-                            textShadowColor: colorize("#111111", 0.9)
+                            textShadowColor: colorize("#111111", 0.6)
                           }}
                         >
                           {category.name}
@@ -221,9 +221,10 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                               aspectRatio: 1,
                               borderWidth: 2,
                               borderRadius: 15,
+                              marginBottom: 10,
                               overflow: "hidden",
-                              borderColor: selectedSubcategory === child ? colorize("#F4F4F5", 1.0) : colorize("#111111", 1.0),
-                              backgroundColor: selectedSubcategory === child ? colorize("#F4F4F5", 1.0) : colorize("#111111", 1.0)
+                              borderColor: selectedSubcategory === child ? colorize("#F4F4F5", 1.0) : colorize("#000000", 1.0),
+                              backgroundColor: selectedSubcategory === child ? colorize("#F4F4F5", 1.0) : colorize("#000000", 1.0)
                             }}
                           >
                             <Text
@@ -390,11 +391,11 @@ const Card: FC<CardProps> = memo(({ data }) => {
                   flexDirection: "row",
                   alignItems: "center",
                   paddingHorizontal: 6,
-                  backgroundColor: colorize("#111111", 0.9)
+                  backgroundColor: colorize("#111111", 0.6)
                 }}
               >
-                <MaterialCommunityIcons name="movie-filter" size={16} color={colorize("#FF000D", 1.0)} style={{ marginRight: 4 }} />
-                <Text style={{ color: "#F4F4F5", fontSize: 12, fontFamily: "Oswald" }}>Freemium (Watch an Ad)</Text>
+                <MaterialCommunityIcons name="movie-filter" size={20} color={colorize("#FF000D", 1.0)} style={{ marginRight: 4 }} />
+                <Text style={{ color: "#F4F4F5", fontSize: 12, fontFamily: "Lobster" }}>Freemium (Watch an Ad)</Text>
               </View>
               <View style={{ position: "absolute", bottom: -2, left: 0, right: 0 }}>
                 <View style={[StyleSheet.absoluteFill, { backgroundColor: colorize(data.images[currentIndex].primary, 1.0) }]} />
@@ -480,7 +481,7 @@ const CategoryButton: FC<CategoryButtonExtendedProps> = memo(({ category, onPres
         <LinearGradient colors={[colorize("#111111", 0.7), colorize("#111111", 0.7)]} style={{ position: "absolute", width: "100%", height: "100%", borderRadius: 15 }} />
         <View style={{ width: "100%", height: "100%", borderRadius: 15, position: "absolute", alignItems: "center", flexDirection: "row", justifyContent: "center" }}>
           <MaterialCommunityIcons name={category === "Categories" ? "image-filter-vintage" : "dice-multiple"} size={20} color={colorize("#F4F4F5", 1.0)} style={{ marginRight: 4 }} />
-          <Text style={{ fontFamily: "Oswald", color: colorize("#F4F4F5", 1.0), fontSize: 18, textAlign: "center" }}> {category === "Combined" ? `All (${count})` : category} </Text>
+          <Text style={{ fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0), fontSize: 18, textAlign: "center" }}> {category === "Combined" ? `All (${count})` : category} </Text>
         </View>
       </View>
     </TouchableOpacity>
@@ -512,7 +513,7 @@ const HeaderComponent: FC<HeaderComponentProps> = memo(({ selectedCategory, onSe
           <Animated.View style={leftIconStyle}>
             <FontAwesome5 name="caret-left" size={24} color={colorize("#F4F4F5", 1.0)} />
           </Animated.View>
-          <Text style={{ fontFamily: "Oswald", fontSize: 30, color: colorize("#F4F4F5", 1.0), textAlign: "center", marginHorizontal: 10 }}> Explore AI Generated Wallpapers </Text>
+          <Text style={{ fontFamily: "Lobster", fontSize: 20, color: colorize("#F4F4F5", 1.0), textAlign: "center", marginHorizontal: 10 }}> Explore AI Generated Wallpapers </Text>
           <Animated.View style={rightIconStyle}>
             <FontAwesome5 name="caret-right" size={24} color={colorize("#F4F4F5", 1.0)} />
           </Animated.View>
