@@ -1,27 +1,27 @@
 (2D)
 ======| Geometry Style Abstract
-Crystal Symmetry: Geometric Crystals Reflecting Light In Abstract Natural Setting.  
-Fractal Forest: Infinite Fractal Patterns Forming A Dense, Intricate Forest Scene.  
-Polygon Peaks: Mountain Peaks Outlined With Sharp Polygonal Geometric Shapes.  
-Hexagon Lake: Lake Surrounded By Hexagonal Patterns And Symmetrical Reflections.  
-Geometric Grove: Grove Of Trees With Branches Forming Precise Geometric Angles.  
-Symmetric Shore: Shoreline Mirroring Perfect Symmetry With Geometric Wave Patterns.  
-Tessellated Terrain: Terrain Covered In Tessellated Geometric Tiles And Shapes.  
-Angular Arbor: Trees With Branches Creating Angular, Geometric Silhouettes Against Sky.  
-Vector Valley: Valley Depicted With Clean Vector Lines And Geometric Precision.  
-Radial River: River Flowing In Radial Geometric Patterns Through Landscape.  
+    Crystal Symmetry: Geometric Crystals Reflecting Light In Abstract Natural Setting.  
+    Fractal Forest: Infinite Fractal Patterns Forming A Dense, Intricate Forest Scene.  
+    Polygon Peaks: Mountain Peaks Outlined With Sharp Polygonal Geometric Shapes.  
+    Hexagon Lake: Lake Surrounded By Hexagonal Patterns And Symmetrical Reflections.  
+    Geometric Grove: Grove Of Trees With Branches Forming Precise Geometric Angles.  
+    Symmetric Shore: Shoreline Mirroring Perfect Symmetry With Geometric Wave Patterns.  
+    Tessellated Terrain: Terrain Covered In Tessellated Geometric Tiles And Shapes.  
+    Angular Arbor: Trees With Branches Creating Angular, Geometric Silhouettes Against Sky.  
+    Vector Valley: Valley Depicted With Clean Vector Lines And Geometric Precision.  
+    Radial River: River Flowing In Radial Geometric Patterns Through Landscape.  
 
 ======| Geometry Style Aerial-View
-Hexagonal Hills: Hills Arranged In Hexagonal Patterns Viewed From Above.  
-Grid Grove: Forest Canopy Forming A Perfect Grid Layout From Aerial Perspective.  
-Circular Canyon: Canyon Carved Into Circular Geometric Shapes Seen From Above.  
-Diamond Dunes: Desert Dunes Shaped Into Diamond-Like Geometric Formations.  
-Triangular Trees: Tree Clusters Forming Triangular Patterns From High Aerial View.  
-Spiral Stream: Stream Winding In A Spiral Geometric Pattern Across Landscape.  
-Concentric Cliffs: Cliffs Arranged In Concentric Circles Viewed From The Sky.  
-Linear Lake: Lake Divided Into Linear Geometric Sections From Aerial Vantage.  
-Modular Meadow: Meadow Segmented Into Modular Geometric Plots And Patterns.  
-Framed Forest: Forest Sections Framed By Geometric Aerial Grid Lines.  
+    Hexagonal Hills: Hills Arranged In Hexagonal Patterns Viewed From Above.  
+    Grid Grove: Forest Canopy Forming A Perfect Grid Layout From Aerial Perspective.  
+    Circular Canyon: Canyon Carved Into Circular Geometric Shapes Seen From Above.  
+    Diamond Dunes: Desert Dunes Shaped Into Diamond-Like Geometric Formations.  
+    Triangular Trees: Tree Clusters Forming Triangular Patterns From High Aerial View.  
+    Spiral Stream: Stream Winding In A Spiral Geometric Pattern Across Landscape.  
+    Concentric Cliffs: Cliffs Arranged In Concentric Circles Viewed From The Sky.  
+    Linear Lake: Lake Divided Into Linear Geometric Sections From Aerial Vantage.  
+    Modular Meadow: Meadow Segmented Into Modular Geometric Plots And Patterns.  
+    Framed Forest: Forest Sections Framed By Geometric Aerial Grid Lines.  
 
 ======| Geometry Style Cyberpunk
 Neon Geometry: Geometric Shapes Illuminated With Vibrant Neon Lights In Forest.  

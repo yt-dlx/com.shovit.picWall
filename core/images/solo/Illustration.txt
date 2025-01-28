@@ -1,27 +1,27 @@
 (Moody)
 ======| Illustration Style Abstract
-Radiant Bloom: Vibrant abstract flowers bursting with colorful, dynamic patterns.  
-Mystic Swirls: Whirling abstract swirls intertwining with natural elements gracefully.  
-Ethereal Shapes: Soft, floating geometric shapes blending seamlessly with nature.  
-Color Burst: Explosive color patterns emanating from serene natural landscapes.  
-Fluid Motion: Flowing abstract lines mimicking the movement of water streams.  
-Dreamscape Harmony: Harmonious abstract forms merging with tranquil natural settings.  
-Celestial Waves: Abstract wave patterns inspired by starry night skies.  
-Organic Geometry: Geometric shapes fused with organic, flowing natural forms.  
-Vivid Layers: Multi-layered abstract textures creating depth in natural scenes.  
-Harmony Blend: Smooth blending of abstract colors enhancing peaceful landscapes.  
+    Radiant Bloom: Vibrant abstract flowers bursting with colorful, dynamic patterns.  
+    Mystic Swirls: Whirling abstract swirls intertwining with natural elements gracefully.  
+    Ethereal Shapes: Soft, floating geometric shapes blending seamlessly with nature.  
+    Color Burst: Explosive color patterns emanating from serene natural landscapes.  
+    Fluid Motion: Flowing abstract lines mimicking the movement of water streams.  
+    Dreamscape Harmony: Harmonious abstract forms merging with tranquil natural settings.  
+    Celestial Waves: Abstract wave patterns inspired by starry night skies.  
+    Organic Geometry: Geometric shapes fused with organic, flowing natural forms.  
+    Vivid Layers: Multi-layered abstract textures creating depth in natural scenes.  
+    Harmony Blend: Smooth blending of abstract colors enhancing peaceful landscapes.  
 
 ======| Illustration Style Aerial-View
-Skyward Forest: Dense forest canopy viewed from a high aerial perspective.  
-Mountain Mosaic: Mountain ranges forming intricate mosaic patterns from above.  
-River Ribbon: Meandering river creating a ribbon-like pattern across landscape.  
-Autumn Patchwork: Patchwork of autumn foliage colors seen from the sky.  
-Desert Tiles: Desert dunes arranged in symmetrical tile-like formations aerially.  
-Island Chain: Series of islands forming a connected chain from above.  
-Snow Blanket: Snow-covered terrain creating a seamless white blanket view.  
-Lavender Rows: Rows of lavender fields stretching into the horizon aerially.  
-Urban Greenery: Green spaces interwoven within urban layout seen from above.  
-Tropical Patterns: Tropical vegetation forming vibrant, patterned landscapes from the air.  
+    Skyward Forest: Dense forest canopy viewed from a high aerial perspective.  
+    Mountain Mosaic: Mountain ranges forming intricate mosaic patterns from above.  
+    River Ribbon: Meandering river creating a ribbon-like pattern across landscape.  
+    Autumn Patchwork: Patchwork of autumn foliage colors seen from the sky.  
+    Desert Tiles: Desert dunes arranged in symmetrical tile-like formations aerially.  
+    Island Chain: Series of islands forming a connected chain from above.  
+    Snow Blanket: Snow-covered terrain creating a seamless white blanket view.  
+    Lavender Rows: Rows of lavender fields stretching into the horizon aerially.  
+    Urban Greenery: Green spaces interwoven within urban layout seen from above.  
+    Tropical Patterns: Tropical vegetation forming vibrant, patterned landscapes from the air.  
 
 ======| Illustration Style Cyberpunk
 Neon Grove: Forest illuminated with vibrant neon lights and futuristic elements.  
