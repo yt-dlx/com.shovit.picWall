@@ -78,19 +78,20 @@ const UpdateDialog: FC<{ serverVersion: string; currentVersion: string }> = memo
         />
       </View>
       <View style={{ alignItems: "center" }}>
-        <Text style={{ margin: wp(6), fontSize: rf(36), fontFamily: "placeholder", color: colorize("#F4F4F5", 1.0) }}>Update Required</Text>
+        {/* Updated font styles */}
+        <Text style={{ margin: wp(6), fontSize: rf(36), fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}>Update Required</Text>
         <View style={{ marginBottom: hp(2), alignItems: "center" }}>
-          <Text style={{ fontSize: rf(18), fontFamily: "placeholder", color: colorize("#F4F4F5", 1.0) }}>- Current Version: {currentVersion}</Text>
-          <Text style={{ fontSize: rf(18), fontFamily: "placeholder", color: colorize("#F4F4F5", 1.0) }}>- Latest Version: {serverVersion}</Text>
+          <Text style={{ fontSize: rf(18), fontFamily: "Oswald", fontWeight: "400", color: colorize("#F4F4F5", 1.0) }}>- Current Version: {currentVersion}</Text>
+          <Text style={{ fontSize: rf(18), fontFamily: "Oswald", fontWeight: "400", color: colorize("#F4F4F5", 1.0) }}>- Latest Version: {serverVersion}</Text>
         </View>
-        <Text style={{ paddingHorizontal: wp(4), fontSize: rf(20), marginBottom: hp(2), fontFamily: "placeholder", color: colorize("#F4F4F5", 1.0) }}>
+        <Text style={{ paddingHorizontal: wp(4), fontSize: rf(20), marginBottom: hp(2), fontFamily: "Oswald", fontWeight: "500", color: colorize("#F4F4F5", 1.0) }}>
           Please update the app to continue using picWall
         </Text>
         <TouchableOpacity
           style={{ marginTop: hp(1.5), paddingHorizontal: wp(8), paddingVertical: hp(2), borderRadius: wp(4), backgroundColor: colorize("#F4F4F5", 1.0), minWidth: wp(50), minHeight: hp(6) }}
           onPress={() => Linking.openURL("market://details?id=com.shovit.picWall")}
         >
-          <Text style={{ fontSize: rf(20), fontFamily: "placeholder", color: colorize("#111111", 1.0) }}>Update Now</Text>
+          <Text style={{ fontSize: rf(20), fontFamily: "Oswald", fontWeight: "600", color: colorize("#111111", 1.0) }}>Update Now</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -192,10 +193,11 @@ const EntryPage = memo(() => {
             <AnimatedTitle />
             <Animated.View entering={FadeInDown.delay(600).duration(1500).springify()}>
               <View>
-                <Text style={{ fontSize: rf(80), fontFamily: "placeholder", color: colorize("#F4F4F5", 1.0), textAlign: "center" }}>picWall</Text>
+                {/* Main title font update */}
+                <Text style={{ fontSize: rf(80), fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0), textAlign: "center" }}>picWall</Text>
                 <Animated.View style={{ alignSelf: "center" }} entering={FadeInDown.delay(600).duration(1500).springify()}>
                   <View style={{ borderRadius: wp(50), paddingHorizontal: wp(3), paddingVertical: hp(0.5), backgroundColor: colorize("#111111", 0.9) }}>
-                    <Text style={{ fontFamily: "placeholder", color: colorize("#F4F4F5", 1.0), fontSize: rf(12), textAlign: "center" }}>
+                    <Text style={{ fontFamily: "Oswald", fontWeight: "400", color: colorize("#F4F4F5", 1.0), fontSize: rf(12), textAlign: "center" }}>
                       Crafted with <AntDesign name="heart" size={rf(12)} color={colorize("#FF000D", 1.0)} /> in India. All rights reserved
                     </Text>
                   </View>
@@ -206,14 +208,16 @@ const EntryPage = memo(() => {
                   <View style={{ shadowColor: colorize("#111111", 1.0), shadowOffset: { width: 0, height: hp(0.5) } }}>
                     <View style={{ paddingVertical: hp(2), flexDirection: "row", alignItems: "center", justifyContent: "center", backgroundColor: colorize("#F4F4F5", 1.0) }}>
                       <FontAwesome5 name="camera-retro" size={rf(32)} color={colorize("#111111", 1.0)} />
-                      <Text style={{ fontSize: rf(30), fontFamily: "placeholder", color: colorize("#111111", 1.0) }}>Let's Explore</Text>
+                      {/* Button text font update */}
+                      <Text style={{ fontSize: rf(30), fontFamily: "Lobster", color: colorize("#111111", 1.0) }}>Let's Explore</Text>
                     </View>
                   </View>
                 </TouchableOpacity>
               </Link>
               <Animated.View entering={FadeIn.delay(1200).duration(1500)} style={{ marginTop: hp(1.5), paddingHorizontal: wp(5), alignItems: "center" }}>
-                <Text style={{ fontFamily: "placeholder", color: colorize("#FF000D", 1.0), fontSize: rf(15), marginBottom: hp(0.5) }}>Perfect AI Wallpapers, Every Day!</Text>
-                <Text style={{ fontFamily: "placeholder", color: colorize("#F4F4F5", 0.9), fontSize: rf(10), maxWidth: wp(80) }}>
+                {/* Subtext font updates */}
+                <Text style={{ fontFamily: "Oswald", fontWeight: "600", color: colorize("#FF000D", 1.0), fontSize: rf(15), marginBottom: hp(0.5) }}>Perfect AI Wallpapers, Every Day!</Text>
+                <Text style={{ fontFamily: "Oswald", fontWeight: "400", color: colorize("#F4F4F5", 0.9), fontSize: rf(10), maxWidth: wp(80) }}>
                   Transform your screens with stunning, AI-curated wallpapers tailored to your style. Explore breathtaking collections, share your favorite moments, and discover awe-inspiring
                   photographs from around the globe. Start your journey today – where every wallpaper tells a story!
                 </Text>

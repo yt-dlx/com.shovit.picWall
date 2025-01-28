@@ -121,7 +121,7 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
           />
           <View style={{ flex: 1, backgroundColor: colorize("#111111", 0.9), overflow: "hidden" }}>
             <View style={{ padding: 10, flexDirection: "row", alignItems: "center", justifyContent: "center", backgroundColor: colorize("#111111", 0.9) }}>
-              <Text style={{ fontFamily: "placeholder", fontSize: 30, color: colorize("#F4F4F5", 1.0) }}> Categories and Styles</Text>
+              <Text style={{ fontFamily: "Oswald", fontSize: 30, color: colorize("#F4F4F5", 1.0) }}> Categories and Styles</Text>
             </View>
             <View style={{ height: 150, backgroundColor: colorize("#111111", 0.9) }}>
               <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: 2 }}>
@@ -168,7 +168,7 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                             textAlign: "center",
                             position: "absolute",
                             textShadowRadius: 4,
-                            fontFamily: "placeholder",
+                            fontFamily: "Oswald",
                             color: colorize("#F4F4F5", 1.0),
                             textShadowOffset: { width: 1, height: 1 },
                             textShadowColor: colorize("#111111", 0.9)
@@ -231,7 +231,7 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                                 fontSize: 16,
                                 marginBottom: 4,
                                 textAlign: "center",
-                                fontFamily: "placeholder",
+                                fontFamily: "Oswald",
                                 color: selectedSubcategory === child ? colorize("#111111", 1.0) : colorize("#F4F4F5", 1.0)
                               }}
                             >
@@ -273,10 +273,11 @@ const SearchBar: FC<{ onSearch: (text: string) => void }> = memo(({ onSearch }) 
         <TextInput
           value={searchText}
           onChangeText={handleSearch}
+          accessibilityLabel="Search Input"
           placeholder="Search by image name..."
           placeholderTextColor={colorize("#F4F4F5", 0.6)}
-          style={{ flex: 1, marginLeft: 8, fontSize: 16, fontFamily: "placeholder", color: colorize("#F4F4F5", 1.0) }}
-          accessibilityLabel="Search wallpapers"
+          accessibilityHint={`Current search term: ${searchText || "empty"}. Enter text to filter wallpapers.`}
+          style={{ flex: 1, marginLeft: 8, fontSize: 16, fontFamily: "Oswald", color: colorize("#F4F4F5", 1.0) }}
         />
         {searchText.length > 0 && (
           <TouchableOpacity onPress={() => handleSearch("")} style={{ padding: 8 }} accessibilityLabel="Clear search">
@@ -313,7 +314,7 @@ const SubImages: FC<SubImagesProps> = memo(({ images, onImagePress }) => (
                   borderRadius: 15,
                   position: "absolute",
                   paddingHorizontal: 8,
-                  fontFamily: "placeholder",
+                  fontFamily: "Oswald",
                   color: colorize("#111111", 1.0),
                   backgroundColor: colorize(image.primary, 1.0)
                 }}
@@ -393,17 +394,17 @@ const Card: FC<CardProps> = memo(({ data }) => {
                 }}
               >
                 <MaterialCommunityIcons name="movie-filter" size={16} color={colorize("#FF000D", 1.0)} style={{ marginRight: 4 }} />
-                <Text style={{ color: "#F4F4F5", fontSize: 12, fontFamily: "placeholder" }}>Freemium (Watch an Ad)</Text>
+                <Text style={{ color: "#F4F4F5", fontSize: 12, fontFamily: "Oswald" }}>Freemium (Watch an Ad)</Text>
               </View>
               <View style={{ position: "absolute", bottom: -2, left: 0, right: 0 }}>
                 <View style={[StyleSheet.absoluteFill, { backgroundColor: colorize(data.images[currentIndex].primary, 1.0) }]} />
                 <View style={{ padding: 4, margin: 4 }}>
                   <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: 2 }}>
-                    <Text style={{ flex: 1, fontSize: 14, marginRight: 8, color: colorize("#F4F4F5", 1.0), fontFamily: "placeholder" }}>
+                    <Text style={{ flex: 1, fontSize: 14, marginRight: 8, color: colorize("#F4F4F5", 1.0), fontFamily: "Oswald" }}>
                       {data.images[currentIndex].original_file_name.replace(/_/g, " ").replace(".jpg", "")}
                     </Text>
                     <View style={{ paddingHorizontal: 6, paddingVertical: 2 }}>
-                      <Text style={{ fontSize: 12, color: colorize("#F4F4F5", 1.0), fontFamily: "placeholder" }}> {data.images[currentIndex].primary} </Text>
+                      <Text style={{ fontSize: 12, color: colorize("#F4F4F5", 1.0), fontFamily: "Oswald" }}> {data.images[currentIndex].primary} </Text>
                     </View>
                   </View>
                 </View>
@@ -479,7 +480,7 @@ const CategoryButton: FC<CategoryButtonExtendedProps> = memo(({ category, onPres
         <LinearGradient colors={[colorize("#111111", 0.7), colorize("#111111", 0.7)]} style={{ position: "absolute", width: "100%", height: "100%", borderRadius: 15 }} />
         <View style={{ width: "100%", height: "100%", borderRadius: 15, position: "absolute", alignItems: "center", flexDirection: "row", justifyContent: "center" }}>
           <MaterialCommunityIcons name={category === "Categories" ? "image-filter-vintage" : "dice-multiple"} size={20} color={colorize("#F4F4F5", 1.0)} style={{ marginRight: 4 }} />
-          <Text style={{ fontFamily: "placeholder", color: colorize("#F4F4F5", 1.0), fontSize: 18, textAlign: "center" }}> {category === "Combined" ? `All (${count})` : category} </Text>
+          <Text style={{ fontFamily: "Oswald", color: colorize("#F4F4F5", 1.0), fontSize: 18, textAlign: "center" }}> {category === "Combined" ? `All (${count})` : category} </Text>
         </View>
       </View>
     </TouchableOpacity>
@@ -511,7 +512,7 @@ const HeaderComponent: FC<HeaderComponentProps> = memo(({ selectedCategory, onSe
           <Animated.View style={leftIconStyle}>
             <FontAwesome5 name="caret-left" size={24} color={colorize("#F4F4F5", 1.0)} />
           </Animated.View>
-          <Text style={{ fontFamily: "placeholder", fontSize: 30, color: colorize("#F4F4F5", 1.0), textAlign: "center", marginHorizontal: 10 }}> Explore AI Generated Wallpapers </Text>
+          <Text style={{ fontFamily: "Oswald", fontSize: 30, color: colorize("#F4F4F5", 1.0), textAlign: "center", marginHorizontal: 10 }}> Explore AI Generated Wallpapers </Text>
           <Animated.View style={rightIconStyle}>
             <FontAwesome5 name="caret-right" size={24} color={colorize("#F4F4F5", 1.0)} />
           </Animated.View>
@@ -662,8 +663,8 @@ export default function HomePage(): JSX.Element {
     if (searchQuery) {
       return (
         <View style={{ padding: 20, alignItems: "center" }}>
-          <Text style={{ fontFamily: "placeholder", color: colorize("#F4F4F5", 1.0), fontSize: 16, textAlign: "center" }}> No images found matching &quot;{searchQuery}&quot;. </Text>
-          <Text style={{ fontFamily: "placeholder", color: colorize("#F4F4F5", 1.0), fontSize: 16, textAlign: "center" }}> You may request images from &quot;Account&quot; Section. </Text>
+          <Text style={{ fontFamily: "Oswald", color: colorize("#F4F4F5", 1.0), fontSize: 16, textAlign: "center" }}> No images found matching &quot;{searchQuery}&quot;. </Text>
+          <Text style={{ fontFamily: "Oswald", color: colorize("#F4F4F5", 1.0), fontSize: 16, textAlign: "center" }}> You may request images from &quot;Account&quot; Section. </Text>
         </View>
       );
     }
@@ -679,7 +680,7 @@ export default function HomePage(): JSX.Element {
   if (error) {
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: colorize("#111111", 1.0) }}>
-        <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 16, fontFamily: "placeholder" }}>{error}</Text>
+        <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 16, fontFamily: "Oswald" }}>{error}</Text>
       </View>
     );
   }
