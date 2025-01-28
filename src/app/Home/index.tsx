@@ -358,7 +358,7 @@ const Card: FC<CardProps> = memo(({ data }) => {
     const interval = setInterval(() => {
       const nextIndex = (currentIndex + 1) % data.images.length;
       animateTransition(nextIndex);
-    }, 5000);
+    }, 4000);
     return () => clearInterval(interval);
   }, [currentIndex, data.images.length, animateTransition]);
   return (
@@ -366,7 +366,7 @@ const Card: FC<CardProps> = memo(({ data }) => {
       <Link href={{ pathname: "/Shared", params: { data: JSON.stringify({ environment_title: data.environment_title, selectedIndex: currentIndex, data: data.images }) } }} asChild>
         <TouchableOpacity accessibilityLabel="View full wallpaper">
           <Animated.View style={{ opacity: fadeAnim, transform: [{ scale: scaleAnim }] }}>
-            <View style={{ position: "relative", width: "100%", height: 400, overflow: "hidden" }}>
+            <View style={{ position: "relative", width: "100%", height: 500, overflow: "hidden" }}>
               <Image
                 contentFit="cover"
                 cachePolicy="disk"
