@@ -1,29 +1,58 @@
-/* ============================================================================================================================== */
-// src/app/Shared/index.tsx
-/* ============================================================================================================================== */
 import { Image } from "expo-image";
 import useAd from "@/hooks/useAd";
 import colorize from "@/utils/colorize";
 import React, { useEffect, useState, useRef } from "react";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
-import { View, Text, ActivityIndicator, Dimensions, StatusBar, Animated, TouchableOpacity } from "react-native";
-/* ============================================================================================================================== */
-/* ============================================================================================================================== */
-const { width, height } = Dimensions.get("screen");
+import { View, Text, ActivityIndicator, Dimensions, StatusBar, Animated, useWindowDimensions } from "react-native";
+
+const useResponsiveStyles = () => {
+  const { width, height } = useWindowDimensions();
+  const wp = (percentage: number) => (width * percentage) / 100;
+  const hp = (percentage: number) => (height * percentage) / 100;
+  const rf = (size: number, factor = 0.5) => {
+    const ratio = (size * width) / 390;
+    return size + (ratio - size) * factor;
+  };
+  return { wp, hp, rf };
+};
+
+const screenDimensions = Dimensions.get("screen");
+
 interface ImageData {
   primary: string;
   previewLink: string;
   original_file_name: string;
 }
+
 interface ParsedData {
   data: ImageData[];
   selectedIndex: number;
   environment_title: string;
 }
-/* ============================================================================================================================== */
-/* ============================================================================================================================== */
+
+const CardContainer: React.FC<{ children: React.ReactNode; style?: any }> = ({ children, style }) => (
+  <View
+    style={[
+      {
+        borderRadius: 20,
+        backgroundColor: "rgba(17, 17, 17, 0.95)",
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.3,
+        shadowRadius: 8,
+        elevation: 5,
+        padding: 24
+      },
+      style
+    ]}
+  >
+    {children}
+  </View>
+);
+
 export default function SharedPage(): JSX.Element {
+  const { wp, hp, rf } = useResponsiveStyles();
   const router = useRouter();
   const params = useLocalSearchParams();
   const [adError, setAdError] = useState(false);
@@ -31,18 +60,23 @@ export default function SharedPage(): JSX.Element {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [countdown, setCountdown] = useState(10);
   const opacity = useRef(new Animated.Value(0)).current;
+  const scaleAnim = useRef(new Animated.Value(0.95)).current;
+
   let parsedData: ParsedData | null = null;
   if (params.data) {
     const dataParam = Array.isArray(params.data) ? params.data[0] : params.data;
     parsedData = JSON.parse(dataParam) as ParsedData;
   }
+
   const selectedImage = parsedData?.data[parsedData.selectedIndex]?.previewLink.replace("min", "max") || null;
+
   const { showAd, adLoaded } = useAd({
     onRewardEarned: () => setAdEarned(true),
     onAdClosed: () => {
       if (!adEarned) setAdError(true);
     }
   });
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCountdown((prev) => {
@@ -55,55 +89,71 @@ export default function SharedPage(): JSX.Element {
     }, 1000);
     return () => clearInterval(timer);
   }, [adLoaded, adEarned, router, params]);
+
   useEffect(() => {
     if (adLoaded) showAd();
   }, [adLoaded, showAd]);
+
   useEffect(() => {
     if (adEarned && imageLoaded) router.replace({ pathname: "/Image", params });
   }, [adEarned, imageLoaded, router, params]);
+
   useEffect(() => {
     Animated.loop(
       Animated.sequence([Animated.timing(opacity, { toValue: 1, duration: 1000, useNativeDriver: true }), Animated.timing(opacity, { toValue: 0, duration: 1000, useNativeDriver: true })])
     ).start();
-  }, [opacity]);
-  const handleTryAgain = () => {
-    setAdError(false);
-    if (adLoaded) showAd();
-  };
+
+    // Add entrance animation
+    Animated.spring(scaleAnim, {
+      toValue: 1,
+      tension: 50,
+      friction: 7,
+      useNativeDriver: true
+    }).start();
+  }, [opacity, scaleAnim]);
+
   return (
     <View style={{ flex: 1 }}>
       <StatusBar hidden />
       <Image
-        accessibilityLabel="Advertisement background"
-        alt="Advertisement background"
-        source={require("@/assets/images/admob.jpg")}
-        style={{ position: "absolute", width, height, top: 0, left: 0 }}
         contentFit="cover"
+        alt="Advertisement background"
+        accessibilityLabel="Advertisement background"
+        source={require("@/assets/images/admob.jpg")}
+        style={{
+          position: "absolute",
+          width: screenDimensions.width,
+          height: screenDimensions.height,
+          opacity: 0.8
+        }}
       />
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center", padding: 24 }}>
-        <View
-          style={{
-            borderRadius: 20,
-            position: "relative",
-            alignItems: "center",
-            paddingTop: height / 8,
-            paddingBottom: height / 8,
-            paddingHorizontal: width / 4,
-            backgroundColor: colorize("#111111", 0.9)
-          }}
-        >
+
+      <Animated.View
+        style={{
+          flex: 1,
+          alignItems: "center",
+          justifyContent: "center",
+          padding: wp(6),
+          transform: [{ scale: scaleAnim }]
+        }}
+      >
+        <CardContainer>
           {selectedImage && (
             <View
               style={{
-                width: width / 3,
-                borderWidth: 2,
-                borderRadius: 8,
-                height: height / 4,
-                marginBottom: 24,
+                height: hp(30),
+                width: wp(40),
                 overflow: "hidden",
-                position: "relative",
-                borderColor: colorize("#F4F4F5", 1.0),
-                backgroundColor: colorize("#111111", 1.0)
+                borderRadius: 16,
+                marginBottom: hp(4),
+                backgroundColor: colorize("#111111", 1.0),
+                borderWidth: 3,
+                borderColor: colorize("#F4F4F5", 0.2),
+                shadowColor: "#000",
+                shadowOffset: { width: 0, height: 2 },
+                shadowOpacity: 0.25,
+                shadowRadius: 4,
+                elevation: 5
               }}
             >
               <Image
@@ -115,38 +165,75 @@ export default function SharedPage(): JSX.Element {
                 alt={`SelectedWallpaperPreview${selectedImage}`}
               />
               {!imageLoaded && (
-                <Animated.View style={{ position: "absolute", top: "50%", left: "50%", transform: [{ translateX: -12 }, { translateY: -12 }], opacity: opacity }}>
-                  <FontAwesome6 name="download" size={24} color={colorize("#F4F4F5", 1.0)} />
+                <Animated.View
+                  style={{
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    transform: [{ translateX: -wp(3) }, { translateY: -wp(3) }, { scale: scaleAnim }],
+                    opacity: opacity
+                  }}
+                >
+                  <FontAwesome6 name="download" size={rf(28)} color={colorize("#F4F4F5", 1.0)} />
                 </Animated.View>
               )}
             </View>
           )}
-          {!imageLoaded && <ActivityIndicator size="large" color={colorize("#F4F4F5", 1.0)} accessibilityLabel="Loading image" />}
-          {adError && (
-            <View style={{ marginTop: 16, alignItems: "center" }}>
-              <Text style={{ color: colorize("#FF0000", 1.0), textAlign: "center", marginBottom: 8, fontFamily: "RobotoCondensed" }}> Reward not received. Please try again. </Text>
-              {/* <TouchableOpacity
-onPress={handleTryAgain}
-style={{ backgroundColor: colorize("#F4F4F5", 1.0), paddingVertical: 12, paddingHorizontal: 24, borderRadius: 8, minWidth: 120, minHeight: 44 }}
-accessibilityLabel="Try again"
->
-<Text style={{ color: colorize("#111111", 1.0), fontFamily: "RobotoCondensed", textAlign: "center" }}>Try Again</Text>
-</TouchableOpacity> */}
-            </View>
-          )}
-          {!adError && (
-            <View style={{ marginTop: 24, alignItems: "center" }}>
-              <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 18, textAlign: "center", marginBottom: 16, fontFamily: "RobotoCondensed" }}> Preparing Your Experience </Text>
-              <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 14, textAlign: "center", fontFamily: "RobotoCondensed" }}>
-                After watching the ad, you&apos;ll be redirected to your selected content.
+
+          {!imageLoaded && <ActivityIndicator size="large" color={colorize("#F4F4F5", 1.0)} style={{ marginVertical: hp(2) }} />}
+
+          {adError ? (
+            <View style={{ alignItems: "center", marginTop: hp(2) }}>
+              <Text
+                style={{
+                  color: colorize("#FF6B6B", 1.0),
+                  fontSize: rf(16),
+                  fontFamily: "Lobster",
+                  textAlign: "center",
+                  marginBottom: hp(1)
+                }}
+              >
+                Reward not received. Please try again.
               </Text>
-              <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 18, textAlign: "center", marginTop: 16, fontFamily: "RobotoCondensed" }}>Redirecting in {countdown} seconds...</Text>
+            </View>
+          ) : (
+            <View style={{ alignItems: "center", marginTop: hp(2) }}>
+              <Text
+                style={{
+                  color: colorize("#F4F4F5", 1.0),
+                  fontSize: rf(22),
+                  fontFamily: "Lobster",
+                  fontWeight: "600",
+                  marginBottom: hp(2)
+                }}
+              >
+                Preparing Your Experience
+              </Text>
+              <Text
+                style={{
+                  color: colorize("#F4F4F5", 0.8),
+                  fontSize: rf(14),
+                  fontFamily: "RobotoCondensed",
+                  textAlign: "center",
+                  lineHeight: rf(20)
+                }}
+              >
+                After watching the ad, you'll be redirected to your selected content.
+              </Text>
+              <Text
+                style={{
+                  color: colorize("#F4F4F5", 0.9),
+                  fontSize: rf(16),
+                  fontFamily: "RobotoCondensed",
+                  marginTop: hp(3)
+                }}
+              >
+                Redirecting in {countdown} seconds...
+              </Text>
             </View>
           )}
-        </View>
-      </View>
+        </CardContainer>
+      </Animated.View>
     </View>
   );
 }
-/* ============================================================================================================================== */
-/* ============================================================================================================================== */

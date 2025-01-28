@@ -200,17 +200,17 @@ const EntryPage = memo(() => {
                 </Animated.View>
               </View>
               <Link href="./Home" asChild>
-                <TouchableOpacity onPressIn={onPressIn} onPressOut={onPressOut} style={{ marginTop: hp(22), borderRadius: wp(12), overflow: "hidden", minWidth: wp(60), minHeight: hp(6) }}>
+                <TouchableOpacity onPressIn={onPressIn} onPressOut={onPressOut} style={{ marginTop: hp(22), borderRadius: wp(12), overflow: "hidden", minWidth: wp(40), minHeight: hp(6) }}>
                   <View style={{ shadowColor: colorize("#111111", 1.0), shadowOffset: { width: 0, height: hp(0.5) } }}>
                     <View style={{ paddingVertical: hp(1.5), flexDirection: "row", alignItems: "center", justifyContent: "center", backgroundColor: colorize("#F4F4F5", 1.0), gap: wp(2) }}>
                       <FontAwesome5 name="camera-retro" size={rf(32)} color={colorize("#111111", 1.0)} />
-                      <Text style={{ fontSize: rf(30), fontFamily: "Lobster", color: colorize("#111111", 1.0) }}>Let's Explore</Text>
+                      <Text style={{ fontSize: rf(20), fontFamily: "Lobster", color: colorize("#111111", 1.0) }}>Let's Explore ...</Text>
                     </View>
                   </View>
                 </TouchableOpacity>
               </Link>
-              <Animated.View entering={FadeIn.delay(1200).duration(1500)} style={{ marginTop: hp(1.5), paddingHorizontal: wp(5), alignItems: "center" }}>
-                <Text style={{ fontFamily: "RobotoCondensed", color: colorize("#F4F4F5", 0.9), fontSize: rf(10), maxWidth: wp(80) }}>
+              <Animated.View entering={FadeIn.delay(1200).duration(1500)} style={{ marginTop: hp(2), paddingHorizontal: wp(5), alignItems: "center" }}>
+                <Text style={{ fontFamily: "RobotoCondensed", color: colorize("#F4F4F5", 0.9), fontSize: rf(10), maxWidth: wp(60) }}>
                   Transform your screens with stunning, AI-curated wallpapers tailored to your style. Explore breathtaking collections, share your favorite moments, and discover awe-inspiring
                   photographs from around the globe. Start your journey today – where every wallpaper tells a story!
                 </Text>
