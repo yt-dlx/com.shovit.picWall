@@ -22,7 +22,7 @@ const Footer: React.FC = memo(() => {
   const { rf } = useResponsiveStyles();
   return (
     <View className="relative w-full" style={{ padding: rf(8), backgroundColor: colorize("#111111", 1.0) }}>
-      <Text style={{ textAlign: "center", fontSize: rf(14), fontFamily: "Merriweather", color: colorize("#F4F4F5", 1.0) }}>
+      <Text style={{ textAlign: "center", fontSize: rf(14), fontFamily: "RobotoCondensed", color: colorize("#F4F4F5", 1.0) }}>
         Crafted with <AntDesign name="heart" size={rf(15)} color={colorize("#FF000D", 1.0)} /> in India. All rights reserved{" "}
       </Text>
     </View>
