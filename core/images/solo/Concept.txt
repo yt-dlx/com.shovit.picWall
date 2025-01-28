@@ -12,16 +12,16 @@
     Symmetric Chaos: Balanced chaos of abstract elements inspired by natural symmetry.  
 
 ======| Concept Style Aerial-View
-Skyward Mountains: Majestic mountains captured from a breathtaking aerial perspective.  
-River Maze: Intricate river patterns winding through lush landscapes aerially.  
-Forest Grid: Dense forest canopy forming a perfect grid pattern from above.  
-Desert Spiral: Desert dunes arranged in mesmerizing spiral formations aerial view.  
-Island Cluster: Group of islands creating a stunning aerial natural mosaic.  
-Autumn Mosaic: Vibrant autumn foliage forming colorful mosaic patterns from sky.  
-Snow Blanket: Expansive snow-covered terrain seen from a high aerial angle.  
-Lavender Rows: Symmetrical rows of lavender fields stretching into the distance.  
-Tropical Canopy: Dense tropical rainforest canopy captured from an elevated viewpoint.  
-Mountain Reflection: Aerial view of mountains reflected perfectly in serene lake waters.  
+    Skyward Mountains: Majestic mountains captured from a breathtaking aerial perspective.  
+    River Maze: Intricate river patterns winding through lush landscapes aerially.  
+    Forest Grid: Dense forest canopy forming a perfect grid pattern from above.  
+    Desert Spiral: Desert dunes arranged in mesmerizing spiral formations aerial view.  
+    Island Cluster: Group of islands creating a stunning aerial natural mosaic.  
+    Autumn Mosaic: Vibrant autumn foliage forming colorful mosaic patterns from sky.  
+    Snow Blanket: Expansive snow-covered terrain seen from a high aerial angle.  
+    Lavender Rows: Symmetrical rows of lavender fields stretching into the distance.  
+    Tropical Canopy: Dense tropical rainforest canopy captured from an elevated viewpoint.  
+    Mountain Reflection: Aerial view of mountains reflected perfectly in serene lake waters.  
 
 ======| Concept Style Cyberpunk
 Neon Canopy: Forest illuminated with vibrant neon lights and futuristic elements.  

@@ -24,16 +24,16 @@
     Rolling Hills: Gentle Rolling Hills Creating A Serene, Picturesque Aerial Panorama.  
 
 ======| Cinematic Style Cyberpunk
-Neon Forest: Forest Illuminated With Vibrant Neon Lights And Futuristic Elements.  
-Electric River: River Glowing With Electric Hues Under A Cyberpunk Sky.  
-Digital Grove: Grove Of Trees Intertwined With Glowing Digital Circuitry Patterns.  
-Holographic Lake: Lake Surface Displaying Dynamic Holographic Projections And Reflections.  
-Techno Mountains: Mountains Enhanced With Glowing Techno Lines And Cybernetic Accents.  
-Cyber Canopy: Tree Canopy Adorned With Neon Lights And Digital Interfaces.  
-Glowing Meadow: Meadow Illuminated By Cyberpunk-Inspired Glowing Flora And Lights.  
-Virtual Sunset: Sunset Sky Enhanced With Vibrant Digital Colors And Neon Streaks.  
-Cyber Stream: Stream Flowing Through A Landscape Of Futuristic Cyber Elements.  
-Neon Cliffs: Dramatic Cliffs Bathed In Vibrant Neon Lighting And Colors.  
+    Neon Forest: Forest Illuminated With Vibrant Neon Lights And Futuristic Elements.  
+    Electric River: River Glowing With Electric Hues Under A Cyberpunk Sky.  
+    Digital Grove: Grove Of Trees Intertwined With Glowing Digital Circuitry Patterns.  
+    Holographic Lake: Lake Surface Displaying Dynamic Holographic Projections And Reflections.  
+    Techno Mountains: Mountains Enhanced With Glowing Techno Lines And Cybernetic Accents.  
+    Cyber Canopy: Tree Canopy Adorned With Neon Lights And Digital Interfaces.  
+    Glowing Meadow: Meadow Illuminated By Cyberpunk-Inspired Glowing Flora And Lights.  
+    Virtual Sunset: Sunset Sky Enhanced With Vibrant Digital Colors And Neon Streaks.  
+    Cyber Stream: Stream Flowing Through A Landscape Of Futuristic Cyber Elements.  
+    Neon Cliffs: Dramatic Cliffs Bathed In Vibrant Neon Lighting And Colors.  
 
 ======| Cinematic Style Dusk-Life
 Twilight Lake: Lake Shimmering Under The Soft Hues Of Dusk Sky.  

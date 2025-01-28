@@ -48,16 +48,16 @@
     Twilight Garden: Garden Scene Enveloped In The Peaceful Light Of Dusk.  
 
 ======| Photography Style Ethereal
-Moonlit Lake: Serene Lake Glowing Under The Soft Light Of The Moon.  
-Mist Forest: Enchanted Forest Enveloped In A Mystical Morning Mist.  
-Starry Night: Clear Night Sky Filled With Countless Twinkling Stars.  
-Ghostly Shore: Hauntingly Beautiful Shoreline Shrouded In Ethereal Fog.  
-Aurora Borealis: Vibrant Northern Lights Dancing Across The Night Sky.  
-Ethereal Waterfall: Waterfall Cascading With A Magical, Otherworldly Glow.  
-Fairy Lights: Forest Illuminated By Delicate, Twinkling Fairy Lights.  
-Celestial Garden: Garden Scene Bathed In Celestial, Soft Glowing Light.  
-Mystic Pond: Pond Surrounded By Glowing Mist And Ethereal Reflections.  
-Dreamy Sunset: Sunset Sky Filled With Dreamy, Pastel-Colored Clouds.  
+    Moonlit Lake: Serene Lake Glowing Under The Soft Light Of The Moon.  
+    Mist Forest: Enchanted Forest Enveloped In A Mystical Morning Mist.  
+    Starry Night: Clear Night Sky Filled With Countless Twinkling Stars.  
+    Ghostly Shore: Hauntingly Beautiful Shoreline Shrouded In Ethereal Fog.  
+    Aurora Borealis: Vibrant Northern Lights Dancing Across The Night Sky.  
+    Ethereal Waterfall: Waterfall Cascading With A Magical, Otherworldly Glow.  
+    Fairy Lights: Forest Illuminated By Delicate, Twinkling Fairy Lights.  
+    Celestial Garden: Garden Scene Bathed In Celestial, Soft Glowing Light.  
+    Mystic Pond: Pond Surrounded By Glowing Mist And Ethereal Reflections.  
+    Dreamy Sunset: Sunset Sky Filled With Dreamy, Pastel-Colored Clouds.  
 
 ======| Photography Style Landscapes
 Majestic Mountains: Towering Mountains Under A Clear, Expansive Blue Sky.  

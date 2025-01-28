@@ -24,16 +24,16 @@
     Framed Forest: Forest Sections Framed By Geometric Aerial Grid Lines.  
 
 ======| Geometry Style Cyberpunk
-Neon Geometry: Geometric Shapes Illuminated With Vibrant Neon Lights In Forest.  
-Digital Symmetry: Symmetrical Geometric Patterns Overlaid On Natural Cyberpunk Landscape.  
-Holographic Hexagons: Hexagonal Holograms Floating Above A Cyberpunk Forest.  
-Pixelated Peaks: Mountain Peaks Rendered With Pixelated Geometric Cyber Elements.  
-Glowing Grids: Glowing Geometric Grids Intersecting A Dark, Cyberpunk Nature Scene.  
-Laser Lines: Laser-Emitting Geometric Lines Cutting Through A Futuristic Forest.  
-Tech Triangles: Triangular Geometric Structures Integrated Into Cyberpunk Natural Environment.  
-Circuit Canopy: Tree Canopies Interwoven With Glowing Cybernetic Circuit Patterns.  
-Virtual Vines: Vines Forming Virtual Geometric Shapes In A Cyberpunk Garden.  
-Digital Diamonds: Diamond-Shaped Digital Projections Overlaid On A Natural Landscape.  
+    Neon Geometry: Geometric Shapes Illuminated With Vibrant Neon Lights In Forest.  
+    Digital Symmetry: Symmetrical Geometric Patterns Overlaid On Natural Cyberpunk Landscape.  
+    Holographic Hexagons: Hexagonal Holograms Floating Above A Cyberpunk Forest.  
+    Pixelated Peaks: Mountain Peaks Rendered With Pixelated Geometric Cyber Elements.  
+    Glowing Grids: Glowing Geometric Grids Intersecting A Dark, Cyberpunk Nature Scene.  
+    Laser Lines: Laser-Emitting Geometric Lines Cutting Through A Futuristic Forest.  
+    Tech Triangles: Triangular Geometric Structures Integrated Into Cyberpunk Natural Environment.  
+    Circuit Canopy: Tree Canopies Interwoven With Glowing Cybernetic Circuit Patterns.  
+    Virtual Vines: Vines Forming Virtual Geometric Shapes In A Cyberpunk Garden.  
+    Digital Diamonds: Diamond-Shaped Digital Projections Overlaid On A Natural Landscape.  
 
 ======| Geometry Style Dusk-Life
 Golden Geometry: Geometric Patterns Glowing Under The Golden Hues Of Dusk.  
