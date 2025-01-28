@@ -36,16 +36,16 @@
     Digital Diamonds: Diamond-Shaped Digital Projections Overlaid On A Natural Landscape.  
 
 ======| Geometry Style Dusk-Life
-Golden Geometry: Geometric Patterns Glowing Under The Golden Hues Of Dusk.  
-Symmetric Sunset: Sunset Sky Displaying Perfect Geometric Symmetry Over Horizon.  
-Angular Twilight: Twilight Scene Highlighted By Angular Geometric Shadows And Forms.  
-Framed Dusk: Dusk Landscape Framed With Precise Geometric Lines And Shapes.  
-Polygonal Glow: Glow From The Setting Sun Creating Polygonal Patterns In Sky.  
-Radiant Rhombus: Rhombus-Shaped Light Reflections During Dusk Over Lake.  
-Geometric Glow: Natural Dusk Light Interacting With Geometric Formations In Landscape.  
-Linear Dusk: Linear Geometric Shadows Stretching Across Fields At Dusk.  
-Circular Sunset: Circular Geometric Patterns Formed By The Sun Setting Over Hills.  
-Tessellated Twilight: Twilight Sky Filled With Tessellated Geometric Cloud Formations.  
+    Golden Geometry: Geometric Patterns Glowing Under The Golden Hues Of Dusk.  
+    Symmetric Sunset: Sunset Sky Displaying Perfect Geometric Symmetry Over Horizon.  
+    Angular Twilight: Twilight Scene Highlighted By Angular Geometric Shadows And Forms.  
+    Framed Dusk: Dusk Landscape Framed With Precise Geometric Lines And Shapes.  
+    Polygonal Glow: Glow From The Setting Sun Creating Polygonal Patterns In Sky.  
+    Radiant Rhombus: Rhombus-Shaped Light Reflections During Dusk Over Lake.  
+    Geometric Glow: Natural Dusk Light Interacting With Geometric Formations In Landscape.  
+    Linear Dusk: Linear Geometric Shadows Stretching Across Fields At Dusk.  
+    Circular Sunset: Circular Geometric Patterns Formed By The Sun Setting Over Hills.  
+    Tessellated Twilight: Twilight Sky Filled With Tessellated Geometric Cloud Formations.  
 
 ======| Geometry Style Ethereal
 Crystal Geometry: Ethereal Crystals Forming Geometric Patterns In A Mystical Forest.  

@@ -36,16 +36,16 @@
     Synth Trees: Trees styled with synthwave colors and glowing outlines.  
 
 ======| Illustration Style Dusk-life
-Twilight Grove: Grove bathed in the soft hues of twilight evening.  
-Sunset Reflections: Sunset colors reflecting beautifully on a calm lake.  
-Dusky Hills: Rolling hills silhouetted against a vibrant dusk sky.  
-Evening Mist: Mist enveloping a serene landscape during dusk hours.  
-Golden Twilight: Golden light casting long shadows over peaceful meadow.  
-Sunset Path: Pathway illuminated by the warm glow of setting sun.  
-Dusky River: River shimmering under the colorful hues of dusk.  
-Evening Blossom: Blossoming trees glowing softly in the twilight.  
-Twilight Peaks: Mountain peaks highlighted by the fading light of dusk.  
-Sunset Orchard: Orchard trees glowing with the rich colors of sunset.  
+    Twilight Grove: Grove bathed in the soft hues of twilight evening.  
+    Sunset Reflections: Sunset colors reflecting beautifully on a calm lake.  
+    Dusky Hills: Rolling hills silhouetted against a vibrant dusk sky.  
+    Evening Mist: Mist enveloping a serene landscape during dusk hours.  
+    Golden Twilight: Golden light casting long shadows over peaceful meadow.  
+    Sunset Path: Pathway illuminated by the warm glow of setting sun.  
+    Dusky River: River shimmering under the colorful hues of dusk.  
+    Evening Blossom: Blossoming trees glowing softly in the twilight.  
+    Twilight Peaks: Mountain peaks highlighted by the fading light of dusk.  
+    Sunset Orchard: Orchard trees glowing with the rich colors of sunset.  
 
 ======| Illustration Style Ethereal
 Moonlit Meadow: Meadow glowing under the soft light of a full moon.  

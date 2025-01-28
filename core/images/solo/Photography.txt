@@ -60,16 +60,16 @@
     Dreamy Sunset: Sunset Sky Filled With Dreamy, Pastel-Colored Clouds.  
 
 ======| Photography Style Landscapes
-Majestic Mountains: Towering Mountains Under A Clear, Expansive Blue Sky.  
-Serene Lake: Calm Lake Reflecting Surrounding Lush Green Forests Beautifully.  
-Sunny Beach: Pristine Beach With Golden Sands And Sparkling Turquoise Waters.  
-Autumn Forest: Vibrant Forest Displaying Rich Autumn Foliage And Serene Paths.  
-Rocky Cliffs: Dramatic Rocky Cliffs Overlooking A Vast, Endless Ocean.  
-Verdant Valley: Green Valley Nestled Between Towering, Majestic Mountain Ranges.  
-Desert Oasis: Lush Oasis Surrounded By Expansive, Arid Desert Sands.  
-Snowy Peaks: Snow-Covered Mountain Peaks Piercing Through A Clear Winter Sky.  
-Flower Meadow: Colorful Meadow Bursting With A Variety Of Blooming Wildflowers.  
-Starry Night: Open Landscape Under A Breathtaking, Star-Filled Night Sky.  
+    Majestic Mountains: Towering Mountains Under A Clear, Expansive Blue Sky.  
+    Serene Lake: Calm Lake Reflecting Surrounding Lush Green Forests Beautifully.  
+    Sunny Beach: Pristine Beach With Golden Sands And Sparkling Turquoise Waters.  
+    Autumn Forest: Vibrant Forest Displaying Rich Autumn Foliage And Serene Paths.  
+    Rocky Cliffs: Dramatic Rocky Cliffs Overlooking A Vast, Endless Ocean.  
+    Verdant Valley: Green Valley Nestled Between Towering, Majestic Mountain Ranges.  
+    Desert Oasis: Lush Oasis Surrounded By Expansive, Arid Desert Sands.  
+    Snowy Peaks: Snow-Covered Mountain Peaks Piercing Through A Clear Winter Sky.  
+    Flower Meadow: Colorful Meadow Bursting With A Variety Of Blooming Wildflowers.  
+    Starry Night: Open Landscape Under A Breathtaking, Star-Filled Night Sky.  
 
 ======| Photography Style Minimalism
 Silent Lake: Tranquil Lake With Minimalistic Shoreline And Calm Waters.  

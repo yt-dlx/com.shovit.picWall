@@ -17,21 +17,21 @@
     Infinite Field: An Infinite Field Of Blooming Flowers Under A Bright, Expansive Sky.  
 
 ======| Anime Style Aerial-View
-Skyward Peak: Snow-Covered Peak Visible From High Aerial Vantage Point.  
-Sunset Valley: Golden Sunset Casting Long Shadows Over Expansive Valley Below.  
-Verdant Canopy: Lush Green Canopy Seen From Soaring Aerial Perspective.  
-River Delta: Meandering River Delta Captured From Elevated Aerial View.  
-Mountain Range: Majestic Mountain Range Spread Out From Above Vantage.  
-Desert Dunes: Rolling Desert Dunes Forming Intricate Patterns From Aerial Sight.  
-Coastal Cliffs: Dramatic Coastal Cliffs Overlooking Vast Ocean From Above.  
-Autumn Forest: Vibrant Autumn Forest Colors Seen From High Aerial Position.  
-Island Archipelago: Scattered Islands Forming Archipelago Visible From Aerial Height.  
-Lake Panorama: Expansive Lake Surrounded By Forest, Viewed From Aerial Perspective.  
-Cloud Sea: Thick Sea Of Clouds Covering Vast Landscape Below Aerial View.  
-Tropical Reef: Colorful Coral Reef Visible From Elevated Aerial Viewpoint.  
-Frozen Tundra: Icy Tundra Landscape Captured From High Aerial Angle.  
-Lavender Fields: Vast Lavender Fields Stretching Under Sunlit Sky, Seen From Above.  
-Cherry Blossom: Pink Cherry Blossoms Forming Stunning Patterns From Aerial Perspective.  
+    Skyward Peak: Snow-Covered Peak Visible From High Aerial Vantage Point.  
+    Sunset Valley: Golden Sunset Casting Long Shadows Over Expansive Valley Below.  
+    Verdant Canopy: Lush Green Canopy Seen From Soaring Aerial Perspective.  
+    River Delta: Meandering River Delta Captured From Elevated Aerial View.  
+    Mountain Range: Majestic Mountain Range Spread Out From Above Vantage.  
+    Desert Dunes: Rolling Desert Dunes Forming Intricate Patterns From Aerial Sight.  
+    Coastal Cliffs: Dramatic Coastal Cliffs Overlooking Vast Ocean From Above.  
+    Autumn Forest: Vibrant Autumn Forest Colors Seen From High Aerial Position.  
+    Island Archipelago: Scattered Islands Forming Archipelago Visible From Aerial Height.  
+    Lake Panorama: Expansive Lake Surrounded By Forest, Viewed From Aerial Perspective.  
+    Cloud Sea: Thick Sea Of Clouds Covering Vast Landscape Below Aerial View.  
+    Tropical Reef: Colorful Coral Reef Visible From Elevated Aerial Viewpoint.  
+    Frozen Tundra: Icy Tundra Landscape Captured From High Aerial Angle.  
+    Lavender Fields: Vast Lavender Fields Stretching Under Sunlit Sky, Seen From Above.  
+    Cherry Blossom: Pink Cherry Blossoms Forming Stunning Patterns From Aerial Perspective.  
 
 ======| Anime Style Cyberpunk
 Neon Jungle: Dense Urban Jungle Illuminated By Vibrant Neon Lights And Signs.  
