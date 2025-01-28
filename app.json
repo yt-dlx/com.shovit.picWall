@@ -55,7 +55,7 @@
       [
         "expo-font",
         {
-          "fonts": ["./src/assets/fonts/Oswald.ttf", "./src/assets/fonts/Lobster.ttf"]
+          "fonts": ["./src/assets/fonts/Lobster.ttf", "./src/assets/fonts/Merriweather.ttf"]
         }
       ],
       [

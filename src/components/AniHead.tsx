@@ -88,7 +88,7 @@ const HAnimated: React.FC = memo(() => {
             <Text style={{ fontFamily: "Lobster", fontSize: rf(50), marginTop: hp(2), color: colorize("#F4F4F5", 1.0), lineHeight: rf(52) }}> picWall </Text>
             <Animated.View style={{ alignSelf: "center" }} entering={FadeInDown.delay(600).duration(1500).springify()}>
               <View style={{ backgroundColor: colorize("#111111", 0.6), borderRadius: wp(50), paddingHorizontal: wp(3), paddingVertical: hp(0.5) }}>
-                <Text style={{ fontFamily: "Oswald", color: colorize("#F4F4F5", 1.0), fontSize: rf(12), textAlign: "center" }}>
+                <Text style={{ fontFamily: "Merriweather", color: colorize("#F4F4F5", 1.0), fontSize: rf(12), textAlign: "center" }}>
                   Crafted with <AntDesign name="heart" size={rf(12)} color={colorize("#FF000D", 1.0)} /> in India. All rights reserved
                 </Text>
               </View>

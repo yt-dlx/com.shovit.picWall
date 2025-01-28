@@ -124,23 +124,23 @@ export default function SharedPage(): JSX.Element {
           {!imageLoaded && <ActivityIndicator size="large" color={colorize("#F4F4F5", 1.0)} accessibilityLabel="Loading image" />}
           {adError && (
             <View style={{ marginTop: 16, alignItems: "center" }}>
-              <Text style={{ color: colorize("#FF0000", 1.0), textAlign: "center", marginBottom: 8, fontFamily: "Oswald" }}> Reward not received. Please try again. </Text>
+              <Text style={{ color: colorize("#FF0000", 1.0), textAlign: "center", marginBottom: 8, fontFamily: "Merriweather" }}> Reward not received. Please try again. </Text>
               {/* <TouchableOpacity
 onPress={handleTryAgain}
 style={{ backgroundColor: colorize("#F4F4F5", 1.0), paddingVertical: 12, paddingHorizontal: 24, borderRadius: 8, minWidth: 120, minHeight: 44 }}
 accessibilityLabel="Try again"
 >
-<Text style={{ color: colorize("#111111", 1.0), fontFamily: "Oswald", textAlign: "center" }}>Try Again</Text>
+<Text style={{ color: colorize("#111111", 1.0), fontFamily: "Merriweather", textAlign: "center" }}>Try Again</Text>
 </TouchableOpacity> */}
             </View>
           )}
           {!adError && (
             <View style={{ marginTop: 24, alignItems: "center" }}>
-              <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 18, textAlign: "center", marginBottom: 16, fontFamily: "Oswald" }}> Preparing Your Experience </Text>
-              <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 14, textAlign: "center", fontFamily: "Oswald" }}>
+              <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 18, textAlign: "center", marginBottom: 16, fontFamily: "Merriweather" }}> Preparing Your Experience </Text>
+              <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 14, textAlign: "center", fontFamily: "Merriweather" }}>
                 After watching the ad, you&apos;ll be redirected to your selected content.
               </Text>
-              <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 18, textAlign: "center", marginTop: 16, fontFamily: "Oswald" }}>Redirecting in {countdown} seconds...</Text>
+              <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 18, textAlign: "center", marginTop: 16, fontFamily: "Merriweather" }}>Redirecting in {countdown} seconds...</Text>
             </View>
           )}
         </View>
