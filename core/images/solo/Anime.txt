@@ -1,20 +1,20 @@
 (Semi-Realism)
 ======| Anime Style Abstract
-Twilight Forest: A Vibrant Forest At Twilight, Illuminated By Glowing Bioluminescent Plants.  
-Misty Mountains: Snow-Capped Misty Mountains Under A Pastel-Colored Sunset Sky.  
-Crystal Lake: A Serene Crystal-Clear Lake Reflecting Surrounding Lush Green Forests Beautifully.  
-Ethereal Garden: An Ethereal Garden With Floating Flowers And Shimmering Light Particles.  
-Celestial Sky: A Celestial Sky Filled With Swirling Nebulae And Radiant Stars.  
-Hidden Waterfall: A Hidden Waterfall Cascading Over Moss-Covered Rocks Into A Tranquil Pool.  
-Golden Meadow: A Golden Meadow Swaying Gently Under Soft, Warm Sunlight.  
-Luminous Cave: An Underground Cave Glowing With Natural Luminescent Crystals And Minerals.  
-Silent Prairie: A Vast Silent Prairie Stretching Into The Horizon Under Clear Blue Sky.  
-Enchanted Grove: An Enchanted Grove With Ancient Trees And Sparkling Magical Lights.  
-Radiant Horizon: A Radiant Horizon Where The Sun Meets The Vibrant, Colorful Sky.  
-Mystic River: A Mystic River Winding Through Dense Forest With Sparkling Waters.  
-Aurora Forest: A Forest Under The Aurora Borealis With Vibrant Green Lights.  
-Serene Oasis: A Serene Oasis Surrounded By Desert Dunes And Lush Palm Trees.  
-Infinite Field: An Infinite Field Of Blooming Flowers Under A Bright, Expansive Sky.  
+    Twilight Forest: A Vibrant Forest At Twilight, Illuminated By Glowing Bioluminescent Plants.  
+    Misty Mountains: Snow-Capped Misty Mountains Under A Pastel-Colored Sunset Sky.  
+    Crystal Lake: A Serene Crystal-Clear Lake Reflecting Surrounding Lush Green Forests Beautifully.  
+    Ethereal Garden: An Ethereal Garden With Floating Flowers And Shimmering Light Particles.  
+    Celestial Sky: A Celestial Sky Filled With Swirling Nebulae And Radiant Stars.  
+    Hidden Waterfall: A Hidden Waterfall Cascading Over Moss-Covered Rocks Into A Tranquil Pool.  
+    Golden Meadow: A Golden Meadow Swaying Gently Under Soft, Warm Sunlight.  
+    Luminous Cave: An Underground Cave Glowing With Natural Luminescent Crystals And Minerals.  
+    Silent Prairie: A Vast Silent Prairie Stretching Into The Horizon Under Clear Blue Sky.  
+    Enchanted Grove: An Enchanted Grove With Ancient Trees And Sparkling Magical Lights.  
+    Radiant Horizon: A Radiant Horizon Where The Sun Meets The Vibrant, Colorful Sky.  
+    Mystic River: A Mystic River Winding Through Dense Forest With Sparkling Waters.  
+    Aurora Forest: A Forest Under The Aurora Borealis With Vibrant Green Lights.  
+    Serene Oasis: A Serene Oasis Surrounded By Desert Dunes And Lush Palm Trees.  
+    Infinite Field: An Infinite Field Of Blooming Flowers Under A Bright, Expansive Sky.  
 
 ======| Anime Style Aerial-View
 Skyward Peak: Snow-Covered Peak Visible From High Aerial Vantage Point.  

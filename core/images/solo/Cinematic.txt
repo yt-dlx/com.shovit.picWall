@@ -1,27 +1,27 @@
 (Moody)
 ======| Cinematic Style Abstract
-Radiant Dawn: Sunlight Piercing Through Abstract, Vibrant Morning Mist Landscape.  
-Shadowed Peaks: Dramatic Mountain Silhouettes Against A Twilight Abstract Sky.  
-Whispering Waves: Ocean Waves Blending Into Abstract, Colorful Horizon Seamlessly.  
-Mystic Fog: Dense Fog Swirling Around Abstract, Towering Forest Silhouettes.  
-Crimson Sunset: Bold Red Sunset Reflected On Abstract, Calm Lake Surface.  
-Golden Horizon: Expansive Golden Horizon Merging With Abstract, Cloud-Filled Sky.  
-Ethereal Lights: Soft, Ethereal Lights Dancing Over Abstract, Tranquil Waters.  
-Twilight Shadows: Long Shadows Stretching Across Abstract, Serene Meadow At Dusk.  
-Celestial Reflections: Starry Night Sky Mirrored In Abstract, Still River.  
-Vivid Aurora: Bright Aurora Borealis Illuminating Abstract, Snowy Mountain Landscape.  
+    Radiant Dawn: Sunlight Piercing Through Abstract, Vibrant Morning Mist Landscape.  
+    Shadowed Peaks: Dramatic Mountain Silhouettes Against A Twilight Abstract Sky.  
+    Whispering Waves: Ocean Waves Blending Into Abstract, Colorful Horizon Seamlessly.  
+    Mystic Fog: Dense Fog Swirling Around Abstract, Towering Forest Silhouettes.  
+    Crimson Sunset: Bold Red Sunset Reflected On Abstract, Calm Lake Surface.  
+    Golden Horizon: Expansive Golden Horizon Merging With Abstract, Cloud-Filled Sky.  
+    Ethereal Lights: Soft, Ethereal Lights Dancing Over Abstract, Tranquil Waters.  
+    Twilight Shadows: Long Shadows Stretching Across Abstract, Serene Meadow At Dusk.  
+    Celestial Reflections: Starry Night Sky Mirrored In Abstract, Still River.  
+    Vivid Aurora: Bright Aurora Borealis Illuminating Abstract, Snowy Mountain Landscape.  
 
 ======| Cinematic Style Aerial-View
-Mountain Majesty: Aerial View Of Majestic Mountains Covered In Lush Greenery.  
-Sunlit Valley: Golden Sunlight Illuminating Vast Valley From High Aerial Perspective.  
-Crystal Lake: Pristine Crystal-Clear Lake Nestled Within Dense, Green Forest.  
-Winding River: Meandering River Carving Through Expansive, Vibrant Aerial Landscape.  
-Autumn Canopy: Colorful Autumn Foliage Spread Out From A Bird's Eye View.  
-Desert Patterns: Intricate Desert Dune Patterns Visible From Elevated Aerial Vantage.  
-Tropical Island: Lush Tropical Island Surrounded By Clear, Azure Ocean Waters.  
-Snowy Ridge: Snow-Covered Ridge Lines Stretching Across Vast Aerial Mountain Range.  
-Lavender Fields: Endless Lavender Fields Blooming Under Bright, Sunny Aerial Sky.  
-Rolling Hills: Gentle Rolling Hills Creating A Serene, Picturesque Aerial Panorama.  
+    Mountain Majesty: Aerial View Of Majestic Mountains Covered In Lush Greenery.  
+    Sunlit Valley: Golden Sunlight Illuminating Vast Valley From High Aerial Perspective.  
+    Crystal Lake: Pristine Crystal-Clear Lake Nestled Within Dense, Green Forest.  
+    Winding River: Meandering River Carving Through Expansive, Vibrant Aerial Landscape.  
+    Autumn Canopy: Colorful Autumn Foliage Spread Out From A Bird's Eye View.  
+    Desert Patterns: Intricate Desert Dune Patterns Visible From Elevated Aerial Vantage.  
+    Tropical Island: Lush Tropical Island Surrounded By Clear, Azure Ocean Waters.  
+    Snowy Ridge: Snow-Covered Ridge Lines Stretching Across Vast Aerial Mountain Range.  
+    Lavender Fields: Endless Lavender Fields Blooming Under Bright, Sunny Aerial Sky.  
+    Rolling Hills: Gentle Rolling Hills Creating A Serene, Picturesque Aerial Panorama.  
 
 ======| Cinematic Style Cyberpunk
 Neon Forest: Forest Illuminated With Vibrant Neon Lights And Futuristic Elements.  
