@@ -246,7 +246,7 @@ const DownloadButton: React.FC<DownloadButtonProps> = memo(({ onDownload, colors
       style={{ marginTop: 8, borderRadius: 16, overflow: "hidden", backgroundColor: colorize(colors.primary, 0.4), minHeight: 44 }}
     >
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", padding: 12 }}>
-        <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 18, fontFamily: "Lobster" }}> Download Wallpaper </Text>
+        <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 18, fontFamily: "Lobster" }}> Download Current Wallpaper </Text>
         <FontAwesome5 name="download" size={15} color={colorize("#F4F4F5", 1.0)} style={{ marginHorizontal: 8 }} />
       </View>
     </TouchableOpacity>
