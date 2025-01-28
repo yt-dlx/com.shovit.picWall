@@ -78,7 +78,6 @@ const UpdateDialog: FC<{ serverVersion: string; currentVersion: string }> = memo
         />
       </View>
       <View style={{ alignItems: "center" }}>
-        {/* Updated font styles */}
         <Text style={{ margin: wp(6), fontSize: rf(36), fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}>Update Required</Text>
         <View style={{ marginBottom: hp(2), alignItems: "center" }}>
           <Text style={{ fontSize: rf(18), fontFamily: "Oswald", fontWeight: "400", color: colorize("#F4F4F5", 1.0) }}>- Current Version: {currentVersion}</Text>
@@ -98,7 +97,6 @@ const UpdateDialog: FC<{ serverVersion: string; currentVersion: string }> = memo
   );
 });
 UpdateDialog.displayName = "UpdateDialog";
-
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
 const ScrollingSlot = memo<ScrollingSlotProps>(({ images, delay }) => {
@@ -132,7 +130,6 @@ const ScrollingSlot = memo<ScrollingSlotProps>(({ images, delay }) => {
   );
 });
 ScrollingSlot.displayName = "ScrollingSlot";
-
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
 const AnimatedTitle = memo(() => {
@@ -193,7 +190,6 @@ const EntryPage = memo(() => {
             <AnimatedTitle />
             <Animated.View entering={FadeInDown.delay(600).duration(1500).springify()}>
               <View>
-                {/* Main title font update */}
                 <Text style={{ fontSize: rf(80), fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0), textAlign: "center" }}>picWall</Text>
                 <Animated.View style={{ alignSelf: "center" }} entering={FadeInDown.delay(600).duration(1500).springify()}>
                   <View style={{ borderRadius: wp(50), paddingHorizontal: wp(3), paddingVertical: hp(0.5), backgroundColor: colorize("#111111", 0.9) }}>
@@ -204,18 +200,16 @@ const EntryPage = memo(() => {
                 </Animated.View>
               </View>
               <Link href="./Home" asChild>
-                <TouchableOpacity onPressIn={onPressIn} onPressOut={onPressOut} style={{ marginTop: hp(22), borderRadius: wp(12), overflow: "hidden", minWidth: wp(60), minHeight: hp(7) }}>
+                <TouchableOpacity onPressIn={onPressIn} onPressOut={onPressOut} style={{ marginTop: hp(22), borderRadius: wp(12), overflow: "hidden", minWidth: wp(60), minHeight: hp(6) }}>
                   <View style={{ shadowColor: colorize("#111111", 1.0), shadowOffset: { width: 0, height: hp(0.5) } }}>
-                    <View style={{ paddingVertical: hp(2), flexDirection: "row", alignItems: "center", justifyContent: "center", backgroundColor: colorize("#F4F4F5", 1.0) }}>
+                    <View style={{ paddingVertical: hp(1.5), flexDirection: "row", alignItems: "center", justifyContent: "center", backgroundColor: colorize("#F4F4F5", 1.0), gap: wp(2) }}>
                       <FontAwesome5 name="camera-retro" size={rf(32)} color={colorize("#111111", 1.0)} />
-                      {/* Button text font update */}
-                      <Text style={{ fontSize: rf(30), fontFamily: "Lobster", color: colorize("#111111", 1.0) }}>Let's Explore</Text>
+                      <Text style={{ fontSize: rf(30), fontFamily: "Lobster", fontWeight: "600", color: colorize("#111111", 1.0) }}>Let's Explore</Text>
                     </View>
                   </View>
                 </TouchableOpacity>
               </Link>
               <Animated.View entering={FadeIn.delay(1200).duration(1500)} style={{ marginTop: hp(1.5), paddingHorizontal: wp(5), alignItems: "center" }}>
-                {/* Subtext font updates */}
                 <Text style={{ fontFamily: "Oswald", fontWeight: "600", color: colorize("#FF000D", 1.0), fontSize: rf(15), marginBottom: hp(0.5) }}>Perfect AI Wallpapers, Every Day!</Text>
                 <Text style={{ fontFamily: "Oswald", fontWeight: "400", color: colorize("#F4F4F5", 0.9), fontSize: rf(10), maxWidth: wp(80) }}>
                   Transform your screens with stunning, AI-curated wallpapers tailored to your style. Explore breathtaking collections, share your favorite moments, and discover awe-inspiring
