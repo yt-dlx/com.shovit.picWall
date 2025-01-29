@@ -36,64 +36,64 @@
     Neon Cliffs: Dramatic Cliffs Bathed In Vibrant Neon Lighting And Colors.  
 
 ======| Cinematic Style Dusk-Life
-Twilight Lake: Lake Shimmering Under The Soft Hues Of Dusk Sky.  
-Evening Forest: Forest Scene Illuminated By The Warm Glow Of Evening Light.  
-Sunset Ridge: Ridge Silhouetted Against A Vibrant, Colorful Sunset Backdrop.  
-Dusky Beach: Serene Beach Scene Under The Fading Light Of Dusk.  
-Golden Dunes: Desert Dunes Glowing Warmly As The Sun Sets.  
-Evening Mountains: Mountains Bathed In The Rich Colors Of Evening Twilight.  
-Twilight River: River Reflecting The Stunning Colors Of The Dusky Sky.  
-Sunset Orchard: Orchard Trees Silhouetted Against A Breathtaking Sunset.  
-Dusky Meadow: Meadow Softly Lit By The Gentle Light Of Dusk.  
-Evening Cliffs: Cliffs Highlighted By The Dramatic Colors Of The Setting Sun.  
+    Twilight Lake: Lake Shimmering Under The Soft Hues Of Dusk Sky.  
+    Evening Forest: Forest Scene Illuminated By The Warm Glow Of Evening Light.  
+    Sunset Ridge: Ridge Silhouetted Against A Vibrant, Colorful Sunset Backdrop.  
+    Dusky Beach: Serene Beach Scene Under The Fading Light Of Dusk.  
+    Golden Dunes: Desert Dunes Glowing Warmly As The Sun Sets.  
+    Evening Mountains: Mountains Bathed In The Rich Colors Of Evening Twilight.  
+    Twilight River: River Reflecting The Stunning Colors Of The Dusky Sky.  
+    Sunset Orchard: Orchard Trees Silhouetted Against A Breathtaking Sunset.  
+    Dusky Meadow: Meadow Softly Lit By The Gentle Light Of Dusk.  
+    Evening Cliffs: Cliffs Highlighted By The Dramatic Colors Of The Setting Sun.  
 
 ======| Cinematic Style Ethereal
-Moonlit Forest: Forest Glowing With An Ethereal Moonlight Under Starry Sky.  
-Ghostly Lake: Mist-Covered Lake Emanating An Otherworldly, Ethereal Ambiance.  
-Spirit Grove: Enchanted Grove Filled With Soft, Ethereal Light And Shadows.  
-Mystic Waterfall: Waterfall Cascading With A Translucent, Ethereal Shimmer.  
-Celestial Garden: Garden Illuminated By Celestial, Ethereal Lights And Soft Glow.  
-Luminous Marsh: Marshland Shimmering With Ethereal, Glowing Plant Life At Night.  
-Dreamy Valley: Valley Enveloped In A Dreamy, Ethereal Morning Mist.  
-Ethereal Peaks: Mountain Peaks Bathed In A Surreal, Ethereal Light.  
-Spectral River: River Flowing Through An Ethereal, Misty Landscape.  
-Aurora Grove: Grove Under The Mesmerizing Glow Of An Ethereal Aurora.  
+    Moonlit Forest: Forest Glowing With An Ethereal Moonlight Under Starry Sky.  
+    Ghostly Lake: Mist-Covered Lake Emanating An Otherworldly, Ethereal Ambiance.  
+    Spirit Grove: Enchanted Grove Filled With Soft, Ethereal Light And Shadows.  
+    Mystic Waterfall: Waterfall Cascading With A Translucent, Ethereal Shimmer.  
+    Celestial Garden: Garden Illuminated By Celestial, Ethereal Lights And Soft Glow.  
+    Luminous Marsh: Marshland Shimmering With Ethereal, Glowing Plant Life At Night.  
+    Dreamy Valley: Valley Enveloped In A Dreamy, Ethereal Morning Mist.  
+    Ethereal Peaks: Mountain Peaks Bathed In A Surreal, Ethereal Light.  
+    Spectral River: River Flowing Through An Ethereal, Misty Landscape.  
+    Aurora Grove: Grove Under The Mesmerizing Glow Of An Ethereal Aurora.  
 
 ======| Cinematic Style Landscapes
-Majestic Mountains: Towering Mountains Under A Clear, Expansive Blue Sky.  
-Serene Lake: Calm Lake Reflecting Surrounding Lush Green Forests And Mountains.  
-Sunlit Beach: Pristine Beach With Golden Sands And Sparkling Turquoise Waters.  
-Autumn Forest: Vibrant Forest Displaying Rich Autumn Foliage And Serene Paths.  
-Rocky Cliffs: Dramatic Rocky Cliffs Overlooking A Vast, Endless Ocean.  
-Verdant Valley: Green Valley Nestled Between Towering, Majestic Mountain Ranges.  
-Desert Oasis: Lush Oasis Surrounded By Expansive, Arid Desert Sands.  
-Snowy Peaks: Snow-Covered Mountain Peaks Piercing Through A Clear Winter Sky.  
-Flower Meadow: Colorful Meadow Bursting With A Variety Of Blooming Wildflowers.  
-Starry Night: Open Landscape Under A Breathtaking, Star-Filled Night Sky.  
+    Majestic Mountains: Towering Mountains Under A Clear, Expansive Blue Sky.  
+    Serene Lake: Calm Lake Reflecting Surrounding Lush Green Forests And Mountains.  
+    Sunlit Beach: Pristine Beach With Golden Sands And Sparkling Turquoise Waters.  
+    Autumn Forest: Vibrant Forest Displaying Rich Autumn Foliage And Serene Paths.  
+    Rocky Cliffs: Dramatic Rocky Cliffs Overlooking A Vast, Endless Ocean.  
+    Verdant Valley: Green Valley Nestled Between Towering, Majestic Mountain Ranges.  
+    Desert Oasis: Lush Oasis Surrounded By Expansive, Arid Desert Sands.  
+    Snowy Peaks: Snow-Covered Mountain Peaks Piercing Through A Clear Winter Sky.  
+    Flower Meadow: Colorful Meadow Bursting With A Variety Of Blooming Wildflowers.  
+    Starry Night: Open Landscape Under A Breathtaking, Star-Filled Night Sky.  
 
 ======| Cinematic Style Minimalism
-Silent Lake: Tranquil Lake With Minimalistic Shoreline And Calm Waters.  
-Empty Meadow: Vast Meadow With Sparse Vegetation Under A Clear Sky.  
-Bare Mountain: Simplistic Mountain Silhouette Against A Minimalist, Soft Background.  
-Calm River: Smooth River Flowing Through A Minimalistic, Open Landscape.  
-Sparse Forest: Few Trees Scattered In A Minimalist, Expansive Field.  
-Lone Tree: Single Tree Standing In A Vast, Empty Minimalist Setting.  
-Minimal Beach: Clean Beach With Minimal Elements And Wide Open Horizon.  
-Quiet Desert: Simple Desert Scene With Undulating Dunes And Clear Sky.  
-Simple Cliff: Stark Cliff Edge With Minimal Surrounding Natural Details.  
-Bare Hills: Rolling Hills With Minimal Vegetation Under A Soft Sky.  
+    Silent Lake: Tranquil Lake With Minimalistic Shoreline And Calm Waters.  
+    Empty Meadow: Vast Meadow With Sparse Vegetation Under A Clear Sky.  
+    Bare Mountain: Simplistic Mountain Silhouette Against A Minimalist, Soft Background.  
+    Calm River: Smooth River Flowing Through A Minimalistic, Open Landscape.  
+    Sparse Forest: Few Trees Scattered In A Minimalist, Expansive Field.  
+    Lone Tree: Single Tree Standing In A Vast, Empty Minimalist Setting.  
+    Minimal Beach: Clean Beach With Minimal Elements And Wide Open Horizon.  
+    Quiet Desert: Simple Desert Scene With Undulating Dunes And Clear Sky.  
+    Simple Cliff: Stark Cliff Edge With Minimal Surrounding Natural Details.  
+    Bare Hills: Rolling Hills With Minimal Vegetation Under A Soft Sky.  
 
 ======| Cinematic Style Nature
-Majestic Waterfall: Powerful Waterfall Cascading Over Rugged Natural Rocks Gracefully.  
-Ancient Forest: Dense Forest With Towering Ancient Trees And Lush Undergrowth.  
-Blooming Garden: Vibrant Garden Bursting With Diverse Colorful Flowers And Plants.  
-Rocky Shore: Rugged Shoreline With Natural Rock Formations And Crashing Waves.  
-Serene Pond: Peaceful Pond Surrounded By Greenery And Calm, Clear Water.  
-Verdant Hills: Rolling Green Hills Under A Bright, Clear Sky.  
-Tropical Rainforest: Lush Rainforest Teeming With Diverse Plant Life And Greenery.  
-Crystal Stream: Clear, Sparkling Stream Flowing Through A Natural, Scenic Landscape.  
-Desert Bloom: Desert Landscape With Rare Blooming Flowers And Cacti.  
-Snowy Forest: Snow-Covered Forest With Tall, Silent Trees And Pristine Snow.  
+    Majestic Waterfall: Powerful Waterfall Cascading Over Rugged Natural Rocks Gracefully.  
+    Ancient Forest: Dense Forest With Towering Ancient Trees And Lush Undergrowth.  
+    Blooming Garden: Vibrant Garden Bursting With Diverse Colorful Flowers And Plants.  
+    Rocky Shore: Rugged Shoreline With Natural Rock Formations And Crashing Waves.  
+    Serene Pond: Peaceful Pond Surrounded By Greenery And Calm, Clear Water.  
+    Verdant Hills: Rolling Green Hills Under A Bright, Clear Sky.  
+    Tropical Rainforest: Lush Rainforest Teeming With Diverse Plant Life And Greenery.  
+    Crystal Stream: Clear, Sparkling Stream Flowing Through A Natural, Scenic Landscape.  
+    Desert Bloom: Desert Landscape With Rare Blooming Flowers And Cacti.  
+    Snowy Forest: Snow-Covered Forest With Tall, Silent Trees And Pristine Snow.  
 
 ======| Cinematic Style Night-Life
 Starry Sky: Clear Night Sky Filled With Countless Shimmering Stars Above.  
