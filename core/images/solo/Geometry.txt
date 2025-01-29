@@ -48,28 +48,28 @@
     Tessellated Twilight: Twilight Sky Filled With Tessellated Geometric Cloud Formations.  
 
 ======| Geometry Style Ethereal
-Crystal Geometry: Ethereal Crystals Forming Geometric Patterns In A Mystical Forest.  
-Geometric Mist: Mist Swirling In Precise Geometric Shapes Over A Serene Lake.  
-Symmetric Spirits: Ethereal Spirits Arranged In Symmetrical Geometric Formations.  
-Fractal Fog: Fog Creating Fractal Geometric Patterns In An Enchanted Grove.  
-Radial Radiance: Radiant Light Emanating From Geometric Shapes In Ethereal Landscape.  
-Polygonal Lights: Soft Polygonal Lights Floating Above An Ethereal Meadow.  
-Geometric Glimmer: Glimmering Geometric Shapes Reflecting In A Magical Pond.  
-Tessellated Twilight: Twilight Scene With Tessellated Geometric Light Patterns.  
-Angular Aura: Aura Surrounding Trees With Angular Geometric Light Beams.  
-Symmetric Spirits: Spirits Arranged In Perfect Geometric Symmetry Within Ethereal Forest.  
+    Crystal Geometry: Ethereal Crystals Forming Geometric Patterns In A Mystical Forest.  
+    Geometric Mist: Mist Swirling In Precise Geometric Shapes Over A Serene Lake.  
+    Symmetric Spirits: Ethereal Spirits Arranged In Symmetrical Geometric Formations.  
+    Fractal Fog: Fog Creating Fractal Geometric Patterns In An Enchanted Grove.  
+    Radial Radiance: Radiant Light Emanating From Geometric Shapes In Ethereal Landscape.  
+    Polygonal Lights: Soft Polygonal Lights Floating Above An Ethereal Meadow.  
+    Geometric Glimmer: Glimmering Geometric Shapes Reflecting In A Magical Pond.  
+    Tessellated Twilight: Twilight Scene With Tessellated Geometric Light Patterns.  
+    Angular Aura: Aura Surrounding Trees With Angular Geometric Light Beams.  
+    Symmetric Spirits: Spirits Arranged In Perfect Geometric Symmetry Within Ethereal Forest.  
 
 ======| Geometry Style Landscapes
-Hexagon Hills: Rolling Hills Formed Into Hexagonal Geometric Patterns.  
-Polygonal Prairie: Prairie Landscape Divided Into Colorful Polygonal Geometric Sections.  
-Symmetric Stream: Stream Flowing In A Symmetric Geometric Pattern Through Meadow.  
-Geometric Grove: Grove Of Trees Arranged In Precise Geometric Formations.  
-Fractal Fields: Fields Displaying Fractal Geometric Patterns In Natural Scenery.  
-Tessellated Terrain: Terrain Covered With Tessellated Geometric Shapes And Colors.  
-Radial River: River Flowing In A Radial Geometric Design Across Landscape.  
-Angular Archipelago: Island Archipelago Arranged In Angular Geometric Formations.  
-Linear Lake: Lake Segmented Into Linear Geometric Sections And Reflections.  
-Circular Canyon: Canyon Carved Into Circular Geometric Patterns Within Mountains.  
+    Hexagon Hills: Rolling Hills Formed Into Hexagonal Geometric Patterns.  
+    Polygonal Prairie: Prairie Landscape Divided Into Colorful Polygonal Geometric Sections.  
+    Symmetric Stream: Stream Flowing In A Symmetric Geometric Pattern Through Meadow.  
+    Geometric Grove: Grove Of Trees Arranged In Precise Geometric Formations.  
+    Fractal Fields: Fields Displaying Fractal Geometric Patterns In Natural Scenery.  
+    Tessellated Terrain: Terrain Covered With Tessellated Geometric Shapes And Colors.  
+    Radial River: River Flowing In A Radial Geometric Design Across Landscape.  
+    Angular Archipelago: Island Archipelago Arranged In Angular Geometric Formations.  
+    Linear Lake: Lake Segmented Into Linear Geometric Sections And Reflections.  
+    Circular Canyon: Canyon Carved Into Circular Geometric Patterns Within Mountains.  
 
 ======| Geometry Style Minimalism
 Simple Shapes: Minimalist Landscape With Basic Geometric Shapes And Open Space.  
