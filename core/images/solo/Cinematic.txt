@@ -96,40 +96,40 @@
     Snowy Forest: Snow-Covered Forest With Tall, Silent Trees And Pristine Snow.  
 
 ======| Cinematic Style Night-Life
-Starry Sky: Clear Night Sky Filled With Countless Shimmering Stars Above.  
-Moonlit Lake: Calm Lake Illuminated By The Soft Glow Of The Moonlight.  
-Night Forest: Dark Forest Scene With Moonlight Filtering Through Dense Trees.  
-Glowing Path: Pathway Illuminated By Subtle, Glowing Lights Under Night Sky.  
-Twilight Beach: Beach Scene Under The Stars With Gentle Moonlight Waves.  
-Night Mountains: Silhouetted Mountain Range Against A Deep, Star-Filled Night Sky.  
-Luminous Pond: Pond Reflecting The Moonlight And Surrounding Night Flora.  
-Nocturnal Meadow: Meadow Alive With Nocturnal Plants And Subtle Night Illumination.  
-Celestial River: River Reflecting The Stars And Moon In A Serene Night Setting.  
-Dark Orchard: Orchard Trees Silhouetted Against A Dark, Starry Night Sky.  
+    Starry Sky: Clear Night Sky Filled With Countless Shimmering Stars Above.  
+    Moonlit Lake: Calm Lake Illuminated By The Soft Glow Of The Moonlight.  
+    Night Forest: Dark Forest Scene With Moonlight Filtering Through Dense Trees.  
+    Glowing Path: Pathway Illuminated By Subtle, Glowing Lights Under Night Sky.  
+    Twilight Beach: Beach Scene Under The Stars With Gentle Moonlight Waves.  
+    Night Mountains: Silhouetted Mountain Range Against A Deep, Star-Filled Night Sky.  
+    Luminous Pond: Pond Reflecting The Moonlight And Surrounding Night Flora.  
+    Nocturnal Meadow: Meadow Alive With Nocturnal Plants And Subtle Night Illumination.  
+    Celestial River: River Reflecting The Stars And Moon In A Serene Night Setting.  
+    Dark Orchard: Orchard Trees Silhouetted Against A Dark, Starry Night Sky.  
 
 ======| Cinematic Style Rain
-Rainy Forest: Dense Forest Scene With Heavy Rain And Lush Greenery.  
-Stormy Lake: Lake Under A Heavy Rainstorm With Dark, Cloudy Skies.  
-Rainy Meadow: Meadow Soaked In Rain With Droplets On Vibrant Flowers.  
-Wet Path: Muddy Path Glistening Under Steady Rain In A Natural Setting.  
-Rainfall Stream: Stream Flowing Vigorously Under Continuous Rain In Forest.  
-Rainy Cliff: Cliffs Drenched In Rain With Turbulent Waves Below.  
-Stormy Mountains: Mountain Range Under A Fierce Rainstorm With Dark Clouds.  
-Rainy Orchard: Orchard Trees Laden With Rain And Glistening Foliage.  
-Rainy Garden: Garden Scene With Rain-Soaked Plants And Puddles Forming.  
-Rainy Prairie: Prairie Landscape Under Steady Rain With Wet Grasses Swaying.  
+    Rainy Forest: Dense Forest Scene With Heavy Rain And Lush Greenery.  
+    Stormy Lake: Lake Under A Heavy Rainstorm With Dark, Cloudy Skies.  
+    Rainy Meadow: Meadow Soaked In Rain With Droplets On Vibrant Flowers.  
+    Wet Path: Muddy Path Glistening Under Steady Rain In A Natural Setting.  
+    Rainfall Stream: Stream Flowing Vigorously Under Continuous Rain In Forest.  
+    Rainy Cliff: Cliffs Drenched In Rain With Turbulent Waves Below.  
+    Stormy Mountains: Mountain Range Under A Fierce Rainstorm With Dark Clouds.  
+    Rainy Orchard: Orchard Trees Laden With Rain And Glistening Foliage.  
+    Rainy Garden: Garden Scene With Rain-Soaked Plants And Puddles Forming.  
+    Rainy Prairie: Prairie Landscape Under Steady Rain With Wet Grasses Swaying.  
 
 ======| Cinematic Style Season
-Spring Blossom: Cherry Trees In Full Bloom During Vibrant Spring Season.  
-Summer Beach: Sunny Beach Scene With Clear Skies And Warm Sands.  
-Autumn Leaves: Forest Covered In Colorful Autumn Leaves And Soft Light.  
-Winter Snowfall: Snow-Covered Landscape Under A Serene Winter Sky.  
-Spring Meadow: Blooming Meadow With Fresh Green Grass And Spring Flowers.  
-Summer Forest: Lush Green Forest Thriving Under The Bright Summer Sun.  
-Autumn Orchard: Orchard Trees Heavy With Colorful Autumn Fruits And Leaves.  
-Winter Lake: Frozen Lake Surrounded By Snow-Covered Trees And Hills.  
-Spring Rain: Gentle Spring Rain Nourishing Blooming Flowers And Green Foliage.  
-Summer Sunset: Bright Sunset Casting Warm Colors Over Summer Landscape.  
+    Spring Blossom: Cherry Trees In Full Bloom During Vibrant Spring Season.  
+    Summer Beach: Sunny Beach Scene With Clear Skies And Warm Sands.  
+    Autumn Leaves: Forest Covered In Colorful Autumn Leaves And Soft Light.  
+    Winter Snowfall: Snow-Covered Landscape Under A Serene Winter Sky.  
+    Spring Meadow: Blooming Meadow With Fresh Green Grass And Spring Flowers.  
+    Summer Forest: Lush Green Forest Thriving Under The Bright Summer Sun.  
+    Autumn Orchard: Orchard Trees Heavy With Colorful Autumn Fruits And Leaves.  
+    Winter Lake: Frozen Lake Surrounded By Snow-Covered Trees And Hills.  
+    Spring Rain: Gentle Spring Rain Nourishing Blooming Flowers And Green Foliage.  
+    Summer Sunset: Bright Sunset Casting Warm Colors Over Summer Landscape.  
 
 ======| Cinematic Style Serene
 Calm Lake: Tranquil Lake Reflecting Clear Skies And Surrounding Nature.  
