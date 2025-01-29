@@ -59,14 +59,14 @@ const SuccessModal: React.FC<{ visible: boolean; message: string; onClose: () =>
   if (!visible) return null;
   return (
     <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center" }}>
-      <Animated.View style={[{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#171819", 0.5) }, backdropStyle]} />
-      <Animated.View style={[{ width: "80%", borderRadius: 24, padding: 20, borderWidth: 4, backgroundColor: colorize("#171819", 1.0), borderColor: colorize("#25BE8B", 1.0) }, modalStyle]}>
+      <Animated.View style={[{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#111111", 0.5) }, backdropStyle]} />
+      <Animated.View style={[{ width: "80%", borderRadius: 24, padding: 20, borderWidth: 4, backgroundColor: colorize("#111111", 1.0), borderColor: colorize("#25BE8B", 1.0) }, modalStyle]}>
         <View style={{ alignItems: "center" }}>
           <Ionicons name="checkmark-done-circle" size={50} color={colorize("#25BE8B", 1.0)} />
           <Text style={{ marginTop: 10, fontSize: 48, fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}> Success </Text>
           <Text style={{ marginVertical: 10, textAlign: "center", fontSize: 18, fontFamily: "RobotoCondensed", color: colorize("#F4F4F5", 1.0) }}> {message} </Text>
           <TouchableOpacity
-            style={{ marginTop: 10, paddingHorizontal: 20, paddingVertical: 12, borderRadius: 16, overflow: "hidden", backgroundColor: colorize("#25BE8B", 0.4), minWidth: 120, minHeight: 44 }}
+            style={{ marginTop: 10, paddingHorizontal: 20, paddingVertical: 12, borderRadius: 15, overflow: "hidden", backgroundColor: colorize("#25BE8B", 0.4), minWidth: 120, minHeight: 44 }}
             onPress={onClose}
             accessibilityLabel="Close success modal"
           >
@@ -92,14 +92,14 @@ const ErrorModal: React.FC<{ visible: boolean; message: string; onClose: () => v
   if (!visible) return null;
   return (
     <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center" }}>
-      <Animated.View style={[{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#171819", 0.5) }, backdropStyle]} />
-      <Animated.View style={[{ width: "80%", borderRadius: 24, padding: 20, borderWidth: 4, backgroundColor: colorize("#171819", 1.0), borderColor: colorize("#F4F4F5", 1.0) }, modalStyle]}>
+      <Animated.View style={[{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#111111", 0.5) }, backdropStyle]} />
+      <Animated.View style={[{ width: "80%", borderRadius: 24, padding: 20, borderWidth: 4, backgroundColor: colorize("#111111", 1.0), borderColor: colorize("#F4F4F5", 1.0) }, modalStyle]}>
         <View style={{ alignItems: "center" }}>
           <MaterialIcons name="error" size={50} color={colorize("#F4F4F5", 1.0)} />
           <Text style={{ marginTop: 10, fontSize: 48, fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}> Error </Text>
           <Text style={{ marginVertical: 10, textAlign: "center", fontSize: 18, fontFamily: "RobotoCondensed", color: colorize("#F4F4F5", 1.0) }}> {message} </Text>
           <TouchableOpacity
-            style={{ marginTop: 10, paddingHorizontal: 20, paddingVertical: 12, borderRadius: 16, overflow: "hidden", backgroundColor: colorize("#F4F4F5", 0.4), minWidth: 120, minHeight: 44 }}
+            style={{ marginTop: 10, paddingHorizontal: 20, paddingVertical: 12, borderRadius: 15, overflow: "hidden", backgroundColor: colorize("#F4F4F5", 0.4), minWidth: 120, minHeight: 44 }}
             onPress={onClose}
             accessibilityLabel="Close error modal"
           >
@@ -135,8 +135,8 @@ const DownloadingModal: React.FC<{ visible: boolean; percentage: number; downloa
     if (!visible) return null;
     return (
       <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center" }}>
-        <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#171819", 0.5) }} />
-        <View style={{ width: "80%", borderRadius: 24, padding: 20, borderWidth: 4, backgroundColor: colorize("#171819", 1.0), borderColor: colorize(primaryColor, 1.0) }}>
+        <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#111111", 0.5) }} />
+        <View style={{ width: "80%", borderRadius: 24, padding: 20, borderWidth: 4, backgroundColor: colorize("#111111", 1.0), borderColor: colorize(primaryColor, 1.0) }}>
           <View style={{ alignItems: "center" }}>
             <MaterialIcons name="cloud-download" size={50} color={colorize(primaryColor, 1.0)} />
             <Text style={{ marginTop: 10, fontSize: 48, fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}> Downloading.</Text>
@@ -174,7 +174,7 @@ const PreviewImage: React.FC<{ selectedImage: ImageMetadata; screenWidth: number
   return (
     <View style={{ position: "relative" }}>
       {imageLoading && (
-        <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center", backgroundColor: colorize("#171819", 1.0), zIndex: 40 }}>
+        <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center", backgroundColor: colorize("#111111", 1.0), zIndex: 40 }}>
           <ActivityIndicator size="large" color={colorize(selectedImage.primary, 1.0)} accessibilityLabel="Loading image" />
           <Text style={{ marginTop: 10, fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}> Loading HD Image Preview... </Text>
         </View>
@@ -198,21 +198,21 @@ const PreviewImage: React.FC<{ selectedImage: ImageMetadata; screenWidth: number
         activeOpacity={0.8}
         onPress={onViewFullScreen}
         style={{
-          position: "absolute",
-          bottom: 8,
           left: 16,
           right: 16,
-          paddingHorizontal: 16,
+          bottom: 8,
+          zIndex: 50,
+          minHeight: 44,
+          borderWidth: 2,
+          borderRadius: 20,
           paddingVertical: 12,
+          position: "absolute",
           flexDirection: "row",
           alignItems: "center",
+          paddingHorizontal: 16,
           justifyContent: "center",
-          backgroundColor: colorize(selectedImage.secondary, 0.9),
           borderColor: colorize(selectedImage.primary, 1.0),
-          borderRadius: 20,
-          borderWidth: 2,
-          zIndex: 50,
-          minHeight: 44
+          backgroundColor: colorize(selectedImage.secondary, 0.9)
         }}
         accessibilityLabel="Set as wallpaper"
       >
@@ -243,7 +243,7 @@ const DownloadButton: React.FC<DownloadButtonProps> = memo(({ onDownload, colors
       activeOpacity={0.8}
       onPress={onDownload}
       accessibilityLabel="Download wallpaper"
-      style={{ marginTop: 8, borderRadius: 16, overflow: "hidden", backgroundColor: colorize(colors.primary, 0.4), minHeight: 44 }}
+      style={{ marginTop: 8, borderRadius: 15, overflow: "hidden", backgroundColor: colorize(colors.primary, 0.4), minHeight: 44 }}
     >
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", padding: 12 }}>
         <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 18, fontFamily: "Lobster" }}> Download Current Wallpaper </Text>
@@ -255,7 +255,7 @@ const DownloadButton: React.FC<DownloadButtonProps> = memo(({ onDownload, colors
 DownloadButton.displayName = "DownloadButton";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
-const OtherImages: React.FC<OtherImagesProps> = memo(({ otherImages, setCurrentIndex, primaryColor, tertiaryColor, currentIndex, selectedFileName }) => {
+const SubImages: React.FC<OtherImagesProps> = memo(({ otherImages, setCurrentIndex, primaryColor, tertiaryColor, currentIndex, selectedFileName }) => {
   const uniqueImages = useMemo(() => {
     const uniqueFileNames = new Set<string>();
     return otherImages.filter(({ img, idx }) => {
@@ -266,32 +266,29 @@ const OtherImages: React.FC<OtherImagesProps> = memo(({ otherImages, setCurrentI
     });
   }, [otherImages, selectedFileName]);
   return (
-    <View style={{ padding: 4, marginVertical: 8, borderRadius: 16, backgroundColor: colorize(primaryColor, 0.2) }}>
-      <View style={{ padding: 4, borderRadius: 16, backgroundColor: colorize(tertiaryColor, 0.2) }}>
-        <Text style={{ marginLeft: 8, fontSize: 20, fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}> Other Wallpapers: </Text>
-        <View style={{ flexDirection: "row", flexWrap: "wrap", marginVertical: 4 }}>
-          {uniqueImages.map(({ img, idx }) => {
-            const lowResLink = createPreviewLink(img);
-            return (
-              <TouchableOpacity
-                key={idx}
-                style={{ position: "relative", borderRadius: 10, overflow: "hidden", marginHorizontal: 2, flex: 1, aspectRatio: 9 / 16, borderWidth: 1, borderColor: colorize(primaryColor, 1.0) }}
-                onPress={() => setCurrentIndex(idx)}
-                accessibilityLabel={`Select wallpaper ${img.original_file_name}`}
-              >
-                <Image alt={`WallpaperThumbnail${lowResLink}`} source={{ uri: lowResLink }} style={{ width: "100%", height: "100%" }} contentFit="cover" />
-                <View style={{ position: "absolute", top: 4, left: 4, backgroundColor: colorize("#171819", 0.5), paddingHorizontal: 4, paddingVertical: 4, borderRadius: 8 }}>
-                  <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 12, fontFamily: "RobotoCondensed" }}> {img.original_file_name.replace(".jpg", "")} </Text>
-                </View>
-              </TouchableOpacity>
-            );
-          })}
-        </View>
+    <View style={{ padding: 4, marginVertical: 8, borderRadius: 15 }}>
+      <View style={{ flexDirection: "row", flexWrap: "wrap", marginVertical: 4 }}>
+        {uniqueImages.map(({ img, idx }) => {
+          const lowResLink = createPreviewLink(img);
+          return (
+            <TouchableOpacity
+              key={idx}
+              style={{ position: "relative", borderRadius: 15, overflow: "hidden", marginHorizontal: 2, flex: 1, aspectRatio: 9 / 16, borderWidth: 2, borderColor: colorize(primaryColor, 1.0) }}
+              onPress={() => setCurrentIndex(idx)}
+              accessibilityLabel={`SelectWallpaper${img.original_file_name}`}
+            >
+              <Image alt={`WallpaperThumbnail${lowResLink}`} source={{ uri: lowResLink }} style={{ width: "100%", height: "100%" }} contentFit="cover" />
+              <View style={{ position: "absolute", top: 4, left: 4, backgroundColor: colorize("#111111", 0.5), paddingHorizontal: 4, paddingVertical: 4, borderRadius: 8 }}>
+                <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 12, fontFamily: "RobotoCondensed" }}> {img.original_file_name.replace(".jpg", "")} </Text>
+              </View>
+            </TouchableOpacity>
+          );
+        })}
       </View>
     </View>
   );
 });
-OtherImages.displayName = "OtherImages";
+SubImages.displayName = "SubImages";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
 const WallModal: React.FC<WallModalProps> = memo(({ visible, onComplete, onCancel, wallType, primaryColor }) => {
@@ -326,8 +323,8 @@ const WallModal: React.FC<WallModalProps> = memo(({ visible, onComplete, onCance
   if (!visible) return null;
   return (
     <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center" }}>
-      <Animated.View style={[{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#171819", 0.5) }, backdropStyle]} />
-      <Animated.View style={[{ width: "80%", borderRadius: 24, padding: 20, borderWidth: 4, backgroundColor: colorize("#171819", 1.0), borderColor: colorize(primaryColor, 1.0) }, modalStyle]}>
+      <Animated.View style={[{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#111111", 0.5) }, backdropStyle]} />
+      <Animated.View style={[{ width: "80%", borderRadius: 24, padding: 20, borderWidth: 4, backgroundColor: colorize("#111111", 1.0), borderColor: colorize(primaryColor, 1.0) }, modalStyle]}>
         <View style={{ alignItems: "center" }}>
           <MaterialIcons name="warning" size={50} color={colorize(primaryColor, 1.0)} />
           <Text style={{ marginTop: 10, fontSize: 48, fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}>
@@ -338,12 +335,12 @@ const WallModal: React.FC<WallModalProps> = memo(({ visible, onComplete, onCance
           </Text>
           <Text style={{ marginVertical: 16, fontSize: 48, fontFamily: "RobotoCondensed", color: colorize("#F4F4F5", 1.0) }}> {countdown} </Text>
           <TouchableOpacity
-            style={{ marginTop: 10, paddingHorizontal: 20, paddingVertical: 12, borderRadius: 16, overflow: "hidden", backgroundColor: colorize(primaryColor, 0.4), minWidth: 120, minHeight: 44 }}
+            style={{ marginTop: 10, paddingHorizontal: 20, paddingVertical: 12, borderRadius: 15, overflow: "hidden", backgroundColor: colorize(primaryColor, 0.4), minWidth: 120, minHeight: 44 }}
             onPress={() => {
               clearInterval(countdownRef.current);
               onCancel();
             }}
-            accessibilityLabel="Cancel wallpaper setting"
+            accessibilityLabel="CancelWallpaperSetting"
           >
             <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 18, fontFamily: "Lobster" }}> Cancel </Text>
           </TouchableOpacity>
@@ -365,14 +362,12 @@ const FullScreenView: React.FC<FullScreenViewProps> = memo(({ isFullScreen, setI
   }, [selectedIndex, data, environment_title]);
   const handleWallpaperSet = useCallback(async () => {
     await saveCurrentState();
-    const lowResLink = createPreviewLink(selectedImage);
-    const highResLink = lowResLink.replace("min", "max");
-    await setWallpaper({ uri: highResLink }, TYPE_SCREEN[wallType]);
+    await setWallpaper({ uri: createPreviewLink(selectedImage).replace("min", "max") }, TYPE_SCREEN[wallType]);
     setShowWallModal(false);
   }, [saveCurrentState, selectedImage, wallType]);
   return (
     <Modal visible={isFullScreen} transparent={false} onRequestClose={() => setIsFullScreen(false)} presentationStyle="fullScreen" statusBarTranslucent>
-      <View style={{ flex: 1, backgroundColor: colorize("#171819", 1.0) }}>
+      <View style={{ flex: 1, backgroundColor: colorize("#111111", 1.0) }}>
         <ScrollView horizontal contentContainerStyle={{ flexGrow: 1, justifyContent: "center", alignItems: "center" }} showsHorizontalScrollIndicator={false}>
           <Image
             contentFit="fill"
@@ -385,8 +380,8 @@ const FullScreenView: React.FC<FullScreenViewProps> = memo(({ isFullScreen, setI
           <LinearGradient
             end={[1, 0]}
             start={[0, 0]}
-            style={{ flex: 1, height: 40, borderTopLeftRadius: 5, borderBottomLeftRadius: 30, marginHorizontal: 1 }}
-            colors={[colorize(selectedImage.primary, 1.0), colorize(selectedImage.primary, 0.9), colorize(selectedImage.primary, 0.8)]}
+            colors={[colorize("#111111", 0.8), colorize("#111111", 0.8), colorize("#111111", 0.8)]}
+            style={{ flex: 1, height: 40, borderTopLeftRadius: 5, borderBottomLeftRadius: 5, marginHorizontal: 1 }}
           >
             <TouchableOpacity
               style={{ flexDirection: "row", justifyContent: "center", alignItems: "center", height: "100%" }}
@@ -400,12 +395,7 @@ const FullScreenView: React.FC<FullScreenViewProps> = memo(({ isFullScreen, setI
               <Text style={{ fontSize: 12, color: colorize("#F4F4F5", 1.0), fontFamily: "Lobster" }}>Set LockScreen</Text>
             </TouchableOpacity>
           </LinearGradient>
-          <LinearGradient
-            end={[1, 0]}
-            start={[0, 0]}
-            style={{ flex: 1, height: 40, marginHorizontal: 1 }}
-            colors={[colorize(selectedImage.primary, 1.0), colorize(selectedImage.primary, 0.9), colorize(selectedImage.primary, 0.8)]}
-          >
+          <LinearGradient end={[1, 0]} start={[0, 0]} style={{ flex: 1, height: 40, marginHorizontal: 1 }} colors={[colorize("#111111", 0.8), colorize("#111111", 0.8), colorize("#111111", 0.8)]}>
             <TouchableOpacity
               style={{ flexDirection: "row", justifyContent: "center", alignItems: "center", height: "100%" }}
               onPress={() => {
@@ -421,8 +411,8 @@ const FullScreenView: React.FC<FullScreenViewProps> = memo(({ isFullScreen, setI
           <LinearGradient
             end={[1, 0]}
             start={[0, 0]}
-            style={{ flex: 1, height: 40, borderTopRightRadius: 5, borderBottomRightRadius: 30, marginHorizontal: 1 }}
-            colors={[colorize(selectedImage.primary, 1.0), colorize(selectedImage.primary, 0.9), colorize(selectedImage.primary, 0.8)]}
+            colors={[colorize("#111111", 0.8), colorize("#111111", 0.8), colorize("#111111", 0.8)]}
+            style={{ flex: 1, height: 40, borderTopRightRadius: 5, borderBottomRightRadius: 5, marginHorizontal: 1 }}
           >
             <TouchableOpacity
               style={{ flexDirection: "row", justifyContent: "center", alignItems: "center", height: "100%" }}
@@ -517,16 +507,14 @@ export default function ImagePage(): JSX.Element {
   const allImagesWithIndex = useMemo(() => allImages.map((img, idx) => ({ img, idx })), [allImages]);
   const otherImages = useMemo(() => allImagesWithIndex.filter((item) => item.idx !== currentIndex), [allImagesWithIndex, currentIndex]);
   return (
-    <View style={{ flex: 1, backgroundColor: colorize("#171819", 1.0) }}>
+    <View style={{ flex: 1, backgroundColor: colorize("#111111", 1.0) }}>
       <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
       <ScrollView style={{ flex: 1 }}>
         <PreviewImage selectedImage={selectedImage} screenWidth={screenWidth} onViewFullScreen={() => setIsFullScreen(true)} />
-        <View style={{ padding: 16, borderWidth: 2, backgroundColor: colorize("#171819", 1.0) }}>
-          <Text style={{ marginBottom: 8, fontSize: 30, textAlign: "center", fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}>
-            Title: {selectedImage.original_file_name.replace(".jpg", "")}
-          </Text>
-          <DownloadButton onDownload={downloadAndSaveImage} colors={{ primary: selectedImage.primary, secondary: selectedImage.primary, tertiary: selectedImage.primary }} />
-          <OtherImages
+        <View style={{ padding: 4, borderWidth: 2, backgroundColor: colorize("#111111", 1.0) }}>
+          <Text style={{ margin: 8, fontSize: 30, textAlign: "center", fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}>Title: {selectedImage.original_file_name.replace(".jpg", "")}</Text>
+          <DownloadButton onDownload={downloadAndSaveImage} colors={{ primary: selectedImage.primary, secondary: selectedImage.secondary, tertiary: selectedImage.tertiary }} />
+          <SubImages
             otherImages={otherImages}
             currentIndex={currentIndex}
             setCurrentIndex={setCurrentIndex}
