@@ -1,216 +1,216 @@
 (Stock Photography)
 ======| Photography Style Abstract
-    Light Reflections: Abstract Light Reflections Shimmering On Calm Lake Surface.  
-    Colorful Shadows: Vibrant Shadows Cast By Trees During Golden Hour.  
-    Foggy Silhouettes: Silhouetted Trees Emerging Through Dense, Misty Morning Fog.  
-    Water Ripples: Close-Up Of Water Ripples Creating Intricate Abstract Patterns.  
-    Mirror Lake: Perfect Mirror-Like Lake Reflecting Surrounding Mountainous Landscape.  
-    Sunlight Beams: Sunlight Beams Piercing Through Dense Forest Canopy Beautifully.  
-    Abstract Rocks: Close-Up Shot Of Textured, Abstract Rock Formations On Shore.  
-    Color Gradient: Smooth Color Gradients Blending Seamlessly Across Serene Sky.  
-    Symmetric Patterns: Naturally Symmetric Patterns Formed By Waves On Sandy Beach.  
-    Macro Details: Detailed Macro Photograph Of Dew Drops On Vibrant Leaves.  
+    Light Reflections: Abstract Light Reflections Shimmering On Calm Lake Surface
+    Colorful Shadows: Vibrant Shadows Cast By Trees During Golden Hour
+    Foggy Silhouettes: Silhouetted Trees Emerging Through Dense, Misty Morning Fog
+    Water Ripples: Close-Up Of Water Ripples Creating Intricate Abstract Patterns
+    Mirror Lake: Perfect Mirror-Like Lake Reflecting Surrounding Mountainous Landscape
+    Sunlight Beams: Sunlight Beams Piercing Through Dense Forest Canopy Beautifully
+    Abstract Rocks: Close-Up Shot Of Textured, Abstract Rock Formations On Shore
+    Color Gradient: Smooth Color Gradients Blending Seamlessly Across Serene Sky
+    Symmetric Patterns: Naturally Symmetric Patterns Formed By Waves On Sandy Beach
+    Macro Details: Detailed Macro Photograph Of Dew Drops On Vibrant Leaves
 
 ======| Photography Style Aerial-View
-    Mountain Ridge: Expansive Aerial View Of Rugged Mountain Ridge Under Sky.  
-    Forest Canopy: Lush Green Forest Canopy Seen From High Aerial Perspective.  
-    River Bend: Meandering River Creating Beautiful Bends From Aerial Viewpoint.  
-    Coastal Shore: Stunning Aerial View Of Winding Coastal Shoreline And Waves.  
-    Autumn Forest: Vibrant Autumn Forest Colors Spread Out From Above.  
-    Desert Dunes: Rolling Desert Dunes Captured From A High Aerial Angle.  
-    Island Archipelago: Scattered Islands Forming Archipelago Visible From The Sky.  
-    Snowy Peaks: Snow-Covered Mountain Peaks Extending Into The Horizon Aerially.  
-    Urban Park: Green Urban Park Layout Seen From Elevated Aerial Perspective.  
-    Tropical Reef: Vibrant Coral Reef Surrounded By Clear Blue Waters Aerial View.  
+    Mountain Ridge: Expansive Aerial View Of Rugged Mountain Ridge Under Sky
+    Forest Canopy: Lush Green Forest Canopy Seen From High Aerial Perspective
+    River Bend: Meandering River Creating Beautiful Bends From Aerial Viewpoint
+    Coastal Shore: Stunning Aerial View Of Winding Coastal Shoreline And Waves
+    Autumn Forest: Vibrant Autumn Forest Colors Spread Out From Above
+    Desert Dunes: Rolling Desert Dunes Captured From A High Aerial Angle
+    Island Archipelago: Scattered Islands Forming Archipelago Visible From The Sky
+    Snowy Peaks: Snow-Covered Mountain Peaks Extending Into The Horizon Aerially
+    Urban Park: Green Urban Park Layout Seen From Elevated Aerial Perspective
+    Tropical Reef: Vibrant Coral Reef Surrounded By Clear Blue Waters Aerial View
 
 ======| Photography Style Cyberpunk
-    Neon Bridge: Futuristic Bridge Illuminated With Vibrant Neon Lights At Night.  
-    City Lights: Bright Cityscape With Glowing Skyscrapers Under Cyberpunk Sky.  
-    Neon Alley: Dark Alleyway Brightly Lit With Colorful Neon Signs.  
-    Glowing Path: Pathway Lined With Pulsating Neon Lights In Urban Setting.  
-    Digital Reflections: Reflections Of Neon Lights On Wet City Streets.  
-    Cyber Tower: Tall Tower Adorned With Dynamic Neon Cyberpunk Patterns.  
-    Holographic Signs: Holographic Advertisements Glowing Amidst Futuristic Urban Landscape.  
-    Electric Skyline: City Skyline Illuminated By Vibrant Electric Neon Colors.  
-    Neon Market: Bustling Market Area Brightly Lit With Various Neon Signs.  
-    Techno Lights: Futuristic Lighting Effects Creating A Cyberpunk Atmosphere Outdoors.  
+    Neon Bridge: Futuristic Bridge Illuminated With Vibrant Neon Lights At Night
+    City Lights: Bright Cityscape With Glowing Skyscrapers Under Cyberpunk Sky
+    Neon Alley: Dark Alleyway Brightly Lit With Colorful Neon Signs
+    Glowing Path: Pathway Lined With Pulsating Neon Lights In Urban Setting
+    Digital Reflections: Reflections Of Neon Lights On Wet City Streets
+    Cyber Tower: Tall Tower Adorned With Dynamic Neon Cyberpunk Patterns
+    Holographic Signs: Holographic Advertisements Glowing Amidst Futuristic Urban Landscape
+    Electric Skyline: City Skyline Illuminated By Vibrant Electric Neon Colors
+    Neon Market: Bustling Market Area Brightly Lit With Various Neon Signs
+    Techno Lights: Futuristic Lighting Effects Creating A Cyberpunk Atmosphere Outdoors
 
 ======| Photography Style Dusk-Life
-    Golden Sunset: Sun Setting Over Horizon, Casting Golden Hues On Landscape.  
-    Twilight Lake: Tranquil Lake Reflecting The Vibrant Colors Of Dusk Sky.  
-    Evening Forest: Forest Bathed In The Warm Glow Of Evening Light.  
-    Sunset Beach: Serene Beach Scene Illuminated By The Fading Sunset.  
-    Dusky Mountains: Mountains Silhouetted Against The Colorful Dusk Sky Backdrop.  
-    Twilight River: River Shimmering Under The Soft Light Of Twilight Hours.  
-    Evening Meadow: Meadow Softly Lit By The Gentle Colors Of Dusk.  
-    Sunset Orchard: Orchard Trees Glowing Under The Rich Hues Of Sunset.  
-    Dusky Cliffs: Cliffs Highlighted By The Deep Colors Of The Setting Sun.  
-    Twilight Garden: Garden Scene Enveloped In The Peaceful Light Of Dusk.  
+    Golden Sunset: Sun Setting Over Horizon, Casting Golden Hues On Landscape
+    Twilight Lake: Tranquil Lake Reflecting The Vibrant Colors Of Dusk Sky
+    Evening Forest: Forest Bathed In The Warm Glow Of Evening Light
+    Sunset Beach: Serene Beach Scene Illuminated By The Fading Sunset
+    Dusky Mountains: Mountains Silhouetted Against The Colorful Dusk Sky Backdrop
+    Twilight River: River Shimmering Under The Soft Light Of Twilight Hours
+    Evening Meadow: Meadow Softly Lit By The Gentle Colors Of Dusk
+    Sunset Orchard: Orchard Trees Glowing Under The Rich Hues Of Sunset
+    Dusky Cliffs: Cliffs Highlighted By The Deep Colors Of The Setting Sun
+    Twilight Garden: Garden Scene Enveloped In The Peaceful Light Of Dusk
 
 ======| Photography Style Ethereal
-    Moonlit Lake: Serene Lake Glowing Under The Soft Light Of The Moon.  
-    Mist Forest: Enchanted Forest Enveloped In A Mystical Morning Mist.  
-    Starry Night: Clear Night Sky Filled With Countless Twinkling Stars.  
-    Ghostly Shore: Hauntingly Beautiful Shoreline Shrouded In Ethereal Fog.  
-    Aurora Borealis: Vibrant Northern Lights Dancing Across The Night Sky.  
-    Ethereal Waterfall: Waterfall Cascading With A Magical, Otherworldly Glow.  
-    Fairy Lights: Forest Illuminated By Delicate, Twinkling Fairy Lights.  
-    Celestial Garden: Garden Scene Bathed In Celestial, Soft Glowing Light.  
-    Mystic Pond: Pond Surrounded By Glowing Mist And Ethereal Reflections.  
-    Dreamy Sunset: Sunset Sky Filled With Dreamy, Pastel-Colored Clouds.  
+    Moonlit Lake: Serene Lake Glowing Under The Soft Light Of The Moon
+    Mist Forest: Enchanted Forest Enveloped In A Mystical Morning Mist
+    Starry Night: Clear Night Sky Filled With Countless Twinkling Stars
+    Ghostly Shore: Hauntingly Beautiful Shoreline Shrouded In Ethereal Fog
+    Aurora Borealis: Vibrant Northern Lights Dancing Across The Night Sky
+    Ethereal Waterfall: Waterfall Cascading With A Magical, Otherworldly Glow
+    Fairy Lights: Forest Illuminated By Delicate, Twinkling Fairy Lights
+    Celestial Garden: Garden Scene Bathed In Celestial, Soft Glowing Light
+    Mystic Pond: Pond Surrounded By Glowing Mist And Ethereal Reflections
+    Dreamy Sunset: Sunset Sky Filled With Dreamy, Pastel-Colored Clouds
 
 ======| Photography Style Landscapes
-    Majestic Mountains: Towering Mountains Under A Clear, Expansive Blue Sky.  
-    Serene Lake: Calm Lake Reflecting Surrounding Lush Green Forests Beautifully.  
-    Sunny Beach: Pristine Beach With Golden Sands And Sparkling Turquoise Waters.  
-    Autumn Forest: Vibrant Forest Displaying Rich Autumn Foliage And Serene Paths.  
-    Rocky Cliffs: Dramatic Rocky Cliffs Overlooking A Vast, Endless Ocean.  
-    Verdant Valley: Green Valley Nestled Between Towering, Majestic Mountain Ranges.  
-    Desert Oasis: Lush Oasis Surrounded By Expansive, Arid Desert Sands.  
-    Snowy Peaks: Snow-Covered Mountain Peaks Piercing Through A Clear Winter Sky.  
-    Flower Meadow: Colorful Meadow Bursting With A Variety Of Blooming Wildflowers.  
-    Starry Night: Open Landscape Under A Breathtaking, Star-Filled Night Sky.  
+    Majestic Mountains: Towering Mountains Under A Clear, Expansive Blue Sky
+    Serene Lake: Calm Lake Reflecting Surrounding Lush Green Forests Beautifully
+    Sunny Beach: Pristine Beach With Golden Sands And Sparkling Turquoise Waters
+    Autumn Forest: Vibrant Forest Displaying Rich Autumn Foliage And Serene Paths
+    Rocky Cliffs: Dramatic Rocky Cliffs Overlooking A Vast, Endless Ocean
+    Verdant Valley: Green Valley Nestled Between Towering, Majestic Mountain Ranges
+    Desert Oasis: Lush Oasis Surrounded By Expansive, Arid Desert Sands
+    Snowy Peaks: Snow-Covered Mountain Peaks Piercing Through A Clear Winter Sky
+    Flower Meadow: Colorful Meadow Bursting With A Variety Of Blooming Wildflowers
+    Starry Night: Open Landscape Under A Breathtaking, Star-Filled Night Sky
 
 ======| Photography Style Minimalism
-Silent Lake: Tranquil Lake With Minimalistic Shoreline And Calm Waters.  
-Empty Meadow: Vast Meadow With Sparse Vegetation Under A Clear Sky.  
-Bare Mountain: Simplistic Mountain Silhouette Against A Minimalist, Soft Background.  
-Calm River: Smooth River Flowing Through A Minimalistic, Open Landscape.  
-Sparse Forest: Few Trees Scattered In A Minimalist, Expansive Field.  
-Lone Tree: Single Tree Standing In A Vast, Empty Minimalist Setting.  
-Minimal Beach: Clean Beach With Minimal Elements And Wide Open Horizon.  
-Quiet Desert: Simple Desert Scene With Undulating Dunes And Clear Sky.  
-Simple Cliff: Stark Cliff Edge With Minimal Surrounding Natural Details.  
-Bare Hills: Rolling Hills With Minimal Vegetation Under A Soft Sky.  
+Silent Lake: Tranquil Lake With Minimalistic Shoreline And Calm Waters
+Empty Meadow: Vast Meadow With Sparse Vegetation Under A Clear Sky
+Bare Mountain: Simplistic Mountain Silhouette Against A Minimalist, Soft Background
+Calm River: Smooth River Flowing Through A Minimalistic, Open Landscape
+Sparse Forest: Few Trees Scattered In A Minimalist, Expansive Field
+Lone Tree: Single Tree Standing In A Vast, Empty Minimalist Setting
+Minimal Beach: Clean Beach With Minimal Elements And Wide Open Horizon
+Quiet Desert: Simple Desert Scene With Undulating Dunes And Clear Sky
+Simple Cliff: Stark Cliff Edge With Minimal Surrounding Natural Details
+Bare Hills: Rolling Hills With Minimal Vegetation Under A Soft Sky
 
 ======| Photography Style Nature
-Majestic Waterfall: Powerful Waterfall Cascading Over Rugged Natural Rocks Gracefully.  
-Ancient Forest: Dense Forest With Towering Ancient Trees And Lush Undergrowth.  
-Blooming Garden: Vibrant Garden Bursting With Diverse Colorful Flowers And Plants.  
-Rocky Shore: Rugged Shoreline With Natural Rock Formations And Crashing Waves.  
-Serene Pond: Peaceful Pond Surrounded By Greenery And Calm, Clear Water.  
-Verdant Hills: Rolling Green Hills Under A Bright, Clear Sky.  
-Tropical Rainforest: Lush Rainforest Teeming With Diverse Plant Life And Greenery.  
-Crystal Stream: Clear, Sparkling Stream Flowing Through A Natural, Scenic Landscape.  
-Desert Bloom: Desert Landscape With Rare Blooming Flowers And Cacti.  
-Snowy Forest: Snow-Covered Forest With Tall, Silent Trees And Pristine Snow.  
+Majestic Waterfall: Powerful Waterfall Cascading Over Rugged Natural Rocks Gracefully
+Ancient Forest: Dense Forest With Towering Ancient Trees And Lush Undergrowth
+Blooming Garden: Vibrant Garden Bursting With Diverse Colorful Flowers And Plants
+Rocky Shore: Rugged Shoreline With Natural Rock Formations And Crashing Waves
+Serene Pond: Peaceful Pond Surrounded By Greenery And Calm, Clear Water
+Verdant Hills: Rolling Green Hills Under A Bright, Clear Sky
+Tropical Rainforest: Lush Rainforest Teeming With Diverse Plant Life And Greenery
+Crystal Stream: Clear, Sparkling Stream Flowing Through A Natural, Scenic Landscape
+Desert Bloom: Desert Landscape With Rare Blooming Flowers And Cacti
+Snowy Forest: Snow-Covered Forest With Tall, Silent Trees And Pristine Snow
 
 ======| Photography Style Night-Life
-Starry Sky: Clear Night Sky Filled With Countless Shimmering Stars Above.  
-Moonlit Lake: Calm Lake Illuminated By The Soft Glow Of The Moonlight.  
-Night Forest: Dark Forest Scene With Moonlight Filtering Through Dense Trees.  
-Glowing Path: Pathway Illuminated By Subtle, Glowing Lights Under Night Sky.  
-Twilight Beach: Beach Scene Under The Stars With Gentle Moonlight Waves.  
-Night Mountains: Silhouetted Mountain Range Against A Deep, Star-Filled Night Sky.  
-Luminous Pond: Pond Reflecting The Moonlight And Surrounding Night Flora.  
-Nocturnal Meadow: Meadow Alive With Nocturnal Plants And Subtle Night Illumination.  
-Celestial River: River Reflecting The Stars And Moon In A Serene Night Setting.  
-Dark Orchard: Orchard Trees Silhouetted Against A Dark, Starry Night Sky.  
+Starry Sky: Clear Night Sky Filled With Countless Shimmering Stars Above
+Moonlit Lake: Calm Lake Illuminated By The Soft Glow Of The Moonlight
+Night Forest: Dark Forest Scene With Moonlight Filtering Through Dense Trees
+Glowing Path: Pathway Illuminated By Subtle, Glowing Lights Under Night Sky
+Twilight Beach: Beach Scene Under The Stars With Gentle Moonlight Waves
+Night Mountains: Silhouetted Mountain Range Against A Deep, Star-Filled Night Sky
+Luminous Pond: Pond Reflecting The Moonlight And Surrounding Night Flora
+Nocturnal Meadow: Meadow Alive With Nocturnal Plants And Subtle Night Illumination
+Celestial River: River Reflecting The Stars And Moon In A Serene Night Setting
+Dark Orchard: Orchard Trees Silhouetted Against A Dark, Starry Night Sky
 
 ======| Photography Style Rain
-Rainy Forest: Dense Forest Scene With Heavy Rain And Lush Greenery.  
-Stormy Lake: Lake Under A Heavy Rainstorm With Dark, Cloudy Skies.  
-Rainy Meadow: Meadow Soaked In Rain With Droplets On Vibrant Flowers.  
-Wet Path: Muddy Path Glistening Under Steady Rain In A Natural Setting.  
-Rainfall Stream: Stream Flowing Vigorously Under Continuous Rain In Forest.  
-Rainy Cliff: Cliffs Drenched In Rain With Turbulent Waves Below.  
-Stormy Mountains: Mountain Range Under A Fierce Rainstorm With Dark Clouds.  
-Rainy Orchard: Orchard Trees Laden With Rain And Glistening Foliage.  
-Rainy Garden: Garden Scene With Rain-Soaked Plants And Puddles Forming.  
-Rainy Prairie: Prairie Landscape Under Steady Rain With Wet Grasses Swaying.  
+Rainy Forest: Dense Forest Scene With Heavy Rain And Lush Greenery
+Stormy Lake: Lake Under A Heavy Rainstorm With Dark, Cloudy Skies
+Rainy Meadow: Meadow Soaked In Rain With Droplets On Vibrant Flowers
+Wet Path: Muddy Path Glistening Under Steady Rain In A Natural Setting
+Rainfall Stream: Stream Flowing Vigorously Under Continuous Rain In Forest
+Rainy Cliff: Cliffs Drenched In Rain With Turbulent Waves Below
+Stormy Mountains: Mountain Range Under A Fierce Rainstorm With Dark Clouds
+Rainy Orchard: Orchard Trees Laden With Rain And Glistening Foliage
+Rainy Garden: Garden Scene With Rain-Soaked Plants And Puddles Forming
+Rainy Prairie: Prairie Landscape Under Steady Rain With Wet Grasses Swaying
 
 ======| Photography Style Season
-Spring Blossom: Cherry Trees In Full Bloom During Vibrant Spring Season.  
-Summer Beach: Sunny Beach Scene With Clear Skies And Warm Sands.  
-Autumn Leaves: Forest Covered In Colorful Autumn Leaves And Soft Light.  
-Winter Snowfall: Snow-Covered Landscape Under A Serene Winter Sky.  
-Spring Meadow: Blooming Meadow With Fresh Green Grass And Spring Flowers.  
-Summer Forest: Lush Green Forest Thriving Under The Bright Summer Sun.  
-Autumn Orchard: Orchard Trees Heavy With Colorful Autumn Fruits And Leaves.  
-Winter Lake: Frozen Lake Surrounded By Snow-Covered Trees And Hills.  
-Spring Rain: Gentle Spring Rain Nourishing Blooming Flowers And Green Foliage.  
-Summer Sunset: Bright Sunset Casting Warm Colors Over Summer Landscape.  
+Spring Blossom: Cherry Trees In Full Bloom During Vibrant Spring Season
+Summer Beach: Sunny Beach Scene With Clear Skies And Warm Sands
+Autumn Leaves: Forest Covered In Colorful Autumn Leaves And Soft Light
+Winter Snowfall: Snow-Covered Landscape Under A Serene Winter Sky
+Spring Meadow: Blooming Meadow With Fresh Green Grass And Spring Flowers
+Summer Forest: Lush Green Forest Thriving Under The Bright Summer Sun
+Autumn Orchard: Orchard Trees Heavy With Colorful Autumn Fruits And Leaves
+Winter Lake: Frozen Lake Surrounded By Snow-Covered Trees And Hills
+Spring Rain: Gentle Spring Rain Nourishing Blooming Flowers And Green Foliage
+Summer Sunset: Bright Sunset Casting Warm Colors Over Summer Landscape
 
 ======| Photography Style Serene
-Calm Lake: Tranquil Lake Reflecting Clear Skies And Surrounding Nature.  
-Peaceful Forest: Quiet Forest With Gentle Sunlight Filtering Through Trees.  
-Silent Meadow: Serene Meadow With Soft Grasses And Gentle Breezes.  
-Still Pond: Calm Pond Mirroring The Serene Surrounding Landscape Perfectly.  
-Gentle River: Slow-Flowing River Winding Through A Peaceful Natural Setting.  
-Quiet Garden: Serene Garden With Neatly Arranged Flowers And Foliage.  
-Tranquil Beach: Calm Beach With Gentle Waves And Soft Sands.  
-Serene Mountains: Peaceful Mountain Range Under A Clear, Tranquil Sky.  
-Calm Valley: Quiet Valley With Lush Greenery And Serene Atmosphere.  
-Peaceful Stream: Gentle Stream Flowing Through A Serene, Natural Landscape.  
+Calm Lake: Tranquil Lake Reflecting Clear Skies And Surrounding Nature
+Peaceful Forest: Quiet Forest With Gentle Sunlight Filtering Through Trees
+Silent Meadow: Serene Meadow With Soft Grasses And Gentle Breezes
+Still Pond: Calm Pond Mirroring The Serene Surrounding Landscape Perfectly
+Gentle River: Slow-Flowing River Winding Through A Peaceful Natural Setting
+Quiet Garden: Serene Garden With Neatly Arranged Flowers And Foliage
+Tranquil Beach: Calm Beach With Gentle Waves And Soft Sands
+Serene Mountains: Peaceful Mountain Range Under A Clear, Tranquil Sky
+Calm Valley: Quiet Valley With Lush Greenery And Serene Atmosphere
+Peaceful Stream: Gentle Stream Flowing Through A Serene, Natural Landscape
 
 ======| Photography Style Snow
-Snowy Forest: Dense Forest Blanketed In Pristine White Snowflakes Gently Falling.  
-Winter Lake: Frozen Lake Surrounded By Snow-Covered Trees And Clear Skies.  
-Snowy Mountain: Majestic Mountain Peak Covered In Thick, Untouched Snow.  
-Silent Snowfall: Gentle Snowfall Creating A Quiet, Serene Winter Landscape.  
-Snowy Path: Pathway Winding Through Snow-Laden Trees In Winter Scene.  
-Frozen Waterfall: Waterfall Frozen In Ice, Glistening Under Winter Sunlight.  
-Snowy Meadow: Meadow Blanketed In Fresh Snow With Distant Snowy Hills.  
-Winter Garden: Garden Covered In Snow With Bare Trees And Icy Paths.  
-Snowy Ridge: Ridge Line Sparkling With Fresh Snow Under Clear Winter Sky.  
-Snowy River: River Partially Frozen With Snow-Covered Banks And Trees.  
+Snowy Forest: Dense Forest Blanketed In Pristine White Snowflakes Gently Falling
+Winter Lake: Frozen Lake Surrounded By Snow-Covered Trees And Clear Skies
+Snowy Mountain: Majestic Mountain Peak Covered In Thick, Untouched Snow
+Silent Snowfall: Gentle Snowfall Creating A Quiet, Serene Winter Landscape
+Snowy Path: Pathway Winding Through Snow-Laden Trees In Winter Scene
+Frozen Waterfall: Waterfall Frozen In Ice, Glistening Under Winter Sunlight
+Snowy Meadow: Meadow Blanketed In Fresh Snow With Distant Snowy Hills
+Winter Garden: Garden Covered In Snow With Bare Trees And Icy Paths
+Snowy Ridge: Ridge Line Sparkling With Fresh Snow Under Clear Winter Sky
+Snowy River: River Partially Frozen With Snow-Covered Banks And Trees
 
 ======| Photography Style Synthwave
-Neon Dunes: Desert Dunes Glowing With Vibrant Neon Lights Under Twilight.  
-Retro Lake: Lake Reflecting Colorful Synthwave Sunset With Neon Horizons.  
-Cyber Sunset: Sunset Sky Ablaze With Synthwave Colors And Neon Gradients.  
-Electric Forest: Forest Illuminated By Neon Lights And Synthwave-Inspired Colors.  
-Pixel Mountains: Mountain Range Stylized With Pixel Art And Neon Accents.  
-Neon River: River Flowing With Vibrant Neon Reflections Under Synthwave Sky.  
-Retro Garden: Garden Scene Enhanced With Retro Neon Lights And Synth Colors.  
-Synth Beach: Beachscape Glowing With Neon Lights And Vibrant Synthwave Hues.  
-Electric Fields: Open Fields Bathed In Electric Neon Colors And Synth Lights.  
-Neon Skyline: City Skyline Illuminated With Bright Neon Lights And Synthwave Style.  
+Neon Dunes: Desert Dunes Glowing With Vibrant Neon Lights Under Twilight
+Retro Lake: Lake Reflecting Colorful Synthwave Sunset With Neon Horizons
+Cyber Sunset: Sunset Sky Ablaze With Synthwave Colors And Neon Gradients
+Electric Forest: Forest Illuminated By Neon Lights And Synthwave-Inspired Colors
+Pixel Mountains: Mountain Range Stylized With Pixel Art And Neon Accents
+Neon River: River Flowing With Vibrant Neon Reflections Under Synthwave Sky
+Retro Garden: Garden Scene Enhanced With Retro Neon Lights And Synth Colors
+Synth Beach: Beachscape Glowing With Neon Lights And Vibrant Synthwave Hues
+Electric Fields: Open Fields Bathed In Electric Neon Colors And Synth Lights
+Neon Skyline: City Skyline Illuminated With Bright Neon Lights And Synthwave Style
 
 ======| Photography Style Techno
-Circuit Forest: Forest Intertwined With Glowing Techno Circuits And Digital Elements.  
-Digital Lake: Lake Surface Displaying Techno Patterns And Digital Reflections.  
-Techno Meadow: Meadow Enhanced With Techno-Inspired Lighting And Futuristic Elements.  
-Electric Forest: Forest Scene Illuminated By Techno-Style Electric Lights And Colors.  
-Techno River: River Flowing Through A Landscape Filled With Techno Enhancements.  
-Digital Mountains: Mountain Range Depicted With Techno Circuits And Glowing Elements.  
-Techno Garden: Garden Integrated With Techno Lights And Futuristic Plant Designs.  
-Electric Lake: Lake Scene With Techno-Inspired Electric Light Reflections.  
-Techno Path: Pathway Lined With Techno Lights And Digital Patterns.  
-Digital Orchard: Orchard Trees Enhanced With Techno Circuits And Glowing Fruits.  
+Circuit Forest: Forest Intertwined With Glowing Techno Circuits And Digital Elements
+Digital Lake: Lake Surface Displaying Techno Patterns And Digital Reflections
+Techno Meadow: Meadow Enhanced With Techno-Inspired Lighting And Futuristic Elements
+Electric Forest: Forest Scene Illuminated By Techno-Style Electric Lights And Colors
+Techno River: River Flowing Through A Landscape Filled With Techno Enhancements
+Digital Mountains: Mountain Range Depicted With Techno Circuits And Glowing Elements
+Techno Garden: Garden Integrated With Techno Lights And Futuristic Plant Designs
+Electric Lake: Lake Scene With Techno-Inspired Electric Light Reflections
+Techno Path: Pathway Lined With Techno Lights And Digital Patterns
+Digital Orchard: Orchard Trees Enhanced With Techno Circuits And Glowing Fruits
 
 ======| Photography Style Urban
-City Park: Urban Park With Green Spaces, Pathways, And Modern Landscaping.  
-Rooftop Garden: Rooftop Garden In Cityscape With Lush Plants And Views.  
-Urban Lake: Lake Situated Within A Bustling Urban Environment And Skyline.  
-City Bridge: Modern Bridge Spanning Urban Waterways With City Lights.  
-Urban Forest: Green Forest Area Integrated Within A Busy City Landscape.  
-City Plaza: Open City Plaza Surrounded By Buildings And Green Areas.  
-Urban Meadow: Meadow Area Nestled Within A Densely Built Urban Environment.  
-City Stream: Stream Flowing Through City Park With Surrounding Urban Structures.  
-Urban Hills: Gently Rolling Hills Within An Urban Setting And Skyline.  
-City Orchard: Orchard Trees Planted In An Urban Neighborhood Park.  
+City Park: Urban Park With Green Spaces, Pathways, And Modern Landscaping
+Rooftop Garden: Rooftop Garden In Cityscape With Lush Plants And Views
+Urban Lake: Lake Situated Within A Bustling Urban Environment And Skyline
+City Bridge: Modern Bridge Spanning Urban Waterways With City Lights
+Urban Forest: Green Forest Area Integrated Within A Busy City Landscape
+City Plaza: Open City Plaza Surrounded By Buildings And Green Areas
+Urban Meadow: Meadow Area Nestled Within A Densely Built Urban Environment
+City Stream: Stream Flowing Through City Park With Surrounding Urban Structures
+Urban Hills: Gently Rolling Hills Within An Urban Setting And Skyline
+City Orchard: Orchard Trees Planted In An Urban Neighborhood Park
 
 ======| Photography Style Vehicles
-Electric Boat: Sleek Electric Boat Gliding Smoothly Across A Serene Lake.  
-Solar Car: Futuristic Solar-Powered Car Parked In A Lush Green Field.  
-Wind Turbine: Modern Wind Turbine Set Against A Natural, Scenic Backdrop.  
-Hydro Plane: Hydro Plane Soaring Gracefully Over A Tranquil Water Landscape.  
-Solar Sail: Solar Sailboat Navigating Calm, Clear Waters Under Sunlight.  
-Electric Bike: Eco-Friendly Electric Bike Resting Beside A Peaceful Riverside.  
-Hybrid Scooter: Stylish Hybrid Scooter Placed In A Vibrant Natural Setting.  
-Eco Van: Eco-Friendly Van Parked Near A Blooming Flower Meadow.  
-Electric Tram: Electric Tram Moving Through A Green, Nature-Infused Urban Area.  
-Solar Yacht: Luxurious Solar-Powered Yacht Anchored In A Pristine Bay.  
+Electric Boat: Sleek Electric Boat Gliding Smoothly Across A Serene Lake
+Solar Car: Futuristic Solar-Powered Car Parked In A Lush Green Field
+Wind Turbine: Modern Wind Turbine Set Against A Natural, Scenic Backdrop
+Hydro Plane: Hydro Plane Soaring Gracefully Over A Tranquil Water Landscape
+Solar Sail: Solar Sailboat Navigating Calm, Clear Waters Under Sunlight
+Electric Bike: Eco-Friendly Electric Bike Resting Beside A Peaceful Riverside
+Hybrid Scooter: Stylish Hybrid Scooter Placed In A Vibrant Natural Setting
+Eco Van: Eco-Friendly Van Parked Near A Blooming Flower Meadow
+Electric Tram: Electric Tram Moving Through A Green, Nature-Infused Urban Area
+Solar Yacht: Luxurious Solar-Powered Yacht Anchored In A Pristine Bay
 
 ======| Photography Style Vintage
-Classic Lake: Vintage-Style Lake Scene With Timeless Trees And Calm Waters.  
-Retro Forest: Forest Depicted With Vintage Colors And Nostalgic Atmosphere.  
-Old Meadow: Timeless Meadow With Classic Wildflowers And Serene Views.  
-Vintage Mountains: Mountain Range Illustrated With A Vintage, Sepia-Toned Palette.  
-Antique Pond: Pond Scene With Vintage Flora And Classic Natural Beauty.  
-Vintage Beach: Classic Beach Setting With Timeless Sands And Gentle Waves.  
-Old Garden: Vintage Garden With Classic Blooms And Traditional Pathways.  
-Retro Lakeview: Lakeview Scene Rendered In A Vintage, Nostalgic Style.  
-Classic Orchard: Orchard Trees In A Vintage Setting With Timeless Charm.  
-Vintage Path: Old Pathway Winding Through A Classic, Serene Landscape.  
+Classic Lake: Vintage-Style Lake Scene With Timeless Trees And Calm Waters
+Retro Forest: Forest Depicted With Vintage Colors And Nostalgic Atmosphere
+Old Meadow: Timeless Meadow With Classic Wildflowers And Serene Views
+Vintage Mountains: Mountain Range Illustrated With A Vintage, Sepia-Toned Palette
+Antique Pond: Pond Scene With Vintage Flora And Classic Natural Beauty
+Vintage Beach: Classic Beach Setting With Timeless Sands And Gentle Waves
+Old Garden: Vintage Garden With Classic Blooms And Traditional Pathways
+Retro Lakeview: Lakeview Scene Rendered In A Vintage, Nostalgic Style
+Classic Orchard: Orchard Trees In A Vintage Setting With Timeless Charm
+Vintage Path: Old Pathway Winding Through A Classic, Serene Landscape
