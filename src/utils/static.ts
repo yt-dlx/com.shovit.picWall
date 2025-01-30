@@ -9,22 +9,22 @@ const categories: Category[] = [
   {
     base: "Anime",
     subCategories: ["Rain", "Snow", "Urban", "Synthwave"],
-    names: ["placeholder", "placeholder", "placeholder", "placeholder"]
+    names: ["Rainy Forest", "Snowy Forest", "City Park", "Neon Dunes"]
   },
   {
     base: "Cinematic",
     subCategories: ["Rain", "Snow", "Urban", "Synthwave"],
-    names: ["placeholder", "placeholder", "placeholder", "placeholder"]
+    names: ["Rainy Forest", "Snowy Forest", "City Park", "Neon Dunes"]
   },
   {
     base: "Geometry",
     subCategories: ["Rain", "Snow", "Urban", "Synthwave"],
-    names: ["placeholder", "placeholder", "placeholder", "placeholder"]
+    names: ["Geometric Raindrops", "Hexagonal Snowflakes", "Geometric Park", "Neon Geometry"]
   },
   {
     base: "Photography",
     subCategories: ["Rain", "Snow", "Urban", "Synthwave"],
-    names: ["placeholder", "placeholder", "placeholder", "placeholder"]
+    names: ["Rainy Forest", "Snowy Forest", "City Park", "Neon Dunes"]
   }
 ];
 const generateImageUrls = (category: Category): ImageSet => {
