@@ -7,24 +7,24 @@ type Category = {
 type ImageSet = string[];
 const categories: Category[] = [
   {
-    base: "Abstract",
-    subCategories: ["Anime", "Cinematic", "Geometry", "Realism"],
-    names: ["Bubble Hearts", "Chromatic Storm", "Circuit Maze", "Crystal Burst"]
+    base: "Anime",
+    subCategories: ["Rain", "Snow", "Urban", "Synthwave"],
+    names: ["placeholder", "placeholder", "placeholder", "placeholder"]
   },
   {
-    base: "Landscapes",
-    subCategories: ["Anime", "Cinematic", "Geometry", "Realism"],
-    names: ["Blossom Arch", "Cloudy Cliffs", "Circuit Plains", "Autumn Bridge"]
+    base: "Cinematic",
+    subCategories: ["Rain", "Snow", "Urban", "Synthwave"],
+    names: ["placeholder", "placeholder", "placeholder", "placeholder"]
   },
   {
-    base: "Minimalist",
-    subCategories: ["Anime", "Cinematic", "Geometry", "Realism"],
-    names: ["Blush Grid", "Falling Shapes", "Contour Wave", "Chrome Ring"]
+    base: "Geometry",
+    subCategories: ["Rain", "Snow", "Urban", "Synthwave"],
+    names: ["placeholder", "placeholder", "placeholder", "placeholder"]
   },
   {
-    base: "Urban",
-    subCategories: ["Anime", "Cinematic", "Geometry", "Realism"],
-    names: ["Canal Row", "Desert Town", "Checker Avenue", "Abandoned Block"]
+    base: "Photography",
+    subCategories: ["Rain", "Snow", "Urban", "Synthwave"],
+    names: ["placeholder", "placeholder", "placeholder", "placeholder"]
   }
 ];
 const generateImageUrls = (category: Category): ImageSet => {
