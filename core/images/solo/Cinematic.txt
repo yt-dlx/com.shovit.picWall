@@ -168,16 +168,16 @@
     Neon Skyline: City Skyline Illuminated With Bright Neon Lights And Synthwave Style
 
 ======| Cinematic Style Techno
-Circuit Forest: Forest Intertwined With Glowing Techno Circuits And Digital Elements
-Digital Lake: Lake Surface Displaying Techno Patterns And Digital Reflections
-Techno Meadow: Meadow Enhanced With Techno-Inspired Lighting And Futuristic Elements
-Electric Forest: Forest Scene Illuminated By Techno-Style Electric Lights And Colors
-Techno River: River Flowing Through A Landscape Filled With Techno Enhancements
-Digital Mountains: Mountain Range Depicted With Techno Circuits And Glowing Elements
-Techno Garden: Garden Integrated With Techno Lights And Futuristic Plant Designs
-Electric Lake: Lake Scene With Techno-Inspired Electric Light Reflections
-Techno Path: Pathway Lined With Techno Lights And Digital Patterns
-Digital Orchard: Orchard Trees Enhanced With Techno Circuits And Glowing Fruits
+    Circuit Forest: Forest Intertwined With Glowing Techno Circuits And Digital Elements
+    Digital Lake: Lake Surface Displaying Techno Patterns And Digital Reflections
+    Techno Meadow: Meadow Enhanced With Techno-Inspired Lighting And Futuristic Elements
+    Electric Forest: Forest Scene Illuminated By Techno-Style Electric Lights And Colors
+    Techno River: River Flowing Through A Landscape Filled With Techno Enhancements
+    Digital Mountains: Mountain Range Depicted With Techno Circuits And Glowing Elements
+    Techno Garden: Garden Integrated With Techno Lights And Futuristic Plant Designs
+    Electric Lake: Lake Scene With Techno-Inspired Electric Light Reflections
+    Techno Path: Pathway Lined With Techno Lights And Digital Patterns
+    Digital Orchard: Orchard Trees Enhanced With Techno Circuits And Glowing Fruits
 
 ======| Cinematic Style Urban
 City Park: Urban Park With Green Spaces, Pathways, And Modern Landscaping

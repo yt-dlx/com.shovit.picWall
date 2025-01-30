@@ -170,21 +170,21 @@
     Rainy Grove: Grove Of Trees Immersed In Rain With Dripping Leaves
 
 ======| Anime Style Season
-Spring Blossom: Cherry Trees In Full Bloom During Vibrant Spring Season
-Summer Beach: Sunny Beach Scene With Clear Skies And Warm Sands
-Autumn Leaves: Forest Covered In Colorful Autumn Leaves And Soft Light
-Winter Snowfall: Snow-Covered Landscape Under A Serene Winter Sky
-Spring Meadow: Blooming Meadow With Fresh Green Grass And Spring Flowers
-Summer Forest: Lush Green Forest Thriving Under The Bright Summer Sun
-Autumn Orchard: Orchard Trees Heavy With Colorful Autumn Fruits And Leaves
-Winter Lake: Frozen Lake Surrounded By Snow-Covered Trees And Hills
-Spring Rain: Gentle Spring Rain Nourishing Blooming Flowers And Green Foliage
-Summer Sunset: Bright Sunset Casting Warm Colors Over Summer Landscape
-Autumn River: River Flowing Through Autumn-Colored Forest With Falling Leaves
-Winter Mountains: Majestic Snow-Capped Mountains Under A Clear Winter Sky
-Spring Garden: Vibrant Garden Bursting With Spring Blooms And Fresh Greenery
-Summer Fields: Expansive Fields Glowing Under The Strong Summer Sunlight
-Autumn Path: Leaf-Strewn Path Winding Through Vibrant Autumn Woods
+    Spring Blossom: Cherry Trees In Full Bloom During Vibrant Spring Season
+    Summer Beach: Sunny Beach Scene With Clear Skies And Warm Sands
+    Autumn Leaves: Forest Covered In Colorful Autumn Leaves And Soft Light
+    Winter Snowfall: Snow-Covered Landscape Under A Serene Winter Sky
+    Spring Meadow: Blooming Meadow With Fresh Green Grass And Spring Flowers
+    Summer Forest: Lush Green Forest Thriving Under The Bright Summer Sun
+    Autumn Orchard: Orchard Trees Heavy With Colorful Autumn Fruits And Leaves
+    Winter Lake: Frozen Lake Surrounded By Snow-Covered Trees And Hills
+    Spring Rain: Gentle Spring Rain Nourishing Blooming Flowers And Green Foliage
+    Summer Sunset: Bright Sunset Casting Warm Colors Over Summer Landscape
+    Autumn River: River Flowing Through Autumn-Colored Forest With Falling Leaves
+    Winter Mountains: Majestic Snow-Capped Mountains Under A Clear Winter Sky
+    Spring Garden: Vibrant Garden Bursting With Spring Blooms And Fresh Greenery
+    Summer Fields: Expansive Fields Glowing Under The Strong Summer Sunlight
+    Autumn Path: Leaf-Strewn Path Winding Through Vibrant Autumn Woods
 
 ======| Anime Style Serene
 Calm Lake: Tranquil Lake Reflecting Clear Skies And Surrounding Nature
