@@ -96,28 +96,28 @@
     Geometric Garden: Garden Designed With Precise Geometric Shapes And Natural Flora
 
 ======| Geometry Style Night-Life
-Geometric Night: Night Sky Filled With Geometric Constellations And Patterns
-Symmetric Stars: Stars Arranged In Symmetric Geometric Formations Across Night Sky
-Polygonal Moon: Moon Depicted With Polygonal Geometric Facets Glowing At Night
-Fractal Fireflies: Fireflies Creating Fractal Geometric Light Patterns In Dark Forest
-Radial Reflections: Reflections Of Geometric Shapes In A Tranquil Night Lake
-Angular Aurora: Aurora Borealis Displaying Angular Geometric Light Streaks In Sky
-Hexagon Horizon: Horizon Line Divided Into Hexagonal Geometric Sections Under Night
-Tessellated Twilight: Twilight Sky Filled With Tessellated Geometric Cloud Formations
-Geometric Glow: Natural Night Scene Enhanced With Geometric Glowing Elements
-Circular Constellations: Constellations Forming Circular Geometric Patterns In Starry Night
+    Geometric Night: Night Sky Filled With Geometric Constellations And Patterns
+    Symmetric Stars: Stars Arranged In Symmetric Geometric Formations Across Night Sky
+    Polygonal Moon: Moon Depicted With Polygonal Geometric Facets Glowing At Night
+    Fractal Fireflies: Fireflies Creating Fractal Geometric Light Patterns In Dark Forest
+    Radial Reflections: Reflections Of Geometric Shapes In A Tranquil Night Lake
+    Angular Aurora: Aurora Borealis Displaying Angular Geometric Light Streaks In Sky
+    Hexagon Horizon: Horizon Line Divided Into Hexagonal Geometric Sections Under Night
+    Tessellated Twilight: Twilight Sky Filled With Tessellated Geometric Cloud Formations
+    Geometric Glow: Natural Night Scene Enhanced With Geometric Glowing Elements
+    Circular Constellations: Constellations Forming Circular Geometric Patterns In Starry Night
 
 ======| Geometry Style Rain
-Geometric Raindrops: Raindrops Forming Geometric Patterns As They Fall On Pond
-Symmetric Storm: Storm Clouds Arranged In Symmetric Geometric Formations Over Landscape
-Fractal Flood: Floodwaters Displaying Fractal Geometric Flow Patterns In River
-Polygonal Puddles: Puddles Reflecting Polygonal Geometric Shapes On Ground
-Tessellated Trees: Trees Appearing In Tessellated Geometric Patterns During Rain
-Radial Rain: Rain Spreading In Radial Geometric Patterns From Central Point
-Hexagon Haze: Hazy Rain Scene With Hexagonal Geometric Light Reflections
-Angular Arches: Rain Creating Angular Geometric Arches Over Natural Structures
-Circular Cascades: Rain Cascading In Circular Geometric Patterns Down Cliffs
-Symmetric Splash: Splashing Rainwater Forming Symmetric Geometric Shapes In Air
+    Geometric Raindrops: Raindrops Forming Geometric Patterns As They Fall On Pond
+    Symmetric Storm: Storm Clouds Arranged In Symmetric Geometric Formations Over Landscape
+    Fractal Flood: Floodwaters Displaying Fractal Geometric Flow Patterns In River
+    Polygonal Puddles: Puddles Reflecting Polygonal Geometric Shapes On Ground
+    Tessellated Trees: Trees Appearing In Tessellated Geometric Patterns During Rain
+    Radial Rain: Rain Spreading In Radial Geometric Patterns From Central Point
+    Hexagon Haze: Hazy Rain Scene With Hexagonal Geometric Light Reflections
+    Angular Arches: Rain Creating Angular Geometric Arches Over Natural Structures
+    Circular Cascades: Rain Cascading In Circular Geometric Patterns Down Cliffs
+    Symmetric Splash: Splashing Rainwater Forming Symmetric Geometric Shapes In Air
 
 ======| Geometry Style Season
 Autumn Geometry: Autumn Leaves Arranged In Geometric Patterns On Ground

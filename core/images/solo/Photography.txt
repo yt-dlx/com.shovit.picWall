@@ -72,40 +72,40 @@
     Starry Night: Open Landscape Under A Breathtaking, Star-Filled Night Sky
 
 ======| Photography Style Minimalism
-Silent Lake: Tranquil Lake With Minimalistic Shoreline And Calm Waters
-Empty Meadow: Vast Meadow With Sparse Vegetation Under A Clear Sky
-Bare Mountain: Simplistic Mountain Silhouette Against A Minimalist, Soft Background
-Calm River: Smooth River Flowing Through A Minimalistic, Open Landscape
-Sparse Forest: Few Trees Scattered In A Minimalist, Expansive Field
-Lone Tree: Single Tree Standing In A Vast, Empty Minimalist Setting
-Minimal Beach: Clean Beach With Minimal Elements And Wide Open Horizon
-Quiet Desert: Simple Desert Scene With Undulating Dunes And Clear Sky
-Simple Cliff: Stark Cliff Edge With Minimal Surrounding Natural Details
-Bare Hills: Rolling Hills With Minimal Vegetation Under A Soft Sky
+    Silent Lake: Tranquil Lake With Minimalistic Shoreline And Calm Waters
+    Empty Meadow: Vast Meadow With Sparse Vegetation Under A Clear Sky
+    Bare Mountain: Simplistic Mountain Silhouette Against A Minimalist, Soft Background
+    Calm River: Smooth River Flowing Through A Minimalistic, Open Landscape
+    Sparse Forest: Few Trees Scattered In A Minimalist, Expansive Field
+    Lone Tree: Single Tree Standing In A Vast, Empty Minimalist Setting
+    Minimal Beach: Clean Beach With Minimal Elements And Wide Open Horizon
+    Quiet Desert: Simple Desert Scene With Undulating Dunes And Clear Sky
+    Simple Cliff: Stark Cliff Edge With Minimal Surrounding Natural Details
+    Bare Hills: Rolling Hills With Minimal Vegetation Under A Soft Sky
 
 ======| Photography Style Nature
-Majestic Waterfall: Powerful Waterfall Cascading Over Rugged Natural Rocks Gracefully
-Ancient Forest: Dense Forest With Towering Ancient Trees And Lush Undergrowth
-Blooming Garden: Vibrant Garden Bursting With Diverse Colorful Flowers And Plants
-Rocky Shore: Rugged Shoreline With Natural Rock Formations And Crashing Waves
-Serene Pond: Peaceful Pond Surrounded By Greenery And Calm, Clear Water
-Verdant Hills: Rolling Green Hills Under A Bright, Clear Sky
-Tropical Rainforest: Lush Rainforest Teeming With Diverse Plant Life And Greenery
-Crystal Stream: Clear, Sparkling Stream Flowing Through A Natural, Scenic Landscape
-Desert Bloom: Desert Landscape With Rare Blooming Flowers And Cacti
-Snowy Forest: Snow-Covered Forest With Tall, Silent Trees And Pristine Snow
+    Majestic Waterfall: Powerful Waterfall Cascading Over Rugged Natural Rocks Gracefully
+    Ancient Forest: Dense Forest With Towering Ancient Trees And Lush Undergrowth
+    Blooming Garden: Vibrant Garden Bursting With Diverse Colorful Flowers And Plants
+    Rocky Shore: Rugged Shoreline With Natural Rock Formations And Crashing Waves
+    Serene Pond: Peaceful Pond Surrounded By Greenery And Calm, Clear Water
+    Verdant Hills: Rolling Green Hills Under A Bright, Clear Sky
+    Tropical Rainforest: Lush Rainforest Teeming With Diverse Plant Life And Greenery
+    Crystal Stream: Clear, Sparkling Stream Flowing Through A Natural, Scenic Landscape
+    Desert Bloom: Desert Landscape With Rare Blooming Flowers And Cacti
+    Snowy Forest: Snow-Covered Forest With Tall, Silent Trees And Pristine Snow
 
 ======| Photography Style Night-Life
-Starry Sky: Clear Night Sky Filled With Countless Shimmering Stars Above
-Moonlit Lake: Calm Lake Illuminated By The Soft Glow Of The Moonlight
-Night Forest: Dark Forest Scene With Moonlight Filtering Through Dense Trees
-Glowing Path: Pathway Illuminated By Subtle, Glowing Lights Under Night Sky
-Twilight Beach: Beach Scene Under The Stars With Gentle Moonlight Waves
-Night Mountains: Silhouetted Mountain Range Against A Deep, Star-Filled Night Sky
-Luminous Pond: Pond Reflecting The Moonlight And Surrounding Night Flora
-Nocturnal Meadow: Meadow Alive With Nocturnal Plants And Subtle Night Illumination
-Celestial River: River Reflecting The Stars And Moon In A Serene Night Setting
-Dark Orchard: Orchard Trees Silhouetted Against A Dark, Starry Night Sky
+    Starry Sky: Clear Night Sky Filled With Countless Shimmering Stars Above
+    Moonlit Lake: Calm Lake Illuminated By The Soft Glow Of The Moonlight
+    Night Forest: Dark Forest Scene With Moonlight Filtering Through Dense Trees
+    Glowing Path: Pathway Illuminated By Subtle, Glowing Lights Under Night Sky
+    Twilight Beach: Beach Scene Under The Stars With Gentle Moonlight Waves
+    Night Mountains: Silhouetted Mountain Range Against A Deep, Star-Filled Night Sky
+    Luminous Pond: Pond Reflecting The Moonlight And Surrounding Night Flora
+    Nocturnal Meadow: Meadow Alive With Nocturnal Plants And Subtle Night Illumination
+    Celestial River: River Reflecting The Stars And Moon In A Serene Night Setting
+    Dark Orchard: Orchard Trees Silhouetted Against A Dark, Starry Night Sky
 
 ======| Photography Style Rain
 Rainy Forest: Dense Forest Scene With Heavy Rain And Lush Greenery

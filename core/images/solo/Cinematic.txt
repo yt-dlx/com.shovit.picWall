@@ -132,40 +132,40 @@
     Summer Sunset: Bright Sunset Casting Warm Colors Over Summer Landscape
 
 ======| Cinematic Style Serene
-Calm Lake: Tranquil Lake Reflecting Clear Skies And Surrounding Nature
-Peaceful Forest: Quiet Forest With Gentle Sunlight Filtering Through Trees
-Silent Meadow: Serene Meadow With Soft Grasses And Gentle Breezes
-Still Pond: Calm Pond Mirroring The Serene Surrounding Landscape Perfectly
-Gentle River: Slow-Flowing River Winding Through A Peaceful Natural Setting
-Quiet Garden: Serene Garden With Neatly Arranged Flowers And Foliage
-Tranquil Beach: Calm Beach With Gentle Waves And Soft Sands
-Serene Mountains: Peaceful Mountain Range Under A Clear, Tranquil Sky
-Calm Valley: Quiet Valley With Lush Greenery And Serene Atmosphere
-Peaceful Stream: Gentle Stream Flowing Through A Serene, Natural Landscape
+    Calm Lake: Tranquil Lake Reflecting Clear Skies And Surrounding Nature
+    Peaceful Forest: Quiet Forest With Gentle Sunlight Filtering Through Trees
+    Silent Meadow: Serene Meadow With Soft Grasses And Gentle Breezes
+    Still Pond: Calm Pond Mirroring The Serene Surrounding Landscape Perfectly
+    Gentle River: Slow-Flowing River Winding Through A Peaceful Natural Setting
+    Quiet Garden: Serene Garden With Neatly Arranged Flowers And Foliage
+    Tranquil Beach: Calm Beach With Gentle Waves And Soft Sands
+    Serene Mountains: Peaceful Mountain Range Under A Clear, Tranquil Sky
+    Calm Valley: Quiet Valley With Lush Greenery And Serene Atmosphere
+    Peaceful Stream: Gentle Stream Flowing Through A Serene, Natural Landscape
 
 ======| Cinematic Style Snow
-Snowy Forest: Dense Forest Blanketed In Pristine White Snowflakes Gently Falling
-Winter Lake: Frozen Lake Surrounded By Snow-Covered Trees And Clear Skies
-Snowy Mountain: Majestic Mountain Peak Covered In Thick, Untouched Snow
-Silent Snowfall: Gentle Snowfall Creating A Quiet, Serene Winter Landscape
-Snowy Path: Pathway Winding Through Snow-Laden Trees In Winter Scene
-Frozen Waterfall: Waterfall Frozen In Ice, Glistening Under Winter Sunlight
-Snowy Meadow: Meadow Blanketed In Fresh Snow With Distant Snowy Hills
-Winter Garden: Garden Covered In Snow With Bare Trees And Icy Paths
-Snowy Ridge: Ridge Line Sparkling With Fresh Snow Under Clear Winter Sky
-Snowy River: River Partially Frozen With Snow-Covered Banks And Trees
+    Snowy Forest: Dense Forest Blanketed In Pristine White Snowflakes Gently Falling
+    Winter Lake: Frozen Lake Surrounded By Snow-Covered Trees And Clear Skies
+    Snowy Mountain: Majestic Mountain Peak Covered In Thick, Untouched Snow
+    Silent Snowfall: Gentle Snowfall Creating A Quiet, Serene Winter Landscape
+    Snowy Path: Pathway Winding Through Snow-Laden Trees In Winter Scene
+    Frozen Waterfall: Waterfall Frozen In Ice, Glistening Under Winter Sunlight
+    Snowy Meadow: Meadow Blanketed In Fresh Snow With Distant Snowy Hills
+    Winter Garden: Garden Covered In Snow With Bare Trees And Icy Paths
+    Snowy Ridge: Ridge Line Sparkling With Fresh Snow Under Clear Winter Sky
+    Snowy River: River Partially Frozen With Snow-Covered Banks And Trees
 
 ======| Cinematic Style Synthwave
-Neon Dunes: Desert Dunes Glowing With Vibrant Neon Lights Under Twilight
-Retro Lake: Lake Reflecting Colorful Synthwave Sunset With Neon Horizons
-Cyber Sunset: Sunset Sky Ablaze With Synthwave Colors And Neon Gradients
-Electric Forest: Forest Illuminated By Neon Lights And Synthwave-Inspired Colors
-Pixel Mountains: Mountain Range Stylized With Pixel Art And Neon Accents
-Neon River: River Flowing With Vibrant Neon Reflections Under Synthwave Sky
-Retro Garden: Garden Scene Enhanced With Retro Neon Lights And Synth Colors
-Synth Beach: Beachscape Glowing With Neon Lights And Vibrant Synthwave Hues
-Electric Fields: Open Fields Bathed In Electric Neon Colors And Synth Lights
-Neon Skyline: City Skyline Illuminated With Bright Neon Lights And Synthwave Style
+    Neon Dunes: Desert Dunes Glowing With Vibrant Neon Lights Under Twilight
+    Retro Lake: Lake Reflecting Colorful Synthwave Sunset With Neon Horizons
+    Cyber Sunset: Sunset Sky Ablaze With Synthwave Colors And Neon Gradients
+    Electric Forest: Forest Illuminated By Neon Lights And Synthwave-Inspired Colors
+    Pixel Mountains: Mountain Range Stylized With Pixel Art And Neon Accents
+    Neon River: River Flowing With Vibrant Neon Reflections Under Synthwave Sky
+    Retro Garden: Garden Scene Enhanced With Retro Neon Lights And Synth Colors
+    Synth Beach: Beachscape Glowing With Neon Lights And Vibrant Synthwave Hues
+    Electric Fields: Open Fields Bathed In Electric Neon Colors And Synth Lights
+    Neon Skyline: City Skyline Illuminated With Bright Neon Lights And Synthwave Style
 
 ======| Cinematic Style Techno
 Circuit Forest: Forest Intertwined With Glowing Techno Circuits And Digital Elements
