@@ -78,7 +78,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
-    "@types/react": "~18.3.12",
+    "@types/react": "19.0.8",
     "@types/react-test-renderer": "^18.3.0",
     "eslint": "^9.18.0",
     "eslint-config-expo": "~8.0.1",
