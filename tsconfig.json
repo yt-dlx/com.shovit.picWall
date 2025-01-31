@@ -1,5 +1,5 @@
 {
-  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts", "nativewind-env.d.ts", "../server/src/database/styles/Geometry - Cinematic.ts"],
+  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts", "nativewind-env.d.ts"s, "../server/src/database/styles/Anime - Synthwave.ts", "../server/src/database/styles/Cinematic - Retro.ts", "../server/src/database/styles/Geometry - Retro.ts", "../server/src/database/styles/Geometry - Synthwave.ts"],
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true,
