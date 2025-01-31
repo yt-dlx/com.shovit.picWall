@@ -120,40 +120,40 @@
     Symmetric Splash: Splashing Rainwater Forming Symmetric Geometric Shapes In Air
 
 ======| Geometry Style Season
-Autumn Geometry: Autumn Leaves Arranged In Geometric Patterns On Ground
-Winter Symmetry: Snow-Covered Landscape Displaying Symmetric Geometric Formations
-Spring Fractals: Spring Blossoms Creating Fractal Geometric Patterns In Garden
-Summer Grids: Summer Fields Divided Into Geometric Grid Patterns Under Sun
-Symmetric Snow: Snowflakes Forming Symmetric Geometric Shapes On Trees
-Fractal Fall: Fall Foliage Exhibiting Fractal Geometric Arrangements In Forest
-Polygonal Spring: Spring Blooms Arranged In Polygonal Geometric Clusters
-Radial Summer: Summer Sun Creating Radial Geometric Shadows Across Landscape
-Tessellated Winter: Winter Scene With Tessellated Geometric Snow Patterns
-Circular Autumn: Autumn Trees Forming Circular Geometric Silhouettes Against Sky
+    Autumn Geometry: Autumn Leaves Arranged In Geometric Patterns On Ground
+    Winter Symmetry: Snow-Covered Landscape Displaying Symmetric Geometric Formations
+    Spring Fractals: Spring Blossoms Creating Fractal Geometric Patterns In Garden
+    Summer Grids: Summer Fields Divided Into Geometric Grid Patterns Under Sun
+    Symmetric Snow: Snowflakes Forming Symmetric Geometric Shapes On Trees
+    Fractal Fall: Fall Foliage Exhibiting Fractal Geometric Arrangements In Forest
+    Polygonal Spring: Spring Blooms Arranged In Polygonal Geometric Clusters
+    Radial Summer: Summer Sun Creating Radial Geometric Shadows Across Landscape
+    Tessellated Winter: Winter Scene With Tessellated Geometric Snow Patterns
+    Circular Autumn: Autumn Trees Forming Circular Geometric Silhouettes Against Sky
 
 ======| Geometry Style Serene
-Calm Geometry: Serene Lake Mirrored With Calm Geometric Reflections
-Symmetric Silence: Quiet Landscape Featuring Symmetric Geometric Elements
-Fractal Peace: Peaceful Forest Displaying Fractal Geometric Tree Patterns
-Radial Reflection: Tranquil Pond Reflecting Radial Geometric Shapes From Surroundings
-Polygonal Calm: Calm Meadow Outlined With Polygonal Geometric Borders
-Tessellated Tranquility: Tranquil Scene Enhanced With Tessellated Geometric Patterns
-Geometric Harmony: Harmonious Nature Scene With Balanced Geometric Shapes
-Circular Serenity: Serene Landscape With Circular Geometric Formations In Nature
-Fractal Flow: Gentle River Exhibiting Fractal Geometric Flow Patterns
-Symmetric Serenity: Serene Environment Highlighted By Symmetric Geometric Designs
+    Calm Geometry: Serene Lake Mirrored With Calm Geometric Reflections
+    Symmetric Silence: Quiet Landscape Featuring Symmetric Geometric Elements
+    Fractal Peace: Peaceful Forest Displaying Fractal Geometric Tree Patterns
+    Radial Reflection: Tranquil Pond Reflecting Radial Geometric Shapes From Surroundings
+    Polygonal Calm: Calm Meadow Outlined With Polygonal Geometric Borders
+    Tessellated Tranquility: Tranquil Scene Enhanced With Tessellated Geometric Patterns
+    Geometric Harmony: Harmonious Nature Scene With Balanced Geometric Shapes
+    Circular Serenity: Serene Landscape With Circular Geometric Formations In Nature
+    Fractal Flow: Gentle River Exhibiting Fractal Geometric Flow Patterns
+    Symmetric Serenity: Serene Environment Highlighted By Symmetric Geometric Designs
 
 ======| Geometry Style Snow
-Hexagonal Snowflakes: Snowflakes Forming Hexagonal Geometric Patterns In Falling Snow
-Symmetric Snow: Snow-Covered Landscape Displaying Symmetric Geometric Formations
-Fractal Frost: Frost Patterns On Trees Exhibiting Fractal Geometric Designs
-Polygonal Peaks: Snowy Mountain Peaks Outlined With Polygonal Geometric Precision
-Tessellated Terrain: Snow-Covered Terrain Divided Into Tessellated Geometric Sections
-Radial Snow: Snow Spreading In Radial Geometric Patterns From Central Point
-Circular Snowdrifts: Snowdrifts Shaped Into Circular Geometric Formations Across Field
-Geometric Glaze: Snow Glaze Reflecting Geometric Shapes And Patterns Naturally
-Fractal Freeze: Frozen Lake Displaying Fractal Geometric Ice Patterns
-Symmetric Silence: Silent Snowy Forest With Symmetric Geometric Tree Arrangements
+    Hexagonal Snowflakes: Snowflakes Forming Hexagonal Geometric Patterns In Falling Snow
+    Symmetric Snow: Snow-Covered Landscape Displaying Symmetric Geometric Formations
+    Fractal Frost: Frost Patterns On Trees Exhibiting Fractal Geometric Designs
+    Polygonal Peaks: Snowy Mountain Peaks Outlined With Polygonal Geometric Precision
+    Tessellated Terrain: Snow-Covered Terrain Divided Into Tessellated Geometric Sections
+    Radial Snow: Snow Spreading In Radial Geometric Patterns From Central Point
+    Circular Snowdrifts: Snowdrifts Shaped Into Circular Geometric Formations Across Field
+    Geometric Glaze: Snow Glaze Reflecting Geometric Shapes And Patterns Naturally
+    Fractal Freeze: Frozen Lake Displaying Fractal Geometric Ice Patterns
+    Symmetric Silence: Silent Snowy Forest With Symmetric Geometric Tree Arrangements
 
 ======| Geometry Style Synthwave
 Neon Geometry: Synthwave Colors Highlighting Geometric Shapes In Natural Landscape

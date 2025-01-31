@@ -180,37 +180,37 @@
     Digital Orchard: Orchard Trees Enhanced With Techno Circuits And Glowing Fruits
 
 ======| Cinematic Style Urban
-City Park: Urban Park With Green Spaces, Pathways, And Modern Landscaping
-Rooftop Garden: Rooftop Garden In Cityscape With Lush Plants And Views
-Urban Lake: Lake Situated Within A Bustling Urban Environment And Skyline
-City Bridge: Modern Bridge Spanning Urban Waterways With City Lights
-Urban Forest: Green Forest Area Integrated Within A Busy City Landscape
-City Plaza: Open City Plaza Surrounded By Buildings And Green Areas
-Urban Meadow: Meadow Area Nestled Within A Densely Built Urban Environment
-City Stream: Stream Flowing Through City Park With Surrounding Urban Structures
-Urban Hills: Gently Rolling Hills Within An Urban Setting And Skyline
-City Orchard: Orchard Trees Planted In An Urban Neighborhood Park
+    City Park: Urban Park With Green Spaces, Pathways, And Modern Landscaping
+    Rooftop Garden: Rooftop Garden In Cityscape With Lush Plants And Views
+    Urban Lake: Lake Situated Within A Bustling Urban Environment And Skyline
+    City Bridge: Modern Bridge Spanning Urban Waterways With City Lights
+    Urban Forest: Green Forest Area Integrated Within A Busy City Landscape
+    City Plaza: Open City Plaza Surrounded By Buildings And Green Areas
+    Urban Meadow: Meadow Area Nestled Within A Densely Built Urban Environment
+    City Stream: Stream Flowing Through City Park With Surrounding Urban Structures
+    Urban Hills: Gently Rolling Hills Within An Urban Setting And Skyline
+    City Orchard: Orchard Trees Planted In An Urban Neighborhood Park
 
 ======| Cinematic Style Vehicles
-Electric Boat: Sleek Electric Boat Gliding Smoothly Across A Serene Lake
-Solar Car: Futuristic Solar-Powered Car Parked In A Lush Green Field
-Wind Turbine: Modern Wind Turbine Set Against A Natural, Scenic Backdrop
-Hydro Plane: Hydro Plane Soaring Gracefully Over A Tranquil Water Landscape
-Solar Sail: Solar Sailboat Navigating Calm, Clear Waters Under Sunlight
-Electric Bike: Eco-Friendly Electric Bike Resting Beside A Peaceful Riverside
-Hybrid Scooter: Stylish Hybrid Scooter Placed In A Vibrant Natural Setting
-Eco Van: Eco-Friendly Van Parked Near A Blooming Flower Meadow
-Electric Tram: Electric Tram Moving Through A Green, Nature-Infused Urban Area
-Solar Yacht: Luxurious Solar-Powered Yacht Anchored In A Pristine Bay
+    Electric Boat: Sleek Electric Boat Gliding Smoothly Across A Serene Lake
+    Solar Car: Futuristic Solar-Powered Car Parked In A Lush Green Field
+    Wind Turbine: Modern Wind Turbine Set Against A Natural, Scenic Backdrop
+    Hydro Plane: Hydro Plane Soaring Gracefully Over A Tranquil Water Landscape
+    Solar Sail: Solar Sailboat Navigating Calm, Clear Waters Under Sunlight
+    Electric Bike: Eco-Friendly Electric Bike Resting Beside A Peaceful Riverside
+    Hybrid Scooter: Stylish Hybrid Scooter Placed In A Vibrant Natural Setting
+    Eco Van: Eco-Friendly Van Parked Near A Blooming Flower Meadow
+    Electric Tram: Electric Tram Moving Through A Green, Nature-Infused Urban Area
+    Solar Yacht: Luxurious Solar-Powered Yacht Anchored In A Pristine Bay
 
 ======| Cinematic Style Vintage
-Classic Lake: Vintage-Style Lake Scene With Timeless Trees And Calm Waters
-Retro Forest: Forest Depicted With Vintage Colors And Nostalgic Atmosphere
-Old Meadow: Timeless Meadow With Classic Wildflowers And Serene Views
-Vintage Mountains: Mountain Range Illustrated With A Vintage, Sepia-Toned Palette
-Antique Pond: Pond Scene With Vintage Flora And Classic Natural Beauty
-Vintage Beach: Classic Beach Setting With Timeless Sands And Gentle Waves
-Old Garden: Vintage Garden With Classic Blooms And Traditional Pathways
-Retro Lakeview: Lakeview Scene Rendered In A Vintage, Nostalgic Style
-Classic Orchard: Orchard Trees In A Vintage Setting With Timeless Charm
-Vintage Path: Old Pathway Winding Through A Classic, Serene Landscape
+    Classic Lake: Vintage-Style Lake Scene With Timeless Trees And Calm Waters
+    Retro Forest: Forest Depicted With Vintage Colors And Nostalgic Atmosphere
+    Old Meadow: Timeless Meadow With Classic Wildflowers And Serene Views
+    Vintage Mountains: Mountain Range Illustrated With A Vintage, Sepia-Toned Palette
+    Antique Pond: Pond Scene With Vintage Flora And Classic Natural Beauty
+    Vintage Beach: Classic Beach Setting With Timeless Sands And Gentle Waves
+    Old Garden: Vintage Garden With Classic Blooms And Traditional Pathways
+    Retro Lakeview: Lakeview Scene Rendered In A Vintage, Nostalgic Style
+    Classic Orchard: Orchard Trees In A Vintage Setting With Timeless Charm
+    Vintage Path: Old Pathway Winding Through A Classic, Serene Landscape
