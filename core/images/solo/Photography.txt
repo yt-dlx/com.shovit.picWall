@@ -204,13 +204,13 @@ Electric Tram: Electric Tram Moving Through A Green, Nature-Infused Urban Area
 Solar Yacht: Luxurious Solar-Powered Yacht Anchored In A Pristine Bay
 
 ======| Photography Style Vintage
-Classic Lake: Vintage-Style Lake Scene With Timeless Trees And Calm Waters
-Retro Forest: Forest Depicted With Vintage Colors And Nostalgic Atmosphere
-Old Meadow: Timeless Meadow With Classic Wildflowers And Serene Views
-Vintage Mountains: Mountain Range Illustrated With A Vintage, Sepia-Toned Palette
-Antique Pond: Pond Scene With Vintage Flora And Classic Natural Beauty
-Vintage Beach: Classic Beach Setting With Timeless Sands And Gentle Waves
-Old Garden: Vintage Garden With Classic Blooms And Traditional Pathways
-Retro Lakeview: Lakeview Scene Rendered In A Vintage, Nostalgic Style
-Classic Orchard: Orchard Trees In A Vintage Setting With Timeless Charm
-Vintage Path: Old Pathway Winding Through A Classic, Serene Landscape
+    Classic Lake: Vintage-Style Lake Scene With Timeless Trees And Calm Waters
+    Retro Forest: Forest Depicted With Vintage Colors And Nostalgic Atmosphere
+    Old Meadow: Timeless Meadow With Classic Wildflowers And Serene Views
+    Vintage Mountains: Mountain Range Illustrated With A Vintage, Sepia-Toned Palette
+    Antique Pond: Pond Scene With Vintage Flora And Classic Natural Beauty
+    Vintage Beach: Classic Beach Setting With Timeless Sands And Gentle Waves
+    Old Garden: Vintage Garden With Classic Blooms And Traditional Pathways
+    Retro Lakeview: Lakeview Scene Rendered In A Vintage, Nostalgic Style
+    Classic Orchard: Orchard Trees In A Vintage Setting With Timeless Charm
+    Vintage Path: Old Pathway Winding Through A Classic, Serene Landscape
