@@ -2,7 +2,7 @@
 # Script 0: Create the Opposite Folder Structure
 #=======================================================================================================================================================================================
 import os
-main_folder = "input"
+main_folder = "original"
 models = ["Anime", "Cinematic", "Geometry", "Photography"]
 sub_topics = ["Nature", "Minimalism", "Abstract", "Synthwave", "Retro"]
 if not os.path.exists(main_folder):
