@@ -4,7 +4,7 @@
 import os
 main_folder = "input"
 models = ["Anime", "Cinematic", "Geometry", "Photography"]
-sub_topics = ["Abstract", "Aerial-View", "Cyberpunk", "Dusk-life", "Ethereal", "Landscapes", "Minimalism", "Nature", "Night-life", "Rain", "Season", "Serene", "Snow", "Synthwave", "Techno", "Urban", "Vehicles", "Vintage"]
+sub_topics = ["Nature", "Minimalism", "Abstract", "Synthwave", "Retro"]
 if not os.path.exists(main_folder):
     os.makedirs(main_folder)
 for model in models:
