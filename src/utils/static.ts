@@ -8,23 +8,23 @@ type ImageSet = string[];
 const categories: Category[] = [
   {
     base: "Anime",
-    subCategories: ["Rain", "Snow", "Urban", "Synthwave"],
-    names: ["Rainy Forest", "Snowy Forest", "City Park", "Neon Dunes"]
+    subCategories: ["Abstract", "DuskLife", "Cyberpunk", "Ethereal"],
+    names: ["Celestial Sky", "Sunset Prairie", "hacker Forest", "Fairy Pond"]
   },
   {
     base: "Cinematic",
-    subCategories: ["Rain", "Snow", "Urban", "Synthwave"],
-    names: ["Rainy Forest", "Snowy Forest", "City Park", "Neon Dunes"]
+    subCategories: ["Abstract", "DuskLife", "Cyberpunk", "Ethereal"],
+    names: ["Galactic Flow", "Dusky Beach", "Techno Mountains", "Ethereal Peaks"]
   },
   {
     base: "Geometry",
-    subCategories: ["Rain", "Snow", "Urban", "Synthwave"],
-    names: ["Geometric Raindrops", "Hexagonal Snowflakes", "Geometric Park", "Neon Geometry"]
+    subCategories: ["Rain", "Snow", "Nature", "Synthwave"],
+    names: ["Hexagon Haze", "Polygon Peaks", "Geometrix Forest", "Park Lights"]
   },
   {
     base: "Photography",
-    subCategories: ["Rain", "Snow", "Urban", "Synthwave"],
-    names: ["Rainy Forest", "Snowy Forest", "City Park", "Neon Dunes"]
+    subCategories: ["Aerial View", "Minimalism", "Landscapes", "NightLife"],
+    names: ["Snowy Peaks", "Calm River", "Autumn Forest", "Glowing Path"]
   }
 ];
 const generateImageUrls = (category: Category): ImageSet => {
