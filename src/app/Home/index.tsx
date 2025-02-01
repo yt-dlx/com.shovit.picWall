@@ -94,6 +94,7 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
     });
     setPreviewLinks(newLinks);
   }, [rawCategoriesArray]);
+
   useEffect(() => {
     if (!isVisible) return;
     const intervals: NodeJS.Timeout[] = [];
@@ -105,9 +106,11 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
     });
     return () => intervals.forEach(clearInterval);
   }, [isVisible, previewLinks]);
+
   useEffect(() => {
     if (isVisible) generatePreviewLinks();
   }, [isVisible, generatePreviewLinks]);
+
   if (!isVisible) return null;
   return (
     <Modal visible transparent animationType="slide" onRequestClose={onClose}>

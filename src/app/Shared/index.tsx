@@ -4,18 +4,7 @@ import colorize from "@/utils/colorize";
 import React, { useEffect, useState, useRef } from "react";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
-import { View, Text, ActivityIndicator, Dimensions, StatusBar, Animated, useWindowDimensions } from "react-native";
-
-const useResponsiveStyles = () => {
-  const { width, height } = useWindowDimensions();
-  const wp = (percentage: number) => (width * percentage) / 100;
-  const hp = (percentage: number) => (height * percentage) / 100;
-  const rf = (size: number, factor = 0.5) => {
-    const ratio = (size * width) / 390;
-    return size + (ratio - size) * factor;
-  };
-  return { wp, hp, rf };
-};
+import { View, Text, ActivityIndicator, StatusBar, Animated, Dimensions } from "react-native";
 
 const screenDimensions = Dimensions.get("screen");
 
@@ -52,7 +41,6 @@ const CardContainer: React.FC<{ children: React.ReactNode; style?: any }> = ({ c
 );
 
 export default function SharedPage(): JSX.Element {
-  const { wp, hp, rf } = useResponsiveStyles();
   const router = useRouter();
   const params = useLocalSearchParams();
   const [adError, setAdError] = useState(false);
@@ -103,7 +91,6 @@ export default function SharedPage(): JSX.Element {
       Animated.sequence([Animated.timing(opacity, { toValue: 1, duration: 1000, useNativeDriver: true }), Animated.timing(opacity, { toValue: 0, duration: 1000, useNativeDriver: true })])
     ).start();
 
-    // Add entrance animation
     Animated.spring(scaleAnim, {
       toValue: 1,
       tension: 50,
@@ -133,7 +120,7 @@ export default function SharedPage(): JSX.Element {
           flex: 1,
           alignItems: "center",
           justifyContent: "center",
-          padding: wp(6),
+          padding: 24,
           transform: [{ scale: scaleAnim }]
         }}
       >
@@ -141,11 +128,11 @@ export default function SharedPage(): JSX.Element {
           {selectedImage && (
             <View
               style={{
-                height: hp(30),
-                width: wp(40),
+                height: 210, // Fixed height for the image container
+                width: 160, // Fixed width for the image container
                 overflow: "hidden",
                 borderRadius: 16,
-                marginBottom: hp(4),
+                marginBottom: 32,
                 backgroundColor: colorize("#111111", 1.0),
                 borderWidth: 3,
                 borderColor: colorize("#F4F4F5", 0.2),
@@ -170,41 +157,41 @@ export default function SharedPage(): JSX.Element {
                     position: "absolute",
                     top: "50%",
                     left: "50%",
-                    transform: [{ translateX: -wp(3) }, { translateY: -wp(3) }, { scale: scaleAnim }],
+                    transform: [{ translateX: -48 }, { translateY: -48 }, { scale: scaleAnim }],
                     opacity: opacity
                   }}
                 >
-                  <FontAwesome6 name="download" size={rf(28)} color={colorize("#F4F4F5", 1.0)} />
+                  <FontAwesome6 name="download" size={28} color={colorize("#F4F4F5", 1.0)} />
                 </Animated.View>
               )}
             </View>
           )}
 
-          {!imageLoaded && <ActivityIndicator size="large" color={colorize("#F4F4F5", 1.0)} style={{ marginVertical: hp(2) }} />}
+          {!imageLoaded && <ActivityIndicator size="large" color={colorize("#F4F4F5", 1.0)} style={{ marginVertical: 16 }} />}
 
           {adError ? (
-            <View style={{ alignItems: "center", marginTop: hp(2) }}>
+            <View style={{ alignItems: "center", marginTop: 16 }}>
               <Text
                 style={{
                   color: colorize("#FF6B6B", 1.0),
-                  fontSize: rf(16),
+                  fontSize: 16,
                   fontFamily: "Lobster",
                   textAlign: "center",
-                  marginBottom: hp(1)
+                  marginBottom: 8
                 }}
               >
                 Reward not received. Please try again.
               </Text>
             </View>
           ) : (
-            <View style={{ alignItems: "center", marginTop: hp(2) }}>
+            <View style={{ alignItems: "center", marginTop: 16 }}>
               <Text
                 style={{
                   color: colorize("#F4F4F5", 1.0),
-                  fontSize: rf(22),
+                  fontSize: 22,
                   fontFamily: "Lobster",
                   fontWeight: "600",
-                  marginBottom: hp(2)
+                  marginBottom: 16
                 }}
               >
                 Preparing Your Experience
@@ -212,10 +199,10 @@ export default function SharedPage(): JSX.Element {
               <Text
                 style={{
                   color: colorize("#F4F4F5", 0.8),
-                  fontSize: rf(14),
+                  fontSize: 14,
                   fontFamily: "RobotoCondensed",
                   textAlign: "center",
-                  lineHeight: rf(20)
+                  lineHeight: 20
                 }}
               >
                 After watching the ad, you'll be redirected to your selected content.
@@ -223,9 +210,9 @@ export default function SharedPage(): JSX.Element {
               <Text
                 style={{
                   color: colorize("#F4F4F5", 0.9),
-                  fontSize: rf(16),
+                  fontSize: 16,
                   fontFamily: "RobotoCondensed",
-                  marginTop: hp(3)
+                  marginTop: 24
                 }}
               >
                 Redirecting in {countdown} seconds...

@@ -292,8 +292,8 @@ SubImages.displayName = "SubImages";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
 const WallModal: React.FC<WallModalProps> = memo(({ visible, onComplete, onCancel, wallType, primaryColor }) => {
+  const countdownRef = useRef<NodeJS.Timeout | undefined>(undefined);
   const [modalAnim] = useState(new Animated.Value(0));
-  const countdownRef = useRef<NodeJS.Timeout>();
   const [countdown, setCountdown] = useState(3);
   useEffect(() => {
     if (visible) {
