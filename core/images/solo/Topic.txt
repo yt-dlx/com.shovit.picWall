@@ -1,4 +1,4 @@
-### Anime
+=================================| Anime
     ### Mountains
     Majestic Peaks: A massive, snow-covered mountain range under a golden sunset sky.  
     Lonely Warrior: A lone warrior standing on a cliff, gazing at the towering mountain peaks.  
@@ -84,7 +84,7 @@
     Mermaid Rock: A mermaid sitting on a rock in the ocean, gazing at the stars above.  
     Shipwrecked: A dramatic scene of a shipwreck in the middle of a violent ocean storm.
 
-### Cinematic
+=================================| Cinematic
     ### Vistas
     Rolling Hills: A Breathtaking View Of Rolling Green Hills Stretching Endlessly Under A Bright Blue Sky.  
     Ocean Cliff: A Sweeping Vista Of A Cliffside Overlooking A Vast, Sparkling Ocean At Dawn.  
@@ -145,7 +145,7 @@
     Mountain Shadows: A Timelapse Of Shadows Moving Across A Mountain Range As The Sun Rises And Sets.  
     Tidal Change: A Timelapse Of The Ocean's Tide Coming In And Out, Revealing Different Parts Of The Shoreline Over Time.
 
-### Geometry
+=================================| Geometry
     ### Structures
     Towering Heights: A futuristic cityscape with geometric skyscrapers reaching into the clouds.  
     Sacred Temple: An ancient stone structure with intricate geometric carvings adorning the walls.  
@@ -206,7 +206,7 @@
     Tree Rings: The concentric contours of a tree trunk, revealing the passage of time through annual growth rings.  
     Abstract Curves: Smooth, flowing contours in an abstract design, forming an elegant and fluid composition.
 
-### Photography
+=================================| Photography
     ### Wilderness
     Hidden Waterfall: A remote waterfall cascading down a cliff, surrounded by untouched wilderness and lush greenery.  
     Wild Plains: An expansive plain stretching out under a clear blue sky, with a solitary figure walking through the tall grass.  
