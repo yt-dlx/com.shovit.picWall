@@ -8,23 +8,23 @@ type ImageSet = string[];
 const categories: Category[] = [
   {
     base: "Anime",
-    subCategories: ["Abstract", "DuskLife", "Cyberpunk", "Ethereal"],
-    names: ["Celestial Sky", "Sunset Prairie", "hacker Forest", "Fairy Pond"]
+    subCategories: ["Rain", "Retro", "Season", "Synthwave"],
+    names: ["Rainfall Stream", "Arcade Glow", "Autumn Leaves", "Beach Vibes"]
   },
   {
     base: "Cinematic",
-    subCategories: ["Abstract", "DuskLife", "Cyberpunk", "Ethereal"],
-    names: ["Galactic Flow", "Dusky Beach", "Techno Mountains", "Ethereal Peaks"]
+    subCategories: ["Abstract", "Nature", "Cyberpunk", "Ethereal"],
+    names: ["Cosmic Forms", "Autumn Warmth", "Cyber Canopy", "Aurora Grove"]
   },
   {
     base: "Geometry",
     subCategories: ["Rain", "Snow", "Nature", "Synthwave"],
-    names: ["Hexagon Haze", "Polygon Peaks", "Geometrix Forest", "Park Lights"]
+    names: ["Angular Arches", "Circular Snowdrifts", "Cactus Shapes", "Beach Glow"]
   },
   {
     base: "Photography",
-    subCategories: ["Aerial View", "Minimalism", "Landscapes", "NightLife"],
-    names: ["Snowy Peaks", "Calm River", "Autumn Forest", "Glowing Path"]
+    subCategories: ["Cyberpunk", "Minimalism", "Retro", "Synthwave"],
+    names: ["City Lights", "Clear Horizon", "Classic Drivein", "Cyber Sunset"]
   }
 ];
 const generateImageUrls = (category: Category): ImageSet => {

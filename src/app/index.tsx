@@ -95,25 +95,22 @@ UpdateDialog.displayName = "UpdateDialog";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
 const ScrollingSlot = memo<ScrollingSlotProps>(({ images, delay }) => {
-  const imageHeight = 210; // Fixed value for image height
-  const scale = useSharedValue(0.9);
+  const imageHeight = 210;
+  const scale = useSharedValue(0.8);
   const opacity = useSharedValue(0);
   const scrollValue = useSharedValue(0);
   const totalHeight = useMemo(() => images.length * imageHeight, [images]);
-
   useEffect(() => {
     opacity.value = withDelay(delay, withTiming(1, { duration: 10 }));
     scale.value = withDelay(delay, withSpring(1, { damping: 20, stiffness: 50 }));
     scrollValue.value = withDelay(delay, withRepeat(withTiming(totalHeight, { duration: 10000, easing: Easing.linear }), -1));
   }, [delay, opacity, scale, scrollValue, totalHeight]);
-
   const animatedStyle = useAnimatedStyle(() => ({ transform: [{ translateY: -scrollValue.value % totalHeight }, { scale: scale.value }], opacity: opacity.value }));
-
   return (
-    <View style={{ flex: 1, overflow: "hidden", padding: 8 }}>
+    <View style={{ flex: 1, overflow: "hidden", padding: 2 }}>
       <Animated.View style={animatedStyle}>
         {images.concat(images).map((uri, idx) => (
-          <Image alt="Wallpaper image" source={uri} key={`${uri}-${idx}`} contentFit="cover" cachePolicy="disk" style={{ height: imageHeight, borderRadius: 16, width: "100%", marginBottom: 8 }} />
+          <Image alt="Wallpaper image" source={uri} key={`${uri}-${idx}`} contentFit="cover" cachePolicy="disk" style={{ height: imageHeight, borderRadius: 16, width: "100%", marginBottom: 4 }} />
         ))}
       </Animated.View>
     </View>
