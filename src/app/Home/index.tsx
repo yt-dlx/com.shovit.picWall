@@ -171,7 +171,7 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                             textAlign: "center",
                             position: "absolute",
                             textShadowRadius: 4,
-                            fontFamily: "RobotoCondensed",
+                            fontFamily: "PTSerifRegular",
                             color: colorize("#F4F4F5", 1.0),
                             textShadowOffset: { width: 1, height: 1 },
                             textShadowColor: colorize("#111111", 0.6)
@@ -235,7 +235,7 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                                 fontSize: 16,
                                 marginBottom: 4,
                                 textAlign: "center",
-                                fontFamily: "RobotoCondensed",
+                                fontFamily: "PTSerifRegular",
                                 color: selectedSubcategory === child ? colorize("#111111", 1.0) : colorize("#F4F4F5", 1.0)
                               }}
                             >
@@ -281,7 +281,7 @@ const SearchBar: FC<{ onSearch: (text: string) => void }> = memo(({ onSearch }) 
           placeholder="Search by image name..."
           placeholderTextColor={colorize("#F4F4F5", 0.6)}
           accessibilityHint={`Current search term: ${searchText || "empty"}. Enter text to filter wallpapers.`}
-          style={{ flex: 1, marginLeft: 8, fontSize: 16, fontFamily: "RobotoCondensed", color: colorize("#F4F4F5", 1.0) }}
+          style={{ flex: 1, marginLeft: 8, fontSize: 16, fontFamily: "PTSerifRegular", color: colorize("#F4F4F5", 1.0) }}
         />
         {searchText.length > 0 && (
           <TouchableOpacity onPress={() => handleSearch("")} style={{ padding: 8 }} accessibilityLabel="Clear search">
@@ -318,7 +318,7 @@ const SubImages: FC<SubImagesProps> = memo(({ images, onImagePress }) => (
                   borderRadius: 15,
                   position: "absolute",
                   paddingHorizontal: 8,
-                  fontFamily: "RobotoCondensed",
+                  fontFamily: "PTSerifRegular",
                   color: colorize("#111111", 1.0),
                   backgroundColor: colorize(image.primary, 1.0)
                 }}
@@ -404,11 +404,11 @@ const Card: FC<CardProps> = memo(({ data }) => {
                 <View style={[StyleSheet.absoluteFill, { backgroundColor: colorize(data.images[currentIndex].primary, 1.0) }]} />
                 <View style={{ padding: 4, margin: 4 }}>
                   <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: 2 }}>
-                    <Text style={{ flex: 1, fontSize: 14, marginRight: 8, color: colorize("#F4F4F5", 1.0), fontFamily: "RobotoCondensed" }}>
+                    <Text style={{ flex: 1, fontSize: 14, marginRight: 8, color: colorize("#F4F4F5", 1.0), fontFamily: "PTSerifRegular" }}>
                       {data.images[currentIndex].original_file_name.replace(/_/g, " ").replace(".jpg", "")}
                     </Text>
                     <View style={{ paddingHorizontal: 6, paddingVertical: 2 }}>
-                      <Text style={{ fontSize: 12, color: colorize("#F4F4F5", 1.0), fontFamily: "RobotoCondensed" }}> {data.images[currentIndex].primary} </Text>
+                      <Text style={{ fontSize: 12, color: colorize("#F4F4F5", 1.0), fontFamily: "PTSerifRegular" }}> {data.images[currentIndex].primary} </Text>
                     </View>
                   </View>
                 </View>
@@ -667,8 +667,8 @@ export default function HomePage(): JSX.Element {
     if (searchQuery) {
       return (
         <View style={{ padding: 20, alignItems: "center" }}>
-          <Text style={{ fontFamily: "RobotoCondensed", color: colorize("#F4F4F5", 1.0), fontSize: 16, textAlign: "center" }}> No images found matching &quot;{searchQuery}&quot;. </Text>
-          <Text style={{ fontFamily: "RobotoCondensed", color: colorize("#F4F4F5", 1.0), fontSize: 16, textAlign: "center" }}> You may request images from &quot;Account&quot; Section. </Text>
+          <Text style={{ fontFamily: "PTSerifRegular", color: colorize("#F4F4F5", 1.0), fontSize: 16, textAlign: "center" }}> No images found matching &quot;{searchQuery}&quot;. </Text>
+          <Text style={{ fontFamily: "PTSerifRegular", color: colorize("#F4F4F5", 1.0), fontSize: 16, textAlign: "center" }}> You may request images from &quot;Account&quot; Section. </Text>
         </View>
       );
     }
@@ -684,7 +684,7 @@ export default function HomePage(): JSX.Element {
   if (error) {
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: colorize("#111111", 1.0) }}>
-        <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 16, fontFamily: "RobotoCondensed" }}>{error}</Text>
+        <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 16, fontFamily: "PTSerifRegular" }}>{error}</Text>
       </View>
     );
   }

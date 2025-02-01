@@ -55,7 +55,7 @@
       [
         "expo-font",
         {
-          "fonts": ["./src/assets/fonts/Lobster.ttf", "./src/assets/fonts/RobotoCondensed.ttf"]
+          "fonts": ["./src/assets/fonts/Lobster.ttf", "./src/assets/fonts/PTSerif-Regular.ttf"]
         }
       ],
       [

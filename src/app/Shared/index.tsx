@@ -200,7 +200,7 @@ export default function SharedPage(): JSX.Element {
                 style={{
                   color: colorize("#F4F4F5", 0.8),
                   fontSize: 14,
-                  fontFamily: "RobotoCondensed",
+                  fontFamily: "PTSerifRegular",
                   textAlign: "center",
                   lineHeight: 20
                 }}
@@ -211,7 +211,7 @@ export default function SharedPage(): JSX.Element {
                 style={{
                   color: colorize("#F4F4F5", 0.9),
                   fontSize: 16,
-                  fontFamily: "RobotoCondensed",
+                  fontFamily: "PTSerifRegular",
                   marginTop: 24
                 }}
               >
