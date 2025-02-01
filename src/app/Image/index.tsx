@@ -64,13 +64,13 @@ const SuccessModal: React.FC<{ visible: boolean; message: string; onClose: () =>
         <View style={{ alignItems: "center" }}>
           <Ionicons name="checkmark-done-circle" size={50} color={colorize("#25BE8B", 1.0)} />
           <Text style={{ marginTop: 10, fontSize: 48, fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}> Success </Text>
-          <Text style={{ marginVertical: 10, textAlign: "center", fontSize: 18, fontFamily: "PTSerifRegular", color: colorize("#F4F4F5", 1.0) }}> {message} </Text>
+          <Text style={{ marginVertical: 10, textAlign: "center", fontSize: 18, fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}> {message} </Text>
           <TouchableOpacity
             style={{ marginTop: 10, paddingHorizontal: 20, paddingVertical: 12, borderRadius: 15, overflow: "hidden", backgroundColor: colorize("#25BE8B", 0.4), minWidth: 120, minHeight: 44 }}
             onPress={onClose}
             accessibilityLabel="Close success modal"
           >
-            <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 18, fontFamily: "PTSerifRegular" }}> OK </Text>
+            <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 18, fontFamily: "Markazi" }}> OK </Text>
           </TouchableOpacity>
         </View>
       </Animated.View>
@@ -97,13 +97,13 @@ const ErrorModal: React.FC<{ visible: boolean; message: string; onClose: () => v
         <View style={{ alignItems: "center" }}>
           <MaterialIcons name="error" size={50} color={colorize("#F4F4F5", 1.0)} />
           <Text style={{ marginTop: 10, fontSize: 48, fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}> Error </Text>
-          <Text style={{ marginVertical: 10, textAlign: "center", fontSize: 18, fontFamily: "PTSerifRegular", color: colorize("#F4F4F5", 1.0) }}> {message} </Text>
+          <Text style={{ marginVertical: 10, textAlign: "center", fontSize: 18, fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}> {message} </Text>
           <TouchableOpacity
             style={{ marginTop: 10, paddingHorizontal: 20, paddingVertical: 12, borderRadius: 15, overflow: "hidden", backgroundColor: colorize("#F4F4F5", 0.4), minWidth: 120, minHeight: 44 }}
             onPress={onClose}
             accessibilityLabel="Close error modal"
           >
-            <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 18, fontFamily: "PTSerifRegular" }}> OK </Text>
+            <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 18, fontFamily: "Markazi" }}> OK </Text>
           </TouchableOpacity>
         </View>
       </Animated.View>
@@ -140,13 +140,13 @@ const DownloadingModal: React.FC<{ visible: boolean; percentage: number; downloa
           <View style={{ alignItems: "center" }}>
             <MaterialIcons name="cloud-download" size={50} color={colorize(primaryColor, 1.0)} />
             <Text style={{ marginTop: 10, fontSize: 48, fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}> Downloading.</Text>
-            <Text style={{ marginTop: 16, fontSize: 30, fontFamily: "PTSerifRegular", color: colorize("#F4F4F5", 1.0) }}> {percentage.toFixed(1)}% </Text>
+            <Text style={{ marginTop: 16, fontSize: 30, fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}> {percentage.toFixed(1)}% </Text>
             <View style={{ width: "100%", height: 12, borderRadius: 9999, overflow: "hidden", marginTop: 16, backgroundColor: colorize("#242424", 1.0) }}>
               <Animated.View style={{ width: widthInterpolated, backgroundColor: colorize(primaryColor, 1.0), height: "100%" }} />
             </View>
             <View style={{ flexDirection: "row", justifyContent: "space-between", width: "100%", marginTop: 16 }}>
-              <Text style={{ fontSize: 18, fontFamily: "PTSerifRegular", color: colorize("#F4F4F5", 1.0) }}> {formatBytes(downloadRate)}/s </Text>
-              <Text style={{ fontSize: 18, fontFamily: "PTSerifRegular", color: colorize("#F4F4F5", 1.0) }}> ETA: {formatTime(eta)} </Text>
+              <Text style={{ fontSize: 18, fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}> {formatBytes(downloadRate)}/s </Text>
+              <Text style={{ fontSize: 18, fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}> ETA: {formatTime(eta)} </Text>
             </View>
           </View>
         </View>
@@ -279,7 +279,7 @@ const SubImages: React.FC<OtherImagesProps> = memo(({ otherImages, setCurrentInd
             >
               <Image alt={`WallpaperThumbnail${lowResLink}`} source={{ uri: lowResLink }} style={{ width: "100%", height: "100%" }} contentFit="cover" />
               <View style={{ position: "absolute", top: 4, left: 4, backgroundColor: colorize("#111111", 0.5), paddingHorizontal: 4, paddingVertical: 4, borderRadius: 8 }}>
-                <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 12, fontFamily: "PTSerifRegular" }}> {img.original_file_name.replace(".jpg", "")} </Text>
+                <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 12, fontFamily: "Markazi" }}> {img.original_file_name.replace(".jpg", "")} </Text>
               </View>
             </TouchableOpacity>
           );
@@ -330,10 +330,10 @@ const WallModal: React.FC<WallModalProps> = memo(({ visible, onComplete, onCance
           <Text style={{ marginTop: 10, fontSize: 48, fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}>
             {wallType === "BOTH" ? "Setting Both Screens" : wallType === "HOME" ? "Setting HomeScreen" : "Setting LockScreen"}
           </Text>
-          <Text style={{ marginVertical: 10, textAlign: "center", fontSize: 18, fontFamily: "PTSerifRegular", color: colorize("#F4F4F5", 1.0) }}>
+          <Text style={{ marginVertical: 10, textAlign: "center", fontSize: 18, fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}>
             Due to Android&apos;s Material Style, the system UI will restart after setting the wallpaper. This is normal behavior.
           </Text>
-          <Text style={{ marginVertical: 16, fontSize: 48, fontFamily: "PTSerifRegular", color: colorize("#F4F4F5", 1.0) }}> {countdown} </Text>
+          <Text style={{ marginVertical: 16, fontSize: 48, fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}> {countdown} </Text>
           <TouchableOpacity
             style={{ marginTop: 10, paddingHorizontal: 20, paddingVertical: 12, borderRadius: 15, overflow: "hidden", backgroundColor: colorize(primaryColor, 0.4), minWidth: 120, minHeight: 44 }}
             onPress={() => {

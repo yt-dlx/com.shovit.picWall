@@ -15,7 +15,7 @@ import { SafeAreaView, StatusBar, View } from "react-native";
 SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
   const router = useRouter();
-  const [loaded, error] = useFonts({ PTSerifRegular: require("@/assets/fonts/PTSerif-Regular.ttf"), Lobster: require("@/assets/fonts/Lobster.ttf") });
+  const [loaded, error] = useFonts({ Markazi: require("@/assets/fonts/Markazi.ttf"), Lobster: require("@/assets/fonts/Lobster.ttf") });
   React.useEffect(() => {
     const initializeApp = async () => {
       if (loaded && !error) {

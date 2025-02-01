@@ -68,8 +68,8 @@ const UpdateDialog: FC<{ serverVersion: string; currentVersion: string }> = memo
       <View style={{ alignItems: "center" }}>
         <Text style={{ margin: 24, fontSize: 36, fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}>Update Required</Text>
         <View style={{ marginBottom: 16, alignItems: "center" }}>
-          <Text style={{ fontSize: 18, fontFamily: "PTSerifRegular", color: colorize("#F4F4F5", 1.0) }}>Current Version: {currentVersion}</Text>
-          <Text style={{ fontSize: 18, fontFamily: "PTSerifRegular", color: colorize("#F4F4F5", 1.0) }}>Latest Version: {serverVersion}</Text>
+          <Text style={{ fontSize: 18, fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}>Current Version: {currentVersion}</Text>
+          <Text style={{ fontSize: 18, fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}>Latest Version: {serverVersion}</Text>
         </View>
         <TouchableOpacity
           style={{
@@ -187,7 +187,7 @@ const EntryPage = memo(() => {
                 <Text style={{ fontSize: 80, fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0), textAlign: "center" }}>picWall</Text>
                 <Animated.View style={{ alignSelf: "center" }} entering={FadeInDown.delay(600).duration(1500).springify()}>
                   <View style={{ borderRadius: 40, paddingHorizontal: 24, paddingVertical: 8, backgroundColor: colorize("#111111", 0.9) }}>
-                    <Text style={{ fontFamily: "PTSerifRegular", color: colorize("#F4F4F5", 1.0), fontSize: 12, textAlign: "center" }}>
+                    <Text style={{ fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0), fontSize: 13, textAlign: "center" }}>
                       Crafted with <AntDesign name="heart" size={12} color={colorize("#FF000D", 1.0)} /> in India. All rights reserved
                     </Text>
                   </View>
@@ -202,7 +202,7 @@ const EntryPage = memo(() => {
                 </TouchableOpacity>
               </Link>
               <Animated.View entering={FadeIn.delay(1200).duration(1500)} style={{ marginTop: 16, paddingHorizontal: 40, alignItems: "center" }}>
-                <Text style={{ fontFamily: "PTSerifRegular", color: colorize("#F4F4F5", 0.9), fontSize: 10, maxWidth: 250 }}>
+                <Text style={{ fontFamily: "Markazi", color: colorize("#F4F4F5", 0.9), fontSize: 12, maxWidth: 250 }}>
                   Transform your screens with stunning, AI-curated wallpapers tailored to your style. Explore breathtaking collections, share your favorite moments, and discover awe-inspiring
                   photographs from around the globe. Start your journey today – where every wallpaper tells a story!
                 </Text>
