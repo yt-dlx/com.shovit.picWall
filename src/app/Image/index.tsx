@@ -60,8 +60,8 @@ const SuccessModal: React.FC<{ visible: boolean; message: string; onClose: () =>
   if (!visible) return null;
   return (
     <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center" }}>
-      <Animated.View style={[{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#111111", 0.5) }, backdropStyle]} />
-      <Animated.View style={[{ width: wp(80), borderRadius: 24, padding: wp(5), borderWidth: 4, backgroundColor: colorize("#111111", 1.0), borderColor: colorize("#25BE8B", 1.0) }, modalStyle]}>
+      <Animated.View style={[{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#171717", 0.5) }, backdropStyle]} />
+      <Animated.View style={[{ width: wp(80), borderRadius: 24, padding: wp(5), borderWidth: 4, backgroundColor: colorize("#171717", 1.0), borderColor: colorize("#25BE8B", 1.0) }, modalStyle]}>
         <View style={{ alignItems: "center" }}>
           <Ionicons name="checkmark-done-circle" size={hp(6)} color={colorize("#25BE8B", 1.0)} /> <Text style={{ marginTop: hp(1), fontSize: hp(6), fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}> Success </Text>
           <Text style={{ marginVertical: hp(1), textAlign: "center", fontSize: hp(2.5), fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}>{message}</Text>
@@ -92,8 +92,8 @@ const ErrorModal: React.FC<{ visible: boolean; message: string; onClose: () => v
   if (!visible) return null;
   return (
     <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center" }}>
-      <Animated.View style={[{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#111111", 0.5) }, backdropStyle]} />
-      <Animated.View style={[{ width: wp(80), borderRadius: 24, padding: wp(5), borderWidth: 4, backgroundColor: colorize("#111111", 1.0), borderColor: colorize("#F4F4F5", 1.0) }, modalStyle]}>
+      <Animated.View style={[{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#171717", 0.5) }, backdropStyle]} />
+      <Animated.View style={[{ width: wp(80), borderRadius: 24, padding: wp(5), borderWidth: 4, backgroundColor: colorize("#171717", 1.0), borderColor: colorize("#F4F4F5", 1.0) }, modalStyle]}>
         <View style={{ alignItems: "center" }}>
           <MaterialIcons name="error" size={hp(6)} color={colorize("#F4F4F5", 1.0)} /> <Text style={{ marginTop: hp(1), fontSize: hp(6), fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}> Error </Text>
           <Text style={{ marginVertical: hp(1), textAlign: "center", fontSize: hp(2.5), fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}>{message}</Text>
@@ -133,8 +133,8 @@ const DownloadingModal: React.FC<{ visible: boolean; percentage: number; downloa
   if (!visible) return null;
   return (
     <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center" }}>
-      <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#111111", 0.5) }} />
-      <View style={{ width: wp(80), borderRadius: 24, padding: wp(5), borderWidth: 4, backgroundColor: colorize("#111111", 1.0), borderColor: colorize(primaryColor, 1.0) }}>
+      <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#171717", 0.5) }} />
+      <View style={{ width: wp(80), borderRadius: 24, padding: wp(5), borderWidth: 4, backgroundColor: colorize("#171717", 1.0), borderColor: colorize(primaryColor, 1.0) }}>
         <View style={{ alignItems: "center" }}>
           <MaterialIcons name="cloud-download" size={hp(6)} color={colorize(primaryColor, 1.0)} /> <Text style={{ marginTop: hp(1), fontSize: hp(6), fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}> Downloading.</Text>
           <Text style={{ marginTop: hp(2), fontSize: hp(3), fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}> {percentage.toFixed(1)}% </Text>
@@ -170,7 +170,7 @@ const PreviewImage: React.FC<{ selectedImage: ImageMetadata; screenWidth: number
   return (
     <View style={{ position: "relative" }}>
       {imageLoading && (
-        <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center", backgroundColor: colorize("#111111", 1.0), zIndex: 40 }}>
+        <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center", backgroundColor: colorize("#171717", 1.0), zIndex: 40 }}>
           <ActivityIndicator size="large" color={colorize(selectedImage.primary, 1.0)} accessibilityLabel="Loading image" />
           <Text style={{ marginTop: hp(2), fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}> Loading HD Image Preview... </Text>
         </View>
@@ -267,7 +267,7 @@ const SubImages: React.FC<OtherImagesProps> = memo(({ otherImages, setCurrentInd
               accessibilityLabel={`SelectWallpaper${img.original_file_name}`}
             >
               <Image alt={`WallpaperThumbnail${lowResLink}`} source={{ uri: lowResLink }} style={{ width: "100%", height: "100%" }} contentFit="cover" />
-              <View style={{ position: "absolute", top: wp(1), left: wp(1), backgroundColor: colorize("#111111", 0.5), paddingHorizontal: wp(2), paddingVertical: hp(1), borderRadius: wp(2) }}>
+              <View style={{ position: "absolute", top: wp(1), left: wp(1), backgroundColor: colorize("#171717", 0.5), paddingHorizontal: wp(2), paddingVertical: hp(1), borderRadius: wp(2) }}>
                 <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: hp(1.5), fontFamily: "Markazi" }}>{img.original_file_name.replace(".jpg", "")}</Text>
               </View>
             </TouchableOpacity>
@@ -312,8 +312,8 @@ const WallModal: React.FC<WallModalProps> = memo(({ visible, onComplete, onCance
   if (!visible) return null;
   return (
     <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center" }}>
-      <Animated.View style={[{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#111111", 0.5) }, backdropStyle]} />
-      <Animated.View style={[{ width: wp(80), borderRadius: wp(6), padding: wp(5), borderWidth: 4, backgroundColor: colorize("#111111", 1.0), borderColor: colorize(primaryColor, 1.0) }, modalStyle]}>
+      <Animated.View style={[{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#171717", 0.5) }, backdropStyle]} />
+      <Animated.View style={[{ width: wp(80), borderRadius: wp(6), padding: wp(5), borderWidth: 4, backgroundColor: colorize("#171717", 1.0), borderColor: colorize(primaryColor, 1.0) }, modalStyle]}>
         <View style={{ alignItems: "center" }}>
           <MaterialIcons name="warning" size={hp(6)} color={colorize(primaryColor, 1.0)} />
           <Text style={{ marginTop: hp(2), fontSize: hp(6), fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}>{wallType === "HOME" ? "Setting HomeScreen" : "Setting LockScreen"}</Text>
@@ -368,7 +368,7 @@ const FullScreenView: React.FC<FullScreenViewProps> = ({ isFullScreen, setIsFull
   }, [saveCurrentState, selectedImage, wallType]);
   return (
     <Modal visible={isFullScreen} transparent={false} onRequestClose={() => setIsFullScreen(false)} presentationStyle="fullScreen" statusBarTranslucent>
-      <View style={{ flex: 1, backgroundColor: colorize("#111111", 1.0) }}>
+      <View style={{ flex: 1, backgroundColor: colorize("#171717", 1.0) }}>
         <ScrollView horizontal contentContainerStyle={{ flexGrow: 1, justifyContent: "center", alignItems: "center" }} showsHorizontalScrollIndicator={false}>
           <Image contentFit="fill" alt={`WallpaperFullView${createPreviewLink(selectedImage)}`} source={{ uri: createPreviewLink(selectedImage).replace("min", "max") }} style={{ height: "100%", width: (Dimensions.get("window").height * 9) / 16 }} />
         </ScrollView>
@@ -382,7 +382,7 @@ const FullScreenView: React.FC<FullScreenViewProps> = ({ isFullScreen, setIsFull
           <LinearGradient
             end={[1, 0]}
             start={[0, 0]}
-            colors={[colorize("#111111", 0.8), colorize("#111111", 0.8), colorize("#111111", 0.8)]}
+            colors={[colorize("#171717", 0.8), colorize("#171717", 0.8), colorize("#171717", 0.8)]}
             style={{ flex: 1, height: hp(6), borderTopLeftRadius: wp(3), borderBottomLeftRadius: wp(3), marginHorizontal: wp(1) }}
           >
             <TouchableOpacity
@@ -400,7 +400,7 @@ const FullScreenView: React.FC<FullScreenViewProps> = ({ isFullScreen, setIsFull
             end={[1, 0]}
             start={[0, 0]}
             style={{ flex: 1, height: hp(6), marginHorizontal: wp(1), borderTopRightRadius: wp(3), borderBottomRightRadius: wp(3) }}
-            colors={[colorize("#111111", 0.8), colorize("#111111", 0.8), colorize("#111111", 0.8)]}
+            colors={[colorize("#171717", 0.8), colorize("#171717", 0.8), colorize("#171717", 0.8)]}
           >
             <TouchableOpacity
               style={{ flexDirection: "row", justifyContent: "center", alignItems: "center", height: "100%" }}
@@ -494,11 +494,11 @@ export default function ImagePage(): JSX.Element {
   const allImagesWithIndex = useMemo(() => allImages.map((img, idx) => ({ img, idx })), [allImages]);
   const otherImages = useMemo(() => allImagesWithIndex.filter((item) => item.idx !== currentIndex), [allImagesWithIndex, currentIndex]);
   return (
-    <View style={{ flex: 1, backgroundColor: colorize("#111111", 1.0) }}>
+    <View style={{ flex: 1, backgroundColor: colorize("#171717", 1.0) }}>
       <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
       <ScrollView style={{ flex: 1 }}>
         <PreviewImage selectedImage={selectedImage} screenWidth={screenWidth} onViewFullScreen={() => setIsFullScreen(true)} />
-        <View style={{ padding: wp(2), borderWidth: 2, backgroundColor: colorize("#111111", 1.0) }}>
+        <View style={{ padding: wp(2), borderWidth: 2, backgroundColor: colorize("#171717", 1.0) }}>
           <Text style={{ margin: wp(3), fontSize: hp(3.5), textAlign: "center", fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}> Title: {selectedImage.original_file_name.replace(".jpg", "")} </Text>
           <DownloadButton onDownload={downloadAndSaveImage} colors={{ primary: selectedImage.primary, secondary: selectedImage.secondary, tertiary: selectedImage.tertiary }} />
           <SubImages otherImages={otherImages} currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} primaryColor={selectedImage.primary} tertiaryColor={selectedImage.tertiary} selectedFileName={selectedImage.original_file_name} />

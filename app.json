@@ -36,7 +36,7 @@
     "android": {
       "package": "com.shovit.picWall",
       "adaptiveIcon": {
-        "backgroundColor": "#111111",
+        "backgroundColor": "#171717",
         "foregroundImage": "./src/assets/images/logo.jpg"
       },
       "permissions": ["READ_EXTERNAL_STORAGE", "WRITE_EXTERNAL_STORAGE", "SET_WALLPAPER "]
@@ -48,7 +48,7 @@
         {
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#111111",
+          "backgroundColor": "#171717",
           "image": "./src/assets/images/logo.jpg"
         }
       ],

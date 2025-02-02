@@ -114,12 +114,12 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
     <Modal visible transparent animationType="slide" onRequestClose={onClose}>
       <View style={{ flex: 1, justifyContent: "flex-end" }}>
         <View style={{ height: "100%" }}>
-          <BlurView blurType="dark" blurAmount={80} style={{ position: "absolute", top: 0, left: 0, bottom: 0, right: 0 }} overlayColor={Platform.OS === "android" ? colorize("#111111", 0.0) : colorize("#111111", 0.0)} />
-          <View style={{ flex: 1, backgroundColor: colorize("#111111", 0.6), overflow: "hidden" }}>
-            <View style={{ padding: wp(5), flexDirection: "row", alignItems: "center", justifyContent: "center", backgroundColor: colorize("#111111", 0.6) }}>
+          <BlurView blurType="dark" blurAmount={80} style={{ position: "absolute", top: 0, left: 0, bottom: 0, right: 0 }} overlayColor={Platform.OS === "android" ? colorize("#171717", 0.0) : colorize("#171717", 0.0)} />
+          <View style={{ flex: 1, backgroundColor: colorize("#171717", 0.6), overflow: "hidden" }}>
+            <View style={{ padding: wp(5), flexDirection: "row", alignItems: "center", justifyContent: "center", backgroundColor: colorize("#171717", 0.6) }}>
               <Text style={{ fontFamily: "Lobster", fontSize: wp(8), textDecorationLine: "underline", color: colorize("#F4F4F5", 1.0) }}>Categories + Styles</Text>
             </View>
-            <View style={{ height: hp(25), backgroundColor: colorize("#111111", 0.6) }}>
+            <View style={{ height: hp(25), backgroundColor: colorize("#171717", 0.6) }}>
               <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: wp(0.5) }}>
                 {rawCategoriesArray
                   .filter((cat) => cat.name !== "Combined")
@@ -151,7 +151,7 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                           start={{ x: 0.5, y: 1 }}
                           locations={[0, 0.2, 0.4]}
                           style={{ position: "absolute", top: 0, right: 0, bottom: 0, left: 0 }}
-                          colors={[colorize("#111111", 0.6), colorize("#111111", 0.7), "transparent"]}
+                          colors={[colorize("#171717", 0.6), colorize("#171717", 0.7), "transparent"]}
                         />
                         <Text
                           style={{
@@ -165,7 +165,7 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                             fontFamily: "Markazi",
                             color: colorize("#F4F4F5", 1.0),
                             textShadowOffset: { width: 1, height: 1 },
-                            textShadowColor: colorize("#111111", 0.6)
+                            textShadowColor: colorize("#171717", 0.6)
                           }}
                         >
                           {category.name}
@@ -220,7 +220,7 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                               backgroundColor: selectedSubcategory === child ? colorize("#F4F4F5", 1.0) : colorize("#000000", 1.0)
                             }}
                           >
-                            <Text style={{ fontSize: wp(4), marginBottom: wp(1), textAlign: "center", fontFamily: "Markazi", color: selectedSubcategory === child ? colorize("#111111", 1.0) : colorize("#F4F4F5", 1.0) }}> {displayName} </Text>
+                            <Text style={{ fontSize: wp(4), marginBottom: wp(1), textAlign: "center", fontFamily: "Markazi", color: selectedSubcategory === child ? colorize("#171717", 1.0) : colorize("#F4F4F5", 1.0) }}> {displayName} </Text>
                             {child === "Combined" ? (
                               <Image alt="CombinedCategoryPreview" source={require("@/assets/images/Combined.gif")} style={{ width: "100%", height: "100%" }} contentFit="cover" />
                             ) : (
@@ -288,7 +288,7 @@ const SubImages: FC<SubImagesProps> = memo(({ images, onImagePress }) => (
                 alt={`WallpaperPreview${image.previewLink}`}
                 style={{ height: hp(8), width: wp(15), borderWidth: 1, borderColor: colorize("#F4F4F5", 0.5), borderRadius: wp(3) }}
               />
-              <Text style={{ right: wp(1), bottom: wp(1), fontSize: wp(3), borderRadius: wp(2), position: "absolute", paddingHorizontal: wp(2), fontFamily: "Markazi", color: colorize("#111111", 1.0), backgroundColor: colorize(image.primary, 1.0) }}>
+              <Text style={{ right: wp(1), bottom: wp(1), fontSize: wp(3), borderRadius: wp(2), position: "absolute", paddingHorizontal: wp(2), fontFamily: "Markazi", color: colorize("#171717", 1.0), backgroundColor: colorize(image.primary, 1.0) }}>
                 {image.primary.toUpperCase()}
               </Text>
             </View>
@@ -331,18 +331,18 @@ const Card: FC<CardProps> = memo(({ data }) => {
     return () => clearInterval(interval);
   }, [currentIndex, data.images.length, animateTransition]);
   return (
-    <View style={{ position: "relative", margin: wp(1), borderRadius: wp(4), overflow: "hidden", shadowColor: "#111111", shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.4, shadowRadius: 3 }}>
+    <View style={{ position: "relative", margin: wp(1), borderRadius: wp(4), overflow: "hidden", shadowColor: "#171717", shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.4, shadowRadius: 3 }}>
       <Link href={{ pathname: "/Shared", params: { data: JSON.stringify({ environment_title: data.environment_title, selectedIndex: currentIndex, data: data.images }) } }} asChild>
         <TouchableOpacity accessibilityLabel="View full wallpaper">
           <Animated.View style={{ opacity: fadeAnim, transform: [{ scale: scaleAnim }] }}>
             <View style={{ position: "relative", width: "100%", height: 500, overflow: "hidden" }}>
               <Image contentFit="cover" cachePolicy="disk" source={{ uri: currentImage }} onLoad={() => setLoading(false)} onLoadStart={() => setLoading(true)} alt={`WallpaperImage${currentImage}`} style={{ width: "100%", height: "100%" }} />
               {loading && (
-                <View style={[StyleSheet.absoluteFill, { backgroundColor: colorize("#111111", 0.2) }]} className="flex items-center justify-center">
+                <View style={[StyleSheet.absoluteFill, { backgroundColor: colorize("#171717", 0.2) }]} className="flex items-center justify-center">
                   <ActivityIndicator size="large" color={colorize("#F4F4F5", 1.0)} accessibilityLabel="Loading image" />
                 </View>
               )}
-              <View style={{ top: hp(1), left: wp(2), borderRadius: wp(3), paddingVertical: hp(0.5), position: "absolute", flexDirection: "row", alignItems: "center", paddingHorizontal: wp(1.5), backgroundColor: colorize("#111111", 0.6) }}>
+              <View style={{ top: hp(1), left: wp(2), borderRadius: wp(3), paddingVertical: hp(0.5), position: "absolute", flexDirection: "row", alignItems: "center", paddingHorizontal: wp(1.5), backgroundColor: colorize("#171717", 0.6) }}>
                 <MaterialCommunityIcons name="movie-filter" size={wp(5)} color={colorize("#FF000D", 1.0)} style={{ marginRight: wp(2) }} /> <Text style={{ color: "#F4F4F5", fontSize: wp(3), fontFamily: "Lobster" }}>Freemium (Watch an Ad)</Text>
               </View>
               <View style={{ position: "absolute", bottom: -2, left: 0, right: 0 }}>
@@ -359,7 +359,7 @@ const Card: FC<CardProps> = memo(({ data }) => {
             </View>
           </Animated.View>
           <View style={{ position: "absolute", top: "35%", right: wp(2), padding: wp(1), transform: [{ translateY: -hp(3) }], borderRadius: wp(3) }}>
-            <View style={[StyleSheet.absoluteFillObject, { borderRadius: wp(3), overflow: "hidden", backgroundColor: colorize("#111111", 0.8) }]} />
+            <View style={[StyleSheet.absoluteFillObject, { borderRadius: wp(3), overflow: "hidden", backgroundColor: colorize("#171717", 0.8) }]} />
             {data.images.slice(0, 3).map((img, idx) => (
               <TouchableOpacity key={idx} onPress={() => animateTransition(idx)} style={{ marginBottom: idx < 2 ? wp(1) : 0 }} accessibilityLabel="Select thumbnail">
                 <Image
@@ -419,7 +419,7 @@ const CategoryButton: FC<CategoryButtonExtendedProps> = memo(({ category, onPres
     <TouchableOpacity onPress={() => onPress()} style={{ flex: 1, height: hp(8), margin: wp(1), borderRadius: wp(4), overflow: "hidden", minWidth: wp(30) }} accessibilityLabel={`Browse ${category}`}>
       <View style={{ borderRadius: wp(4), overflow: "hidden", width: "100%", height: "100%" }}>
         <Image contentFit="cover" alt={`CategoryBackground${currentImage}`} style={{ width: "100%", height: "100%", borderRadius: wp(4) }} source={category === "Combined" ? require("@/assets/images/Shuffle.gif") : { uri: currentImage }} />
-        <LinearGradient colors={[colorize("#111111", 0.7), colorize("#111111", 0.7)]} style={{ position: "absolute", width: "100%", height: "100%", borderRadius: wp(4) }} />
+        <LinearGradient colors={[colorize("#171717", 0.7), colorize("#171717", 0.7)]} style={{ position: "absolute", width: "100%", height: "100%", borderRadius: wp(4) }} />
         <View style={{ width: "100%", height: "100%", borderRadius: wp(4), position: "absolute", alignItems: "center", flexDirection: "row", justifyContent: "center" }}>
           <MaterialCommunityIcons name={category === "Categories" ? "image-filter-vintage" : "dice-multiple"} size={wp(5)} color={colorize("#F4F4F5", 1.0)} style={{ marginRight: wp(2) }} />
           <Text style={{ fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0), fontSize: wp(5), textAlign: "center" }}>{category === "Combined" ? `All (${count})` : category}</Text>
@@ -607,20 +607,20 @@ export default function HomePage(): JSX.Element {
   }, [searchQuery]);
   if (isLoading) {
     return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: colorize("#111111", 1.0) }}>
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: colorize("#171717", 1.0) }}>
         <ActivityIndicator size="large" color={colorize("#F4F4F5", 1.0)} accessibilityLabel="Loading content" />
       </View>
     );
   }
   if (error) {
     return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: colorize("#111111", 1.0) }}>
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: colorize("#171717", 1.0) }}>
         <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 16, fontFamily: "Markazi" }}>{error}</Text>
       </View>
     );
   }
   return (
-    <View style={{ backgroundColor: colorize("#111111", 1.0), flex: 1, position: "relative" }}>
+    <View style={{ backgroundColor: colorize("#171717", 1.0), flex: 1, position: "relative" }}>
       <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
       <FlatList
         windowSize={2}

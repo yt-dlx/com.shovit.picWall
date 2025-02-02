@@ -45,7 +45,7 @@ const AnimatedTitle: React.FC = memo(() => {
   const animatedStyle = useAnimatedStyle(() => ({ transform: [{ scale: scale.value }] }));
   return (
     <Animated.View style={[animatedStyle, { alignItems: "center", marginTop: hp(5) }]}>
-      <View style={{ backgroundColor: colorize("#111111", 0.6), borderRadius: wp(50), padding: wp(1) }}>
+      <View style={{ backgroundColor: colorize("#171717", 0.6), borderRadius: wp(50), padding: wp(1) }}>
         <Image alt="picWallLogo" resizeMode="contain" source={require("@/assets/images/logo.jpg")} style={{ width: wp(24), height: wp(24), borderRadius: wp(50), borderWidth: wp(0.5), borderColor: colorize("#F4F4F5", 1.0) }} />
       </View>
     </Animated.View>
@@ -69,14 +69,14 @@ const HAnimated: React.FC = memo(() => {
           <ScrollingSlot key={slotIndex} images={images} reverse={slotIndex % 2 === 0} delay={slotIndex * 200} />
         ))}
         <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center", borderRadius: wp(2), overflow: "hidden" }}>
-          <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#111111", 0.5) }} />
+          <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#171717", 0.5) }} />
           <View style={{ position: "absolute", justifyContent: "center", alignItems: "center", margin: wp(2), padding: wp(1) }}>
             <View style={{ flexDirection: "row", marginBottom: hp(0.5) }}>
               <AnimatedTitle />
             </View>
             <Text style={{ fontFamily: "Lobster", fontSize: rf(50), marginTop: hp(2), color: colorize("#F4F4F5", 1.0), lineHeight: rf(52) }}>picWall</Text>
             <Animated.View style={{ alignSelf: "center" }} entering={FadeInDown.delay(600).duration(1500).springify()}>
-              <View style={{ backgroundColor: colorize("#111111", 0.6), borderRadius: wp(50), paddingHorizontal: wp(3), paddingVertical: hp(0.5) }}>
+              <View style={{ backgroundColor: colorize("#171717", 0.6), borderRadius: wp(50), paddingHorizontal: wp(3), paddingVertical: hp(0.5) }}>
                 <Text style={{ fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0), fontSize: rf(12), textAlign: "center" }}>
                   Crafted with <AntDesign name="heart" size={rf(12)} color={colorize("#FF000D", 1.0)} /> in India. All rights reserved
                 </Text>

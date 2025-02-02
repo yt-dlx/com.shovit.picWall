@@ -87,7 +87,7 @@ export default function SharedPage(): JSX.Element {
                 overflow: "hidden",
                 borderRadius: wp("4%"),
                 marginBottom: hp("4%"),
-                backgroundColor: colorize("#111111", 1.0),
+                backgroundColor: colorize("#171717", 1.0),
                 borderWidth: wp("0.8%"),
                 borderColor: colorize("#F4F4F5", 0.2),
                 shadowColor: "#000",

@@ -53,8 +53,8 @@ const UpdateDialog: FC<{ serverVersion: string; currentVersion: string }> = memo
   }, [opacity, scale]);
   return (
     <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center", padding: wp("4%"), zIndex: 1000 }}>
-      <Animated.View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#111111", 1.0) }} />
-      <View style={{ borderRadius: wp("10%"), padding: wp("2%"), backgroundColor: colorize("#111111", 0.8), justifyContent: "center", alignItems: "center" }}>
+      <Animated.View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#171717", 1.0) }} />
+      <View style={{ borderRadius: wp("10%"), padding: wp("2%"), backgroundColor: colorize("#171717", 0.8), justifyContent: "center", alignItems: "center" }}>
         <Image
           cachePolicy="disk"
           contentFit="contain"
@@ -73,7 +73,7 @@ const UpdateDialog: FC<{ serverVersion: string; currentVersion: string }> = memo
           style={{ marginTop: hp("10%"), flexDirection: "row", alignItems: "center", borderRadius: wp("12.5%"), paddingVertical: hp("2%"), justifyContent: "center", paddingHorizontal: wp("10%"), backgroundColor: colorize("#F4F4F5", 1.0) }}
           onPress={() => Linking.openURL("market://details?id=com.shovit.picWall")}
         >
-          <Entypo name="google-play" size={wp("8%")} color={colorize("#111111", 1.0)} /> <Text style={{ fontSize: wp("5%"), fontFamily: "Lobster", color: colorize("#111111", 1.0), marginLeft: wp("4%") }}> Open Play Store ... </Text>
+          <Entypo name="google-play" size={wp("8%")} color={colorize("#171717", 1.0)} /> <Text style={{ fontSize: wp("5%"), fontFamily: "Lobster", color: colorize("#171717", 1.0), marginLeft: wp("4%") }}> Open Play Store ... </Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -148,14 +148,14 @@ const EntryPage = memo(() => {
   };
   if (updateRequired) return <UpdateDialog currentVersion={currentVersion} serverVersion={serverVersion} />;
   return (
-    <View style={{ flex: 1, backgroundColor: colorize("#111111", 1.0) }}>
+    <View style={{ flex: 1, backgroundColor: colorize("#171717", 1.0) }}>
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center", position: "relative" }}>
         <View style={{ flexDirection: "row", height: "100%", overflow: "hidden", position: "relative" }}>
           {imageSets.map((images, slotIndex) => (
             <ScrollingSlot key={slotIndex} images={images} delay={slotIndex * 400} reverse={true} />
           ))}
           <LinearGradient
-            colors={[colorize("#111111", 1.0), colorize("#111111", 0.4), colorize("#111111", 0.1), colorize("#111111", 0.4), colorize("#111111", 1.0)]}
+            colors={[colorize("#171717", 1.0), colorize("#171717", 0.4), colorize("#171717", 0.1), colorize("#171717", 0.4), colorize("#171717", 1.0)]}
             style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}
             locations={[0, 0.2, 0.4, 0.5, 1]}
           />
@@ -165,7 +165,7 @@ const EntryPage = memo(() => {
               <View>
                 <Text style={{ fontSize: wp("20%"), fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0), textAlign: "center" }}> picWall </Text>
                 <Animated.View style={{ alignSelf: "center" }} entering={FadeInDown.delay(600).duration(1500).springify()}>
-                  <View style={{ borderRadius: wp("10%"), paddingHorizontal: wp("6%"), paddingVertical: hp("1%"), backgroundColor: colorize("#111111", 0.9) }}>
+                  <View style={{ borderRadius: wp("10%"), paddingHorizontal: wp("6%"), paddingVertical: hp("1%"), backgroundColor: colorize("#171717", 0.9) }}>
                     <Text style={{ fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0), fontSize: wp("3.25%"), textAlign: "center" }}>
                       Crafted with <AntDesign name="heart" size={wp("3%")} color={colorize("#FF000D", 1.0)} /> in India. All rights reserved
                     </Text>
@@ -175,7 +175,7 @@ const EntryPage = memo(() => {
               <Link href="./Home" asChild>
                 <TouchableOpacity onPressIn={onPressIn} onPressOut={onPressOut} style={{ marginTop: hp("18%"), borderRadius: wp("12.5%"), overflow: "hidden" }}>
                   <View style={{ paddingVertical: hp("2%"), flexDirection: "row", alignItems: "center", justifyContent: "center", backgroundColor: colorize("#F4F4F5", 1.0), gap: wp("2%") }}>
-                    <FontAwesome5 name="camera-retro" size={wp("8%")} color={colorize("#111111", 1.0)} /> <Text style={{ fontSize: wp("5%"), fontFamily: "Lobster", color: colorize("#111111", 1.0) }}> Let's Explore ... </Text>
+                    <FontAwesome5 name="camera-retro" size={wp("8%")} color={colorize("#171717", 1.0)} /> <Text style={{ fontSize: wp("5%"), fontFamily: "Lobster", color: colorize("#171717", 1.0) }}> Let's Explore ... </Text>
                   </View>
                 </TouchableOpacity>
               </Link>
