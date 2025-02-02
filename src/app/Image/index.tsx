@@ -13,7 +13,8 @@ import { LinearGradient } from "expo-linear-gradient";
 import { setWallpaper, TYPE_SCREEN } from "rn-wallpapers";
 import { createPreviewLink, createDownloadLink } from "@/utils/linker";
 import React, { useState, useEffect, useRef, memo, useMemo, useCallback } from "react";
-import { FontAwesome5, MaterialIcons, Ionicons, FontAwesome6 } from "@expo/vector-icons";
+import { FontAwesome5, MaterialIcons, Ionicons, FontAwesome6, AntDesign } from "@expo/vector-icons";
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 import { View, Text, Dimensions, StatusBar, ActivityIndicator, TouchableOpacity, Alert, Modal, Animated, Easing, ScrollView } from "react-native";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
@@ -63,9 +64,9 @@ const SuccessModal: React.FC<{ visible: boolean; message: string; onClose: () =>
       <Animated.View
         style={[
           {
-            width: "80%",
+            width: wp(80),
             borderRadius: 24,
-            padding: 20,
+            padding: wp(5),
             borderWidth: 4,
             backgroundColor: colorize("#111111", 1.0),
             borderColor: colorize("#25BE8B", 1.0)
@@ -74,24 +75,24 @@ const SuccessModal: React.FC<{ visible: boolean; message: string; onClose: () =>
         ]}
       >
         <View style={{ alignItems: "center" }}>
-          <Ionicons name="checkmark-done-circle" size={50} color={colorize("#25BE8B", 1.0)} />
-          <Text style={{ marginTop: 10, fontSize: 48, fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}> Success </Text>
-          <Text style={{ marginVertical: 10, textAlign: "center", fontSize: 18, fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}>{message}</Text>
+          <Ionicons name="checkmark-done-circle" size={hp(6)} color={colorize("#25BE8B", 1.0)} />
+          <Text style={{ marginTop: hp(1), fontSize: hp(6), fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}> Success </Text>
+          <Text style={{ marginVertical: hp(1), textAlign: "center", fontSize: hp(2.5), fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}>{message}</Text>
           <TouchableOpacity
             style={{
-              marginTop: 10,
-              paddingHorizontal: 20,
-              paddingVertical: 12,
+              marginTop: hp(1),
+              paddingHorizontal: wp(5),
+              paddingVertical: hp(1.5),
               borderRadius: 15,
               overflow: "hidden",
               backgroundColor: colorize("#25BE8B", 0.4),
-              minWidth: 120,
-              minHeight: 44
+              minWidth: wp(30),
+              minHeight: hp(5)
             }}
             onPress={onClose}
             accessibilityLabel="Close success modal"
           >
-            <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 18, fontFamily: "Markazi" }}> OK </Text>
+            <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: hp(2), fontFamily: "Markazi" }}> OK </Text>
           </TouchableOpacity>
         </View>
       </Animated.View>
@@ -117,9 +118,9 @@ const ErrorModal: React.FC<{ visible: boolean; message: string; onClose: () => v
       <Animated.View
         style={[
           {
-            width: "80%",
+            width: wp(80),
             borderRadius: 24,
-            padding: 20,
+            padding: wp(5),
             borderWidth: 4,
             backgroundColor: colorize("#111111", 1.0),
             borderColor: colorize("#F4F4F5", 1.0)
@@ -128,24 +129,24 @@ const ErrorModal: React.FC<{ visible: boolean; message: string; onClose: () => v
         ]}
       >
         <View style={{ alignItems: "center" }}>
-          <MaterialIcons name="error" size={50} color={colorize("#F4F4F5", 1.0)} />
-          <Text style={{ marginTop: 10, fontSize: 48, fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}> Error </Text>
-          <Text style={{ marginVertical: 10, textAlign: "center", fontSize: 18, fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}>{message}</Text>
+          <MaterialIcons name="error" size={hp(6)} color={colorize("#F4F4F5", 1.0)} />
+          <Text style={{ marginTop: hp(1), fontSize: hp(6), fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}> Error </Text>
+          <Text style={{ marginVertical: hp(1), textAlign: "center", fontSize: hp(2.5), fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}>{message}</Text>
           <TouchableOpacity
             style={{
-              marginTop: 10,
-              paddingHorizontal: 20,
-              paddingVertical: 12,
+              marginTop: hp(1),
+              paddingHorizontal: wp(5),
+              paddingVertical: hp(1.5),
               borderRadius: 15,
               overflow: "hidden",
               backgroundColor: colorize("#F4F4F5", 0.4),
-              minWidth: 120,
-              minHeight: 44
+              minWidth: wp(30),
+              minHeight: hp(5)
             }}
             onPress={onClose}
             accessibilityLabel="Close error modal"
           >
-            <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 18, fontFamily: "Markazi" }}> OK </Text>
+            <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: hp(2), fontFamily: "Markazi" }}> OK </Text>
           </TouchableOpacity>
         </View>
       </Animated.View>
@@ -180,24 +181,24 @@ const DownloadingModal: React.FC<{ visible: boolean; percentage: number; downloa
         <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#111111", 0.5) }} />
         <View
           style={{
-            width: "80%",
+            width: wp(80),
             borderRadius: 24,
-            padding: 20,
+            padding: wp(5),
             borderWidth: 4,
             backgroundColor: colorize("#111111", 1.0),
             borderColor: colorize(primaryColor, 1.0)
           }}
         >
           <View style={{ alignItems: "center" }}>
-            <MaterialIcons name="cloud-download" size={50} color={colorize(primaryColor, 1.0)} />
-            <Text style={{ marginTop: 10, fontSize: 48, fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}> Downloading.</Text>
-            <Text style={{ marginTop: 16, fontSize: 30, fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}> {percentage.toFixed(1)}% </Text>
-            <View style={{ width: "100%", height: 12, borderRadius: 9999, overflow: "hidden", marginTop: 16, backgroundColor: colorize("#242424", 1.0) }}>
+            <MaterialIcons name="cloud-download" size={hp(6)} color={colorize(primaryColor, 1.0)} />
+            <Text style={{ marginTop: hp(1), fontSize: hp(6), fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}> Downloading.</Text>
+            <Text style={{ marginTop: hp(2), fontSize: hp(3), fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}> {percentage.toFixed(1)}% </Text>
+            <View style={{ width: "100%", height: hp(1.5), borderRadius: 9999, overflow: "hidden", marginTop: hp(2), backgroundColor: colorize("#242424", 1.0) }}>
               <Animated.View style={{ width: widthInterpolated, backgroundColor: colorize(primaryColor, 1.0), height: "100%" }} />
             </View>
-            <View style={{ flexDirection: "row", justifyContent: "space-between", width: "100%", marginTop: 16 }}>
-              <Text style={{ fontSize: 18, fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}> {formatBytes(downloadRate)}/s </Text>
-              <Text style={{ fontSize: 18, fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}> ETA: {formatTime(eta)} </Text>
+            <View style={{ flexDirection: "row", justifyContent: "space-between", width: "100%", marginTop: hp(2) }}>
+              <Text style={{ fontSize: hp(2), fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}> {formatBytes(downloadRate)}/s </Text>
+              <Text style={{ fontSize: hp(2), fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}> ETA: {formatTime(eta)} </Text>
             </View>
           </View>
         </View>
@@ -213,6 +214,7 @@ const PreviewImage: React.FC<{ selectedImage: ImageMetadata; screenWidth: number
   const aspectRatio = selectedImage.width / selectedImage.height;
   const imageHeight = useMemo(() => (screenWidth / aspectRatio) * 0.8, [screenWidth, aspectRatio]);
   const scaleValue = useRef(new Animated.Value(1.1)).current;
+
   useEffect(() => {
     const animation = Animated.sequence([
       Animated.timing(scaleValue, { toValue: 1.4, duration: 4000, easing: Easing.inOut(Easing.ease), useNativeDriver: true }),
@@ -220,8 +222,10 @@ const PreviewImage: React.FC<{ selectedImage: ImageMetadata; screenWidth: number
     ]);
     Animated.loop(animation).start();
   }, [scaleValue]);
+
   const lowResLink = useMemo(() => createPreviewLink(selectedImage), [selectedImage]);
   const highResLink = useMemo(() => lowResLink.replace("min", "max"), [lowResLink]);
+
   return (
     <View style={{ position: "relative" }}>
       {imageLoading && (
@@ -239,7 +243,7 @@ const PreviewImage: React.FC<{ selectedImage: ImageMetadata; screenWidth: number
           }}
         >
           <ActivityIndicator size="large" color={colorize(selectedImage.primary, 1.0)} accessibilityLabel="Loading image" />
-          <Text style={{ marginTop: 10, fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}> Loading HD Image Preview... </Text>
+          <Text style={{ marginTop: hp(2), fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}> Loading HD Image Preview... </Text>
         </View>
       )}
       <Animated.View
@@ -248,8 +252,8 @@ const PreviewImage: React.FC<{ selectedImage: ImageMetadata; screenWidth: number
             width: "100%",
             height: imageHeight,
             overflow: "hidden",
-            borderTopLeftRadius: 20,
-            borderTopRightRadius: 20,
+            borderTopLeftRadius: wp(5),
+            borderTopRightRadius: wp(5),
             transform: [{ scale: scaleValue }]
           }
         ]}
@@ -261,7 +265,7 @@ const PreviewImage: React.FC<{ selectedImage: ImageMetadata; screenWidth: number
           alt={`WallpaperPreview${highResLink}`}
           onLoadStart={() => setImageLoading(true)}
           onLoadEnd={() => setImageLoading(false)}
-          style={{ width: "100%", height: "100%", borderTopLeftRadius: 20, borderTopRightRadius: 20 }}
+          style={{ width: "100%", height: "100%", borderTopLeftRadius: wp(5), borderTopRightRadius: wp(5) }}
           onError={() => {
             setImageLoading(false);
             Alert.alert("Error", "Failed to load image. Please try again.");
@@ -272,27 +276,27 @@ const PreviewImage: React.FC<{ selectedImage: ImageMetadata; screenWidth: number
         activeOpacity={0.8}
         onPress={onViewFullScreen}
         style={{
-          left: 16,
-          right: 16,
-          bottom: 8,
+          left: wp(4),
+          right: wp(4),
+          bottom: hp(2),
           zIndex: 50,
-          minHeight: 44,
+          minHeight: hp(5),
           borderWidth: 2,
-          borderRadius: 20,
-          paddingVertical: 12,
+          borderRadius: wp(5),
+          paddingVertical: hp(1.5),
           position: "absolute",
           flexDirection: "row",
           alignItems: "center",
-          paddingHorizontal: 16,
+          paddingHorizontal: wp(4),
           justifyContent: "center",
           borderColor: colorize(selectedImage.primary, 1.0),
           backgroundColor: colorize(selectedImage.secondary, 0.9)
         }}
         accessibilityLabel="Set as wallpaper"
       >
-        <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 18, fontFamily: "Lobster" }}> Set as Wallpaper </Text>
-        <FontAwesome6 name="mobile-button" size={15} color={colorize("#F4F4F5", 1.0)} style={{ marginHorizontal: 4 }} />
-        <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 18, fontFamily: "Lobster" }}> (Full-Screen View) </Text>
+        <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: hp(2), fontFamily: "Lobster" }}> Set as Wallpaper </Text>
+        <FontAwesome6 name="mobile-button" size={hp(1.5)} color={colorize("#F4F4F5", 1.0)} style={{ marginHorizontal: wp(2) }} />
+        <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: hp(2), fontFamily: "Lobster" }}> (Full-Screen View) </Text>
       </TouchableOpacity>
     </View>
   );
@@ -302,6 +306,7 @@ PreviewImage.displayName = "PreviewImage";
 /* ============================================================================================================================== */
 const DownloadButton: React.FC<DownloadButtonProps> = memo(({ onDownload, colors }) => {
   const scaleValue = useRef(new Animated.Value(1)).current;
+
   useEffect(() => {
     const pulse = Animated.loop(
       Animated.sequence([
@@ -312,16 +317,23 @@ const DownloadButton: React.FC<DownloadButtonProps> = memo(({ onDownload, colors
     pulse.start();
     return () => pulse.stop();
   }, [scaleValue]);
+
   return (
     <TouchableOpacity
       activeOpacity={0.8}
       onPress={onDownload}
       accessibilityLabel="Download wallpaper"
-      style={{ marginTop: 8, borderRadius: 15, overflow: "hidden", backgroundColor: colorize(colors.primary, 0.4), minHeight: 44 }}
+      style={{
+        marginTop: hp(2),
+        borderRadius: wp(4),
+        overflow: "hidden",
+        backgroundColor: colorize(colors.primary, 0.4),
+        minHeight: hp(5)
+      }}
     >
-      <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", padding: 12 }}>
-        <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 18, fontFamily: "Lobster" }}> Download Current Wallpaper </Text>
-        <FontAwesome5 name="download" size={15} color={colorize("#F4F4F5", 1.0)} style={{ marginHorizontal: 8 }} />
+      <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", paddingVertical: hp(1.5), paddingHorizontal: wp(5) }}>
+        <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: hp(2.2), fontFamily: "Lobster" }}>Download Current Wallpaper</Text>
+        <FontAwesome5 name="download" size={hp(2)} color={colorize("#F4F4F5", 1.0)} style={{ marginHorizontal: wp(2) }} />
       </View>
     </TouchableOpacity>
   );
@@ -340,8 +352,8 @@ const SubImages: React.FC<OtherImagesProps> = memo(({ otherImages, setCurrentInd
     });
   }, [otherImages, selectedFileName]);
   return (
-    <View style={{ padding: 4, marginVertical: 8, borderRadius: 15 }}>
-      <View style={{ flexDirection: "row", flexWrap: "wrap", marginVertical: 4 }}>
+    <View style={{ borderRadius: wp(3) }}>
+      <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
         {uniqueImages.map(({ img, idx }) => {
           const lowResLink = createPreviewLink(img);
           return (
@@ -349,13 +361,13 @@ const SubImages: React.FC<OtherImagesProps> = memo(({ otherImages, setCurrentInd
               key={idx}
               style={{
                 position: "relative",
-                borderRadius: 15,
+                borderRadius: wp(3),
                 overflow: "hidden",
-                marginHorizontal: 2,
+                marginHorizontal: wp(0.2),
                 flex: 1,
                 aspectRatio: 9 / 16,
                 borderWidth: 2,
-                borderColor: colorize(primaryColor, 1.0)
+                borderColor: colorize(tertiaryColor, 1.0)
               }}
               onPress={() => setCurrentIndex(idx)}
               accessibilityLabel={`SelectWallpaper${img.original_file_name}`}
@@ -364,15 +376,15 @@ const SubImages: React.FC<OtherImagesProps> = memo(({ otherImages, setCurrentInd
               <View
                 style={{
                   position: "absolute",
-                  top: 4,
-                  left: 4,
+                  top: wp(1),
+                  left: wp(1),
                   backgroundColor: colorize("#111111", 0.5),
-                  paddingHorizontal: 4,
-                  paddingVertical: 4,
-                  borderRadius: 8
+                  paddingHorizontal: wp(2),
+                  paddingVertical: hp(1),
+                  borderRadius: wp(2)
                 }}
               >
-                <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 12, fontFamily: "Markazi" }}>{img.original_file_name.replace(".jpg", "")}</Text>
+                <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: hp(1.5), fontFamily: "Markazi" }}>{img.original_file_name.replace(".jpg", "")}</Text>
               </View>
             </TouchableOpacity>
           );
@@ -388,6 +400,7 @@ const WallModal: React.FC<WallModalProps> = memo(({ visible, onComplete, onCance
   const countdownRef = useRef<NodeJS.Timeout | undefined>(undefined);
   const [modalAnim] = useState(new Animated.Value(0));
   const [countdown, setCountdown] = useState(3);
+
   useEffect(() => {
     if (visible) {
       setCountdown(3);
@@ -410,19 +423,22 @@ const WallModal: React.FC<WallModalProps> = memo(({ visible, onComplete, onCance
       clearInterval(countdownRef.current);
     };
   }, [visible, modalAnim, onComplete]);
+
   const backdropStyle = { opacity: modalAnim };
   const scale = modalAnim.interpolate({ inputRange: [0, 1], outputRange: [0.8, 1] });
   const modalStyle = { opacity: modalAnim, transform: [{ scale }] };
+
   if (!visible) return null;
+
   return (
     <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center" }}>
       <Animated.View style={[{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#111111", 0.5) }, backdropStyle]} />
       <Animated.View
         style={[
           {
-            width: "80%",
-            borderRadius: 24,
-            padding: 20,
+            width: wp(80),
+            borderRadius: wp(6),
+            padding: wp(5),
             borderWidth: 4,
             backgroundColor: colorize("#111111", 1.0),
             borderColor: colorize(primaryColor, 1.0)
@@ -431,24 +447,22 @@ const WallModal: React.FC<WallModalProps> = memo(({ visible, onComplete, onCance
         ]}
       >
         <View style={{ alignItems: "center" }}>
-          <MaterialIcons name="warning" size={50} color={colorize(primaryColor, 1.0)} />
-          <Text style={{ marginTop: 10, fontSize: 48, fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}>
-            {wallType === "BOTH" ? "Setting Both Screens" : wallType === "HOME" ? "Setting HomeScreen" : "Setting LockScreen"}
-          </Text>
-          <Text style={{ marginVertical: 10, textAlign: "center", fontSize: 18, fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}>
+          <MaterialIcons name="warning" size={hp(6)} color={colorize(primaryColor, 1.0)} />
+          <Text style={{ marginTop: hp(2), fontSize: hp(6), fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}>{wallType === "HOME" ? "Setting HomeScreen" : "Setting LockScreen"}</Text>
+          <Text style={{ marginVertical: hp(1), textAlign: "center", fontSize: hp(2.5), fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}>
             Due to Android&apos;s Material Style, the system UI will restart after setting the wallpaper. This is normal behavior.
           </Text>
-          <Text style={{ marginVertical: 16, fontSize: 48, fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}> {countdown} </Text>
+          <Text style={{ marginVertical: hp(2), fontSize: hp(6), fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}> {countdown} </Text>
           <TouchableOpacity
             style={{
-              marginTop: 10,
-              paddingHorizontal: 20,
-              paddingVertical: 12,
-              borderRadius: 15,
+              marginTop: hp(2),
+              paddingHorizontal: wp(5),
+              paddingVertical: hp(1.5),
+              borderRadius: wp(4),
               overflow: "hidden",
               backgroundColor: colorize(primaryColor, 0.4),
-              minWidth: 120,
-              minHeight: 44
+              minWidth: wp(30),
+              minHeight: hp(5)
             }}
             onPress={() => {
               clearInterval(countdownRef.current);
@@ -456,7 +470,7 @@ const WallModal: React.FC<WallModalProps> = memo(({ visible, onComplete, onCance
             }}
             accessibilityLabel="CancelWallpaperSetting"
           >
-            <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: 18, fontFamily: "Lobster" }}> Cancel </Text>
+            <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: hp(2), fontFamily: "Lobster" }}> Cancel </Text>
           </TouchableOpacity>
         </View>
       </Animated.View>
@@ -466,9 +480,35 @@ const WallModal: React.FC<WallModalProps> = memo(({ visible, onComplete, onCance
 WallModal.displayName = "WallModal";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
-const FullScreenView: React.FC<FullScreenViewProps> = memo(({ isFullScreen, setIsFullScreen, selectedImage, selectedIndex, data, environment_title }) => {
+const FullScreenView: React.FC<FullScreenViewProps> = ({ isFullScreen, setIsFullScreen, selectedImage, selectedIndex, data, environment_title }) => {
+  const [wallType, setWallType] = useState<"HOME" | "LOCK">("HOME");
   const [showWallModal, setShowWallModal] = useState(false);
-  const [wallType, setWallType] = useState<"HOME" | "LOCK" | "BOTH">("HOME");
+  const [rightArrowAnim] = useState(new Animated.Value(0));
+  const [leftArrowAnim] = useState(new Animated.Value(0));
+  useEffect(() => {
+    if (isFullScreen) {
+      Animated.loop(
+        Animated.sequence([
+          Animated.parallel([
+            Animated.timing(leftArrowAnim, { toValue: 1, duration: 1000, useNativeDriver: true }),
+            Animated.timing(rightArrowAnim, { toValue: 1, duration: 1000, useNativeDriver: true })
+          ]),
+          Animated.parallel([
+            Animated.timing(leftArrowAnim, { toValue: 0, duration: 1000, useNativeDriver: true }),
+            Animated.timing(rightArrowAnim, { toValue: 0, duration: 1000, useNativeDriver: true })
+          ])
+        ])
+      ).start();
+    }
+  }, [isFullScreen, leftArrowAnim, rightArrowAnim]);
+  const leftArrowTranslate = leftArrowAnim.interpolate({
+    inputRange: [0, 1],
+    outputRange: [0, -10]
+  });
+  const rightArrowTranslate = rightArrowAnim.interpolate({
+    inputRange: [0, 1],
+    outputRange: [0, 10]
+  });
   const saveCurrentState = useCallback(async () => {
     const { setLastState } = useAppState.getState();
     const stateToSave = { selectedIndex, data, environment_title };
@@ -490,22 +530,38 @@ const FullScreenView: React.FC<FullScreenViewProps> = memo(({ isFullScreen, setI
             style={{ height: "100%", width: (Dimensions.get("window").height * 9) / 16 }}
           />
         </ScrollView>
-        <View
+        <Animated.View
           style={{
+            zIndex: 50,
+            left: wp(4),
+            top: hp(45),
+            padding: wp(2),
             position: "absolute",
-            bottom: 8,
-            left: 10,
-            right: 10,
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center"
+            borderRadius: wp(50),
+            transform: [{ translateX: leftArrowTranslate }]
           }}
         >
+          <AntDesign name="caretleft" size={hp(4)} color={colorize("#F4F4F5", 1.0)} />
+        </Animated.View>
+        <Animated.View
+          style={{
+            zIndex: 50,
+            top: hp(45),
+            right: wp(4),
+            padding: wp(2),
+            position: "absolute",
+            borderRadius: wp(50),
+            transform: [{ translateX: rightArrowTranslate }]
+          }}
+        >
+          <AntDesign name="caretright" size={hp(4)} color={colorize("#F4F4F5", 1.0)} />
+        </Animated.View>
+        <View style={{ position: "absolute", bottom: hp(2), left: wp(3), right: wp(3), flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
           <LinearGradient
             end={[1, 0]}
             start={[0, 0]}
             colors={[colorize("#111111", 0.8), colorize("#111111", 0.8), colorize("#111111", 0.8)]}
-            style={{ flex: 1, height: 40, borderTopLeftRadius: 5, borderBottomLeftRadius: 5, marginHorizontal: 1 }}
+            style={{ flex: 1, height: hp(6), borderTopLeftRadius: wp(3), borderBottomLeftRadius: wp(3), marginHorizontal: wp(1) }}
           >
             <TouchableOpacity
               style={{ flexDirection: "row", justifyContent: "center", alignItems: "center", height: "100%" }}
@@ -515,11 +571,17 @@ const FullScreenView: React.FC<FullScreenViewProps> = memo(({ isFullScreen, setI
               }}
               accessibilityLabel="Set lockscreen wallpaper"
             >
-              <Ionicons name="image" size={20} color={colorize("#F4F4F5", 1.0)} style={{ marginRight: 10 }} />
-              <Text style={{ fontSize: 12, color: colorize("#F4F4F5", 1.0), fontFamily: "Lobster" }}>Set LockScreen</Text>
+              <Ionicons name="image" size={hp(2)} color={colorize("#F4F4F5", 1.0)} style={{ marginRight: wp(2) }} />
+              <Text style={{ fontSize: hp(1.8), color: colorize("#F4F4F5", 1.0), fontFamily: "Lobster" }}>Set LockScreen</Text>
             </TouchableOpacity>
           </LinearGradient>
-          <LinearGradient end={[1, 0]} start={[0, 0]} style={{ flex: 1, height: 40, marginHorizontal: 1 }} colors={[colorize("#111111", 0.8), colorize("#111111", 0.8), colorize("#111111", 0.8)]}>
+
+          <LinearGradient
+            end={[1, 0]}
+            start={[0, 0]}
+            style={{ flex: 1, height: hp(6), marginHorizontal: wp(1) }}
+            colors={[colorize("#111111", 0.8), colorize("#111111", 0.8), colorize("#111111", 0.8)]}
+          >
             <TouchableOpacity
               style={{ flexDirection: "row", justifyContent: "center", alignItems: "center", height: "100%" }}
               onPress={() => {
@@ -528,34 +590,17 @@ const FullScreenView: React.FC<FullScreenViewProps> = memo(({ isFullScreen, setI
               }}
               accessibilityLabel="Set homescreen wallpaper"
             >
-              <Ionicons name="image" size={20} color={colorize("#F4F4F5", 1.0)} style={{ marginRight: 10 }} />
-              <Text style={{ fontSize: 12, color: colorize("#F4F4F5", 1.0), fontFamily: "Lobster" }}>Set HomeScreen</Text>
-            </TouchableOpacity>
-          </LinearGradient>
-          <LinearGradient
-            end={[1, 0]}
-            start={[0, 0]}
-            colors={[colorize("#111111", 0.8), colorize("#111111", 0.8), colorize("#111111", 0.8)]}
-            style={{ flex: 1, height: 40, borderTopRightRadius: 5, borderBottomRightRadius: 5, marginHorizontal: 1 }}
-          >
-            <TouchableOpacity
-              style={{ flexDirection: "row", justifyContent: "center", alignItems: "center", height: "100%" }}
-              onPress={() => {
-                setWallType("BOTH");
-                setShowWallModal(true);
-              }}
-              accessibilityLabel="Set both screens wallpaper"
-            >
-              <Ionicons name="image" size={20} color={colorize("#F4F4F5", 1.0)} style={{ marginRight: 10 }} />
-              <Text style={{ fontSize: 12, color: colorize("#F4F4F5", 1.0), fontFamily: "Lobster" }}>Set BothScreens</Text>
+              <Ionicons name="image" size={hp(2)} color={colorize("#F4F4F5", 1.0)} style={{ marginRight: wp(2) }} />
+              <Text style={{ fontSize: hp(1.8), color: colorize("#F4F4F5", 1.0), fontFamily: "Lobster" }}>Set HomeScreen</Text>
             </TouchableOpacity>
           </LinearGradient>
         </View>
+
         <WallModal visible={showWallModal} onComplete={handleWallpaperSet} onCancel={() => setShowWallModal(false)} wallType={wallType} primaryColor={selectedImage.primary} />
       </View>
     </Modal>
   );
-});
+};
 FullScreenView.displayName = "FullScreenView";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
@@ -635,8 +680,10 @@ export default function ImagePage(): JSX.Element {
       <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
       <ScrollView style={{ flex: 1 }}>
         <PreviewImage selectedImage={selectedImage} screenWidth={screenWidth} onViewFullScreen={() => setIsFullScreen(true)} />
-        <View style={{ padding: 4, borderWidth: 2, backgroundColor: colorize("#111111", 1.0) }}>
-          <Text style={{ margin: 8, fontSize: 30, textAlign: "center", fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}>Title: {selectedImage.original_file_name.replace(".jpg", "")}</Text>
+        <View style={{ padding: wp(2), borderWidth: 2, backgroundColor: colorize("#111111", 1.0) }}>
+          <Text style={{ margin: wp(3), fontSize: hp(3.5), textAlign: "center", fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}>
+            Title: {selectedImage.original_file_name.replace(".jpg", "")}
+          </Text>
           <DownloadButton onDownload={downloadAndSaveImage} colors={{ primary: selectedImage.primary, secondary: selectedImage.secondary, tertiary: selectedImage.tertiary }} />
           <SubImages
             otherImages={otherImages}
@@ -649,7 +696,14 @@ export default function ImagePage(): JSX.Element {
         </View>
         <Footer />
       </ScrollView>
-      <FullScreenView isFullScreen={isFullScreen} setIsFullScreen={setIsFullScreen} selectedImage={selectedImage} selectedIndex={currentIndex} data={allImages} environment_title={environmentTitle} />
+      <FullScreenView
+        isFullScreen={isFullScreen}
+        setIsFullScreen={setIsFullScreen}
+        selectedImage={selectedImage}
+        selectedIndex={currentIndex}
+        data={Sanitized.data}
+        environment_title={environmentTitle}
+      />
       <DownloadingModal visible={isDownloading} percentage={percentage} downloadRate={downloadRate} eta={eta} primaryColor={selectedImage.primary} />
       <SuccessModal visible={alertVisible && alertIcon === "checkmark-done-circle"} message={alertMessage} onClose={hideAlert} />
       <ErrorModal visible={alertVisible && alertIcon === "error"} message={alertMessage} onClose={hideAlert} />
