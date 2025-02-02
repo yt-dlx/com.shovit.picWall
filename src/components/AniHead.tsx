@@ -64,7 +64,7 @@ const HAnimated: React.FC = memo(() => {
   const imageSetsMemo = useMemo(() => imageSets, []);
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <View style={{ flexDirection: "row", overflow: "hidden", borderRadius: wp(3), height: hp(40), position: "relative" }}>
+      <View style={{ flexDirection: "row", overflow: "hidden", borderRadius: wp(3), height: hp(50), position: "relative" }}>
         {imageSetsMemo.map((images, slotIndex) => (
           <ScrollingSlot key={slotIndex} images={images} reverse={slotIndex % 2 === 0} delay={slotIndex * 200} />
         ))}
