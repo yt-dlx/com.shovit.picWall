@@ -1,3 +1,6 @@
+// src/app/index.tsx
+// ====================================================================================
+// ====================================================================================
 import { Link } from "expo-router";
 import { Image } from "expo-image";
 import colorize from "@/utils/colorize";
@@ -11,6 +14,8 @@ import { Text, View, TouchableOpacity, Linking } from "react-native";
 import { AntDesign, FontAwesome5, Entypo } from "@expo/vector-icons";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 import Animated, { useSharedValue, useAnimatedStyle, withTiming, withRepeat, withSequence, withSpring, Easing, FadeIn, FadeInDown, withDelay } from "react-native-reanimated";
+// ====================================================================================
+// ====================================================================================
 const useVersionCheck = () => {
   const [serverVersion, setServerVersion] = useState("");
   const [currentVersion, setCurrentVersion] = useState("");
@@ -37,6 +42,8 @@ const useVersionCheck = () => {
   }, []);
   return useMemo(() => ({ updateRequired, currentVersion, serverVersion }), [updateRequired, currentVersion, serverVersion]);
 };
+// ====================================================================================
+// ====================================================================================
 const UpdateDialog: FC<{ serverVersion: string; currentVersion: string }> = memo(({ currentVersion, serverVersion }) => {
   const opacity = useSharedValue(0);
   const scale = useSharedValue(0.8);
@@ -73,6 +80,8 @@ const UpdateDialog: FC<{ serverVersion: string; currentVersion: string }> = memo
   );
 });
 UpdateDialog.displayName = "UpdateDialog";
+// ====================================================================================
+// ====================================================================================
 const ScrollingSlot = memo<ScrollingSlotProps>(({ images, delay }) => {
   const imageHeight = hp("30%");
   const scale = useSharedValue(0.8);
@@ -96,6 +105,8 @@ const ScrollingSlot = memo<ScrollingSlotProps>(({ images, delay }) => {
   );
 });
 ScrollingSlot.displayName = "ScrollingSlot";
+// ====================================================================================
+// ====================================================================================
 const AnimatedTitle = memo(() => {
   const scale = useSharedValue(0.5);
   useEffect(() => {
@@ -117,6 +128,8 @@ const AnimatedTitle = memo(() => {
   );
 });
 AnimatedTitle.displayName = "AnimatedTitle";
+// ====================================================================================
+// ====================================================================================
 const EntryPage = memo(() => {
   const buttonGlow = useSharedValue(0);
   const buttonScale = useSharedValue(1);
@@ -182,3 +195,5 @@ const EntryPage = memo(() => {
 });
 EntryPage.displayName = "EntryPage";
 export default EntryPage;
+// ====================================================================================
+// ====================================================================================

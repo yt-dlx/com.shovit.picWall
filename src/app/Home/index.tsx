@@ -1,3 +1,6 @@
+// src/app/Home/index.tsx
+// ====================================================================================
+// ====================================================================================
 import { Link } from "expo-router";
 import { Image } from "expo-image";
 import colorize from "@/utils/colorize";
@@ -14,6 +17,8 @@ import { SubImagesProps, CardProps, CategoryButtonProps } from "@/types/componen
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 import { Easing, useSharedValue, useAnimatedStyle, withTiming, withRepeat } from "react-native-reanimated";
 import { Animated, View, Text, TouchableOpacity, FlatList, StatusBar, ScrollView, TextInput, Modal, ActivityIndicator, StyleSheet, Platform } from "react-native";
+// ====================================================================================
+// ====================================================================================
 type ParentKey = string;
 interface Category {
   subcategories: string[];
@@ -40,6 +45,8 @@ interface HeaderComponentProps {
   selectedCategory: ParentKey | "Combined";
   onSelectCategory: (parent: ParentKey | "Combined", child?: string) => void;
 }
+// ====================================================================================
+// ====================================================================================
 function generateCategories(apiData: Record<string, any>) {
   let shuffleDB: Record<string, EnvironmentEntry> = {};
   const categoriesArray: Category[] = [{ name: "Combined", subcategories: [], database: {} }];
@@ -56,6 +63,8 @@ function generateCategories(apiData: Record<string, any>) {
   });
   return { categoriesArray, shuffleDB };
 }
+// ====================================================================================
+// ====================================================================================
 const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSelectCategory, rawCategoriesArray }) => {
   const [activeParent, setActiveParent] = useState<ParentKey | "Combined">(rawCategoriesArray.find((cat) => cat.name !== "Combined")?.name || "Combined");
   const [currentIndices, setCurrentIndices] = useState<Record<string, number>>({});
@@ -231,6 +240,8 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
   );
 });
 CategoryModal.displayName = "CategoryModal";
+// ====================================================================================
+// ====================================================================================
 const SearchBar: FC<{ onSearch: (text: string) => void }> = memo(({ onSearch }) => {
   const [searchText, setSearchText] = useState("");
   const handleSearch = (text: string) => {
@@ -260,6 +271,8 @@ const SearchBar: FC<{ onSearch: (text: string) => void }> = memo(({ onSearch }) 
   );
 });
 SearchBar.displayName = "SearchBar";
+// ====================================================================================
+// ====================================================================================
 const SubImages: FC<SubImagesProps> = memo(({ images, onImagePress }) => (
   <View style={{ position: "absolute", right: wp(2), top: "50%", transform: [{ translateY: -hp(10) }], alignItems: "center" }}>
     {images.data.map((image, index) => {
@@ -286,6 +299,8 @@ const SubImages: FC<SubImagesProps> = memo(({ images, onImagePress }) => (
   </View>
 ));
 SubImages.displayName = "SubImages";
+// ====================================================================================
+// ====================================================================================
 const Card: FC<CardProps> = memo(({ data }) => {
   const [currentImage, setCurrentImage] = useState<string>(data.images[0]?.previewLink as string);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -372,6 +387,8 @@ const Card: FC<CardProps> = memo(({ data }) => {
   );
 });
 Card.displayName = "Card";
+// ====================================================================================
+// ====================================================================================
 const CategoryButton: FC<CategoryButtonExtendedProps> = memo(({ category, onPress, rawCategoriesArray, count }) => {
   const [currentImage, setCurrentImage] = useState<string>("");
   const updateShuffleImage = useCallback(() => {
@@ -412,7 +429,8 @@ const CategoryButton: FC<CategoryButtonExtendedProps> = memo(({ category, onPres
   );
 });
 CategoryButton.displayName = "CategoryButton";
-
+// ====================================================================================
+// ====================================================================================
 const HeaderComponent: FC<HeaderComponentProps> = memo(({ selectedCategory, onSelectCategory, onSearch, rawCategoriesArray, mixedCount }) => {
   const fadeInValue = useSharedValue(0);
   const leftIconTranslate = useSharedValue(0);
@@ -451,14 +469,16 @@ const HeaderComponent: FC<HeaderComponentProps> = memo(({ selectedCategory, onSe
   );
 });
 HeaderComponent.displayName = "HeaderComponent";
-
+// ====================================================================================
+// ====================================================================================
 const EnvironmentItem: FC<{ item: EnvironmentEntry }> = memo(({ item }) => (
   <View style={{ flex: 1, margin: wp(0) }}>
     <Card data={item} />
   </View>
 ));
 EnvironmentItem.displayName = "EnvironmentItem";
-
+// ====================================================================================
+// ====================================================================================
 export default function HomePage(): JSX.Element {
   const [selectedParent, setSelectedParent] = useState<ParentKey | "Combined">("Combined");
   const [shuffleDB, setShuffleDB] = useState<Record<string, EnvironmentEntry>>({});
@@ -621,3 +641,5 @@ export default function HomePage(): JSX.Element {
     </View>
   );
 }
+// ====================================================================================
+// ====================================================================================

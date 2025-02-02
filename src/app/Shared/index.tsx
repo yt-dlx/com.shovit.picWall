@@ -1,3 +1,6 @@
+// src/app/Shared/index.tsx
+// ====================================================================================
+// ====================================================================================
 import { Image } from "expo-image";
 import useAd from "@/hooks/useAd";
 import colorize from "@/utils/colorize";
@@ -6,6 +9,8 @@ import { useLocalSearchParams, useRouter } from "expo-router";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import { View, Text, ActivityIndicator, StatusBar, Animated } from "react-native";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
+// ====================================================================================
+// ====================================================================================
 interface ImageData {
   primary: string;
   previewLink: string;
@@ -16,11 +21,15 @@ interface ParsedData {
   selectedIndex: number;
   environment_title: string;
 }
+// ====================================================================================
+// ====================================================================================
 const CardContainer: React.FC<{ children: React.ReactNode; style?: any }> = ({ children, style }) => (
   <View style={[{ borderRadius: wp("5%"), backgroundColor: "rgba(17, 17, 17, 0.95)", shadowColor: "#000", shadowOffset: { width: 0, height: hp("0.5%") }, shadowOpacity: 0.3, shadowRadius: wp("2%"), elevation: 5, padding: wp("6%") }, style]}>
     {children}
   </View>
 );
+// ====================================================================================
+// ====================================================================================
 export default function SharedPage(): JSX.Element {
   const router = useRouter();
   const params = useLocalSearchParams();
@@ -120,3 +129,5 @@ export default function SharedPage(): JSX.Element {
     </View>
   );
 }
+// ====================================================================================
+// ====================================================================================

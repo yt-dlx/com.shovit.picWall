@@ -1,3 +1,6 @@
+// src/app/_layout.tsx
+// ====================================================================================
+// ====================================================================================
 import "../../global.css";
 import React from "react";
 import { useFonts } from "expo-font";
@@ -7,6 +10,8 @@ import { Stack, useRouter } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView, StatusBar, View } from "react-native";
+// ====================================================================================
+// ====================================================================================
 SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
   const router = useRouter();
@@ -39,3 +44,5 @@ export default function RootLayout() {
     </SafeAreaView>
   );
 }
+// ====================================================================================
+// ====================================================================================
