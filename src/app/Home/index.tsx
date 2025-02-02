@@ -729,7 +729,20 @@ import { useEffect, useRef, useCallback, useState, memo, FC, useMemo } from "rea
 import { SubImagesProps, CardProps, CategoryButtonProps } from "@/types/components";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 import { Easing, useSharedValue, useAnimatedStyle, withTiming, withRepeat } from "react-native-reanimated";
-import { Animated, View, Text, TouchableOpacity, FlatList, StatusBar, ScrollView, TextInput, Modal, ActivityIndicator, StyleSheet, Platform } from "react-native";
+import {
+  Animated,
+  View,
+  Text,
+  TouchableOpacity,
+  FlatList,
+  StatusBar,
+  ScrollView,
+  TextInput,
+  Modal,
+  ActivityIndicator,
+  StyleSheet,
+  Platform
+} from "react-native";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
 type ParentKey = string;
@@ -773,14 +786,20 @@ function generateCategories(apiData: Record<string, any>) {
       shuffleDB = { ...shuffleDB, ...environmentEntries };
       db[subKey] = environmentEntries;
     });
-    categoriesArray.push({ name: parent, subcategories: [...subCategories, "Combined"], database: db });
+    categoriesArray.push({
+      name: parent,
+      subcategories: [...subCategories, "Combined"],
+      database: db
+    });
   });
   return { categoriesArray, shuffleDB };
 }
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
 const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSelectCategory, rawCategoriesArray }) => {
-  const [activeParent, setActiveParent] = useState<ParentKey | "Combined">(rawCategoriesArray.find((cat) => cat.name !== "Combined")?.name || "Combined");
+  const [activeParent, setActiveParent] = useState<ParentKey | "Combined">(
+    rawCategoriesArray.find((cat) => cat.name !== "Combined")?.name || "Combined"
+  );
   const [currentIndices, setCurrentIndices] = useState<Record<string, number>>({});
   const [selectedSubcategory, setSelectedSubcategory] = useState<string | null>(null);
   const [previewLinks, setPreviewLinks] = useState<Record<string, string[]>>({});
@@ -815,7 +834,10 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
     const intervals: NodeJS.Timeout[] = [];
     Object.keys(previewLinks).forEach((key) => {
       const interval = setInterval(() => {
-        setCurrentIndices((prev) => ({ ...prev, [key]: ((prev[key] || 0) + 1) % (previewLinks[key]?.length || 1) }));
+        setCurrentIndices((prev) => ({
+          ...prev,
+          [key]: ((prev[key] || 0) + 1) % (previewLinks[key]?.length || 1)
+        }));
       }, 2000);
       intervals.push(interval);
     });
@@ -838,8 +860,26 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
             overlayColor={Platform.OS === "android" ? colorize("#111111", 0.0) : colorize("#111111", 0.0)}
           />
           <View style={{ flex: 1, backgroundColor: colorize("#111111", 0.6), overflow: "hidden" }}>
-            <View style={{ padding: wp("4%"), flexDirection: "row", alignItems: "center", justifyContent: "center", backgroundColor: colorize("#111111", 0.6) }}>
-              <Text style={{ fontFamily: "Lobster", fontSize: wp("10%"), textDecorationLine: "underline", color: colorize("#F4F4F5", 1.0) }}> Categories + Styles</Text>
+            <View
+              style={{
+                padding: wp("4%"),
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: colorize("#111111", 0.6)
+              }}
+            >
+              <Text
+                style={{
+                  fontFamily: "Lobster",
+                  fontSize: wp("10%"),
+                  textDecorationLine: "underline",
+                  color: colorize("#F4F4F5", 1.0)
+                }}
+              >
+                {" "}
+                Categories + Styles
+              </Text>
             </View>
             <View style={{ height: hp("25%"), backgroundColor: colorize("#111111", 0.6) }}>
               <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: wp("1%") }}>
@@ -868,7 +908,12 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                         accessibilityLabel={`Select ${category.name} category`}
                       >
                         {images.length > 0 && (
-                          <Image alt={`CategoryPreview${images[currentIndex]}`} source={{ uri: images[currentIndex] }} style={{ width: "100%", height: "100%" }} contentFit="cover" />
+                          <Image
+                            alt={`CategoryPreview${images[currentIndex]}`}
+                            source={{ uri: images[currentIndex] }}
+                            style={{ width: "100%", height: "100%" }}
+                            contentFit="cover"
+                          />
                         )}
                         <LinearGradient
                           end={{ x: 0.5, y: 0 }}
@@ -901,7 +946,13 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
             </View>
             <View style={{ flex: 1, marginTop: hp("2%") }}>
               <ScrollView contentContainerStyle={{ padding: wp("3%") }}>
-                <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "space-between" }}>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    flexWrap: "wrap",
+                    justifyContent: "space-between"
+                  }}
+                >
                   {rawCategoriesArray
                     .find((c) => c.name === activeParent)
                     ?.subcategories.sort((a, b) => (a === "Combined" ? -1 : b === "Combined" ? 1 : 0))
@@ -957,10 +1008,20 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                               {displayName}
                             </Text>
                             {child === "Combined" ? (
-                              <Image alt="CombinedCategoryPreview" source={require("@/assets/images/Combined.gif")} style={{ width: "100%", height: "100%" }} contentFit="cover" />
+                              <Image
+                                alt="CombinedCategoryPreview"
+                                source={require("@/assets/images/Combined.gif")}
+                                style={{ width: "100%", height: "100%" }}
+                                contentFit="cover"
+                              />
                             ) : (
                               images.length > 0 && (
-                                <Image alt={`SubcategoryPreview${images[currentIndex]}`} source={{ uri: images[currentIndex] }} style={{ width: "100%", height: "100%" }} contentFit="cover" />
+                                <Image
+                                  alt={`SubcategoryPreview${images[currentIndex]}`}
+                                  source={{ uri: images[currentIndex] }}
+                                  style={{ width: "100%", height: "100%" }}
+                                  contentFit="cover"
+                                />
                               )
                             )}
                           </View>
@@ -987,7 +1048,16 @@ const SearchBar: FC<{ onSearch: (text: string) => void }> = memo(({ onSearch }) 
   };
   return (
     <View style={{ marginTop: hp("1%") }}>
-      <View style={{ flexDirection: "row", alignItems: "center", backgroundColor: colorize("#242424", 1.0), borderRadius: wp("3%"), paddingHorizontal: wp("3%"), height: hp("6%") }}>
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          backgroundColor: colorize("#242424", 1.0),
+          borderRadius: wp("3%"),
+          paddingHorizontal: wp("3%"),
+          height: hp("6%")
+        }}
+      >
         <FontAwesome5 name="search" size={wp("4%")} color={colorize("#F4F4F5", 0.8)} />
         <TextInput
           value={searchText}
@@ -996,7 +1066,13 @@ const SearchBar: FC<{ onSearch: (text: string) => void }> = memo(({ onSearch }) 
           placeholder="Search by image name..."
           placeholderTextColor={colorize("#F4F4F5", 0.6)}
           accessibilityHint={`Current search term: ${searchText || "empty"}. Enter text to filter wallpapers.`}
-          style={{ flex: 1, marginLeft: wp("2%"), fontSize: wp("4%"), fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}
+          style={{
+            flex: 1,
+            marginLeft: wp("2%"),
+            fontSize: wp("4%"),
+            fontFamily: "Markazi",
+            color: colorize("#F4F4F5", 1.0)
+          }}
         />
         {searchText.length > 0 && (
           <TouchableOpacity onPress={() => handleSearch("")} style={{ padding: wp("2%") }} accessibilityLabel="Clear search">
@@ -1015,15 +1091,38 @@ const SubImages: FC<SubImagesProps> = memo(({ images, onImagePress }) => (
     {images.data.map((image, index) => {
       const fullDataIndex = images.allData.findIndex((img) => img.original_file_name === image.original_file_name);
       return (
-        <Link key={index} href={{ pathname: "/Shared", params: { data: JSON.stringify({ environment_title: images.environment_title, selectedIndex: fullDataIndex, data: images.allData }) } }} asChild>
-          <TouchableOpacity onPress={() => onImagePress(image.previewLink as string, fullDataIndex)} style={{ flex: 1, padding: wp("2%") }} accessibilityLabel="View wallpaper details">
+        <Link
+          key={index}
+          href={{
+            pathname: "/Shared",
+            params: {
+              data: JSON.stringify({
+                environment_title: images.environment_title,
+                selectedIndex: fullDataIndex,
+                data: images.allData
+              })
+            }
+          }}
+          asChild
+        >
+          <TouchableOpacity
+            onPress={() => onImagePress(image.previewLink as string, fullDataIndex)}
+            style={{ flex: 1, padding: wp("2%") }}
+            accessibilityLabel="View wallpaper details"
+          >
             <View style={{ position: "relative" }}>
               <Image
                 contentFit="cover"
                 cachePolicy="disk"
                 source={{ uri: image.previewLink as string }}
                 alt={`WallpaperPreview${image.previewLink}`}
-                style={{ height: hp("8%"), width: "100%", borderWidth: 1, borderColor: colorize("#F4F4F5", 0.5), borderRadius: wp("3%") }}
+                style={{
+                  height: hp("8%"),
+                  width: "100%",
+                  borderWidth: 1,
+                  borderColor: colorize("#F4F4F5", 0.5),
+                  borderRadius: wp("3%")
+                }}
               />
               <Text
                 style={{
@@ -1066,8 +1165,14 @@ const Card: FC<CardProps> = memo(({ data }) => {
   const animateTransition = useCallback(
     (nextIndex: number) => {
       Animated.parallel([
-        Animated.sequence([Animated.timing(fadeAnim, { toValue: 0.4, duration: 400, useNativeDriver: true }), Animated.timing(fadeAnim, { toValue: 1, duration: 400, useNativeDriver: true })]),
-        Animated.sequence([Animated.timing(scaleAnim, { toValue: 0.98, duration: 400, useNativeDriver: true }), Animated.timing(scaleAnim, { toValue: 1, duration: 400, useNativeDriver: true })])
+        Animated.sequence([
+          Animated.timing(fadeAnim, { toValue: 0.4, duration: 400, useNativeDriver: true }),
+          Animated.timing(fadeAnim, { toValue: 1, duration: 400, useNativeDriver: true })
+        ]),
+        Animated.sequence([
+          Animated.timing(scaleAnim, { toValue: 0.98, duration: 400, useNativeDriver: true }),
+          Animated.timing(scaleAnim, { toValue: 1, duration: 400, useNativeDriver: true })
+        ])
       ]).start(() => updateImageState(nextIndex));
     },
     [fadeAnim, scaleAnim, updateImageState]
@@ -1082,9 +1187,30 @@ const Card: FC<CardProps> = memo(({ data }) => {
 
   return (
     <View
-      style={{ position: "relative", margin: wp("2%"), borderRadius: wp("3%"), overflow: "hidden", shadowColor: "#111111", shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.4, shadowRadius: 3 }}
+      style={{
+        position: "relative",
+        margin: wp("2%"),
+        borderRadius: wp("3%"),
+        overflow: "hidden",
+        shadowColor: "#111111",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.4,
+        shadowRadius: 3
+      }}
     >
-      <Link href={{ pathname: "/Shared", params: { data: JSON.stringify({ environment_title: data.environment_title, selectedIndex: currentIndex, data: data.images }) } }} asChild>
+      <Link
+        href={{
+          pathname: "/Shared",
+          params: {
+            data: JSON.stringify({
+              environment_title: data.environment_title,
+              selectedIndex: currentIndex,
+              data: data.images
+            })
+          }
+        }}
+        asChild
+      >
         <TouchableOpacity accessibilityLabel="View full wallpaper">
           <Animated.View style={{ opacity: fadeAnim, transform: [{ scale: scaleAnim }] }}>
             <View style={{ position: "relative", width: "100%", height: hp("40%"), overflow: "hidden" }}>
@@ -1121,22 +1247,69 @@ const Card: FC<CardProps> = memo(({ data }) => {
               <View style={{ position: "absolute", bottom: wp("-1%"), left: 0, right: 0 }}>
                 <View style={[StyleSheet.absoluteFill, { backgroundColor: colorize(data.images[currentIndex].primary, 1.0) }]} />
                 <View style={{ padding: wp("2%"), margin: wp("2%") }}>
-                  <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: wp("1%") }}>
-                    <Text style={{ flex: 1, fontSize: wp("3.5%"), marginRight: wp("3%"), color: colorize("#F4F4F5", 1.0), fontFamily: "Markazi" }}>
+                  <View
+                    style={{
+                      flexDirection: "row",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      marginBottom: wp("1%")
+                    }}
+                  >
+                    <Text
+                      style={{
+                        flex: 1,
+                        fontSize: wp("3.5%"),
+                        marginRight: wp("3%"),
+                        color: colorize("#F4F4F5", 1.0),
+                        fontFamily: "Markazi"
+                      }}
+                    >
                       {data.images[currentIndex].original_file_name.replace(/_/g, " ").replace(".jpg", "")}
                     </Text>
                     <View style={{ paddingHorizontal: wp("2%"), paddingVertical: wp("1%") }}>
-                      <Text style={{ fontSize: wp("3%"), color: colorize("#F4F4F5", 1.0), fontFamily: "Markazi" }}> {data.images[currentIndex].primary} </Text>
+                      <Text
+                        style={{
+                          fontSize: wp("3%"),
+                          color: colorize("#F4F4F5", 1.0),
+                          fontFamily: "Markazi"
+                        }}
+                      >
+                        {" "}
+                        {data.images[currentIndex].primary}{" "}
+                      </Text>
                     </View>
                   </View>
                 </View>
               </View>
             </View>
           </Animated.View>
-          <View style={{ position: "absolute", top: hp("10%"), right: wp("2%"), padding: wp("2%"), transform: [{ translateY: -wp("7%") }], borderRadius: wp("2%") }}>
-            <View style={[StyleSheet.absoluteFillObject, { borderRadius: wp("3%"), overflow: "hidden", backgroundColor: colorize("#111111", 0.8) }]} />
+          <View
+            style={{
+              position: "absolute",
+              top: hp("10%"),
+              right: wp("2%"),
+              padding: wp("2%"),
+              transform: [{ translateY: -wp("7%") }],
+              borderRadius: wp("2%")
+            }}
+          >
+            <View
+              style={[
+                StyleSheet.absoluteFillObject,
+                {
+                  borderRadius: wp("3%"),
+                  overflow: "hidden",
+                  backgroundColor: colorize("#111111", 0.8)
+                }
+              ]}
+            />
             {data.images.slice(0, 3).map((img, idx) => (
-              <TouchableOpacity key={idx} onPress={() => animateTransition(idx)} style={{ marginBottom: wp("1%") }} accessibilityLabel="Select thumbnail">
+              <TouchableOpacity
+                key={idx}
+                onPress={() => animateTransition(idx)}
+                style={{ marginBottom: wp("1%") }}
+                accessibilityLabel="Select thumbnail"
+              >
                 <Image
                   source={{ uri: img.previewLink }}
                   alt={`WallpaperThumbnail${img.previewLink}`}
@@ -1147,8 +1320,18 @@ const Card: FC<CardProps> = memo(({ data }) => {
                     opacity: currentIndex === idx ? 1 : 0.8,
                     borderColor: colorize("#F4F4F5", 1.0),
                     borderWidth: currentIndex === idx ? 2 : 0,
-                    ...(idx === 0 && { borderTopLeftRadius: wp("2%"), borderTopRightRadius: wp("2%"), borderBottomLeftRadius: 0, borderBottomRightRadius: 0 }),
-                    ...(idx === 2 && { borderBottomLeftRadius: wp("2%"), borderBottomRightRadius: wp("2%"), borderTopLeftRadius: 0, borderTopRightRadius: 0 })
+                    ...(idx === 0 && {
+                      borderTopLeftRadius: wp("2%"),
+                      borderTopRightRadius: wp("2%"),
+                      borderBottomLeftRadius: 0,
+                      borderBottomRightRadius: 0
+                    }),
+                    ...(idx === 2 && {
+                      borderBottomLeftRadius: wp("2%"),
+                      borderBottomRightRadius: wp("2%"),
+                      borderTopLeftRadius: 0,
+                      borderTopRightRadius: 0
+                    })
                   }}
                   cachePolicy="disk"
                   contentFit="cover"
@@ -1195,7 +1378,14 @@ const CategoryButton: FC<CategoryButtonExtendedProps> = memo(({ category, onPres
   return (
     <TouchableOpacity
       onPress={() => onPress()}
-      style={{ flex: 1, height: hp("8%"), margin: wp("2%"), borderRadius: wp("3%"), overflow: "hidden", minWidth: wp("30%") }}
+      style={{
+        flex: 1,
+        height: hp("8%"),
+        margin: wp("2%"),
+        borderRadius: wp("3%"),
+        overflow: "hidden",
+        minWidth: wp("30%")
+      }}
       accessibilityLabel={`Browse ${category}`}
     >
       <View style={{ borderRadius: wp("3%"), overflow: "hidden", width: "100%", height: "100%" }}>
@@ -1205,10 +1395,38 @@ const CategoryButton: FC<CategoryButtonExtendedProps> = memo(({ category, onPres
           style={{ width: "100%", height: "100%", borderRadius: wp("3%") }}
           source={category === "Combined" ? require("@/assets/images/Shuffle.gif") : { uri: currentImage }}
         />
-        <LinearGradient colors={[colorize("#111111", 0.7), colorize("#111111", 0.7)]} style={{ position: "absolute", width: "100%", height: "100%", borderRadius: wp("3%") }} />
-        <View style={{ width: "100%", height: "100%", borderRadius: wp("3%"), position: "absolute", alignItems: "center", flexDirection: "row", justifyContent: "center" }}>
-          <MaterialCommunityIcons name={category === "Categories" ? "image-filter-vintage" : "dice-multiple"} size={wp("5%")} color={colorize("#F4F4F5", 1.0)} style={{ marginRight: wp("2%") }} />
-          <Text style={{ fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0), fontSize: wp("5%"), textAlign: "center" }}> {category === "Combined" ? `All (${count})` : category} </Text>
+        <LinearGradient
+          colors={[colorize("#111111", 0.7), colorize("#111111", 0.7)]}
+          style={{ position: "absolute", width: "100%", height: "100%", borderRadius: wp("3%") }}
+        />
+        <View
+          style={{
+            width: "100%",
+            height: "100%",
+            borderRadius: wp("3%"),
+            position: "absolute",
+            alignItems: "center",
+            flexDirection: "row",
+            justifyContent: "center"
+          }}
+        >
+          <MaterialCommunityIcons
+            name={category === "Categories" ? "image-filter-vintage" : "dice-multiple"}
+            size={wp("5%")}
+            color={colorize("#F4F4F5", 1.0)}
+            style={{ marginRight: wp("2%") }}
+          />
+          <Text
+            style={{
+              fontFamily: "Lobster",
+              color: colorize("#F4F4F5", 1.0),
+              fontSize: wp("5%"),
+              textAlign: "center"
+            }}
+          >
+            {" "}
+            {category === "Combined" ? `All (${count})` : category}{" "}
+          </Text>
         </View>
       </View>
     </TouchableOpacity>
@@ -1223,8 +1441,12 @@ const HeaderComponent: FC<HeaderComponentProps> = memo(({ selectedCategory, onSe
   const rightIconTranslate = useSharedValue(0);
   const [modalVisible, setModalVisible] = useState(false);
   const fadeInStyle = useAnimatedStyle(() => ({ opacity: fadeInValue.value }));
-  const leftIconStyle = useAnimatedStyle(() => ({ transform: [{ translateX: leftIconTranslate.value }] }));
-  const rightIconStyle = useAnimatedStyle(() => ({ transform: [{ translateX: rightIconTranslate.value }] }));
+  const leftIconStyle = useAnimatedStyle(() => ({
+    transform: [{ translateX: leftIconTranslate.value }]
+  }));
+  const rightIconStyle = useAnimatedStyle(() => ({
+    transform: [{ translateX: rightIconTranslate.value }]
+  }));
   useEffect(() => {
     fadeInValue.value = withTiming(1, { duration: 1200, easing: Easing.ease });
     leftIconTranslate.value = withRepeat(withTiming(-20, { duration: 800, easing: Easing.ease }), -1, true);
@@ -1235,18 +1457,42 @@ const HeaderComponent: FC<HeaderComponentProps> = memo(({ selectedCategory, onSe
       <View style={{ marginHorizontal: wp("-2%") }}>
         <AniHead />
       </View>
-      <View style={{ marginTop: hp("2%"), paddingRight: wp("2%"), paddingLeft: wp("2%"), paddingBottom: hp("2%") }}>
+      <View
+        style={{
+          marginTop: hp("2%"),
+          paddingRight: wp("2%"),
+          paddingLeft: wp("2%"),
+          paddingBottom: hp("2%")
+        }}
+      >
         <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
           <Animated.View style={leftIconStyle}>
             <FontAwesome5 name="caret-left" size={wp("6%")} color={colorize("#F4F4F5", 1.0)} />
           </Animated.View>
-          <Text style={{ fontFamily: "Lobster", fontSize: wp("5%"), color: colorize("#F4F4F5", 1.0), textAlign: "center", marginHorizontal: wp("4%") }}> Explore AI Generated Wallpapers </Text>
+          <Text
+            style={{
+              fontFamily: "Lobster",
+              fontSize: wp("5%"),
+              color: colorize("#F4F4F5", 1.0),
+              textAlign: "center",
+              marginHorizontal: wp("4%")
+            }}
+          >
+            {" "}
+            Explore AI Generated Wallpapers{" "}
+          </Text>
           <Animated.View style={rightIconStyle}>
             <FontAwesome5 name="caret-right" size={wp("6%")} color={colorize("#F4F4F5", 1.0)} />
           </Animated.View>
         </View>
         <View style={{ flexDirection: "row", justifyContent: "center", marginTop: hp("2%") }}>
-          <CategoryButton category="Combined" selected={selectedCategory === "Combined"} onPress={() => onSelectCategory("Combined")} rawCategoriesArray={rawCategoriesArray} count={mixedCount} />
+          <CategoryButton
+            category="Combined"
+            selected={selectedCategory === "Combined"}
+            onPress={() => onSelectCategory("Combined")}
+            rawCategoriesArray={rawCategoriesArray}
+            count={mixedCount}
+          />
           <CategoryButton category="Categories" selected={false} onPress={() => setModalVisible(true)} rawCategoriesArray={rawCategoriesArray} />
         </View>
         <SearchBar onSearch={onSearch} />
@@ -1300,7 +1546,14 @@ export default function HomePage(): JSX.Element {
   }, []);
   const getAllCombinedData = useCallback(() => Object.values(shuffleDB), [shuffleDB]);
   const processImageUrls = useCallback((entry: EnvironmentEntry): EnvironmentEntry => {
-    return { ...entry, images: entry.images.map((image: ImageMetadata) => ({ ...image, previewLink: createPreviewLink(image), downloadLink: createDownloadLink(image) })) };
+    return {
+      ...entry,
+      images: entry.images.map((image: ImageMetadata) => ({
+        ...image,
+        previewLink: createPreviewLink(image),
+        downloadLink: createDownloadLink(image)
+      }))
+    };
   }, []);
   const fetchData = useCallback(() => {
     if (selectedParent === "Combined") {
@@ -1365,7 +1618,9 @@ export default function HomePage(): JSX.Element {
       setFilteredData((prev) => {
         const results = prev
           .map((entry) => {
-            const matchedImgs = entry.images.filter((img) => img.original_file_name.toLowerCase().replace(/_/g, " ").replace(".jpg", "").includes(searchText));
+            const matchedImgs = entry.images.filter((img) =>
+              img.original_file_name.toLowerCase().replace(/_/g, " ").replace(".jpg", "").includes(searchText)
+            );
             return { ...entry, images: matchedImgs };
           })
           .filter((x) => x.images.length > 0);
@@ -1392,8 +1647,26 @@ export default function HomePage(): JSX.Element {
     if (searchQuery) {
       return (
         <View style={{ padding: wp("4%"), alignItems: "center" }}>
-          <Text style={{ fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0), fontSize: wp("4%"), textAlign: "center" }}>No images found matching &quot;{searchQuery}&quot;.</Text>
-          <Text style={{ fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0), fontSize: wp("4%"), textAlign: "center" }}>You may request images from &quot;Account&quot; Section.</Text>
+          <Text
+            style={{
+              fontFamily: "Markazi",
+              color: colorize("#F4F4F5", 1.0),
+              fontSize: wp("4%"),
+              textAlign: "center"
+            }}
+          >
+            No images found matching &quot;{searchQuery}&quot;.
+          </Text>
+          <Text
+            style={{
+              fontFamily: "Markazi",
+              color: colorize("#F4F4F5", 1.0),
+              fontSize: wp("4%"),
+              textAlign: "center"
+            }}
+          >
+            You may request images from &quot;Account&quot; Section.
+          </Text>
         </View>
       );
     }
@@ -1401,14 +1674,28 @@ export default function HomePage(): JSX.Element {
   }, [searchQuery]);
   if (isLoading) {
     return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: colorize("#111111", 1.0) }}>
+      <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: colorize("#111111", 1.0)
+        }}
+      >
         <ActivityIndicator size="large" color={colorize("#F4F4F5", 1.0)} accessibilityLabel="Loading content" />
       </View>
     );
   }
   if (error) {
     return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: colorize("#111111", 1.0) }}>
+      <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: colorize("#111111", 1.0)
+        }}
+      >
         <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: wp("4%"), fontFamily: "Markazi" }}>{error}</Text>
       </View>
     );
@@ -1431,7 +1718,13 @@ export default function HomePage(): JSX.Element {
         contentContainerStyle={{ padding: wp("2%") }}
         columnWrapperStyle={{ justifyContent: "space-between" }}
         ListHeaderComponent={
-          <HeaderComponent selectedCategory={selectedParent} onSelectCategory={onSelectCategory} onSearch={handleSearch} rawCategoriesArray={rawCategoriesArray} mixedCount={mixedCount} />
+          <HeaderComponent
+            selectedCategory={selectedParent}
+            onSelectCategory={onSelectCategory}
+            onSearch={handleSearch}
+            rawCategoriesArray={rawCategoriesArray}
+            mixedCount={mixedCount}
+          />
         }
       />
     </View>

@@ -186,13 +186,28 @@ const HAnimated: React.FC = memo(() => {
         {imageSetsMemo.map((images, slotIndex) => (
           <ScrollingSlot key={slotIndex} images={images} reverse={slotIndex % 2 === 0} delay={slotIndex * 200} />
         ))}
-        <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center", borderRadius: wp(2), overflow: "hidden" }}>
+        <View
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: wp(2),
+            overflow: "hidden"
+          }}
+        >
           <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#111111", 0.5) }} />
           <View style={{ position: "absolute", justifyContent: "center", alignItems: "center", margin: wp(2), padding: wp(1) }}>
             <View style={{ flexDirection: "row", marginBottom: hp(0.5) }}>
               <AnimatedTitle />
             </View>
-            <Text style={{ fontFamily: "Lobster", fontSize: wp(12), marginTop: hp(2), color: colorize("#F4F4F5", 1.0), lineHeight: wp(13) }}> picWall </Text>
+            <Text style={{ fontFamily: "Lobster", fontSize: wp(12), marginTop: hp(2), color: colorize("#F4F4F5", 1.0), lineHeight: wp(13) }}>
+              {" "}
+              picWall{" "}
+            </Text>
             <Animated.View style={{ alignSelf: "center" }} entering={FadeInDown.delay(600).duration(1500).springify()}>
               <View style={{ backgroundColor: colorize("#111111", 0.6), borderRadius: wp(50), paddingHorizontal: wp(3), paddingVertical: hp(0.5) }}>
                 <Text style={{ fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0), fontSize: wp(4), textAlign: "center" }}>

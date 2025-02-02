@@ -39,11 +39,7 @@
         "backgroundColor": "#111111",
         "foregroundImage": "./src/assets/images/logo.jpg"
       },
-      "permissions": [
-        "READ_EXTERNAL_STORAGE",
-        "WRITE_EXTERNAL_STORAGE",
-        "SET_WALLPAPER "
-      ]
+      "permissions": ["READ_EXTERNAL_STORAGE", "WRITE_EXTERNAL_STORAGE", "SET_WALLPAPER "]
     },
     "plugins": [
       "expo-router",
@@ -59,10 +55,7 @@
       [
         "expo-font",
         {
-          "fonts": [
-            "./src/assets/fonts/Lobster.ttf",
-            "./src/assets/fonts/Markazi.ttf"
-          ]
+          "fonts": ["./src/assets/fonts/Lobster.ttf", "./src/assets/fonts/Markazi.ttf"]
         }
       ],
       [

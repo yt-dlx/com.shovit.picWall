@@ -231,7 +231,18 @@ import { FC, memo, useEffect, useState, useMemo } from "react";
 import { Text, View, TouchableOpacity, Linking } from "react-native";
 import { AntDesign, FontAwesome5, Entypo } from "@expo/vector-icons";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
-import Animated, { useSharedValue, useAnimatedStyle, withTiming, withRepeat, withSequence, withSpring, Easing, FadeIn, FadeInDown, withDelay } from "react-native-reanimated";
+import Animated, {
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
+  withRepeat,
+  withSequence,
+  withSpring,
+  Easing,
+  FadeIn,
+  FadeInDown,
+  withDelay
+} from "react-native-reanimated";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
 const useVersionCheck = () => {
@@ -273,7 +284,19 @@ const UpdateDialog: FC<{ serverVersion: string; currentVersion: string }> = memo
   }, [opacity, scale]);
 
   return (
-    <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center", padding: 16, zIndex: 1000 }}>
+    <View
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        justifyContent: "center",
+        alignItems: "center",
+        padding: 16,
+        zIndex: 1000
+      }}
+    >
       <Animated.View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#111111", 1.0) }} />
       <View style={{ borderRadius: 40, padding: 8, backgroundColor: colorize("#111111", 0.8), justifyContent: "center", alignItems: "center" }}>
         <Image
@@ -304,7 +327,9 @@ const UpdateDialog: FC<{ serverVersion: string; currentVersion: string }> = memo
           onPress={() => Linking.openURL("market://details?id=com.shovit.picWall")}
         >
           <Entypo name="google-play" size={32} color={colorize("#111111", 1.0)} />
-          <Text style={{ fontSize: hp("3%"), fontFamily: "Lobster", color: colorize("#111111", 1.0), marginLeft: wp("4%") }}>Open Play Store ...</Text>
+          <Text style={{ fontSize: hp("3%"), fontFamily: "Lobster", color: colorize("#111111", 1.0), marginLeft: wp("4%") }}>
+            Open Play Store ...
+          </Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -324,12 +349,22 @@ const ScrollingSlot = memo<ScrollingSlotProps>(({ images, delay }) => {
     scale.value = withDelay(delay, withSpring(1, { damping: 20, stiffness: 50 }));
     scrollValue.value = withDelay(delay, withRepeat(withTiming(totalHeight, { duration: 10000, easing: Easing.linear }), -1));
   }, [delay, opacity, scale, scrollValue, totalHeight]);
-  const animatedStyle = useAnimatedStyle(() => ({ transform: [{ translateY: -scrollValue.value % totalHeight }, { scale: scale.value }], opacity: opacity.value }));
+  const animatedStyle = useAnimatedStyle(() => ({
+    transform: [{ translateY: -scrollValue.value % totalHeight }, { scale: scale.value }],
+    opacity: opacity.value
+  }));
   return (
     <View style={{ flex: 1, overflow: "hidden", padding: 2 }}>
       <Animated.View style={animatedStyle}>
         {images.concat(images).map((uri, idx) => (
-          <Image alt="Wallpaper image" source={uri} key={`${uri}-${idx}`} contentFit="cover" cachePolicy="disk" style={{ height: imageHeight, borderRadius: 16, width: "100%", marginBottom: 4 }} />
+          <Image
+            alt="Wallpaper image"
+            source={uri}
+            key={`${uri}-${idx}`}
+            contentFit="cover"
+            cachePolicy="disk"
+            style={{ height: imageHeight, borderRadius: 16, width: "100%", marginBottom: 4 }}
+          />
         ))}
       </Animated.View>
     </View>
@@ -392,7 +427,13 @@ const EntryPage = memo(() => {
             <ScrollingSlot key={slotIndex} images={images} delay={slotIndex * 400} reverse={true} />
           ))}
           <LinearGradient
-            colors={[colorize("#111111", 1.0), colorize("#111111", 0.4), colorize("#111111", 0.1), colorize("#111111", 0.4), colorize("#111111", 1.0)]}
+            colors={[
+              colorize("#111111", 1.0),
+              colorize("#111111", 0.4),
+              colorize("#111111", 0.1),
+              colorize("#111111", 0.4),
+              colorize("#111111", 1.0)
+            ]}
             style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}
             locations={[0, 0.2, 0.4, 0.5, 1]}
           />
@@ -402,7 +443,9 @@ const EntryPage = memo(() => {
               <View>
                 <Text style={{ fontSize: wp("22%"), fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0), textAlign: "center" }}>picWall</Text>
                 <Animated.View style={{ alignSelf: "center" }} entering={FadeInDown.delay(600).duration(1500).springify()}>
-                  <View style={{ borderRadius: 40, paddingHorizontal: wp("8%"), paddingVertical: hp("1%"), backgroundColor: colorize("#111111", 0.9) }}>
+                  <View
+                    style={{ borderRadius: 40, paddingHorizontal: wp("8%"), paddingVertical: hp("1%"), backgroundColor: colorize("#111111", 0.9) }}
+                  >
                     <Text style={{ fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0), fontSize: hp("1.5%"), textAlign: "center" }}>
                       Crafted with <AntDesign name="heart" size={12} color={colorize("#FF000D", 1.0)} /> in India. All rights reserved
                     </Text>
@@ -410,17 +453,34 @@ const EntryPage = memo(() => {
                 </Animated.View>
               </View>
               <Link href="./Home" asChild>
-                <TouchableOpacity onPressIn={onPressIn} onPressOut={onPressOut} style={{ marginTop: hp("15%"), borderRadius: 50, overflow: "hidden" }}>
-                  <View style={{ paddingVertical: hp("2%"), flexDirection: "row", alignItems: "center", justifyContent: "center", backgroundColor: colorize("#F4F4F5", 1.0), gap: wp("2%") }}>
+                <TouchableOpacity
+                  onPressIn={onPressIn}
+                  onPressOut={onPressOut}
+                  style={{ marginTop: hp("15%"), borderRadius: 50, overflow: "hidden" }}
+                >
+                  <View
+                    style={{
+                      paddingVertical: hp("2%"),
+                      flexDirection: "row",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      backgroundColor: colorize("#F4F4F5", 1.0),
+                      gap: wp("2%")
+                    }}
+                  >
                     <FontAwesome5 name="camera-retro" size={32} color={colorize("#111111", 1.0)} />
                     <Text style={{ fontSize: wp("5%"), fontFamily: "Lobster", color: colorize("#111111", 1.0) }}>Let's Explore ...</Text>
                   </View>
                 </TouchableOpacity>
               </Link>
-              <Animated.View entering={FadeIn.delay(1200).duration(1500)} style={{ marginTop: hp("2%"), paddingHorizontal: wp("10%"), alignItems: "center" }}>
+              <Animated.View
+                entering={FadeIn.delay(1200).duration(1500)}
+                style={{ marginTop: hp("2%"), paddingHorizontal: wp("10%"), alignItems: "center" }}
+              >
                 <Text style={{ fontFamily: "Markazi", color: colorize("#F4F4F5", 0.9), fontSize: wp("4%"), maxWidth: wp("80%") }}>
-                  Transform your screens with stunning, AI-curated wallpapers tailored to your style. Explore breathtaking collections, share your favorite moments, and discover awe-inspiring
-                  photographs from around the globe. Start your journey today – where every wallpaper tells a story!
+                  Transform your screens with stunning, AI-curated wallpapers tailored to your style. Explore breathtaking collections, share your
+                  favorite moments, and discover awe-inspiring photographs from around the globe. Start your journey today – where every wallpaper
+                  tells a story!
                 </Text>
               </Animated.View>
             </Animated.View>

@@ -233,21 +233,21 @@ import { useLocalSearchParams, useRouter } from "expo-router";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import { View, Text, ActivityIndicator, StatusBar, Animated } from "react-native";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
-
+/* ============================================================================================================================== */
+/* ============================================================================================================================== */
 const screenDimensions = { width: wp("100%"), height: hp("100%") };
-
 interface ImageData {
   primary: string;
   previewLink: string;
   original_file_name: string;
 }
-
 interface ParsedData {
   data: ImageData[];
   selectedIndex: number;
   environment_title: string;
 }
-
+/* ============================================================================================================================== */
+/* ============================================================================================================================== */
 const CardContainer: React.FC<{ children: React.ReactNode; style?: any }> = ({ children, style }) => (
   <View
     style={[
@@ -267,7 +267,8 @@ const CardContainer: React.FC<{ children: React.ReactNode; style?: any }> = ({ c
     {children}
   </View>
 );
-
+/* ============================================================================================================================== */
+/* ============================================================================================================================== */
 export default function SharedPage(): JSX.Element {
   const router = useRouter();
   const params = useLocalSearchParams();
@@ -277,22 +278,18 @@ export default function SharedPage(): JSX.Element {
   const [countdown, setCountdown] = useState(10);
   const opacity = useRef(new Animated.Value(0)).current;
   const scaleAnim = useRef(new Animated.Value(0.95)).current;
-
   let parsedData: ParsedData | null = null;
   if (params.data) {
     const dataParam = Array.isArray(params.data) ? params.data[0] : params.data;
     parsedData = JSON.parse(dataParam) as ParsedData;
   }
-
   const selectedImage = parsedData?.data[parsedData.selectedIndex]?.previewLink.replace("min", "max") || null;
-
   const { showAd, adLoaded } = useAd({
     onRewardEarned: () => setAdEarned(true),
     onAdClosed: () => {
       if (!adEarned) setAdError(true);
     }
   });
-
   useEffect(() => {
     const timer = setInterval(() => {
       setCountdown((prev) => {
@@ -305,20 +302,19 @@ export default function SharedPage(): JSX.Element {
     }, 1000);
     return () => clearInterval(timer);
   }, [adLoaded, adEarned, router, params]);
-
   useEffect(() => {
     if (adLoaded) showAd();
   }, [adLoaded, showAd]);
-
   useEffect(() => {
     if (adEarned && imageLoaded) router.replace({ pathname: "/Image", params });
   }, [adEarned, imageLoaded, router, params]);
-
   useEffect(() => {
     Animated.loop(
-      Animated.sequence([Animated.timing(opacity, { toValue: 1, duration: 1000, useNativeDriver: true }), Animated.timing(opacity, { toValue: 0, duration: 1000, useNativeDriver: true })])
+      Animated.sequence([
+        Animated.timing(opacity, { toValue: 1, duration: 1000, useNativeDriver: true }),
+        Animated.timing(opacity, { toValue: 0, duration: 1000, useNativeDriver: true })
+      ])
     ).start();
-
     Animated.spring(scaleAnim, {
       toValue: 1,
       tension: 50,
@@ -326,7 +322,6 @@ export default function SharedPage(): JSX.Element {
       useNativeDriver: true
     }).start();
   }, [opacity, scaleAnim]);
-
   return (
     <View style={{ flex: 1 }}>
       <StatusBar hidden />
@@ -342,7 +337,6 @@ export default function SharedPage(): JSX.Element {
           opacity: 0.8
         }}
       />
-
       <Animated.View
         style={{
           flex: 1,
@@ -356,11 +350,11 @@ export default function SharedPage(): JSX.Element {
           {selectedImage && (
             <View
               style={{
-                height: hp("25%"), // Height is responsive
-                width: wp("40%"), // Width is responsive
+                height: hp("25%"),
+                width: wp("40%"),
                 overflow: "hidden",
                 borderRadius: 16,
-                marginBottom: hp("4%"), // Margin is responsive
+                marginBottom: hp("4%"),
                 backgroundColor: colorize("#111111", 1.0),
                 borderWidth: 3,
                 borderColor: colorize("#F4F4F5", 0.2),
@@ -394,9 +388,7 @@ export default function SharedPage(): JSX.Element {
               )}
             </View>
           )}
-
           {!imageLoaded && <ActivityIndicator size="large" color={colorize("#F4F4F5", 1.0)} style={{ marginVertical: hp("2%") }} />}
-
           {adError ? (
             <View style={{ alignItems: "center", marginTop: hp("2%") }}>
               <Text
