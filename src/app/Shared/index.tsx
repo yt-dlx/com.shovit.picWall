@@ -1,29 +1,25 @@
-// src/app/Shared/index.tsx
-/* ============================================================================================================================== */
-/* ============================================================================================================================== */
 import { Image } from "expo-image";
 import useAd from "@/hooks/useAd";
 import colorize from "@/utils/colorize";
 import React, { useEffect, useState, useRef } from "react";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
-import { View, Text, ActivityIndicator, StatusBar, Animated } from "react-native";
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
-/* ============================================================================================================================== */
-/* ============================================================================================================================== */
-const screenDimensions = { width: wp("100%"), height: hp("100%") };
+import { View, Text, ActivityIndicator, StatusBar, Animated, Dimensions } from "react-native";
+
+const screenDimensions = Dimensions.get("screen");
+
 interface ImageData {
   primary: string;
   previewLink: string;
   original_file_name: string;
 }
+
 interface ParsedData {
   data: ImageData[];
   selectedIndex: number;
   environment_title: string;
 }
-/* ============================================================================================================================== */
-/* ============================================================================================================================== */
+
 const CardContainer: React.FC<{ children: React.ReactNode; style?: any }> = ({ children, style }) => (
   <View
     style={[
@@ -35,7 +31,7 @@ const CardContainer: React.FC<{ children: React.ReactNode; style?: any }> = ({ c
         shadowOpacity: 0.3,
         shadowRadius: 8,
         elevation: 5,
-        padding: wp("6%")
+        padding: 24
       },
       style
     ]}
@@ -43,8 +39,7 @@ const CardContainer: React.FC<{ children: React.ReactNode; style?: any }> = ({ c
     {children}
   </View>
 );
-/* ============================================================================================================================== */
-/* ============================================================================================================================== */
+
 export default function SharedPage(): JSX.Element {
   const router = useRouter();
   const params = useLocalSearchParams();
@@ -54,18 +49,22 @@ export default function SharedPage(): JSX.Element {
   const [countdown, setCountdown] = useState(10);
   const opacity = useRef(new Animated.Value(0)).current;
   const scaleAnim = useRef(new Animated.Value(0.95)).current;
+
   let parsedData: ParsedData | null = null;
   if (params.data) {
     const dataParam = Array.isArray(params.data) ? params.data[0] : params.data;
     parsedData = JSON.parse(dataParam) as ParsedData;
   }
+
   const selectedImage = parsedData?.data[parsedData.selectedIndex]?.previewLink.replace("min", "max") || null;
+
   const { showAd, adLoaded } = useAd({
     onRewardEarned: () => setAdEarned(true),
     onAdClosed: () => {
       if (!adEarned) setAdError(true);
     }
   });
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCountdown((prev) => {
@@ -78,16 +77,20 @@ export default function SharedPage(): JSX.Element {
     }, 1000);
     return () => clearInterval(timer);
   }, [adLoaded, adEarned, router, params]);
+
   useEffect(() => {
     if (adLoaded) showAd();
   }, [adLoaded, showAd]);
+
   useEffect(() => {
     if (adEarned && imageLoaded) router.replace({ pathname: "/Image", params });
   }, [adEarned, imageLoaded, router, params]);
+
   useEffect(() => {
     Animated.loop(
       Animated.sequence([Animated.timing(opacity, { toValue: 1, duration: 1000, useNativeDriver: true }), Animated.timing(opacity, { toValue: 0, duration: 1000, useNativeDriver: true })])
     ).start();
+
     Animated.spring(scaleAnim, {
       toValue: 1,
       tension: 50,
@@ -95,6 +98,7 @@ export default function SharedPage(): JSX.Element {
       useNativeDriver: true
     }).start();
   }, [opacity, scaleAnim]);
+
   return (
     <View style={{ flex: 1 }}>
       <StatusBar hidden />
@@ -110,12 +114,13 @@ export default function SharedPage(): JSX.Element {
           opacity: 0.8
         }}
       />
+
       <Animated.View
         style={{
           flex: 1,
           alignItems: "center",
           justifyContent: "center",
-          padding: wp("6%"),
+          padding: 24,
           transform: [{ scale: scaleAnim }]
         }}
       >
@@ -123,11 +128,11 @@ export default function SharedPage(): JSX.Element {
           {selectedImage && (
             <View
               style={{
-                height: hp("25%"),
-                width: wp("40%"),
+                height: 210, // Fixed height for the image container
+                width: 160, // Fixed width for the image container
                 overflow: "hidden",
                 borderRadius: 16,
-                marginBottom: hp("4%"),
+                marginBottom: 32,
                 backgroundColor: colorize("#111111", 1.0),
                 borderWidth: 3,
                 borderColor: colorize("#F4F4F5", 0.2),
@@ -152,39 +157,41 @@ export default function SharedPage(): JSX.Element {
                     position: "absolute",
                     top: "50%",
                     left: "50%",
-                    transform: [{ translateX: -wp("12%") }, { translateY: -hp("6%") }, { scale: scaleAnim }],
+                    transform: [{ translateX: -48 }, { translateY: -48 }, { scale: scaleAnim }],
                     opacity: opacity
                   }}
                 >
-                  <FontAwesome6 name="download" size={hp("4%")} color={colorize("#F4F4F5", 1.0)} />
+                  <FontAwesome6 name="download" size={28} color={colorize("#F4F4F5", 1.0)} />
                 </Animated.View>
               )}
             </View>
           )}
-          {!imageLoaded && <ActivityIndicator size="large" color={colorize("#F4F4F5", 1.0)} style={{ marginVertical: hp("2%") }} />}
+
+          {!imageLoaded && <ActivityIndicator size="large" color={colorize("#F4F4F5", 1.0)} style={{ marginVertical: 16 }} />}
+
           {adError ? (
-            <View style={{ alignItems: "center", marginTop: hp("2%") }}>
+            <View style={{ alignItems: "center", marginTop: 16 }}>
               <Text
                 style={{
                   color: colorize("#FF6B6B", 1.0),
-                  fontSize: wp("4%"),
+                  fontSize: 16,
                   fontFamily: "Lobster",
                   textAlign: "center",
-                  marginBottom: hp("2%")
+                  marginBottom: 8
                 }}
               >
                 Reward not received. Please try again.
               </Text>
             </View>
           ) : (
-            <View style={{ alignItems: "center", marginTop: hp("2%") }}>
+            <View style={{ alignItems: "center", marginTop: 16 }}>
               <Text
                 style={{
                   color: colorize("#F4F4F5", 1.0),
-                  fontSize: wp("5%"),
+                  fontSize: 22,
                   fontFamily: "Lobster",
                   fontWeight: "600",
-                  marginBottom: hp("2%")
+                  marginBottom: 16
                 }}
               >
                 Preparing Your Experience
@@ -192,10 +199,10 @@ export default function SharedPage(): JSX.Element {
               <Text
                 style={{
                   color: colorize("#F4F4F5", 0.8),
-                  fontSize: wp("3.5%"),
+                  fontSize: 14,
                   fontFamily: "Markazi",
                   textAlign: "center",
-                  lineHeight: hp("3%")
+                  lineHeight: 20
                 }}
               >
                 After watching the ad, you'll be redirected to your selected content.
@@ -203,9 +210,9 @@ export default function SharedPage(): JSX.Element {
               <Text
                 style={{
                   color: colorize("#F4F4F5", 0.9),
-                  fontSize: wp("4%"),
+                  fontSize: 16,
                   fontFamily: "Markazi",
-                  marginTop: hp("3%")
+                  marginTop: 24
                 }}
               >
                 Redirecting in {countdown} seconds...

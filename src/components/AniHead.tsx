@@ -7,11 +7,12 @@ import { Text, View, Image } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import React, { useEffect, memo, useMemo } from "react";
 import { ScrollingSlotProps } from "@/types/components";
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 import Animated, { useSharedValue, useAnimatedStyle, withTiming, withRepeat, withSequence, withDelay, FadeInDown } from "react-native-reanimated";
 /* ============================================================================================ */
 /* ============================================================================================ */
 const ScrollingSlot: React.FC<ScrollingSlotProps> = memo(({ images, reverse, delay }) => {
+  const wp = (percentage: number) => (320 * percentage) / 100;
+  const hp = (percentage: number) => (568 * percentage) / 100;
   const imageHeight = hp(25);
   const opacity = useSharedValue(0);
   const scrollValue = useSharedValue(0);
@@ -20,27 +21,12 @@ const ScrollingSlot: React.FC<ScrollingSlotProps> = memo(({ images, reverse, del
     opacity.value = withDelay(delay, withTiming(1, { duration: 1000 }));
     scrollValue.value = withDelay(delay, withRepeat(withTiming(totalHeight, { duration: 10000 }), -1, reverse));
   }, [scrollValue, totalHeight, reverse, delay, opacity]);
-  const animatedStyle = useAnimatedStyle(() => ({
-    transform: [{ translateY: -scrollValue.value % totalHeight }],
-    opacity: opacity.value
-  }));
+  const animatedStyle = useAnimatedStyle(() => ({ transform: [{ translateY: -scrollValue.value % totalHeight }], opacity: opacity.value }));
   return (
     <View style={{ flex: 1, overflow: "hidden", padding: wp(1) }}>
       <Animated.View style={[animatedStyle, { flexDirection: "column" }]}>
         {images.concat(images).map((uri: string, idx: number) => (
-          <Image
-            alt="Wallpaper preview"
-            key={idx}
-            source={{ uri }}
-            style={{
-              width: "100%",
-              height: imageHeight,
-              borderRadius: wp(3),
-              marginBottom: hp(0.5)
-            }}
-            resizeMode="cover"
-            blurRadius={1.5}
-          />
+          <Image alt="Wallpaper preview" key={idx} source={{ uri }} style={{ width: "100%", height: imageHeight, borderRadius: wp(3), marginBottom: hp(0.5) }} resizeMode="cover" blurRadius={1.5} />
         ))}
       </Animated.View>
     </View>
@@ -50,13 +36,13 @@ ScrollingSlot.displayName = "ScrollingSlot";
 /* ============================================================================================ */
 /* ============================================================================================ */
 const AnimatedTitle: React.FC = memo(() => {
+  const wp = (percentage: number) => (320 * percentage) / 100;
+  const hp = (percentage: number) => (568 * percentage) / 100;
   const scale = useSharedValue(0.95);
   useEffect(() => {
     scale.value = withRepeat(withSequence(withTiming(1.05, { duration: 2000 }), withTiming(0.95, { duration: 2000 })), -1, true);
   }, [scale]);
-  const animatedStyle = useAnimatedStyle(() => ({
-    transform: [{ scale: scale.value }]
-  }));
+  const animatedStyle = useAnimatedStyle(() => ({ transform: [{ scale: scale.value }] }));
   return (
     <Animated.View style={[animatedStyle, { alignItems: "center", marginTop: hp(5) }]}>
       <View style={{ backgroundColor: colorize("#111111", 0.6), borderRadius: wp(50), padding: wp(1) }}>
@@ -64,13 +50,7 @@ const AnimatedTitle: React.FC = memo(() => {
           alt="picWallLogo"
           resizeMode="contain"
           source={require("@/assets/images/logo.jpg")}
-          style={{
-            width: wp(24),
-            height: wp(24),
-            borderRadius: wp(50),
-            borderWidth: wp(0.5),
-            borderColor: colorize("#F4F4F5", 1.0)
-          }}
+          style={{ width: wp(24), height: wp(24), borderRadius: wp(50), borderWidth: wp(0.5), borderColor: colorize("#F4F4F5", 1.0) }}
         />
       </View>
     </Animated.View>
@@ -80,6 +60,12 @@ AnimatedTitle.displayName = "AnimatedTitle";
 /* ============================================================================================ */
 /* ============================================================================================ */
 const HAnimated: React.FC = memo(() => {
+  const wp = (percentage: number) => (320 * percentage) / 100;
+  const hp = (percentage: number) => (568 * percentage) / 100;
+  const rf = (size: number, factor = 0.5) => {
+    const ratio = (size * 320) / 390;
+    return size + (ratio - size) * factor;
+  };
   const imageSetsMemo = useMemo(() => imageSets, []);
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
@@ -105,11 +91,11 @@ const HAnimated: React.FC = memo(() => {
             <View style={{ flexDirection: "row", marginBottom: hp(0.5) }}>
               <AnimatedTitle />
             </View>
-            <Text style={{ fontFamily: "Lobster", fontSize: wp(12), marginTop: hp(2), color: colorize("#F4F4F5", 1.0), lineHeight: wp(13) }}> picWall </Text>
+            <Text style={{ fontFamily: "Lobster", fontSize: rf(50), marginTop: hp(2), color: colorize("#F4F4F5", 1.0), lineHeight: rf(52) }}>picWall</Text>
             <Animated.View style={{ alignSelf: "center" }} entering={FadeInDown.delay(600).duration(1500).springify()}>
               <View style={{ backgroundColor: colorize("#111111", 0.6), borderRadius: wp(50), paddingHorizontal: wp(3), paddingVertical: hp(0.5) }}>
-                <Text style={{ fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0), fontSize: wp(4), textAlign: "center" }}>
-                  Crafted with <AntDesign name="heart" size={wp(4)} color={colorize("#FF000D", 1.0)} /> in India. All rights reserved
+                <Text style={{ fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0), fontSize: rf(12), textAlign: "center" }}>
+                  Crafted with <AntDesign name="heart" size={rf(12)} color={colorize("#FF000D", 1.0)} /> in India. All rights reserved
                 </Text>
               </View>
             </Animated.View>

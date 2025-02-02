@@ -10,9 +10,8 @@ import Footer from "@/components/Footer";
 import { LinearGradient } from "expo-linear-gradient";
 import { ScrollingSlotProps } from "@/types/components";
 import { FC, memo, useEffect, useState, useMemo } from "react";
-import { Text, View, TouchableOpacity, Linking } from "react-native";
 import { AntDesign, FontAwesome5, Entypo } from "@expo/vector-icons";
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
+import { Text, View, TouchableOpacity, Linking } from "react-native";
 import Animated, { useSharedValue, useAnimatedStyle, withTiming, withRepeat, withSequence, withSpring, Easing, FadeIn, FadeInDown, withDelay } from "react-native-reanimated";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
@@ -75,30 +74,30 @@ const UpdateDialog: FC<{ serverVersion: string; currentVersion: string }> = memo
           contentFit="contain"
           accessibilityLabel="picWallLogo"
           source={require("@/assets/images/logo.jpg")}
-          style={{ width: wp("40%"), height: hp("20%"), borderWidth: 2, borderRadius: 80, borderColor: colorize("#F4F4F5", 1.0) }}
+          style={{ width: 160, height: 160, borderWidth: 2, borderRadius: 80, borderColor: colorize("#F4F4F5", 1.0) }}
         />
       </View>
       <View style={{ alignItems: "center" }}>
-        <Text style={{ margin: wp("6%"), fontSize: hp("5%"), fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}>Update Required</Text>
-        <View style={{ marginBottom: wp("4%"), alignItems: "center" }}>
-          <Text style={{ fontSize: hp("2.5%"), fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}>Current Version: {currentVersion}</Text>
-          <Text style={{ fontSize: hp("2.5%"), fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}>Latest Version: {serverVersion}</Text>
+        <Text style={{ margin: 24, fontSize: 36, fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}>Update Required</Text>
+        <View style={{ marginBottom: 16, alignItems: "center" }}>
+          <Text style={{ fontSize: 18, fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}>Current Version: {currentVersion}</Text>
+          <Text style={{ fontSize: 18, fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}>Latest Version: {serverVersion}</Text>
         </View>
         <TouchableOpacity
           style={{
-            marginTop: hp("10%"),
+            marginTop: 80,
             flexDirection: "row",
             alignItems: "center",
             borderRadius: 50,
-            paddingVertical: hp("2%"),
+            paddingVertical: 16,
             justifyContent: "center",
-            paddingHorizontal: wp("10%"),
+            paddingHorizontal: 40,
             backgroundColor: colorize("#F4F4F5", 1.0)
           }}
           onPress={() => Linking.openURL("market://details?id=com.shovit.picWall")}
         >
           <Entypo name="google-play" size={32} color={colorize("#111111", 1.0)} />
-          <Text style={{ fontSize: hp("3%"), fontFamily: "Lobster", color: colorize("#111111", 1.0), marginLeft: wp("4%") }}>Open Play Store ...</Text>
+          <Text style={{ fontSize: 20, fontFamily: "Lobster", color: colorize("#111111", 1.0), marginLeft: 16 }}>Open Play Store ...</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -108,7 +107,7 @@ UpdateDialog.displayName = "UpdateDialog";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
 const ScrollingSlot = memo<ScrollingSlotProps>(({ images, delay }) => {
-  const imageHeight = hp("26%"); // Adjusted to make the image height relative to screen size
+  const imageHeight = 210;
   const scale = useSharedValue(0.8);
   const opacity = useSharedValue(0);
   const scrollValue = useSharedValue(0);
@@ -151,7 +150,7 @@ const AnimatedTitle = memo(() => {
           contentFit="contain"
           accessibilityLabel="App logo"
           source={require("@/assets/images/logo.jpg")}
-          style={{ width: wp("40%"), height: hp("20%"), borderWidth: 2, borderRadius: 80, borderColor: colorize("#F4F4F5", 1.0) }}
+          style={{ width: 160, height: 160, borderWidth: 2, borderRadius: 80, borderColor: colorize("#F4F4F5", 1.0) }}
         />
       </View>
     </Animated.View>
@@ -197,34 +196,34 @@ const EntryPage = memo(() => {
             <AnimatedTitle />
             <Animated.View entering={FadeInDown.delay(600).duration(1500).springify()}>
               <View>
-                <Text style={{ fontSize: wp("22%"), fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0), textAlign: "center" }}>picWall</Text>
+                <Text style={{ fontSize: 80, fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0), textAlign: "center" }}>picWall</Text>
                 <Animated.View style={{ alignSelf: "center" }} entering={FadeInDown.delay(600).duration(1500).springify()}>
-                  <View style={{ borderRadius: 40, paddingHorizontal: wp("8%"), paddingVertical: hp("1%"), backgroundColor: colorize("#111111", 0.9) }}>
-                    <Text style={{ fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0), fontSize: hp("1.5%"), textAlign: "center" }}>
+                  <View style={{ borderRadius: 40, paddingHorizontal: 24, paddingVertical: 8, backgroundColor: colorize("#111111", 0.9) }}>
+                    <Text style={{ fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0), fontSize: 13, textAlign: "center" }}>
                       Crafted with <AntDesign name="heart" size={12} color={colorize("#FF000D", 1.0)} /> in India. All rights reserved
                     </Text>
                   </View>
                 </Animated.View>
               </View>
               <Link href="./Home" asChild>
-                <TouchableOpacity onPressIn={onPressIn} onPressOut={onPressOut} style={{ marginTop: hp("15%"), borderRadius: 50, overflow: "hidden" }}>
+                <TouchableOpacity onPressIn={onPressIn} onPressOut={onPressOut} style={{ marginTop: 150, borderRadius: 50, overflow: "hidden" }}>
                   <View
                     style={{
-                      paddingVertical: hp("2%"),
+                      paddingVertical: 15,
                       flexDirection: "row",
                       alignItems: "center",
                       justifyContent: "center",
                       backgroundColor: colorize("#F4F4F5", 1.0),
-                      gap: wp("2%")
+                      gap: 8
                     }}
                   >
                     <FontAwesome5 name="camera-retro" size={32} color={colorize("#111111", 1.0)} />
-                    <Text style={{ fontSize: wp("5%"), fontFamily: "Lobster", color: colorize("#111111", 1.0) }}>Let's Explore ...</Text>
+                    <Text style={{ fontSize: 20, fontFamily: "Lobster", color: colorize("#111111", 1.0) }}>Let's Explore ...</Text>
                   </View>
                 </TouchableOpacity>
               </Link>
-              <Animated.View entering={FadeIn.delay(1200).duration(1500)} style={{ marginTop: hp("2%"), paddingHorizontal: wp("10%"), alignItems: "center" }}>
-                <Text style={{ fontFamily: "Markazi", color: colorize("#F4F4F5", 0.9), fontSize: wp("4%"), maxWidth: wp("80%") }}>
+              <Animated.View entering={FadeIn.delay(1200).duration(1500)} style={{ marginTop: 16, paddingHorizontal: 40, alignItems: "center" }}>
+                <Text style={{ fontFamily: "Markazi", color: colorize("#F4F4F5", 0.9), fontSize: 12, maxWidth: 250 }}>
                   Transform your screens with stunning, AI-curated wallpapers tailored to your style. Explore breathtaking collections, share your favorite moments, and discover awe-inspiring
                   photographs from around the globe. Start your journey today – where every wallpaper tells a story!
                 </Text>
