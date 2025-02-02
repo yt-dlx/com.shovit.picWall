@@ -1,3 +1,6 @@
+// src/components/AniHead.tsx
+/* ============================================================================================================================== */
+/* ============================================================================================================================== */
 import imageSets from "@/utils/static";
 import colorize from "@/utils/colorize";
 import { Text, View, Image } from "react-native";
@@ -5,7 +8,8 @@ import { AntDesign } from "@expo/vector-icons";
 import React, { useEffect, memo, useMemo } from "react";
 import { ScrollingSlotProps } from "@/types/components";
 import Animated, { useSharedValue, useAnimatedStyle, withTiming, withRepeat, withSequence, withDelay, FadeInDown } from "react-native-reanimated";
-
+/* ============================================================================================================================== */
+/* ============================================================================================================================== */
 const ScrollingSlot: React.FC<ScrollingSlotProps> = memo(({ images, reverse, delay }) => {
   const wp = (percentage: number) => (320 * percentage) / 100;
   const hp = (percentage: number) => (568 * percentage) / 100;
@@ -29,7 +33,8 @@ const ScrollingSlot: React.FC<ScrollingSlotProps> = memo(({ images, reverse, del
   );
 });
 ScrollingSlot.displayName = "ScrollingSlot";
-
+/* ============================================================================================================================== */
+/* ============================================================================================================================== */
 const AnimatedTitle: React.FC = memo(() => {
   const wp = (percentage: number) => (320 * percentage) / 100;
   const hp = (percentage: number) => (568 * percentage) / 100;
@@ -41,18 +46,14 @@ const AnimatedTitle: React.FC = memo(() => {
   return (
     <Animated.View style={[animatedStyle, { alignItems: "center", marginTop: hp(5) }]}>
       <View style={{ backgroundColor: colorize("#111111", 0.6), borderRadius: wp(50), padding: wp(1) }}>
-        <Image
-          alt="picWallLogo"
-          resizeMode="contain"
-          source={require("@/assets/images/logo.jpg")}
-          style={{ width: wp(24), height: wp(24), borderRadius: wp(50), borderWidth: wp(0.5), borderColor: colorize("#F4F4F5", 1.0) }}
-        />
+        <Image alt="picWallLogo" resizeMode="contain" source={require("@/assets/images/logo.jpg")} style={{ width: wp(24), height: wp(24), borderRadius: wp(50), borderWidth: wp(0.5), borderColor: colorize("#F4F4F5", 1.0) }} />
       </View>
     </Animated.View>
   );
 });
 AnimatedTitle.displayName = "AnimatedTitle";
-
+/* ============================================================================================================================== */
+/* ============================================================================================================================== */
 const HAnimated: React.FC = memo(() => {
   const wp = (percentage: number) => (320 * percentage) / 100;
   const hp = (percentage: number) => (568 * percentage) / 100;
@@ -67,19 +68,7 @@ const HAnimated: React.FC = memo(() => {
         {imageSetsMemo.map((images, slotIndex) => (
           <ScrollingSlot key={slotIndex} images={images} reverse={slotIndex % 2 === 0} delay={slotIndex * 200} />
         ))}
-        <View
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: wp(2),
-            overflow: "hidden"
-          }}
-        >
+        <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center", borderRadius: wp(2), overflow: "hidden" }}>
           <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colorize("#111111", 0.5) }} />
           <View style={{ position: "absolute", justifyContent: "center", alignItems: "center", margin: wp(2), padding: wp(1) }}>
             <View style={{ flexDirection: "row", marginBottom: hp(0.5) }}>
@@ -101,3 +90,5 @@ const HAnimated: React.FC = memo(() => {
 });
 HAnimated.displayName = "HAnimated";
 export default HAnimated;
+/* ============================================================================================================================== */
+/* ============================================================================================================================== */

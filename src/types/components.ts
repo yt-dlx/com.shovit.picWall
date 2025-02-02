@@ -33,19 +33,4 @@ interface ScrollingSlotProps {
   reverse: boolean;
   delay: number;
 }
-export type {
-  RGB,
-  HEX,
-  RGBA,
-  ColorValue,
-  CardProps,
-  GroupedData,
-  CardTextProps,
-  ImageMetadata,
-  SubImagesProps,
-  ScrollingSlotProps,
-  EnvironmentEntry,
-  AlphabetGroupProps,
-  CategoryButtonProps,
-  DownloadScreenProps
-};
+export type { RGB, HEX, RGBA, ColorValue, CardProps, GroupedData, CardTextProps, ImageMetadata, SubImagesProps, ScrollingSlotProps, EnvironmentEntry, AlphabetGroupProps, CategoryButtonProps, DownloadScreenProps };

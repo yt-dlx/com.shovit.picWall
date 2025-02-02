@@ -1,6 +1,6 @@
 // src/app/Image/index.tsx
-// ====================================================================================
-// ====================================================================================
+/* ============================================================================================================================== */
+/* ============================================================================================================================== */
 import { Image } from "expo-image";
 import colorize from "@/utils/colorize";
 import useAppState from "@/utils/store";
@@ -16,8 +16,8 @@ import React, { useState, useEffect, useRef, memo, useMemo, useCallback } from "
 import { FontAwesome5, MaterialIcons, Ionicons, FontAwesome6, AntDesign } from "@expo/vector-icons";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 import { View, Text, Dimensions, StatusBar, ActivityIndicator, TouchableOpacity, Alert, Modal, Animated, Easing, ScrollView } from "react-native";
-// ====================================================================================
-// ====================================================================================
+/* ============================================================================================================================== */
+/* ============================================================================================================================== */
 interface DownloadButtonProps {
   onDownload?: (event: unknown) => void;
   colors: { primary: string; secondary: string; tertiary: string };
@@ -46,8 +46,8 @@ interface FullScreenViewProps {
   setIsFullScreen: (isFullScreen: boolean) => void;
 }
 const { width: screenWidth } = Dimensions.get("window");
-// ====================================================================================
-// ====================================================================================
+/* ============================================================================================================================== */
+/* ============================================================================================================================== */
 const SuccessModal: React.FC<{ visible: boolean; message: string; onClose: () => void }> = memo(({ visible, message, onClose }) => {
   const [modalAnim] = useState(new Animated.Value(0));
   useEffect(() => {
@@ -78,8 +78,8 @@ const SuccessModal: React.FC<{ visible: boolean; message: string; onClose: () =>
   );
 });
 SuccessModal.displayName = "SuccessModal";
-// ====================================================================================
-// ====================================================================================
+/* ============================================================================================================================== */
+/* ============================================================================================================================== */
 const ErrorModal: React.FC<{ visible: boolean; message: string; onClose: () => void }> = memo(({ visible, message, onClose }) => {
   const [modalAnim] = useState(new Animated.Value(0));
   useEffect(() => {
@@ -110,8 +110,8 @@ const ErrorModal: React.FC<{ visible: boolean; message: string; onClose: () => v
   );
 });
 ErrorModal.displayName = "ErrorModal";
-// ====================================================================================
-// ====================================================================================
+/* ============================================================================================================================== */
+/* ============================================================================================================================== */
 const DownloadingModal: React.FC<{ visible: boolean; percentage: number; downloadRate: number; eta: number; primaryColor: string }> = memo(({ visible, percentage, downloadRate, eta, primaryColor }) => {
   const [progressAnim] = useState(new Animated.Value(percentage / 100));
   useEffect(() => {
@@ -151,8 +151,8 @@ const DownloadingModal: React.FC<{ visible: boolean; percentage: number; downloa
   );
 });
 DownloadingModal.displayName = "DownloadingModal";
-// ====================================================================================
-// ====================================================================================
+/* ============================================================================================================================== */
+/* ============================================================================================================================== */
 const PreviewImage: React.FC<{ selectedImage: ImageMetadata; screenWidth: number; onViewFullScreen: () => void }> = memo(({ selectedImage, screenWidth, onViewFullScreen }) => {
   const [imageLoading, setImageLoading] = useState(true);
   const aspectRatio = selectedImage.width / selectedImage.height;
@@ -219,8 +219,8 @@ const PreviewImage: React.FC<{ selectedImage: ImageMetadata; screenWidth: number
   );
 });
 PreviewImage.displayName = "PreviewImage";
-// ====================================================================================
-// ====================================================================================
+/* ============================================================================================================================== */
+/* ============================================================================================================================== */
 const DownloadButton: React.FC<DownloadButtonProps> = memo(({ onDownload, colors }) => {
   const scaleValue = useRef(new Animated.Value(1)).current;
   useEffect(() => {
@@ -242,8 +242,8 @@ const DownloadButton: React.FC<DownloadButtonProps> = memo(({ onDownload, colors
   );
 });
 DownloadButton.displayName = "DownloadButton";
-// ====================================================================================
-// ====================================================================================
+/* ============================================================================================================================== */
+/* ============================================================================================================================== */
 const SubImages: React.FC<OtherImagesProps> = memo(({ otherImages, setCurrentIndex, primaryColor, tertiaryColor, currentIndex, selectedFileName }) => {
   const uniqueImages = useMemo(() => {
     const uniqueFileNames = new Set<string>();
@@ -278,8 +278,8 @@ const SubImages: React.FC<OtherImagesProps> = memo(({ otherImages, setCurrentInd
   );
 });
 SubImages.displayName = "SubImages";
-// ====================================================================================
-// ====================================================================================
+/* ============================================================================================================================== */
+/* ============================================================================================================================== */
 const WallModal: React.FC<WallModalProps> = memo(({ visible, onComplete, onCancel, wallType, primaryColor }) => {
   const countdownRef = useRef<NodeJS.Timeout | undefined>(undefined);
   const [modalAnim] = useState(new Animated.Value(0));
@@ -337,8 +337,8 @@ const WallModal: React.FC<WallModalProps> = memo(({ visible, onComplete, onCance
   );
 });
 WallModal.displayName = "WallModal";
-// ====================================================================================
-// ====================================================================================
+/* ============================================================================================================================== */
+/* ============================================================================================================================== */
 const FullScreenView: React.FC<FullScreenViewProps> = ({ isFullScreen, setIsFullScreen, selectedImage, selectedIndex, data, environment_title }) => {
   const [wallType, setWallType] = useState<"HOME" | "LOCK">("HOME");
   const [showWallModal, setShowWallModal] = useState(false);
@@ -420,8 +420,8 @@ const FullScreenView: React.FC<FullScreenViewProps> = ({ isFullScreen, setIsFull
   );
 };
 FullScreenView.displayName = "FullScreenView";
-// ====================================================================================
-// ====================================================================================
+/* ============================================================================================================================== */
+/* ============================================================================================================================== */
 export default function ImagePage(): JSX.Element {
   const params = useLocalSearchParams();
   const [eta, setEta] = useState<number>(0);
@@ -511,5 +511,5 @@ export default function ImagePage(): JSX.Element {
     </View>
   );
 }
-// ====================================================================================
-// ====================================================================================
+/* ============================================================================================================================== */
+/* ============================================================================================================================== */
