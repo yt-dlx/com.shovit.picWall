@@ -44,14 +44,7 @@ export default function RootLayout() {
     <SafeAreaView style={{ flex: 1, backgroundColor: colorize("#111111", 1.0) }}>
       <StatusBar backgroundColor="#111111" barStyle="light-content" />
       <LinearGradient
-        colors={[
-          colorize("#111111", 1.0),
-          colorize("#111111", 0.8),
-          colorize("#111111", 0.6),
-          colorize("#111111", 0.4),
-          colorize("#111111", 0.2),
-          "transparent"
-        ]}
+        colors={[colorize("#111111", 1.0), colorize("#111111", 0.8), colorize("#111111", 0.6), colorize("#111111", 0.4), colorize("#111111", 0.2), "transparent"]}
         style={{ position: "absolute", top: 0, left: 0, right: 0, height: 100, zIndex: 50 }}
       />
       <View style={{ flex: 1, backgroundColor: colorize("#111111", 1.0) }} className="capitalize">

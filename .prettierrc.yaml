@@ -1,6 +1,6 @@
 semi: true
 tabWidth: 2
-printWidth: 150
+printWidth: 200
 singleQuote: false
 bracketSpacing: true
 jsxSingleQuote: false
