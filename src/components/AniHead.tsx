@@ -1,6 +1,3 @@
-/* ============================================================================================ */
-// src/utils/HeaderAnimated.tsx
-/* ============================================================================================ */
 import imageSets from "@/utils/static";
 import colorize from "@/utils/colorize";
 import { Text, View, Image } from "react-native";
@@ -8,8 +5,7 @@ import { AntDesign } from "@expo/vector-icons";
 import React, { useEffect, memo, useMemo } from "react";
 import { ScrollingSlotProps } from "@/types/components";
 import Animated, { useSharedValue, useAnimatedStyle, withTiming, withRepeat, withSequence, withDelay, FadeInDown } from "react-native-reanimated";
-/* ============================================================================================ */
-/* ============================================================================================ */
+
 const ScrollingSlot: React.FC<ScrollingSlotProps> = memo(({ images, reverse, delay }) => {
   const wp = (percentage: number) => (320 * percentage) / 100;
   const hp = (percentage: number) => (568 * percentage) / 100;
@@ -33,8 +29,7 @@ const ScrollingSlot: React.FC<ScrollingSlotProps> = memo(({ images, reverse, del
   );
 });
 ScrollingSlot.displayName = "ScrollingSlot";
-/* ============================================================================================ */
-/* ============================================================================================ */
+
 const AnimatedTitle: React.FC = memo(() => {
   const wp = (percentage: number) => (320 * percentage) / 100;
   const hp = (percentage: number) => (568 * percentage) / 100;
@@ -57,8 +52,7 @@ const AnimatedTitle: React.FC = memo(() => {
   );
 });
 AnimatedTitle.displayName = "AnimatedTitle";
-/* ============================================================================================ */
-/* ============================================================================================ */
+
 const HAnimated: React.FC = memo(() => {
   const wp = (percentage: number) => (320 * percentage) / 100;
   const hp = (percentage: number) => (568 * percentage) / 100;
@@ -107,5 +101,3 @@ const HAnimated: React.FC = memo(() => {
 });
 HAnimated.displayName = "HAnimated";
 export default HAnimated;
-/* ============================================================================================ */
-/* ============================================================================================ */

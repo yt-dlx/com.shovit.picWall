@@ -1,6 +1,3 @@
-/* ============================================================================================================================== */
-// src/app/_layout.tsx
-/* ============================================================================================================================== */
 import "../../global.css";
 import React from "react";
 import { useFonts } from "expo-font";
@@ -10,8 +7,6 @@ import { Stack, useRouter } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView, StatusBar, View } from "react-native";
-/* ============================================================================================================================== */
-/* ============================================================================================================================== */
 SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
   const router = useRouter();
@@ -23,16 +18,7 @@ export default function RootLayout() {
         const { lastState, hasRedirected, setRedirected, clearState } = useAppState.getState();
         if (lastState && !hasRedirected) {
           router.push("/Home");
-          router.push({
-            pathname: "/Image",
-            params: {
-              data: JSON.stringify({
-                data: lastState.data,
-                selectedIndex: lastState.selectedIndex,
-                environment_title: lastState.environment_title || "Default Title"
-              })
-            }
-          });
+          router.push({ pathname: "/Image", params: { data: JSON.stringify({ data: lastState.data, selectedIndex: lastState.selectedIndex, environment_title: lastState.environment_title || "Default Title" }) } });
           setRedirected(true);
         } else if (hasRedirected) clearState();
       }
@@ -53,5 +39,3 @@ export default function RootLayout() {
     </SafeAreaView>
   );
 }
-/* ============================================================================================================================== */
-/* ============================================================================================================================== */
