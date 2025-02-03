@@ -31,6 +31,7 @@ function loadContext(filename) {
   }
 }
 (async () => {
+  console.clear();
   const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
   const context = loadContext(filename);
   rl.on("line", async (userMessage) => {
@@ -43,5 +44,6 @@ function loadContext(filename) {
       fs.writeFileSync(filename, JSON.stringify(context, null, 2));
     }
   });
-  console.clear();
 })();
+// ================================================================
+// ================================================================
