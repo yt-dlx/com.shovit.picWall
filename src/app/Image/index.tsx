@@ -98,9 +98,9 @@ const ErrorModal: React.FC<{ visible: boolean; message: string; onClose: () => v
           </Text>
           <Text style={{ marginTop: hp(1), fontSize: hp(6), fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}>{message}</Text>
           <TouchableOpacity
-            style={{ marginTop: hp(1), paddingHorizontal: wp(5), paddingVertical: hp(1.5), borderRadius: 15, overflow: "hidden", backgroundColor: colorize("#F4F4F5", 0.4), minWidth: wp(30), minHeight: hp(5) }}
             onPress={onClose}
             accessibilityLabel="Close error modal"
+            style={{ marginTop: hp(1), paddingHorizontal: wp(5), paddingVertical: hp(1.5), borderRadius: 15, overflow: "hidden", backgroundColor: colorize("#F4F4F5", 0.4), minWidth: wp(30), minHeight: hp(5) }}
           >
             <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: hp(2), fontFamily: "Markazi" }}>OK</Text>
           </TouchableOpacity>

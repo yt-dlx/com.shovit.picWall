@@ -4,13 +4,11 @@
 import { Image } from "expo-image";
 import { FC, useEffect } from "react";
 import colorize from "@/utils/colorize";
-import { Entypo } from "@expo/vector-icons";
-import { Text, View, TouchableOpacity, Linking } from "react-native";
+import { Text, View } from "react-native";
 import { useSharedValue, withTiming } from "react-native-reanimated";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 /* ============================================================================================================================== */
-/* ============================================================================================================================== */
-const TestPage: FC = () => {
+const ErrorPage: FC = () => {
   const scale = useSharedValue(0.8);
   const opacity = useSharedValue(0);
   useEffect(() => {
@@ -18,29 +16,45 @@ const TestPage: FC = () => {
     opacity.value = withTiming(1, { duration: 300 });
   }, [opacity, scale]);
   return (
-    <View style={{ backgroundColor: colorize("#171717", 1.0), position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center", padding: wp("4%"), zIndex: 1000 }}>
-      <Image
-        cachePolicy="disk"
-        contentFit="contain"
-        accessibilityLabel="picWallLogo"
-        source={require("@/assets/images/logo.jpg")}
-        style={{ width: wp("40%"), height: wp("40%"), borderWidth: wp("0.5%"), borderRadius: wp("20%"), borderColor: colorize("#F4F4F5", 1.0) }}
-      />
-      <View style={{ alignItems: "center" }}>
-        <Text style={{ margin: wp("6%"), fontSize: wp("9%"), fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}> Update Required </Text>
+    <View
+      style={{
+        backgroundColor: colorize("#171717", 1.0),
+        borderColor: colorize("#BE3025", 1.0),
+        borderBottomWidth: wp(1),
+        justifyContent: "flex-start",
+        borderRightWidth: wp(1),
+        borderLeftWidth: wp(1),
+        alignItems: "center",
+        position: "absolute",
+        bottom: 0,
+        right: 0,
+        left: 0,
+        top: 0
+      }}
+    >
+      <View style={{ position: "absolute", top: hp("10%"), left: 0, right: 0, justifyContent: "center", alignItems: "center" }}>
+        <Image
+          cachePolicy="disk"
+          contentFit="contain"
+          accessibilityLabel="picWallLogo"
+          source={require("@/assets/images/logo.jpg")}
+          style={{
+            width: wp("40%"),
+            height: wp("40%"),
+            borderWidth: wp("0.5%"),
+            borderRadius: wp("20%"),
+            borderColor: colorize("#BE3025", 1.0)
+          }}
+        />
+      </View>
+      <View style={{ alignItems: "center", marginTop: hp("30%") }}>
+        <Text style={{ margin: wp("2%"), fontSize: wp("12%"), fontFamily: "Lobster", color: colorize("#BE3025", 1.0), textDecorationLine: "underline" }}>Oops Error!</Text>
         <View style={{ marginBottom: hp("2%"), alignItems: "center" }}></View>
-        <TouchableOpacity
-          style={{ marginTop: hp("10%"), flexDirection: "row", alignItems: "center", borderRadius: wp("12.5%"), paddingVertical: hp("2%"), justifyContent: "center", paddingHorizontal: wp("10%"), backgroundColor: colorize("#F4F4F5", 1.0) }}
-          onPress={() => Linking.openURL("market://details?id=com.shovit.picWall")}
-        >
-          <Entypo name="google-play" size={wp("8%")} color={colorize("#171717", 1.0)} />
-          <Text style={{ fontSize: wp("5%"), fontFamily: "Lobster", color: colorize("#171717", 1.0), marginLeft: wp("4%") }}> Open Play Store ... </Text>
-        </TouchableOpacity>
       </View>
     </View>
   );
 };
-TestPage.displayName = "TestPage";
-export default TestPage;
+ErrorPage.displayName = "ErrorPage";
+export default ErrorPage;
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */

@@ -55,7 +55,7 @@ const AnimatedTitle = memo(() => {
           contentFit="contain"
           accessibilityLabel="App logo"
           source={require("@/assets/images/logo.jpg")}
-          style={{ width: wp("40%"), height: wp("40%"), borderWidth: wp("0.5%"), borderRadius: wp("20%"), borderColor: colorize("#F4F4F5", 1.0) }}
+          style={{ width: wp("40%"), height: wp("40%"), borderWidth: wp(0.5), borderRadius: wp("20%"), borderColor: colorize("#F4F4F5", 1.0) }}
         />
       </View>
     </Animated.View>
