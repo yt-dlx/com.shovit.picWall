@@ -138,7 +138,6 @@ const EntryPage = memo(() => {
     </View>
   );
 });
-
 EntryPage.displayName = "EntryPage";
 export default EntryPage;
 /* ============================================================================================================================== */

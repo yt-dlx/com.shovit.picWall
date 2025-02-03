@@ -120,13 +120,12 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
   return (
     <Modal visible transparent animationType="slide" onRequestClose={onClose}>
       <View style={{ flex: 1 }}>
-        <BlurView blurType="dark" blurAmount={80} style={StyleSheet.absoluteFill} overlayColor={Platform.OS === "android" ? colorize("#171717", 0.0) : colorize("#171717", 0.0)} />
+        <BlurView blurType="dark" blurAmount={60} style={StyleSheet.absoluteFill} overlayColor={Platform.OS === "android" ? colorize("#171717", 0.0) : colorize("#171717", 0.0)} />
         <View
           style={{
             width: wp(100),
             height: hp(100),
-            flexDirection: "row",
-            backgroundColor: colorize("#000000", 0.8)
+            flexDirection: "row"
           }}
         >
           <View
@@ -141,9 +140,10 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
               style={{
                 fontSize: wp(6),
                 textAlign: "center",
-                paddingVertical: wp(3),
                 fontFamily: "Lobster",
-                color: colorize("#F4F4F5", 1.0)
+                paddingVertical: wp(3),
+                color: colorize("#F4F4F5", 1.0),
+                textDecorationLine: "underline"
               }}
             >
               Categories
@@ -171,7 +171,7 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                       }}
                       accessibilityLabel={`Select ${category.name} category`}
                     >
-                      {images.length > 0 && <Image alt={`CategoryPreview${images[currentIndex]}`} source={{ uri: images[currentIndex] }} style={{ width: "100%", height: hp(10) }} resizeMode="cover" />}
+                      {images.length > 0 && <Image alt={`CategoryPreview${images[currentIndex]}`} source={{ uri: images[currentIndex] }} style={{ width: "100%", height: hp(10) }} contentFit="cover" />}
                       <Text
                         style={{
                           textAlign: "center",
@@ -189,11 +189,12 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
           <View style={{ width: wp(70), backgroundColor: colorize("#171717", 0.8) }}>
             <Text
               style={{
-                fontSize: wp(6),
+                fontSize: wp(8),
+                paddingTop: wp(3),
                 textAlign: "center",
                 fontFamily: "Lobster",
-                paddingVertical: wp(3),
-                color: colorize("#F4F4F5", 1.0)
+                color: colorize("#F4F4F5", 1.0),
+                textDecorationLine: "underline"
               }}
             >
               Subcategories
@@ -254,9 +255,9 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                             {displayName}
                           </Text>
                           {child === "Combined" ? (
-                            <Image alt="CombinedCategoryPreview" source={require("@/assets/images/Combined.gif")} style={{ width: "100%", height: "100%" }} resizeMode="cover" />
+                            <Image alt="CombinedCategoryPreview" source={require("@/assets/images/Combined.gif")} style={{ width: "100%", height: "100%" }} contentFit="cover" />
                           ) : (
-                            images.length > 0 && <Image alt={`SubcategoryPreview${images[currentIndex]}`} source={{ uri: images[currentIndex] }} style={{ width: "100%", height: "100%" }} resizeMode="cover" />
+                            images.length > 0 && <Image alt={`SubcategoryPreview${images[currentIndex]}`} source={{ uri: images[currentIndex] }} style={{ width: "100%", height: "100%" }} contentFit="cover" />
                           )}
                         </View>
                       </TouchableOpacity>
