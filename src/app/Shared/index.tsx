@@ -102,7 +102,7 @@ export default function SharedPage(): JSX.Element {
   return (
     <View style={{ flex: 1 }}>
       <StatusBar hidden />
-      <Image contentFit="cover" alt="Advertisement background" accessibilityLabel="Advertisement background" source={require("@/assets/images/admob.jpg")} style={{ position: "absolute", width: wp("100%"), height: hp("100%"), opacity: 0.8 }} />
+      <Image contentFit="cover" alt="Advertisement background" accessibilityLabel="Advertisement background" source={require("@/assets/images/AdMob.jpg")} style={{ position: "absolute", width: wp("100%"), height: hp("100%"), opacity: 0.8 }} />
       <Animated.View
         style={{
           flex: 1,
