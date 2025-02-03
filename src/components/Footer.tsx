@@ -11,8 +11,19 @@ import { widthPercentageToDP as wp } from "react-native-responsive-screen";
 const Footer: React.FC = memo(() => {
   return (
     <View style={{ padding: wp(2), backgroundColor: colorize("#171717", 1.0) }}>
-      <Text style={{ textAlign: "center", fontSize: wp(4), fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}>
-        Crafted with <AntDesign name="heart" size={wp(5)} color={colorize("#FF000D", 1.0)} /> in India. All rights reserved
+      <Text
+        style={{
+          textAlign: "center",
+          fontSize: wp(4),
+          fontFamily: "Lobster",
+          color: colorize("#F4F4F5", 1.0)
+        }}
+      >
+        Crafted with
+        <Text>
+          <AntDesign name="heart" size={wp(5)} color={colorize("#FF000D", 1.0)} />
+        </Text>
+        in India. All rights reserved
       </Text>
     </View>
   );

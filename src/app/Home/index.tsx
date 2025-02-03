@@ -318,7 +318,19 @@ const SubImages: FC<SubImagesProps> = memo(({ images, onImagePress }) => (
                 alt={`WallpaperPreview${image.previewLink}`}
                 style={{ height: hp(8), width: wp(15), borderWidth: 1, borderColor: colorize("#F4F4F5", 0.5), borderRadius: wp(3) }}
               />
-              <Text style={{ right: wp(1), bottom: wp(1), fontSize: wp(3), borderRadius: wp(2), position: "absolute", paddingHorizontal: wp(2), fontFamily: "Markazi", color: colorize("#171717", 1.0), backgroundColor: colorize(image.primary, 1.0) }}>
+              <Text
+                style={{
+                  right: wp(1),
+                  bottom: wp(1),
+                  fontSize: wp(3),
+                  borderRadius: wp(2),
+                  position: "absolute",
+                  paddingHorizontal: wp(2),
+                  fontFamily: "Markazi",
+                  color: colorize("#171717", 1.0),
+                  backgroundColor: colorize(image.primary, 1.0)
+                }}
+              >
                 {image.primary.toUpperCase()}
               </Text>
             </View>
@@ -373,7 +385,9 @@ const Card: FC<CardProps> = memo(({ data }) => {
                 </View>
               )}
               <View style={{ top: hp(1), left: wp(2), borderRadius: wp(3), paddingVertical: hp(0.5), position: "absolute", flexDirection: "row", alignItems: "center", paddingHorizontal: wp(1.5), backgroundColor: colorize("#171717", 0.6) }}>
-                <MaterialCommunityIcons name="movie-filter" size={wp(5)} color={colorize("#FF000D", 1.0)} style={{ marginRight: wp(2) }} /> <Text style={{ color: "#F4F4F5", fontSize: wp(3), fontFamily: "Lobster" }}>Freemium (Watch an Ad)</Text>
+                {/* Removed whitespace between the icon and the text */}
+                <MaterialCommunityIcons name="movie-filter" size={wp(5)} color={colorize("#FF000D", 1.0)} style={{ marginRight: wp(2) }} />
+                <Text style={{ color: "#F4F4F5", fontSize: wp(3), fontFamily: "Lobster" }}>Freemium (Watch an Ad)</Text>
               </View>
               <View style={{ position: "absolute", bottom: -2, left: 0, right: 0 }}>
                 <View style={[StyleSheet.absoluteFill, { backgroundColor: colorize(data.images[currentIndex].primary, 1.0) }]} />
@@ -421,7 +435,7 @@ Card.displayName = "Card";
 /* ============================================================================================================================== */
 const CategoryButton: FC<CategoryButtonExtendedProps> = memo(({ category, onPress, count }) => {
   return (
-    <TouchableOpacity onPress={() => onPress()} style={{ flex: 1, height: hp(8), margin: wp(1), borderRadius: wp(4), overflow: "hidden", minWidth: wp(30) }} accessibilityLabel={`Browse ${category}`}>
+    <TouchableOpacity onPress={onPress} style={{ flex: 1, height: hp(8), margin: wp(1), borderRadius: wp(4), overflow: "hidden", minWidth: wp(30) }} accessibilityLabel={`Browse ${category}`}>
       <View style={{ borderRadius: wp(4), overflow: "hidden", width: "100%", height: "100%" }}>
         <Image contentFit="cover" alt="CategoryBackground" style={{ width: "100%", height: "100%", borderRadius: wp(4) }} source={category === "Combined" ? require("@/assets/images/Shuffle.gif") : require("@/assets/images/Category.gif")} />
         <LinearGradient colors={[colorize("#171717", 0.4), colorize("#171717", 0.4)]} style={{ position: "absolute", width: "100%", height: "100%", borderRadius: wp(4) }} />
@@ -468,7 +482,8 @@ const HeaderComponent: FC<HeaderComponentProps> = memo(({ selectedCategory, onSe
           <CategoryButton category="Categories" selected={false} onPress={() => setModalVisible(true)} />
           <CategoryButton category="Combined" selected={selectedCategory === "Combined"} onPress={() => onSelectCategory("Combined")} count={mixedCount} />
         </View>
-        <SearchBar onSearch={onSearch} /> <CategoryModal isVisible={modalVisible} onClose={() => setModalVisible(false)} onSelectCategory={onSelectCategory} selectedCategory={String(selectedCategory)} rawCategoriesArray={rawCategoriesArray} />
+        <SearchBar onSearch={onSearch} />
+        <CategoryModal isVisible={modalVisible} onClose={() => setModalVisible(false)} onSelectCategory={onSelectCategory} selectedCategory={String(selectedCategory)} rawCategoriesArray={rawCategoriesArray} />
       </View>
     </Animated.View>
   );

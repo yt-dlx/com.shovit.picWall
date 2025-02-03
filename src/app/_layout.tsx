@@ -13,9 +13,14 @@ import { SafeAreaView, StatusBar, View } from "react-native";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
 SplashScreen.preventAutoHideAsync();
+
 export default function RootLayout() {
   const router = useRouter();
-  const [loaded, error] = useFonts({ Markazi: require("@/assets/fonts/Markazi.ttf"), Lobster: require("@/assets/fonts/Lobster.ttf") });
+  const [loaded, error] = useFonts({
+    Markazi: require("@/assets/fonts/Markazi.ttf"),
+    Lobster: require("@/assets/fonts/Lobster.ttf")
+  });
+
   React.useEffect(() => {
     const initializeApp = async () => {
       if (loaded && !error) {
@@ -23,14 +28,27 @@ export default function RootLayout() {
         const { lastState, hasRedirected, setRedirected, clearState } = useAppState.getState();
         if (lastState && !hasRedirected) {
           router.push("/Home");
-          router.push({ pathname: "/Image", params: { data: JSON.stringify({ data: lastState.data, selectedIndex: lastState.selectedIndex, environment_title: lastState.environment_title || "Default Title" }) } });
+          router.push({
+            pathname: "/Image",
+            params: {
+              data: JSON.stringify({
+                data: lastState.data,
+                selectedIndex: lastState.selectedIndex,
+                environment_title: lastState.environment_title || "Default Title"
+              })
+            }
+          });
           setRedirected(true);
-        } else if (hasRedirected) clearState();
+        } else if (hasRedirected) {
+          clearState();
+        }
       }
     };
     initializeApp();
   }, [loaded, error, router]);
+
   if (!loaded && !error) return null;
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colorize("#171717", 1.0) }}>
       <StatusBar backgroundColor="#171717" barStyle="light-content" />
