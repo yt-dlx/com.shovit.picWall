@@ -50,7 +50,6 @@ interface HeaderComponentProps {
   selectedCategory: ParentKey | "Combined";
   onSelectCategory: (parent: ParentKey | "Combined", child?: string) => void;
 }
-
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
 function generateCategories(apiData: Record<string, any>) {
