@@ -12,31 +12,22 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-nat
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
 const UpdatePage: FC = () => {
-  const { updateRequired, currentVersion, serverVersion } = useVersionCheck();
-  const opacity = useSharedValue(0);
   const scale = useSharedValue(0.8);
+  const opacity = useSharedValue(0);
+  const { currentVersion, serverVersion } = useVersionCheck();
   useEffect(() => {
     scale.value = withTiming(1, { duration: 300 });
     opacity.value = withTiming(1, { duration: 300 });
   }, [opacity, scale]);
-  if (!updateRequired) {
-    return (
-      <View style={{ flex: 1, backgroundColor: colorize("#171717", 1.0) }}>
-        <Text style={{ color: "#F4F4F5", textAlign: "center", marginTop: hp("50%") }}>No Update Required</Text>
-      </View>
-    );
-  }
   return (
-    <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center", padding: wp("4%"), zIndex: 1000 }}>
-      <View style={{ borderRadius: wp("10%"), padding: wp("2%"), backgroundColor: colorize("#171717", 0.8), justifyContent: "center", alignItems: "center" }}>
-        <Image
-          cachePolicy="disk"
-          contentFit="contain"
-          accessibilityLabel="picWallLogo"
-          source={require("@/assets/images/logo.jpg")}
-          style={{ width: wp("40%"), height: wp("40%"), borderWidth: wp("0.5%"), borderRadius: wp("20%"), borderColor: colorize("#F4F4F5", 1.0) }}
-        />
-      </View>
+    <View style={{ backgroundColor: colorize("#171717", 1.0), position: "absolute", top: 0, left: 0, right: 0, bottom: 0, justifyContent: "center", alignItems: "center", padding: wp("4%"), zIndex: 1000 }}>
+      <Image
+        cachePolicy="disk"
+        contentFit="contain"
+        accessibilityLabel="picWallLogo"
+        source={require("@/assets/images/logo.jpg")}
+        style={{ width: wp("40%"), height: wp("40%"), borderWidth: wp("0.5%"), borderRadius: wp("20%"), borderColor: colorize("#F4F4F5", 1.0) }}
+      />
       <View style={{ alignItems: "center" }}>
         <Text style={{ margin: wp("6%"), fontSize: wp("9%"), fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}> Update Required </Text>
         <View style={{ marginBottom: hp("2%"), alignItems: "center" }}>

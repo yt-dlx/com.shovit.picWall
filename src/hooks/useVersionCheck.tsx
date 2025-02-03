@@ -4,24 +4,19 @@ import { useState, useEffect, useMemo } from "react";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
 export const useVersionCheck = () => {
-  const [serverVersion, setServerVersion] = useState("");
-  const [currentVersion, setCurrentVersion] = useState("");
-  const [updateRequired, setUpdateRequired] = useState(false);
+  const [serverVersion, setServerVersion] = useState<String>("");
+  const [currentVersion, setCurrentVersion] = useState<String>("");
+  const [updateRequired, setUpdateRequired] = useState<Boolean>(false);
   useEffect(() => {
     const checkVersion = async () => {
-      try {
-        const response = await fetch("https://picwall-server.netlify.app/api/version", { headers: { "Content-Type": "application/json", "Cache-Control": "no-cache" } });
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-        const data = await response.json();
-        const receivedVersion = data?.version || data?.data?.version;
-        const current = Constants.expoConfig?.version || "";
-        setCurrentVersion(current);
-        setServerVersion(receivedVersion);
-        setUpdateRequired(receivedVersion !== current);
-      } catch (error) {
-        console.error("Version check failed:", error);
-        setUpdateRequired(false);
-      }
+      const response = await fetch("https://picwall-server.netlify.app/api/version", { headers: { "Content-Type": "application/json", "Cache-Control": "no-cache" } });
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      const data = await response.json();
+      const current = Constants.expoConfig?.version || "";
+      const receivedVersion = data?.version || data?.data?.version;
+      setUpdateRequired(receivedVersion !== current);
+      setServerVersion(receivedVersion);
+      setCurrentVersion(current);
     };
     checkVersion();
     const interval = setInterval(checkVersion, 300000);

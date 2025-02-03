@@ -1,7 +1,7 @@
 // src/app/index.tsx
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import { Image } from "expo-image";
 import colorize from "@/utils/colorize";
 import imageSets from "@/utils/static";
@@ -10,6 +10,7 @@ import { memo, useEffect, useMemo } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { ScrollingSlotProps } from "@/types/components";
 import { Text, View, TouchableOpacity } from "react-native";
+import { useVersionCheck } from "@/hooks/useVersionCheck";
 import { AntDesign, FontAwesome5 } from "@expo/vector-icons";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 import Animated, { useSharedValue, useAnimatedStyle, withTiming, withRepeat, withSequence, withSpring, Easing, FadeIn, FadeInDown, withDelay } from "react-native-reanimated";
@@ -64,6 +65,14 @@ AnimatedTitle.displayName = "AnimatedTitle";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
 const EntryPage = memo(() => {
+  const router = useRouter();
+  const { updateRequired } = useVersionCheck();
+  useEffect(() => {
+    if (updateRequired) {
+      router.push("/Update");
+      return;
+    }
+  }, [router, updateRequired]);
   const buttonGlow = useSharedValue(0);
   const buttonScale = useSharedValue(1);
   const buttonRotate = useSharedValue(0);

@@ -29,24 +29,14 @@ export default function RootLayout() {
         const { lastState, hasRedirected, setRedirected, clearState } = useAppState.getState();
         if (lastState && !hasRedirected) {
           router.push("/Home");
-          router.push({
-            pathname: "/Image",
-            params: {
-              data: JSON.stringify({
-                data: lastState.data,
-                selectedIndex: lastState.selectedIndex,
-                environment_title: lastState.environment_title || "Default Title"
-              })
-            }
-          });
+          router.push({ pathname: "/Image", params: { data: JSON.stringify({ data: lastState.data, selectedIndex: lastState.selectedIndex, environment_title: lastState.environment_title || "Default Title" }) } });
           setRedirected(true);
         } else if (hasRedirected) clearState();
       }
     };
     initializeApp();
   }, [loaded, error, router, updateRequired]);
-  if (!loaded || error) return null;
-  return (
+    return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colorize("#171717", 1.0) }}>
       <StatusBar backgroundColor="#171717" barStyle="light-content" />
       <LinearGradient

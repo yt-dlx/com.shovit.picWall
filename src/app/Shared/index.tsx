@@ -5,6 +5,7 @@ import { Image } from "expo-image";
 import useAd from "@/hooks/useAd";
 import colorize from "@/utils/colorize";
 import React, { useEffect, useState, useRef } from "react";
+import { useVersionCheck } from "@/hooks/useVersionCheck";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import { View, Text, ActivityIndicator, StatusBar, Animated } from "react-native";
@@ -46,6 +47,13 @@ const CardContainer: React.FC<{ children: React.ReactNode; style?: any }> = ({ c
 /* ============================================================================================================================== */
 export default function SharedPage(): JSX.Element {
   const router = useRouter();
+  const { updateRequired } = useVersionCheck();
+  useEffect(() => {
+    if (updateRequired) {
+      router.push("/Update");
+      return;
+    }
+  }, [router, updateRequired]);
   const params = useLocalSearchParams();
   const [adError, setAdError] = useState(false);
   const [adEarned, setAdEarned] = useState(false);
@@ -53,21 +61,18 @@ export default function SharedPage(): JSX.Element {
   const [countdown, setCountdown] = useState(10);
   const opacity = useRef(new Animated.Value(0)).current;
   const scaleAnim = useRef(new Animated.Value(0.95)).current;
-
   let parsedData: ParsedData | null = null;
   if (params.data) {
     const dataParam = Array.isArray(params.data) ? params.data[0] : params.data;
     parsedData = JSON.parse(dataParam) as ParsedData;
   }
   const selectedImage = parsedData?.data[parsedData.selectedIndex]?.previewLink.replace("min", "max") || null;
-
   const { showAd, adLoaded } = useAd({
     onRewardEarned: () => setAdEarned(true),
     onAdClosed: () => {
       if (!adEarned) setAdError(true);
     }
   });
-
   useEffect(() => {
     const timer = setInterval(() => {
       setCountdown((prev) => {

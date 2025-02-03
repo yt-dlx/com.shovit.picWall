@@ -7,9 +7,10 @@ import useAppState from "@/utils/store";
 import Footer from "@/components/Footer";
 import * as FileSystem from "expo-file-system";
 import { ImageMetadata } from "@/types/database";
-import { useLocalSearchParams } from "expo-router";
 import * as MediaLibrary from "expo-media-library";
+import { useVersionCheck } from "@/hooks/useVersionCheck";
 import { setWallpaper, TYPE_SCREEN } from "rn-wallpapers";
+import { useLocalSearchParams, useRouter } from "expo-router";
 import { createPreviewLink, createDownloadLink } from "@/utils/linker";
 import { MaterialIcons, Ionicons, AntDesign } from "@expo/vector-icons";
 import React, { useState, useEffect, useRef, memo, useMemo, useCallback } from "react";
@@ -444,6 +445,14 @@ FullScreenView.displayName = "FullScreenView";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
 export default function ImagePage(): JSX.Element {
+  const router = useRouter();
+  const { updateRequired } = useVersionCheck();
+  useEffect(() => {
+    if (updateRequired) {
+      router.push("/Update");
+      return;
+    }
+  }, [router, updateRequired]);
   const params = useLocalSearchParams();
   const [eta, setEta] = useState<number>(0);
   const rawDataString = params.data as string;

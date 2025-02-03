@@ -1,14 +1,15 @@
 // src/app/Home/index.tsx
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
-import { Link } from "expo-router";
 import { Image } from "expo-image";
 import colorize from "@/utils/colorize";
 import Footer from "@/components/Footer";
 import { fetchAllData } from "@/utils/sercon";
+import { Link, useRouter } from "expo-router";
 import AniHead from "@/components/AniHead";
 import { LinearGradient } from "expo-linear-gradient";
 import { BlurView } from "@react-native-community/blur";
+import { useVersionCheck } from "@/hooks/useVersionCheck";
 import { EnvironmentEntry, ImageMetadata } from "@/types/database";
 import { createPreviewLink, createDownloadLink } from "@/utils/linker";
 import { FontAwesome5, MaterialCommunityIcons } from "@expo/vector-icons";
@@ -499,6 +500,14 @@ EnvironmentItem.displayName = "EnvironmentItem";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
 export default function HomePage(): JSX.Element {
+  const router = useRouter();
+  const { updateRequired } = useVersionCheck();
+  useEffect(() => {
+    if (updateRequired) {
+      router.push("/Update");
+      return;
+    }
+  }, [router, updateRequired]);
   const [selectedParent, setSelectedParent] = useState<ParentKey | "Combined">("Combined");
   const [shuffleDB, setShuffleDB] = useState<Record<string, EnvironmentEntry>>({});
   const [rawCategoriesArray, setRawCategoriesArray] = useState<Category[]>([]);
