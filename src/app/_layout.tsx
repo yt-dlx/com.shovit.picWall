@@ -22,6 +22,11 @@ export default function RootLayout() {
     const initializeApp = async () => {
       if (loaded && !error) {
         await SplashScreen.hideAsync();
+        const RedirectForTesting = true;
+        if (RedirectForTesting) {
+          router.push("/Test");
+          return;
+        }
         if (updateRequired) {
           router.push("/Update");
           return;
@@ -36,7 +41,7 @@ export default function RootLayout() {
     };
     initializeApp();
   }, [loaded, error, router, updateRequired]);
-    return (
+  return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colorize("#171717", 1.0) }}>
       <StatusBar backgroundColor="#171717" barStyle="light-content" />
       <LinearGradient
