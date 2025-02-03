@@ -13,7 +13,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { setWallpaper, TYPE_SCREEN } from "rn-wallpapers";
 import { createPreviewLink, createDownloadLink } from "@/utils/linker";
 import React, { useState, useEffect, useRef, memo, useMemo, useCallback } from "react";
-import { FontAwesome5, MaterialIcons, Ionicons, FontAwesome6, AntDesign } from "@expo/vector-icons";
+import { FontAwesome5, MaterialIcons, Ionicons, AntDesign } from "@expo/vector-icons";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 import { View, Text, Dimensions, StatusBar, ActivityIndicator, TouchableOpacity, Alert, Modal, Animated, Easing, ScrollView } from "react-native";
 /* ============================================================================================================================== */
@@ -23,9 +23,6 @@ interface DownloadButtonProps {
   colors: { primary: string; secondary: string; tertiary: string };
 }
 interface OtherImagesProps {
-  tertiaryColor: string;
-  primaryColor: string;
-  currentIndex: number;
   selectedFileName: string;
   setCurrentIndex: (index: number) => void;
   otherImages: { img: ImageMetadata; idx: number }[];
@@ -196,35 +193,38 @@ const PreviewImage: React.FC<{ selectedImage: ImageMetadata; screenWidth: number
           }}
         />
       </Animated.View>
+      <Text
+        style={{
+          top: hp(6),
+          left: wp(4),
+          zIndex: 50,
+          fontSize: hp(3.5),
+          position: "absolute",
+          fontFamily: "Lobster",
+          color: colorize("#F4F4F5", 1.0)
+        }}
+      >
+        {selectedImage.original_file_name.replace(".jpg", "")}
+      </Text>
       <TouchableOpacity
         activeOpacity={0.8}
         onPress={onViewFullScreen}
         style={{
-          left: wp(4),
-          right: wp(4),
-          bottom: hp(2),
+          left: wp(1),
           zIndex: 50,
-          minHeight: hp(5),
-          borderWidth: 2,
-          borderRadius: wp(5),
-          paddingVertical: hp(1.5),
+          right: wp(1),
+          bottom: hp(0.5),
           position: "absolute",
-          flexDirection: "row",
           alignItems: "center",
-          paddingHorizontal: wp(4),
+          borderRadius: wp(2),
+          flexDirection: "row",
+          paddingVertical: hp(1),
           justifyContent: "center",
-          borderColor: colorize(selectedImage.primary, 1.0),
-          backgroundColor: colorize(selectedImage.secondary, 0.9)
+          backgroundColor: colorize("#171717", 0.9)
         }}
         accessibilityLabel="Set as wallpaper"
       >
-        <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: hp(2), fontFamily: "Lobster" }}>
-          Set as Wallpaper
-          <Text>
-            <FontAwesome6 name="mobile-button" size={hp(1.5)} color={colorize("#F4F4F5", 1.0)} />
-          </Text>
-          (Full-Screen View)
-        </Text>
+        <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: hp(2), fontFamily: "Lobster" }}>Set as Wallpaper (Full-Screen View)</Text>
       </TouchableOpacity>
     </View>
   );
@@ -245,9 +245,9 @@ const DownloadButton: React.FC<DownloadButtonProps> = memo(({ onDownload, colors
     return () => pulse.stop();
   }, [scaleValue]);
   return (
-    <TouchableOpacity activeOpacity={0.8} onPress={onDownload} accessibilityLabel="Download wallpaper" style={{ marginTop: hp(2), borderRadius: wp(4), overflow: "hidden", backgroundColor: colorize(colors.primary, 0.4), minHeight: hp(5) }}>
-      <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", paddingVertical: hp(1.5), paddingHorizontal: wp(5) }}>
-        <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: hp(2.2), fontFamily: "Lobster" }}>
+    <TouchableOpacity activeOpacity={0.8} onPress={onDownload} accessibilityLabel="Download wallpaper" style={{ margin: hp(2), borderRadius: wp(4), overflow: "hidden", backgroundColor: colorize(colors.tertiary, 1.0), minHeight: hp(4) }}>
+      <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", paddingVertical: hp(1), paddingHorizontal: wp(4) }}>
+        <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: hp(2), fontFamily: "Lobster" }}>
           Download Current Wallpaper
           <Text>
             <FontAwesome5 name="download" size={hp(2)} color={colorize("#F4F4F5", 1.0)} style={{ marginHorizontal: wp(2) }} />
@@ -260,7 +260,7 @@ const DownloadButton: React.FC<DownloadButtonProps> = memo(({ onDownload, colors
 DownloadButton.displayName = "DownloadButton";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
-const SubImages: React.FC<OtherImagesProps> = memo(({ otherImages, setCurrentIndex, primaryColor, tertiaryColor, currentIndex, selectedFileName }) => {
+const SubImages: React.FC<OtherImagesProps> = memo(({ otherImages, setCurrentIndex, selectedFileName }) => {
   const uniqueImages = useMemo(() => {
     const uniqueFileNames = new Set<string>();
     return otherImages.filter(({ img, idx }) => {
@@ -278,7 +278,7 @@ const SubImages: React.FC<OtherImagesProps> = memo(({ otherImages, setCurrentInd
           return (
             <TouchableOpacity
               key={idx}
-              style={{ position: "relative", borderRadius: wp(3), overflow: "hidden", marginHorizontal: wp(0.2), flex: 1, aspectRatio: 9 / 16, borderWidth: 2, borderColor: colorize(tertiaryColor, 1.0) }}
+              style={{ position: "relative", borderRadius: wp(2), overflow: "hidden", marginHorizontal: wp(0.5), flex: 1, aspectRatio: 9 / 16 }}
               onPress={() => setCurrentIndex(idx)}
               accessibilityLabel={`SelectWallpaper${img.original_file_name}`}
             >
@@ -517,10 +517,9 @@ export default function ImagePage(): JSX.Element {
       <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
       <ScrollView style={{ flex: 1 }}>
         <PreviewImage selectedImage={selectedImage} screenWidth={screenWidth} onViewFullScreen={() => setIsFullScreen(true)} />
-        <View style={{ padding: wp(2), borderWidth: 2, backgroundColor: colorize("#171717", 1.0) }}>
-          <Text style={{ margin: wp(3), fontSize: hp(3.5), textAlign: "center", fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}>Title: {selectedImage.original_file_name.replace(".jpg", "")}</Text>
+        <View style={{ padding: wp(0.5), borderWidth: 2, backgroundColor: colorize("#171717", 1.0) }}>
           <DownloadButton onDownload={downloadAndSaveImage} colors={{ primary: selectedImage.primary, secondary: selectedImage.secondary, tertiary: selectedImage.tertiary }} />
-          <SubImages otherImages={otherImages} currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} primaryColor={selectedImage.primary} tertiaryColor={selectedImage.tertiary} selectedFileName={selectedImage.original_file_name} />
+          <SubImages otherImages={otherImages} setCurrentIndex={setCurrentIndex} selectedFileName={selectedImage.original_file_name} />
         </View>
         <Footer />
       </ScrollView>

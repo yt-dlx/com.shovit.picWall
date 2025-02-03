@@ -345,7 +345,7 @@ const EntryPage = memo(() => {
                     >
                       Crafted with
                       <Text>
-                        <AntDesign name="heart" size={wp("3%")} color={colorize("#FF000D", 1.0)} />
+                        <AntDesign name="heart" size={wp("3%")} color={colorize("#BE3025", 1.0)} />
                       </Text>
                       in India. All rights reserved
                     </Text>
