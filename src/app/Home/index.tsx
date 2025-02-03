@@ -67,8 +67,8 @@ function generateCategories(apiData: Record<string, any>) {
 /* ============================================================================================================================== */
 const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSelectCategory, rawCategoriesArray }) => {
   const [activeParent, setActiveParent] = useState<ParentKey | "Combined">(rawCategoriesArray.find((cat) => cat.name !== "Combined")?.name || "Combined");
-  const [currentIndices, setCurrentIndices] = useState<Record<string, number>>({});
   const [selectedSubcategory, setSelectedSubcategory] = useState<string | null>(null);
+  const [currentIndices, setCurrentIndices] = useState<Record<string, number>>({});
   const [previewLinks, setPreviewLinks] = useState<Record<string, string[]>>({});
   const generatePreviewLinks = useCallback(() => {
     const newLinks: Record<string, string[]> = {};
@@ -79,7 +79,9 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
         .filter((s: string) => s !== "Combined")
         .forEach((sub: string) => {
           const subObj = cat.database[sub];
-          if (subObj) combinedEnvs.push(...Object.values(subObj));
+          if (subObj) {
+            combinedEnvs.push(...Object.values(subObj));
+          }
         });
       if (combinedEnvs.length) {
         const allParentImages = combinedEnvs.flatMap((env) => env.images);
@@ -89,7 +91,9 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
         const subObj = cat.database[subCat];
         if (subObj) {
           const allSubImages = Object.values(subObj).flatMap((env) => env.images);
-          if (allSubImages.length) newLinks[`${cat.name}-${subCat}`] = allSubImages.map(createPreviewLink);
+          if (allSubImages.length) {
+            newLinks[`${cat.name}-${subCat}`] = allSubImages.map(createPreviewLink);
+          }
         }
       });
     });
@@ -100,7 +104,10 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
     const intervals: NodeJS.Timeout[] = [];
     Object.keys(previewLinks).forEach((key) => {
       const interval = setInterval(() => {
-        setCurrentIndices((prev) => ({ ...prev, [key]: ((prev[key] || 0) + 1) % (previewLinks[key]?.length || 1) }));
+        setCurrentIndices((prev) => ({
+          ...prev,
+          [key]: ((prev[key] || 0) + 1) % (previewLinks[key]?.length || 1)
+        }));
       }, 2000);
       intervals.push(interval);
     });
@@ -112,127 +119,153 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
   if (!isVisible) return null;
   return (
     <Modal visible transparent animationType="slide" onRequestClose={onClose}>
-      <View style={{ flex: 1, justifyContent: "flex-end" }}>
-        <View style={{ height: "100%" }}>
-          <BlurView blurType="dark" blurAmount={80} style={{ position: "absolute", top: 0, left: 0, bottom: 0, right: 0 }} overlayColor={Platform.OS === "android" ? colorize("#171717", 0.0) : colorize("#171717", 0.0)} />
-          <View style={{ flex: 1, backgroundColor: colorize("#171717", 0.6), overflow: "hidden" }}>
-            <View style={{ padding: wp(5), flexDirection: "row", alignItems: "center", justifyContent: "center", backgroundColor: colorize("#171717", 0.6) }}>
-              <Text style={{ fontFamily: "Lobster", fontSize: wp(8), textDecorationLine: "underline", color: colorize("#F4F4F5", 1.0) }}>Categories + Styles</Text>
-            </View>
-            <View style={{ height: hp(25), backgroundColor: colorize("#171717", 0.6) }}>
-              <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: wp(0.5) }}>
+      <View style={{ flex: 1 }}>
+        <BlurView blurType="dark" blurAmount={80} style={StyleSheet.absoluteFill} overlayColor={Platform.OS === "android" ? colorize("#171717", 0.0) : colorize("#171717", 0.0)} />
+        <View
+          style={{
+            width: wp(100),
+            height: hp(100),
+            flexDirection: "row",
+            backgroundColor: colorize("#171717", 0.8)
+          }}
+        >
+          <View
+            style={{
+              width: wp(30),
+              borderRightWidth: 1,
+              borderColor: colorize("#F4F4F5", 1.0),
+              backgroundColor: colorize("#171717", 0.7)
+            }}
+          >
+            <Text
+              style={{
+                fontFamily: "Lobster",
+                fontSize: wp(6),
+                textAlign: "center",
+                paddingVertical: wp(3),
+                color: colorize("#F4F4F5", 1.0)
+              }}
+            >
+              Categories
+            </Text>
+            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: wp(2) }}>
+              {rawCategoriesArray
+                .filter((cat) => cat.name !== "Combined")
+                .map((category) => {
+                  const currentIndex = currentIndices[category.name] || 0;
+                  const images = previewLinks[category.name] || [];
+                  return (
+                    <TouchableOpacity
+                      key={category.name}
+                      onPress={() => {
+                        setActiveParent(category.name);
+                        setSelectedSubcategory(null);
+                      }}
+                      style={{
+                        marginBottom: wp(2),
+                        borderRadius: wp(2),
+                        overflow: "hidden",
+                        borderColor: colorize("#F4F4F5", 1.0),
+                        borderWidth: activeParent === category.name ? 2 : 0,
+                        opacity: activeParent === category.name ? 1 : 0.8
+                      }}
+                      accessibilityLabel={`Select ${category.name} category`}
+                    >
+                      {images.length > 0 && <Image alt={`CategoryPreview${images[currentIndex]}`} source={{ uri: images[currentIndex] }} style={{ width: "100%", height: hp(10) }} resizeMode="cover" />}
+                      <LinearGradient end={{ x: 0.5, y: 0 }} start={{ x: 0.5, y: 1 }} locations={[0, 0.5, 1]} style={StyleSheet.absoluteFill} colors={[colorize("#171717", 0.6), colorize("#171717", 0.7), "transparent"]} />
+                      <Text
+                        style={{
+                          textAlign: "center",
+                          paddingVertical: wp(1),
+                          fontFamily: "Markazi",
+                          color: colorize("#F4F4F5", 1.0)
+                        }}
+                      >
+                        {category.name}
+                      </Text>
+                    </TouchableOpacity>
+                  );
+                })}
+            </ScrollView>
+          </View>
+          <View style={{ width: wp(70), backgroundColor: colorize("#171717", 0.8) }}>
+            <Text
+              style={{
+                fontFamily: "Lobster",
+                fontSize: wp(6),
+                textAlign: "center",
+                paddingVertical: wp(3),
+                color: colorize("#F4F4F5", 1.0)
+              }}
+            >
+              Subcategories
+            </Text>
+            <ScrollView contentContainerStyle={{ padding: wp(2) }}>
+              <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "space-between" }}>
                 {rawCategoriesArray
-                  .filter((cat) => cat.name !== "Combined")
-                  .map((category) => {
-                    const currentIndex = currentIndices[category.name] || 0;
-                    const images = previewLinks[category.name] || [];
+                  .find((c) => c.name === activeParent)
+                  ?.subcategories.sort((a, b) => (a === "Combined" ? -1 : b === "Combined" ? 1 : 0))
+                  .map((child) => {
+                    const key = `${activeParent}-${child}`;
+                    const currentIndex = currentIndices[key] || 0;
+                    const images = previewLinks[key] || [];
+                    const isMixed = child === "Combined";
+                    const activeCat = rawCategoriesArray.find((c) => c.name === activeParent);
+                    let displayName = child;
+                    let count = 0;
+                    if (isMixed && activeCat) {
+                      count = activeCat.subcategories
+                        .filter((s) => s !== "Combined")
+                        .reduce((acc, sub) => {
+                          const subDB = activeCat.database[sub];
+                          return acc + (subDB ? Object.keys(subDB).length : 0);
+                        }, 0);
+                      displayName = `All (${count})`;
+                    }
                     return (
                       <TouchableOpacity
-                        key={category.name}
+                        key={child}
                         onPress={() => {
-                          setActiveParent(category.name);
-                          setSelectedSubcategory(null);
+                          setSelectedSubcategory(child);
+                          onSelectCategory(activeParent, child === "Combined" ? "Combined" : child);
+                          onClose();
                         }}
-                        style={{
-                          width: wp(30),
-                          height: hp(25),
-                          marginRight: wp(1),
-                          borderRadius: 10,
-                          overflow: "hidden",
-                          borderColor: colorize("#F4F4F5", 1.0),
-                          opacity: activeParent === category.name ? 1 : 0.8,
-                          borderWidth: activeParent === category.name ? 2 : 0
-                        }}
-                        accessibilityLabel={`Select ${category.name} category`}
+                        style={{ width: wp(28), marginBottom: wp(3) }}
+                        accessibilityLabel={`Select ${child} subcategory`}
                       >
-                        {images.length > 0 && <Image alt={`CategoryPreview${images[currentIndex]}`} source={{ uri: images[currentIndex] }} style={{ width: "100%", height: "100%" }} contentFit="cover" />}
-                        <LinearGradient
-                          end={{ x: 0.5, y: 0 }}
-                          start={{ x: 0.5, y: 1 }}
-                          locations={[0, 0.2, 0.4]}
-                          style={{ position: "absolute", top: 0, right: 0, bottom: 0, left: 0 }}
-                          colors={[colorize("#171717", 0.6), colorize("#171717", 0.7), "transparent"]}
-                        />
-                        <Text
+                        <View
                           style={{
-                            left: wp(2),
-                            right: wp(2),
-                            bottom: wp(2),
-                            fontSize: wp(3.5),
-                            textAlign: "center",
-                            position: "absolute",
-                            textShadowRadius: 4,
-                            fontFamily: "Markazi",
-                            color: colorize("#F4F4F5", 1.0),
-                            textShadowOffset: { width: 1, height: 1 },
-                            textShadowColor: colorize("#171717", 0.6)
+                            elevation: 4,
+                            aspectRatio: 1,
+                            borderWidth: 2,
+                            borderRadius: wp(3),
+                            overflow: "hidden",
+                            borderColor: selectedSubcategory === child ? colorize("#F4F4F5", 1.0) : colorize("#000000", 1.0),
+                            backgroundColor: selectedSubcategory === child ? colorize("#F4F4F5", 1.0) : colorize("#000000", 1.0)
                           }}
                         >
-                          {category.name}
-                        </Text>
+                          <Text
+                            style={{
+                              fontSize: wp(4),
+                              marginBottom: wp(1),
+                              textAlign: "center",
+                              fontFamily: "Markazi",
+                              color: selectedSubcategory === child ? colorize("#171717", 1.0) : colorize("#F4F4F5", 1.0)
+                            }}
+                          >
+                            {displayName}
+                          </Text>
+                          {child === "Combined" ? (
+                            <Image alt="CombinedCategoryPreview" source={require("@/assets/images/Combined.gif")} style={{ width: "100%", height: "100%" }} resizeMode="cover" />
+                          ) : (
+                            images.length > 0 && <Image alt={`SubcategoryPreview${images[currentIndex]}`} source={{ uri: images[currentIndex] }} style={{ width: "100%", height: "100%" }} resizeMode="cover" />
+                          )}
+                        </View>
                       </TouchableOpacity>
                     );
                   })}
-              </ScrollView>
-            </View>
-            <View style={{ flex: 1, marginTop: hp(1) }}>
-              <ScrollView contentContainerStyle={{ padding: wp(2) }}>
-                <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "space-between" }}>
-                  {rawCategoriesArray
-                    .find((c) => c.name === activeParent)
-                    ?.subcategories.sort((a, b) => (a === "Combined" ? -1 : b === "Combined" ? 1 : 0))
-                    .map((child) => {
-                      const key = `${activeParent}-${child}`;
-                      const currentIndex = currentIndices[key] || 0;
-                      const images = previewLinks[key] || [];
-                      const isMixed = child === "Combined";
-                      const activeCat = rawCategoriesArray.find((c) => c.name === activeParent);
-                      let displayName = child;
-                      let count = 0;
-                      if (isMixed && activeCat) {
-                        count = activeCat.subcategories
-                          .filter((s) => s !== "Combined")
-                          .reduce((acc, sub) => {
-                            const subDB = activeCat.database[sub];
-                            return acc + (subDB ? Object.keys(subDB).length : 0);
-                          }, 0);
-                        displayName = `All (${count})`;
-                      }
-                      return (
-                        <TouchableOpacity
-                          key={child}
-                          onPress={() => {
-                            setSelectedSubcategory(child);
-                            onSelectCategory(activeParent, child === "Combined" ? "Combined" : child);
-                            onClose();
-                          }}
-                          style={{ width: wp(45), marginBottom: hp(2) }}
-                          accessibilityLabel={`Select ${child} subcategory`}
-                        >
-                          <View
-                            style={{
-                              elevation: 4,
-                              aspectRatio: 1,
-                              borderWidth: 2,
-                              borderRadius: 15,
-                              overflow: "hidden",
-                              borderColor: selectedSubcategory === child ? colorize("#F4F4F5", 1.0) : colorize("#000000", 1.0),
-                              backgroundColor: selectedSubcategory === child ? colorize("#F4F4F5", 1.0) : colorize("#000000", 1.0)
-                            }}
-                          >
-                            <Text style={{ fontSize: wp(4), marginBottom: wp(1), textAlign: "center", fontFamily: "Markazi", color: selectedSubcategory === child ? colorize("#171717", 1.0) : colorize("#F4F4F5", 1.0) }}> {displayName} </Text>
-                            {child === "Combined" ? (
-                              <Image alt="CombinedCategoryPreview" source={require("@/assets/images/Combined.gif")} style={{ width: "100%", height: "100%" }} contentFit="cover" />
-                            ) : (
-                              images.length > 0 && <Image alt={`SubcategoryPreview${images[currentIndex]}`} source={{ uri: images[currentIndex] }} style={{ width: "100%", height: "100%" }} contentFit="cover" />
-                            )}
-                          </View>
-                        </TouchableOpacity>
-                      );
-                    })}
-                </View>
-              </ScrollView>
-            </View>
+              </View>
+            </ScrollView>
           </View>
         </View>
       </View>
