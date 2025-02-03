@@ -23,7 +23,12 @@ const useVersionCheck = () => {
   useEffect(() => {
     const checkVersion = async () => {
       try {
-        const response = await fetch("https://picwall-server.netlify.app/api/version", { headers: { "Content-Type": "application/json", "Cache-Control": "no-cache" } });
+        const response = await fetch("https://picwall-server.netlify.app/api/version", {
+          headers: {
+            "Content-Type": "application/json",
+            "Cache-Control": "no-cache"
+          }
+        });
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const data = await response.json();
         const receivedVersion = data?.version || data?.data?.version;

@@ -29,7 +29,6 @@ interface CategoryButtonExtendedProps extends CategoryButtonProps {
   count?: number;
   selected: boolean;
   onPress: () => void;
-  rawCategoriesArray: Category[];
 }
 interface CategoryModalProps {
   isVisible: boolean;
@@ -126,23 +125,23 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
             width: wp(100),
             height: hp(100),
             flexDirection: "row",
-            backgroundColor: colorize("#171717", 0.8)
+            backgroundColor: colorize("#000000", 0.8)
           }}
         >
           <View
             style={{
               width: wp(30),
-              borderRightWidth: 1,
+              borderRightWidth: 2,
               borderColor: colorize("#F4F4F5", 1.0),
               backgroundColor: colorize("#171717", 0.7)
             }}
           >
             <Text
               style={{
-                fontFamily: "Lobster",
                 fontSize: wp(6),
                 textAlign: "center",
                 paddingVertical: wp(3),
+                fontFamily: "Lobster",
                 color: colorize("#F4F4F5", 1.0)
               }}
             >
@@ -162,23 +161,21 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                         setSelectedSubcategory(null);
                       }}
                       style={{
-                        marginBottom: wp(2),
-                        borderRadius: wp(2),
                         overflow: "hidden",
+                        borderRadius: wp(3),
+                        marginBottom: wp(2),
                         borderColor: colorize("#F4F4F5", 1.0),
                         borderWidth: activeParent === category.name ? 2 : 0,
-                        opacity: activeParent === category.name ? 1 : 0.8
+                        backgroundColor: activeParent === category.name ? colorize("#F4F4F5", 1.0) : colorize("#000000", 1.0)
                       }}
                       accessibilityLabel={`Select ${category.name} category`}
                     >
                       {images.length > 0 && <Image alt={`CategoryPreview${images[currentIndex]}`} source={{ uri: images[currentIndex] }} style={{ width: "100%", height: hp(10) }} resizeMode="cover" />}
-                      <LinearGradient end={{ x: 0.5, y: 0 }} start={{ x: 0.5, y: 1 }} locations={[0, 0.5, 1]} style={StyleSheet.absoluteFill} colors={[colorize("#171717", 0.6), colorize("#171717", 0.7), "transparent"]} />
                       <Text
                         style={{
                           textAlign: "center",
-                          paddingVertical: wp(1),
                           fontFamily: "Markazi",
-                          color: colorize("#F4F4F5", 1.0)
+                          color: activeParent === category.name ? colorize("#171717", 1.0) : colorize("#F4F4F5", 1.0)
                         }}
                       >
                         {category.name}
@@ -191,9 +188,9 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
           <View style={{ width: wp(70), backgroundColor: colorize("#171717", 0.8) }}>
             <Text
               style={{
-                fontFamily: "Lobster",
                 fontSize: wp(6),
                 textAlign: "center",
+                fontFamily: "Lobster",
                 paddingVertical: wp(3),
                 color: colorize("#F4F4F5", 1.0)
               }}
@@ -220,7 +217,7 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                           const subDB = activeCat.database[sub];
                           return acc + (subDB ? Object.keys(subDB).length : 0);
                         }, 0);
-                      displayName = `All (${count})`;
+                      displayName = `Mixed (${count})`;
                     }
                     return (
                       <TouchableOpacity
@@ -230,7 +227,7 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                           onSelectCategory(activeParent, child === "Combined" ? "Combined" : child);
                           onClose();
                         }}
-                        style={{ width: wp(28), marginBottom: wp(3) }}
+                        style={{ width: wp(32), marginBottom: wp(3) }}
                         accessibilityLabel={`Select ${child} subcategory`}
                       >
                         <View
@@ -422,40 +419,15 @@ const Card: FC<CardProps> = memo(({ data }) => {
 Card.displayName = "Card";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
-const CategoryButton: FC<CategoryButtonExtendedProps> = memo(({ category, onPress, rawCategoriesArray, count }) => {
-  const [currentImage, setCurrentImage] = useState<string>("");
-  const updateShuffleImage = useCallback(() => {
-    if (category === "Categories") {
-      const allImages: string[] = [];
-      rawCategoriesArray.forEach((cat: Category) => {
-        if (cat.name === "Combined") return;
-        cat.subcategories
-          .filter((s: string) => s !== "Combined")
-          .forEach((sub: string) => {
-            const subObj = cat.database[sub];
-            if (subObj) {
-              Object.values(subObj).forEach((env: EnvironmentEntry) => {
-                env.images.forEach((img: ImageMetadata) => {
-                  allImages.push(createPreviewLink(img));
-                });
-              });
-            }
-          });
-      });
-      if (allImages.length) setCurrentImage(allImages[Math.floor(Math.random() * allImages.length)]);
-    }
-  }, [category, rawCategoriesArray]);
-  useEffect(() => {
-    updateShuffleImage();
-  }, [updateShuffleImage]);
+const CategoryButton: FC<CategoryButtonExtendedProps> = memo(({ category, onPress, count }) => {
   return (
     <TouchableOpacity onPress={() => onPress()} style={{ flex: 1, height: hp(8), margin: wp(1), borderRadius: wp(4), overflow: "hidden", minWidth: wp(30) }} accessibilityLabel={`Browse ${category}`}>
       <View style={{ borderRadius: wp(4), overflow: "hidden", width: "100%", height: "100%" }}>
-        <Image contentFit="cover" alt={`CategoryBackground${currentImage}`} style={{ width: "100%", height: "100%", borderRadius: wp(4) }} source={category === "Combined" ? require("@/assets/images/Shuffle.gif") : { uri: currentImage }} />
-        <LinearGradient colors={[colorize("#171717", 0.7), colorize("#171717", 0.7)]} style={{ position: "absolute", width: "100%", height: "100%", borderRadius: wp(4) }} />
+        <Image contentFit="cover" alt="CategoryBackground" style={{ width: "100%", height: "100%", borderRadius: wp(4) }} source={category === "Combined" ? require("@/assets/images/Shuffle.gif") : require("@/assets/images/Category.gif")} />
+        <LinearGradient colors={[colorize("#171717", 0.4), colorize("#171717", 0.4)]} style={{ position: "absolute", width: "100%", height: "100%", borderRadius: wp(4) }} />
         <View style={{ width: "100%", height: "100%", borderRadius: wp(4), position: "absolute", alignItems: "center", flexDirection: "row", justifyContent: "center" }}>
           <MaterialCommunityIcons name={category === "Categories" ? "image-filter-vintage" : "dice-multiple"} size={wp(5)} color={colorize("#F4F4F5", 1.0)} style={{ marginRight: wp(2) }} />
-          <Text style={{ fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0), fontSize: wp(5), textAlign: "center" }}>{category === "Combined" ? `All (${count})` : category}</Text>
+          <Text style={{ fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0), fontSize: wp(5), textAlign: "center" }}>{category === "Combined" ? `Mixed (${count})` : category}</Text>
         </View>
       </View>
     </TouchableOpacity>
@@ -493,8 +465,8 @@ const HeaderComponent: FC<HeaderComponentProps> = memo(({ selectedCategory, onSe
           </Animated.View>
         </View>
         <View style={{ flexDirection: "row", justifyContent: "center", marginTop: hp(2) }}>
-          <CategoryButton category="Combined" selected={selectedCategory === "Combined"} onPress={() => onSelectCategory("Combined")} rawCategoriesArray={rawCategoriesArray} count={mixedCount} />
-          <CategoryButton category="Categories" selected={false} onPress={() => setModalVisible(true)} rawCategoriesArray={rawCategoriesArray} />
+          <CategoryButton category="Categories" selected={false} onPress={() => setModalVisible(true)} />
+          <CategoryButton category="Combined" selected={selectedCategory === "Combined"} onPress={() => onSelectCategory("Combined")} count={mixedCount} />
         </View>
         <SearchBar onSearch={onSearch} /> <CategoryModal isVisible={modalVisible} onClose={() => setModalVisible(false)} onSelectCategory={onSelectCategory} selectedCategory={String(selectedCategory)} rawCategoriesArray={rawCategoriesArray} />
       </View>
