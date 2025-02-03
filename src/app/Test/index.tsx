@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 import { useSharedValue, withTiming } from "react-native-reanimated";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 /* ============================================================================================================================== */
-const ErrorPage: FC = () => {
+const TestPage: FC = () => {
   const scale = useSharedValue(0.8);
   const opacity = useSharedValue(0);
   useEffect(() => {
@@ -52,7 +52,7 @@ const ErrorPage: FC = () => {
     </View>
   );
 };
-ErrorPage.displayName = "ErrorPage";
-export default ErrorPage;
+TestPage.displayName = "TestPage";
+export default TestPage;
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
