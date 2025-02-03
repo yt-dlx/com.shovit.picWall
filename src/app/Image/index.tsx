@@ -9,18 +9,16 @@ import * as FileSystem from "expo-file-system";
 import { ImageMetadata } from "@/types/database";
 import { useLocalSearchParams } from "expo-router";
 import * as MediaLibrary from "expo-media-library";
-import { LinearGradient } from "expo-linear-gradient";
 import { setWallpaper, TYPE_SCREEN } from "rn-wallpapers";
 import { createPreviewLink, createDownloadLink } from "@/utils/linker";
+import { MaterialIcons, Ionicons, AntDesign } from "@expo/vector-icons";
 import React, { useState, useEffect, useRef, memo, useMemo, useCallback } from "react";
-import { FontAwesome5, MaterialIcons, Ionicons, AntDesign } from "@expo/vector-icons";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 import { View, Text, Dimensions, StatusBar, ActivityIndicator, TouchableOpacity, Alert, Modal, Animated, Easing, ScrollView } from "react-native";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
 interface DownloadButtonProps {
   onDownload?: (event: unknown) => void;
-  colors: { primary: string; secondary: string; tertiary: string };
 }
 interface OtherImagesProps {
   selectedFileName: string;
@@ -224,7 +222,8 @@ const PreviewImage: React.FC<{ selectedImage: ImageMetadata; screenWidth: number
         }}
         accessibilityLabel="Set as wallpaper"
       >
-        <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: hp(2), fontFamily: "Lobster" }}>Set as Wallpaper (Full-Screen View)</Text>
+        <Ionicons name="image" size={hp(2)} color={colorize("#F4F4F5", 1.0)} style={{ marginRight: wp(2) }} />
+        <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: hp(2), fontFamily: "Lobster" }}>Set as Wallpaper (Full Screen View)</Text>
       </TouchableOpacity>
     </View>
   );
@@ -232,7 +231,7 @@ const PreviewImage: React.FC<{ selectedImage: ImageMetadata; screenWidth: number
 PreviewImage.displayName = "PreviewImage";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
-const DownloadButton: React.FC<DownloadButtonProps> = memo(({ onDownload, colors }) => {
+const DownloadButton: React.FC<DownloadButtonProps> = memo(({ onDownload }) => {
   const scaleValue = useRef(new Animated.Value(1)).current;
   useEffect(() => {
     const pulse = Animated.loop(
@@ -245,14 +244,9 @@ const DownloadButton: React.FC<DownloadButtonProps> = memo(({ onDownload, colors
     return () => pulse.stop();
   }, [scaleValue]);
   return (
-    <TouchableOpacity activeOpacity={0.8} onPress={onDownload} accessibilityLabel="Download wallpaper" style={{ margin: hp(2), borderRadius: wp(4), overflow: "hidden", backgroundColor: colorize(colors.tertiary, 1.0), minHeight: hp(4) }}>
+    <TouchableOpacity activeOpacity={0.8} onPress={onDownload} accessibilityLabel="Download wallpaper" style={{ margin: hp(2), borderRadius: wp(4), overflow: "hidden", backgroundColor: colorize("#F4F4F5", 1.0), minHeight: hp(4) }}>
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", paddingVertical: hp(1), paddingHorizontal: wp(4) }}>
-        <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: hp(2), fontFamily: "Lobster" }}>
-          Download Current Wallpaper
-          <Text>
-            <FontAwesome5 name="download" size={hp(2)} color={colorize("#F4F4F5", 1.0)} style={{ marginHorizontal: wp(2) }} />
-          </Text>
-        </Text>
+        <Text style={{ color: colorize("#171717", 1.0), fontSize: hp(2), fontFamily: "Lobster" }}>Download Current Wallpaper</Text>
       </View>
     </TouchableOpacity>
   );
@@ -396,11 +390,15 @@ const FullScreenView: React.FC<FullScreenViewProps> = ({ isFullScreen, setIsFull
           <AntDesign name="caretright" size={hp(4)} color={colorize("#F4F4F5", 1.0)} />
         </Animated.View>
         <View style={{ position: "absolute", bottom: hp(2), left: wp(3), right: wp(3), flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-          <LinearGradient
-            end={[1, 0]}
-            start={[0, 0]}
-            colors={[colorize("#171717", 0.8), colorize("#171717", 0.8), colorize("#171717", 0.8)]}
-            style={{ flex: 1, height: hp(6), borderTopLeftRadius: wp(3), borderBottomLeftRadius: wp(3), marginHorizontal: wp(1) }}
+          <View
+            style={{
+              flex: 1,
+              height: hp(6),
+              marginHorizontal: wp(0.5),
+              borderTopLeftRadius: wp(3),
+              borderBottomLeftRadius: wp(3),
+              backgroundColor: colorize("#171717", 0.9)
+            }}
           >
             <TouchableOpacity
               style={{ flexDirection: "row", justifyContent: "center", alignItems: "center", height: "100%" }}
@@ -413,12 +411,16 @@ const FullScreenView: React.FC<FullScreenViewProps> = ({ isFullScreen, setIsFull
               <Ionicons name="image" size={hp(2)} color={colorize("#F4F4F5", 1.0)} style={{ marginRight: wp(2) }} />
               <Text style={{ fontSize: hp(1.8), color: colorize("#F4F4F5", 1.0), fontFamily: "Lobster" }}>Set LockScreen</Text>
             </TouchableOpacity>
-          </LinearGradient>
-          <LinearGradient
-            end={[1, 0]}
-            start={[0, 0]}
-            style={{ flex: 1, height: hp(6), marginHorizontal: wp(1), borderTopRightRadius: wp(3), borderBottomRightRadius: wp(3) }}
-            colors={[colorize("#171717", 0.8), colorize("#171717", 0.8), colorize("#171717", 0.8)]}
+          </View>
+          <View
+            style={{
+              flex: 1,
+              height: hp(6),
+              marginHorizontal: wp(0.5),
+              borderTopRightRadius: wp(3),
+              borderBottomRightRadius: wp(3),
+              backgroundColor: colorize("#171717", 0.9)
+            }}
           >
             <TouchableOpacity
               style={{ flexDirection: "row", justifyContent: "center", alignItems: "center", height: "100%" }}
@@ -431,7 +433,7 @@ const FullScreenView: React.FC<FullScreenViewProps> = ({ isFullScreen, setIsFull
               <Ionicons name="image" size={hp(2)} color={colorize("#F4F4F5", 1.0)} style={{ marginRight: wp(2) }} />
               <Text style={{ fontSize: hp(1.8), color: colorize("#F4F4F5", 1.0), fontFamily: "Lobster" }}>Set HomeScreen</Text>
             </TouchableOpacity>
-          </LinearGradient>
+          </View>
         </View>
         <WallModal visible={showWallModal} onComplete={handleWallpaperSet} onCancel={() => setShowWallModal(false)} wallType={wallType} primaryColor={selectedImage.primary} />
       </View>
@@ -445,7 +447,6 @@ export default function ImagePage(): JSX.Element {
   const params = useLocalSearchParams();
   const [eta, setEta] = useState<number>(0);
   const rawDataString = params.data as string;
-  const Sanitized = useMemo(() => JSON.parse(rawDataString), [rawDataString]);
   const downloadStartTime = useRef<number>(0);
   const [alertVisible, setAlertVisible] = useState(false);
   const [isFullScreen, setIsFullScreen] = useState(false);
@@ -453,6 +454,7 @@ export default function ImagePage(): JSX.Element {
   const [percentage, setPercentage] = useState<number>(0);
   const [isDownloading, setIsDownloading] = useState(false);
   const [downloadRate, setDownloadRate] = useState<number>(0);
+  const Sanitized = useMemo(() => JSON.parse(rawDataString), [rawDataString]);
   const [alertIcon, setAlertIcon] = useState<"error" | "checkmark-done-circle">("checkmark-done-circle");
   const [currentIndex, setCurrentIndex] = useState(() => {
     const parsedIndex = parseInt(Sanitized.selectedIndex);
@@ -518,7 +520,7 @@ export default function ImagePage(): JSX.Element {
       <ScrollView style={{ flex: 1 }}>
         <PreviewImage selectedImage={selectedImage} screenWidth={screenWidth} onViewFullScreen={() => setIsFullScreen(true)} />
         <View style={{ padding: wp(0.5), borderWidth: 2, backgroundColor: colorize("#171717", 1.0) }}>
-          <DownloadButton onDownload={downloadAndSaveImage} colors={{ primary: selectedImage.primary, secondary: selectedImage.secondary, tertiary: selectedImage.tertiary }} />
+          <DownloadButton onDownload={downloadAndSaveImage} />
           <SubImages otherImages={otherImages} setCurrentIndex={setCurrentIndex} selectedFileName={selectedImage.original_file_name} />
         </View>
         <Footer />
