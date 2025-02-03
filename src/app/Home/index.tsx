@@ -12,15 +12,19 @@ import { BlurView } from "@react-native-community/blur";
 import { useVersionCheck } from "@/hooks/useVersionCheck";
 import { EnvironmentEntry, ImageMetadata } from "@/types/database";
 import { createPreviewLink, createDownloadLink } from "@/utils/linker";
-import { FontAwesome5, MaterialCommunityIcons } from "@expo/vector-icons";
 import { useEffect, useRef, useCallback, useState, memo, FC, useMemo } from "react";
 import { SubImagesProps, CardProps, CategoryButtonProps } from "@/types/components";
+import { AntDesign, FontAwesome5, MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 import { Easing, useSharedValue, useAnimatedStyle, withTiming, withRepeat } from "react-native-reanimated";
 import { Animated, View, Text, TouchableOpacity, FlatList, StatusBar, ScrollView, TextInput, Modal, ActivityIndicator, StyleSheet, Platform } from "react-native";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
 type ParentKey = string;
+interface TopicNameProps {
+  selectedChild: string;
+  selectedCategory: ParentKey | "Combined";
+}
 interface Category {
   subcategories: string[];
   name: ParentKey | "Combined";
@@ -40,11 +44,13 @@ interface CategoryModalProps {
 }
 interface HeaderComponentProps {
   mixedCount: number;
+  selectedChild: string;
   onSearch: (text: string) => void;
   rawCategoriesArray: Category[];
   selectedCategory: ParentKey | "Combined";
   onSelectCategory: (parent: ParentKey | "Combined", child?: string) => void;
 }
+
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
 function generateCategories(apiData: Record<string, any>) {
@@ -434,7 +440,7 @@ const Card: FC<CardProps> = memo(({ data }) => {
 Card.displayName = "Card";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
-const CategoryButton: FC<CategoryButtonExtendedProps> = memo(({ category, onPress, count }) => {
+const CategoryButton: FC<CategoryButtonExtendedProps> = memo(({ category, onPress, count, selected }) => {
   return (
     <TouchableOpacity onPress={onPress} style={{ flex: 1, height: hp(8), margin: wp(1), borderRadius: wp(4), overflow: "hidden", minWidth: wp(30) }} accessibilityLabel={`Browse ${category}`}>
       <View style={{ borderRadius: wp(4), overflow: "hidden", width: "100%", height: "100%" }}>
@@ -444,6 +450,20 @@ const CategoryButton: FC<CategoryButtonExtendedProps> = memo(({ category, onPres
           <MaterialCommunityIcons name={category === "Categories" ? "image-filter-vintage" : "dice-multiple"} size={wp(5)} color={colorize("#F4F4F5", 1.0)} style={{ marginRight: wp(2) }} />
           <Text style={{ fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0), fontSize: wp(5), textAlign: "center" }}>{category === "Combined" ? `Mixed (${count})` : category}</Text>
         </View>
+        {selected && (
+          <View
+            style={{
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              position: "absolute",
+              borderRadius: wp(4),
+              borderWidth: wp(0.6),
+              borderColor: colorize("#F4F4F5", 1.0)
+            }}
+          />
+        )}
       </View>
     </TouchableOpacity>
   );
@@ -451,7 +471,26 @@ const CategoryButton: FC<CategoryButtonExtendedProps> = memo(({ category, onPres
 CategoryButton.displayName = "CategoryButton";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
-const HeaderComponent: FC<HeaderComponentProps> = memo(({ selectedCategory, onSelectCategory, onSearch, rawCategoriesArray, mixedCount }) => {
+const TopicNamer: FC<TopicNameProps> = ({ selectedCategory, selectedChild }) => {
+  return (
+    <View style={{ flexDirection: "row", alignItems: "center", margin: wp(2) }}>
+      <View style={{ flex: 1, height: 1, backgroundColor: colorize("#F4F4F5", 0.2) }} />
+      <View style={{ flexDirection: "row", alignItems: "center", margin: wp(2) }}>
+        <View style={{ flex: 1, height: 1, backgroundColor: colorize("#F4F4F5", 0.2) }} />
+        <MaterialIcons name="topic" size={15} style={{ marginRight: wp(2), color: colorize("#F4F4F5", 1.0) }} />
+        <Text style={{ fontSize: hp(3), fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}>{selectedCategory === "Combined" ? "Combined Categories" : `${selectedCategory} `}</Text>
+        {selectedChild && <AntDesign name="swapright" size={wp(4)} color={colorize("#F4F4F5", 1.0)} style={{ marginRight: wp(1) }} />}
+        <Text style={{ fontSize: hp(3), fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}>{selectedChild ? selectedChild : ""}</Text>
+        <MaterialIcons name="category" size={15} style={{ marginLeft: wp(2), color: colorize("#F4F4F5", 1.0) }} />
+        <View style={{ flex: 1, height: 1, backgroundColor: colorize("#F4F4F5", 0.2) }} />
+      </View>
+      <View style={{ flex: 1, height: 1, backgroundColor: colorize("#F4F4F5", 0.2) }} />
+    </View>
+  );
+};
+/* ============================================================================================================================== */
+/* ============================================================================================================================== */
+const HeaderComponent: FC<HeaderComponentProps> = memo(({ selectedCategory, selectedChild, onSelectCategory, onSearch, rawCategoriesArray, mixedCount }) => {
   const fadeInValue = useSharedValue(0);
   const leftIconTranslate = useSharedValue(0);
   const rightIconTranslate = useSharedValue(0);
@@ -483,6 +522,7 @@ const HeaderComponent: FC<HeaderComponentProps> = memo(({ selectedCategory, onSe
           <CategoryButton category="Categories" selected={false} onPress={() => setModalVisible(true)} />
           <CategoryButton category="Combined" selected={selectedCategory === "Combined"} onPress={() => onSelectCategory("Combined")} count={mixedCount} />
         </View>
+        <TopicNamer selectedCategory={selectedCategory} selectedChild={selectedChild} /> {/* Render TopicNamer component */}
         <SearchBar onSearch={onSearch} />
         <CategoryModal isVisible={modalVisible} onClose={() => setModalVisible(false)} onSelectCategory={onSelectCategory} selectedCategory={String(selectedCategory)} rawCategoriesArray={rawCategoriesArray} />
       </View>
@@ -665,7 +705,7 @@ export default function HomePage(): JSX.Element {
         updateCellsBatchingPeriod={50}
         contentContainerStyle={{ padding: 1 }}
         columnWrapperStyle={{ justifyContent: "space-between" }}
-        ListHeaderComponent={<HeaderComponent selectedCategory={selectedParent} onSelectCategory={onSelectCategory} onSearch={handleSearch} rawCategoriesArray={rawCategoriesArray} mixedCount={mixedCount} />}
+        ListHeaderComponent={<HeaderComponent onSearch={handleSearch} mixedCount={mixedCount} selectedChild={selectedChild} selectedCategory={selectedParent} onSelectCategory={onSelectCategory} rawCategoriesArray={rawCategoriesArray} />}
       />
     </View>
   );
