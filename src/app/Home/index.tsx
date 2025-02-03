@@ -70,6 +70,32 @@ function generateCategories(apiData: Record<string, any>) {
 }
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
+const TopicNamer: FC<TopicNameProps> = ({ selectedCategory, selectedChild }) => {
+  return (
+    <View style={{ flexDirection: "row", alignItems: "center", margin: wp(2) }}>
+      <View style={{ flex: 1, height: 1, backgroundColor: colorize("#F4F4F5", 0.2) }} />
+      <View style={{ flexDirection: "row", alignItems: "center", margin: wp(2) }}>
+        <View style={{ flex: 1, height: 1, backgroundColor: colorize("#F4F4F5", 0.2) }} />
+        <MaterialIcons name="topic" size={15} style={{ marginRight: wp(2), color: colorize("#F4F4F5", 1.0) }} />
+        <Text style={{ fontSize: hp(3), fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}>{selectedCategory === "Combined" ? "Combined Categories" : selectedCategory}</Text>
+        {selectedChild && <AntDesign name="swapright" size={wp(4)} color={colorize("#F4F4F5", 1.0)} style={{ marginRight: wp(1) }} />}
+        <Text style={{ fontSize: hp(3), fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}>{selectedChild ? selectedChild : ""}</Text>
+        <MaterialIcons
+          name="category"
+          size={15}
+          style={{
+            marginLeft: selectedCategory === "Combined" ? -wp(1) : wp(2),
+            color: colorize("#F4F4F5", 1.0)
+          }}
+        />
+        <View style={{ flex: 1, height: 1, backgroundColor: colorize("#F4F4F5", 0.2) }} />
+      </View>
+      <View style={{ flex: 1, height: 1, backgroundColor: colorize("#F4F4F5", 0.2) }} />
+    </View>
+  );
+};
+/* ============================================================================================================================== */
+/* ============================================================================================================================== */
 const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSelectCategory, rawCategoriesArray }) => {
   const [activeParent, setActiveParent] = useState<ParentKey | "Combined">(rawCategoriesArray.find((cat) => cat.name !== "Combined")?.name || "Combined");
   const [selectedSubcategory, setSelectedSubcategory] = useState<string | null>(null);
@@ -468,25 +494,6 @@ const CategoryButton: FC<CategoryButtonExtendedProps> = memo(({ category, onPres
   );
 });
 CategoryButton.displayName = "CategoryButton";
-/* ============================================================================================================================== */
-/* ============================================================================================================================== */
-const TopicNamer: FC<TopicNameProps> = ({ selectedCategory, selectedChild }) => {
-  return (
-    <View style={{ flexDirection: "row", alignItems: "center", margin: wp(2) }}>
-      <View style={{ flex: 1, height: 1, backgroundColor: colorize("#F4F4F5", 0.2) }} />
-      <View style={{ flexDirection: "row", alignItems: "center", margin: wp(2) }}>
-        <View style={{ flex: 1, height: 1, backgroundColor: colorize("#F4F4F5", 0.2) }} />
-        <MaterialIcons name="topic" size={15} style={{ marginRight: wp(2), color: colorize("#F4F4F5", 1.0) }} />
-        <Text style={{ fontSize: hp(3), fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}>{selectedCategory === "Combined" ? "Combined Categories" : `${selectedCategory} `}</Text>
-        {selectedChild && <AntDesign name="swapright" size={wp(4)} color={colorize("#F4F4F5", 1.0)} style={{ marginRight: wp(1) }} />}
-        <Text style={{ fontSize: hp(3), fontFamily: "Lobster", color: colorize("#F4F4F5", 1.0) }}>{selectedChild ? selectedChild : ""}</Text>
-        <MaterialIcons name="category" size={15} style={{ marginLeft: wp(2), color: colorize("#F4F4F5", 1.0) }} />
-        <View style={{ flex: 1, height: 1, backgroundColor: colorize("#F4F4F5", 0.2) }} />
-      </View>
-      <View style={{ flex: 1, height: 1, backgroundColor: colorize("#F4F4F5", 0.2) }} />
-    </View>
-  );
-};
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
 const HeaderComponent: FC<HeaderComponentProps> = memo(({ selectedCategory, selectedChild, onSelectCategory, onSearch, rawCategoriesArray, mixedCount }) => {
