@@ -4,8 +4,8 @@ import readline from "readline";
 import OpenAI from "openai";
 import dotenv from "dotenv";
 import fs from "fs";
-dotenv.config();
 const model = "gpt-4o";
+dotenv.config({ path: "./env" });
 const filename = `${model}.json`;
 const openai = new OpenAI({ apiKey: process.env.OAPI, baseURL: "https://api.sree.shop/v1" });
 async function getOpenAIResponse(messages) {
