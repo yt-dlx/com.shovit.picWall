@@ -30,7 +30,7 @@ const TestPage: FC = () => {
         borderRightWidth: wp(0.4),
         justifyContent: "flex-start",
         borderBottomWidth: wp(0.4),
-        borderColor: colorize("#BE3025", 1.0),
+        borderColor: colorize("#AF3C2E", 1.0),
         backgroundColor: colorize("#171717", 1.0)
       }}
     >
@@ -40,11 +40,11 @@ const TestPage: FC = () => {
           contentFit="contain"
           accessibilityLabel="picWallLogo"
           source={require("@/assets/images/logo.jpg")}
-          style={{ width: wp(40), height: wp(40), borderWidth: wp(0.5), borderRadius: wp(50), borderColor: colorize("#BE3025", 1.0) }}
+          style={{ width: wp(40), height: wp(40), borderWidth: wp(0.5), borderRadius: wp(50), borderColor: colorize("#AF3C2E", 1.0) }}
         />
       </View>
       <View style={{ alignItems: "center", marginTop: hp("20%") }}>
-        <Text style={{ marginTop: wp("20%"), fontSize: wp("12%"), fontFamily: "Lobster", color: colorize("#BE3025", 1.0), textDecorationLine: "underline" }}>Oops Error</Text>
+        <Text style={{ marginTop: wp("20%"), fontSize: wp("12%"), fontFamily: "Lobster", color: colorize("#AF3C2E", 1.0), textDecorationLine: "underline" }}>Oops Error</Text>
       </View>
       <View style={{ position: "absolute", bottom: 0, left: 0, right: 0, zIndex: 1 }}>
         <Footer />

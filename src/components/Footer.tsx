@@ -22,7 +22,7 @@ const Footer: React.FC = memo(() => {
         }}
       >
         Crafted with
-        <AntDesign name="heart" size={wp(5)} color={colorize("#BE3025", 1.0)} />
+        <AntDesign name="heart" size={wp(5)} color={colorize("#AF3C2E", 1.0)} />
         in India. All rights reserved
       </Text>
       <Text

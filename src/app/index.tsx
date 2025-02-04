@@ -109,7 +109,7 @@ const EntryPage = memo(() => {
                     <Text style={{ fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0), fontSize: wp("3.25%"), textAlign: "center" }}>
                       Crafted with
                       <Text>
-                        <AntDesign name="heart" size={wp("3%")} color={colorize("#BE3025", 1.0)} />
+                        <AntDesign name="heart" size={wp("3%")} color={colorize("#AF3C2E", 1.0)} />
                       </Text>
                       in India. All rights reserved
                     </Text>

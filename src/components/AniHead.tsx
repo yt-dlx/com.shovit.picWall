@@ -139,7 +139,7 @@ const HAnimated: React.FC = memo(() => {
                 >
                   Crafted with
                   <Text>
-                    <AntDesign name="heart" size={rf(12)} color={colorize("#BE3025", 1.0)} />
+                    <AntDesign name="heart" size={rf(12)} color={colorize("#AF3C2E", 1.0)} />
                   </Text>
                   in India. All rights reserved
                 </Text>

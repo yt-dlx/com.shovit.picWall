@@ -111,14 +111,7 @@ export default function SharedPage(): JSX.Element {
                 elevation: 5
               }}
             >
-              <Image
-                contentFit="cover"
-                source={{ uri: selectedImage }}
-                onLoadEnd={() => setImageLoaded(true)}
-                style={{ width: "100%", height: "100%" }}
-                accessibilityLabel="Selected wallpaper preview"
-                alt={`SelectedWallpaperPreview${selectedImage}`}
-              />
+              <Image contentFit="cover" source={{ uri: selectedImage }} onLoadEnd={() => setImageLoaded(true)} style={{ width: "100%", height: "100%" }} accessibilityLabel="Wallpaper preview" alt={`SelectedWallpaperPreview${selectedImage}`} />
               {!imageLoaded && (
                 <Animated.View style={{ position: "absolute", top: "50%", left: "50%", transform: [{ translateX: -wp("12%") }, { translateY: -wp("12%") }, { scale: scaleAnim }], opacity: opacity }}>
                   <Text>
@@ -131,8 +124,8 @@ export default function SharedPage(): JSX.Element {
           {!imageLoaded && <ActivityIndicator size={wp("10%")} color={colorize("#F4F4F5", 1.0)} style={{ marginVertical: hp("2%") }} />}
           {adError ? (
             <View style={{ alignItems: "center", marginTop: hp("2%") }}>
-              <Text style={{ color: colorize("#FF6B6B", 1.0), fontSize: wp("5.5%"), fontFamily: "Lobster", fontWeight: "600", marginBottom: hp("2%") }}>Google Ad-Error</Text>
-              <Text style={{ color: colorize("#FF6B6B", 1.0), fontSize: wp("4%"), fontFamily: "Lobster", textAlign: "center", marginBottom: hp("1%") }}> Ad-Reward not received. Trying Again! </Text>
+              <Text style={{ color: colorize("#AF3C2E", 1.0), fontSize: wp("5.5%"), fontFamily: "Lobster", fontWeight: "600", marginBottom: hp("2%") }}>Google Ad-Error</Text>
+              <Text style={{ color: colorize("#AF3C2E", 1.0), fontSize: wp("4%"), fontFamily: "Lobster", textAlign: "center", marginBottom: hp("1%") }}> Ad-Reward not received. Trying Again! </Text>
             </View>
           ) : (
             <View style={{ alignItems: "center", marginTop: hp("2%") }}>

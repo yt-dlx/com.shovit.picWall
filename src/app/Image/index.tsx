@@ -86,10 +86,10 @@ const ErrorModal: React.FC<{ visible: boolean; message: string; onClose: () => v
         <BlurView blurType="dark" blurAmount={60} style={StyleSheet.absoluteFill} overlayColor={Platform.OS === "android" ? colorize("#171717", 0.0) : colorize("#171717", 0.0)} />
         <Animated.View style={[{ flex: 1, width: "100%", alignItems: "center", justifyContent: "center", backgroundColor: colorize("#171717", 0.8) }, modalStyle]}>
           <View style={{ alignItems: "center" }}>
-            <Image source={require("@/assets/images/logo.jpg")} style={{ width: wp(40), height: wp(40), borderWidth: wp(0.5), borderRadius: wp(50), borderColor: colorize("#BE3025", 1.0) }} />
-            <Text style={{ marginTop: hp(4), fontSize: wp(12), fontFamily: "Lobster", color: colorize("#BE3025", 1.0), textDecorationLine: "underline" }}> Oops Error </Text>
+            <Image source={require("@/assets/images/logo.jpg")} style={{ width: wp(40), height: wp(40), borderWidth: wp(0.5), borderRadius: wp(50), borderColor: colorize("#AF3C2E", 1.0) }} />
+            <Text style={{ marginTop: hp(4), fontSize: wp(12), fontFamily: "Lobster", color: colorize("#AF3C2E", 1.0), textDecorationLine: "underline" }}> Oops Error </Text>
             <Text style={{ marginTop: hp(2), textAlign: "center", fontSize: hp(2.5), fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0), paddingHorizontal: wp(5) }}> {message} </Text>
-            <TouchableOpacity onPress={onClose} accessibilityLabel="Close error modal" style={{ marginTop: hp(4), paddingHorizontal: wp(8), paddingVertical: hp(1), borderRadius: wp(4), backgroundColor: colorize("#BE3025", 1.0) }}>
+            <TouchableOpacity onPress={onClose} accessibilityLabel="Close error modal" style={{ marginTop: hp(4), paddingHorizontal: wp(8), paddingVertical: hp(2), borderRadius: wp(4), backgroundColor: colorize("#AF3C2E", 1.0) }}>
               <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: hp(2.5), fontFamily: "Lobster" }}> Okay Understood </Text>
             </TouchableOpacity>
           </View>
@@ -183,16 +183,16 @@ const PreviewImage: React.FC<{ selectedImage: ImageMetadata; screenWidth: number
         <TouchableOpacity
           activeOpacity={0.8}
           onPress={onViewFullScreen}
-          style={{ flex: 1, marginRight: wp(0.5), borderTopLeftRadius: wp(2), borderBottomLeftRadius: wp(2), alignItems: "center", flexDirection: "row", paddingVertical: hp(1), justifyContent: "center", backgroundColor: colorize("#171717", 0.9) }}
           accessibilityLabel="Set as wallpaper"
+          style={{ flex: 1, marginRight: wp(0.5), borderTopLeftRadius: wp(2), borderBottomLeftRadius: wp(2), alignItems: "center", flexDirection: "row", paddingVertical: hp(1.5), justifyContent: "center", backgroundColor: colorize("#171717", 0.9) }}
         >
           <Ionicons name="image" size={hp(2)} color={colorize("#F4F4F5", 1.0)} style={{ marginRight: wp(2) }} /> <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: hp(2), fontFamily: "Lobster" }}>Set as Wallpaper</Text>
         </TouchableOpacity>
         <TouchableOpacity
           activeOpacity={0.8}
           onPress={onDownload}
-          style={{ flex: 1, marginLeft: wp(0.5), borderTopRightRadius: wp(2), borderBottomRightRadius: wp(2), alignItems: "center", flexDirection: "row", paddingVertical: hp(1), justifyContent: "center", backgroundColor: colorize("#171717", 0.9) }}
           accessibilityLabel="Download wallpaper"
+          style={{ flex: 1, marginLeft: wp(0.5), borderTopRightRadius: wp(2), borderBottomRightRadius: wp(2), alignItems: "center", flexDirection: "row", paddingVertical: hp(1.5), justifyContent: "center", backgroundColor: colorize("#171717", 0.9) }}
         >
           <MaterialIcons name="file-download" size={hp(2)} color={colorize("#F4F4F5", 1.0)} style={{ marginRight: wp(2) }} /> <Text style={{ color: colorize("#F4F4F5", 1.0), fontSize: hp(2), fontFamily: "Lobster" }}>Download</Text>
         </TouchableOpacity>
@@ -347,7 +347,7 @@ const FullScreenView: React.FC<FullScreenViewProps> = ({ isFullScreen, setIsFull
           <View
             style={{
               flex: 1,
-              height: hp(6),
+              height: hp(7),
               marginHorizontal: wp(0.5),
               borderTopLeftRadius: wp(3),
               borderBottomLeftRadius: wp(3),
@@ -369,7 +369,7 @@ const FullScreenView: React.FC<FullScreenViewProps> = ({ isFullScreen, setIsFull
           <View
             style={{
               flex: 1,
-              height: hp(6),
+              height: hp(7),
               marginHorizontal: wp(0.5),
               borderTopRightRadius: wp(3),
               borderBottomRightRadius: wp(3),

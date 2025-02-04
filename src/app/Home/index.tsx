@@ -163,7 +163,7 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
             style={{
               width: wp(30),
               borderRightWidth: 2,
-              borderColor: colorize("#BE3025", 1.0),
+              borderColor: colorize("#AF3C2E", 1.0),
               backgroundColor: colorize("#171717", 0.7)
             }}
           >
@@ -196,9 +196,9 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                         overflow: "hidden",
                         borderRadius: wp(3),
                         marginBottom: wp(2),
-                        borderColor: colorize("#BE3025", 1.0),
+                        borderColor: colorize("#AF3C2E", 1.0),
                         borderWidth: activeParent === category.name ? 2 : 0,
-                        backgroundColor: activeParent === category.name ? colorize("#BE3025", 1.0) : colorize("#000000", 1.0)
+                        backgroundColor: activeParent === category.name ? colorize("#AF3C2E", 1.0) : colorize("#000000", 1.0)
                       }}
                       accessibilityLabel={`Select ${category.name} category`}
                     >
@@ -270,8 +270,8 @@ const CategoryModal: FC<CategoryModalProps> = memo(({ isVisible, onClose, onSele
                             borderWidth: 2,
                             borderRadius: wp(3),
                             overflow: "hidden",
-                            borderColor: selectedSubcategory === child ? colorize("#BE3025", 1.0) : colorize("#000000", 1.0),
-                            backgroundColor: selectedSubcategory === child ? colorize("#BE3025", 1.0) : colorize("#000000", 1.0)
+                            borderColor: selectedSubcategory === child ? colorize("#AF3C2E", 1.0) : colorize("#000000", 1.0),
+                            backgroundColor: selectedSubcategory === child ? colorize("#AF3C2E", 1.0) : colorize("#000000", 1.0)
                           }}
                         >
                           <Text
@@ -314,19 +314,19 @@ const SearchBar: FC<{ onSearch: (text: string) => void }> = memo(({ onSearch }) 
   return (
     <View style={{ marginTop: hp(1) }}>
       <View style={{ flexDirection: "row", alignItems: "center", backgroundColor: colorize("#242424", 1.0), borderRadius: wp(4), paddingHorizontal: wp(3), height: hp(6) }}>
-        <FontAwesome5 name="search" size={wp(4)} color={colorize("#BE3025", 0.8)} />
+        <FontAwesome5 name="search" size={wp(4)} color={colorize("#AF3C2E", 0.8)} />
         <TextInput
           value={searchText}
           onChangeText={handleSearch}
-          accessibilityLabel="Search Input"
+          accessibilityLabel="Search for wallpapers by name"
           placeholder="Search by image name..."
           placeholderTextColor={colorize("#F4F4F5", 0.6)}
           accessibilityHint={`Current search term: ${searchText || "empty"}. Enter text to filter wallpapers.`}
           style={{ flex: 1, marginLeft: wp(2), fontSize: wp(4), fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0) }}
         />
         {searchText.length > 0 && (
-          <TouchableOpacity onPress={() => handleSearch("")} style={{ padding: wp(2) }} accessibilityLabel="Clear search">
-            <FontAwesome5 name="times" size={wp(4)} color={colorize("#BE3025", 0.8)} />
+          <TouchableOpacity onPress={() => handleSearch("")} style={{ padding: wp(2) }} accessibilityLabel="Clear search input">
+            <FontAwesome5 name="times" size={wp(4)} color={colorize("#AF3C2E", 0.8)} />
           </TouchableOpacity>
         )}
       </View>
@@ -342,14 +342,18 @@ const SubImages: FC<SubImagesProps> = memo(({ images, onImagePress }) => (
       const fullDataIndex = images.allData.findIndex((img) => img.original_file_name === image.original_file_name);
       return (
         <Link key={index} href={{ pathname: "/Shared", params: { data: JSON.stringify({ environment_title: images.environment_title, selectedIndex: fullDataIndex, data: images.allData }) } }} asChild>
-          <TouchableOpacity onPress={() => onImagePress(image.previewLink as string, fullDataIndex)} style={{ flex: 1, marginBottom: wp(1) }} accessibilityLabel="View wallpaper details">
+          <TouchableOpacity
+            onPress={() => onImagePress(image.previewLink as string, fullDataIndex)}
+            style={{ flex: 1, marginBottom: wp(1) }}
+            accessibilityLabel={`View full wallpaper of ${image.original_file_name.replace(/_/g, " ").replace(".jpg", "")}`}
+          >
             <View style={{ position: "relative", alignItems: "center", justifyContent: "center" }}>
               <Image
                 contentFit="cover"
                 cachePolicy="disk"
                 source={{ uri: image.previewLink as string }}
                 alt={`WallpaperPreview${image.previewLink}`}
-                style={{ height: hp(8), width: wp(15), borderWidth: 1, borderColor: colorize("#BE3025", 0.5), borderRadius: wp(3) }}
+                style={{ height: hp(8), width: wp(15), borderWidth: 1, borderColor: colorize("#AF3C2E", 0.5), borderRadius: wp(3) }}
               />
               <Text
                 style={{
@@ -408,17 +412,17 @@ const Card: FC<CardProps> = memo(({ data }) => {
   return (
     <View style={{ position: "relative", margin: wp(1), borderRadius: wp(4), overflow: "hidden", shadowColor: "#171717", shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.4, shadowRadius: 3 }}>
       <Link href={{ pathname: "/Shared", params: { data: JSON.stringify({ environment_title: data.environment_title, selectedIndex: currentIndex, data: data.images }) } }} asChild>
-        <TouchableOpacity accessibilityLabel="View full wallpaper">
+        <TouchableOpacity accessibilityLabel={`View full wallpaper of ${data.images[currentIndex].original_file_name.replace(/_/g, " ").replace(".jpg", "")}`}>
           <Animated.View style={{ opacity: fadeAnim, transform: [{ scale: scaleAnim }] }}>
             <View style={{ position: "relative", width: "100%", height: 500, overflow: "hidden" }}>
               <Image contentFit="cover" cachePolicy="disk" source={{ uri: currentImage }} onLoad={() => setLoading(false)} onLoadStart={() => setLoading(true)} alt={`WallpaperImage${currentImage}`} style={{ width: "100%", height: "100%" }} />
               {loading && (
                 <View style={[StyleSheet.absoluteFill, { backgroundColor: colorize("#171717", 0.2) }]} className="flex items-center justify-center">
-                  <ActivityIndicator size="large" color={colorize("#BE3025", 1.0)} accessibilityLabel="Loading image" />
+                  <ActivityIndicator size="large" color={colorize("#AF3C2E", 1.0)} accessibilityLabel="Loading image" />
                 </View>
               )}
               <View style={{ top: hp(1), left: wp(2), borderRadius: wp(3), paddingVertical: hp(0.5), position: "absolute", flexDirection: "row", alignItems: "center", paddingHorizontal: wp(1.5), backgroundColor: colorize("#171717", 0.6) }}>
-                <MaterialCommunityIcons name="movie-filter" size={wp(5)} color={colorize("#BE3025", 1.0)} style={{ marginRight: wp(2) }} />
+                <MaterialCommunityIcons name="movie-filter" size={wp(5)} color={colorize("#AF3C2E", 1.0)} style={{ marginRight: wp(2) }} />
                 <Text style={{ color: "#F4F4F5", fontSize: wp(3), fontFamily: "Lobster" }}>Freemium (Watch an Ad)</Text>
               </View>
               <View style={{ position: "absolute", bottom: -2, left: 0, right: 0 }}>
@@ -517,11 +521,11 @@ const HeaderComponent: FC<HeaderComponentProps> = memo(({ selectedCategory, sele
       <View style={{ marginTop: hp(2), paddingRight: wp(1), paddingLeft: wp(1), paddingBottom: hp(1) }}>
         <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
           <Animated.View style={leftIconStyle}>
-            <FontAwesome5 name="caret-left" size={wp(6)} color={colorize("#BE3025", 1.0)} />
+            <FontAwesome5 name="caret-left" size={wp(6)} color={colorize("#AF3C2E", 1.0)} />
           </Animated.View>
           <Text style={{ fontFamily: "Lobster", fontSize: wp(5), color: colorize("#F4F4F5", 1.0), textAlign: "center", marginHorizontal: wp(3) }}>Explore AI Generated Wallpapers</Text>
           <Animated.View style={rightIconStyle}>
-            <FontAwesome5 name="caret-right" size={wp(6)} color={colorize("#BE3025", 1.0)} />
+            <FontAwesome5 name="caret-right" size={wp(6)} color={colorize("#AF3C2E", 1.0)} />
           </Animated.View>
         </View>
         <View style={{ flexDirection: "row", justifyContent: "center", marginTop: hp(2) }}>
@@ -683,7 +687,7 @@ export default function HomePage(): JSX.Element {
   if (isLoading) {
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: colorize("#171717", 1.0) }}>
-        <ActivityIndicator size="large" color={colorize("#BE3025", 1.0)} accessibilityLabel="Loading content" />
+        <ActivityIndicator size="large" color={colorize("#AF3C2E", 1.0)} accessibilityLabel="Loading content" />
       </View>
     );
   }
