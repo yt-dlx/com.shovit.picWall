@@ -4,7 +4,7 @@ import readline from "readline";
 import OpenAI from "openai";
 import dotenv from "dotenv";
 import fs from "fs";
-const model = "gpt-4o";
+const model = "deepseek-r1";
 dotenv.config({ path: "./env" });
 const filename = `${model}.json`;
 const openai = new OpenAI({ apiKey: process.env.OAPI, baseURL: "https://api.sree.shop/v1" });
@@ -47,3 +47,11 @@ function loadContext(filename) {
 })();
 // ================================================================
 // ================================================================
+// gpt-4o
+// gpt-4o-2024-05-13
+// claude-3-5-sonnet
+// claude-3-5-sonnet-20240620
+// deepseek-r1
+// deepseek-v3
+// deepseek-ai/DeepSeek-R1-Distill-Qwen-32B
+// Meta-Llama-3.3-70B-Instruct-Turbo
