@@ -1,4 +1,4 @@
-// src/utils/useVersionCheck.tsx
+// client/src/utils/useVersionCheck.tsx
 import Constants from "expo-constants";
 import { useState, useEffect, useMemo } from "react";
 /* ============================================================================================================================== */

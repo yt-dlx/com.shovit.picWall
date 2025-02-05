@@ -1,4 +1,4 @@
-// src/utils/static.ts
+// client/src/utils/static.ts
 type Category = {
   base: string;
   names: string[];

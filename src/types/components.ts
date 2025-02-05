@@ -1,4 +1,4 @@
-// src/types/components.ts
+// client/src/types/components.ts
 import { ImageMetadata, EnvironmentEntry } from "./database";
 type RGB = `rgb(${number}, ${number}, ${number})`;
 type RGBA = `rgba(${number}, ${number}, ${number}, ${number})`;
