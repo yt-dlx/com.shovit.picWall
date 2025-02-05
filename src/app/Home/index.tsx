@@ -677,8 +677,8 @@ export default function HomePage(): JSX.Element {
     if (searchQuery) {
       return (
         <View style={{ padding: 20, alignItems: "center" }}>
-          <Text style={{ fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0), fontSize: 16, textAlign: "center" }}>No images found matching &quot;{searchQuery}&quot;.</Text>
-          <Text style={{ fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0), fontSize: 16, textAlign: "center" }}>You may request images from &quot;Account&quot; Section.</Text>
+          <Text style={{ fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0), fontSize: 16, textAlign: "center" }}>No images found matching "{searchQuery}".</Text>
+          <Text style={{ fontFamily: "Markazi", color: colorize("#F4F4F5", 1.0), fontSize: 16, textAlign: "center" }}>You may request images from "Account" Section.</Text>
         </View>
       );
     }
