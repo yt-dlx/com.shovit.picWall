@@ -577,7 +577,7 @@ export default function HomePage(): JSX.Element {
         setShuffleDB(newShuffleDB);
       } catch (error) {
         console.error("Failed to load data:", error);
-        setError("Failed to load wallpapers. Please try again later.");
+        setError("Hmm! Seems like the Application is either not official or the Server is not responding. Please Updated and Try again!");
       } finally {
         setIsLoading(false);
       }

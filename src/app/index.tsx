@@ -16,6 +16,7 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-nat
 import Animated, { useSharedValue, useAnimatedStyle, withTiming, withRepeat, withSequence, withSpring, Easing, FadeIn, FadeInDown, withDelay } from "react-native-reanimated";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
+
 const ScrollingSlot = memo<ScrollingSlotProps>(({ images, delay }) => {
   const imageHeight = hp("30%");
   const scale = useSharedValue(0.8);
@@ -41,6 +42,7 @@ const ScrollingSlot = memo<ScrollingSlotProps>(({ images, delay }) => {
 ScrollingSlot.displayName = "ScrollingSlot";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
+
 const AnimatedTitle = memo(() => {
   const scale = useSharedValue(0.5);
   useEffect(() => {
@@ -64,6 +66,7 @@ const AnimatedTitle = memo(() => {
 AnimatedTitle.displayName = "AnimatedTitle";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
+
 const EntryPage = memo(() => {
   const router = useRouter();
   const { updateRequired } = useVersionCheck();
