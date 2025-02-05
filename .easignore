@@ -1,0 +1,8 @@
+ios
+core
+.env
+.expo
+.venv
+server
+android
+node_modules
