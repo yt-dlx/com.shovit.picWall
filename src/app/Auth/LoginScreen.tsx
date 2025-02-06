@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
 import { View, Text, TextInput, Button, Alert } from "react-native";
-import * as WebBrowser from "expo-web-browser";
 import * as Google from "expo-auth-session/providers/google";
+import * as WebBrowser from "expo-web-browser";
 import { ResponseType } from "expo-auth-session";
-import * as Crypto from "expo-crypto";
+import React, { useState, useEffect } from "react";
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -30,6 +29,10 @@ const LoginScreen = () => {
   const handleGoogleLogin = async (idToken: string) => {
     if (!idToken) {
       Alert.alert("Google Login Failed", "Could not retrieve Google ID token");
+      return;
+    }
+    if (typeof idToken !== "string") {
+      Alert.alert("Google Login Failed", "Invalid Google ID token");
       return;
     }
 
