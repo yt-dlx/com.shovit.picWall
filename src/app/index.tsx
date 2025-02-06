@@ -1,10 +1,10 @@
 // client/src/app/index.tsx
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
-import { Link, useRouter } from "expo-router";
 import { Image } from "expo-image";
 import colorize from "@/utils/colorize";
 import imageSets from "@/utils/static";
+import { useRouter } from "expo-router";
 import Footer from "@/components/Footer";
 import { memo, useEffect, useMemo } from "react";
 import { LinearGradient } from "expo-linear-gradient";
@@ -12,11 +12,11 @@ import { ScrollingSlotProps } from "@/types/components";
 import { Text, View, TouchableOpacity } from "react-native";
 import { useVersionCheck } from "@/hooks/useVersionCheck";
 import { AntDesign, FontAwesome5 } from "@expo/vector-icons";
+import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 import Animated, { useSharedValue, useAnimatedStyle, withTiming, withRepeat, withSequence, withSpring, Easing, FadeIn, FadeInDown, withDelay } from "react-native-reanimated";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
-
 const ScrollingSlot = memo<ScrollingSlotProps>(({ images, delay }) => {
   const imageHeight = hp("30%");
   const scale = useSharedValue(0.8);
@@ -42,7 +42,6 @@ const ScrollingSlot = memo<ScrollingSlotProps>(({ images, delay }) => {
 ScrollingSlot.displayName = "ScrollingSlot";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
-
 const AnimatedTitle = memo(() => {
   const scale = useSharedValue(0.5);
   useEffect(() => {
@@ -66,7 +65,50 @@ const AnimatedTitle = memo(() => {
 AnimatedTitle.displayName = "AnimatedTitle";
 /* ============================================================================================================================== */
 /* ============================================================================================================================== */
-
+const GoogleLoginButton = memo(() => {
+  useEffect(() => {
+    const initGoogleSignIn = async () => {
+      try {
+        GoogleSignin.configure({ webClientId: "745094385502-i0alkbk8g115s3jeue3iqqtnagkqhgfr.apps.googleusercontent.com", scopes: ["profile", "email"] });
+        console.log("Google Sign-In configured");
+      } catch (error) {
+        console.error("Google Sign-In configuration error:", error);
+      }
+    };
+    initGoogleSignIn();
+  }, []);
+  const handleGoogleLogin = async () => {
+    try {
+      await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
+      const userInfo = await GoogleSignin.signIn();
+      console.log("Google Sign-In successful", userInfo);
+    } catch (error: any) {
+      if (error.code === 12) console.log("Google Sign-In cancelled");
+      else console.error("Google Sign-In error:", error);
+    }
+  };
+  const buttonScale = useSharedValue(1);
+  const buttonRotate = useSharedValue(0);
+  const onPressIn = () => {
+    buttonScale.value = withSpring(0.94, { damping: 15, stiffness: 90 });
+    buttonRotate.value = withSpring(-2, { damping: 15, stiffness: 90 });
+  };
+  const onPressOut = () => {
+    buttonScale.value = withSpring(1, { damping: 15, stiffness: 90 });
+    buttonRotate.value = withSpring(0, { damping: 15, stiffness: 90 });
+  };
+  return (
+    <TouchableOpacity onPress={handleGoogleLogin} onPressIn={onPressIn} onPressOut={onPressOut} style={{ marginTop: hp("18%"), borderRadius: wp("12.5%"), overflow: "hidden" }}>
+      <View style={{ paddingVertical: hp("2%"), flexDirection: "row", alignItems: "center", justifyContent: "center", backgroundColor: colorize("#F4F4F5", 1.0), gap: wp("2%") }}>
+        <FontAwesome5 name="google" size={wp("8%")} color={colorize("#171717", 1.0)} />
+        <Text style={{ fontSize: wp("5%"), fontFamily: "Lobster", color: colorize("#171717", 1.0) }}> Continue with Google </Text>
+      </View>
+    </TouchableOpacity>
+  );
+});
+GoogleLoginButton.displayName = "GoogleLoginButton";
+/* ============================================================================================================================== */
+/* ============================================================================================================================== */
 const EntryPage = memo(() => {
   const router = useRouter();
   const { updateRequired } = useVersionCheck();
@@ -76,20 +118,6 @@ const EntryPage = memo(() => {
       return;
     }
   }, [router, updateRequired]);
-  const buttonGlow = useSharedValue(0);
-  const buttonScale = useSharedValue(1);
-  const buttonRotate = useSharedValue(0);
-  useEffect(() => {
-    buttonGlow.value = withRepeat(withSequence(withTiming(1, { duration: 2000 }), withTiming(0, { duration: 2000 })), -1, true);
-  }, [buttonGlow]);
-  const onPressIn = () => {
-    buttonScale.value = withSpring(0.94, { damping: 15, stiffness: 90 });
-    buttonRotate.value = withSpring(-2, { damping: 15, stiffness: 90 });
-  };
-  const onPressOut = () => {
-    buttonScale.value = withSpring(1, { damping: 15, stiffness: 90 });
-    buttonRotate.value = withSpring(0, { damping: 15, stiffness: 90 });
-  };
   return (
     <View style={{ flex: 1, backgroundColor: colorize("#171717", 1.0) }}>
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center", position: "relative" }}>
@@ -119,14 +147,7 @@ const EntryPage = memo(() => {
                   </View>
                 </Animated.View>
               </View>
-              <Link href="./Home" asChild>
-                <TouchableOpacity onPressIn={onPressIn} onPressOut={onPressOut} style={{ marginTop: hp("18%"), borderRadius: wp("12.5%"), overflow: "hidden" }}>
-                  <View style={{ paddingVertical: hp("2%"), flexDirection: "row", alignItems: "center", justifyContent: "center", backgroundColor: colorize("#F4F4F5", 1.0), gap: wp("2%") }}>
-                    <FontAwesome5 name="camera-retro" size={wp("8%")} color={colorize("#171717", 1.0)} />
-                    <Text style={{ fontSize: wp("5%"), fontFamily: "Lobster", color: colorize("#171717", 1.0) }}> Let's Explore ... </Text>
-                  </View>
-                </TouchableOpacity>
-              </Link>
+              <GoogleLoginButton />
               <Animated.View entering={FadeIn.delay(1200).duration(1500)} style={{ marginTop: hp("2%"), paddingHorizontal: wp("10%"), alignItems: "center" }}>
                 <Text style={{ fontFamily: "Markazi", color: colorize("#F4F4F5", 0.9), fontSize: wp("3%"), maxWidth: wp("65%") }}>
                   Transform your screens with stunning, AI-curated wallpapers tailored to your style. Explore breathtaking collections, share your favorite moments, and discover awe-inspiring photographs from around the globe. Start your journey
