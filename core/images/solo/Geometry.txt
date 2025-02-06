@@ -7,90 +7,13 @@
 ### Shape
 ### Triangle
 ### Grid
-### Reflection  
-Water Mirror: Geometry Design, Depict A Tranquil Scene Reflected Perfectly On The Surface Of Water
-Self-Awareness: Geometry Design, Show A Mirror Image That Captures The Essence Of Self-Reflection
-Natural Symmetry: Geometry Design, Illustrate The Reflection Of Mountains And Trees Across A Still Lake
-Light Play: Geometry Design, Create A Play Of Light And Shadow Reflecting Off A Surface
-Inward Represent Introspection Or Thought Through A Mirrored Image
-Sky And Earth: Geometry Design, Visualize The Reflection Of The Sky In A Serene Pond Or Lake
-Opposite Sides: Geometry Design, Show Two Identical Halves Reflected Across A Central Line
-Geometric Symmetry: Geometry Design, Illustrate Geometric Shapes Reflected To Create A Balanced Composition
-Floating Mirror: Geometry Design, Create A Scene Where Reflections Are Distorted By Floating Objects
-Surface Distortion: Geometry Design, Depict Reflections That Change As The Surface They Rest On Distorts.
-
-### Texture  
-Earth’S Surface: Geometry Design, Illustrate The Rough Texture Of A Rocky Surface In Nature
-Fuzzy Fabric: Geometry Design, Show A Fabric With A Soft, Fuzzy Texture Like Wool Or Velvet
-Water Ripples: Geometry Design, Visualize The Texture Of Ripples On The Surface Of Water
-Bark And Wood: Geometry Design, Capture The Tactile Texture Of Tree Bark And Wood Grains
-Stone Path: Geometry Design, Show A Textured Stone Path That Leads Through A Forest Or Garden
-Rough Terrain: Geometry Design, Illustrate A Rugged, Uneven Terrain With Distinct Textures Of Rocks And Dirt
-Woven Strands: Geometry Design, Depict The Intricate Texture Of Woven Materials Like Rope Or Fabric
-Smooth Glass: Geometry Design, Visualize A Smooth, Glass-Like Surface Reflecting Light In Soft Waves
-Scaly Skin: Geometry Design, Show The Rough, Scaly Texture Of An Animal's Skin, Like A Reptile
-Abstract Patterns: Geometry Design, Create An Abstract Design Where Different Textures Blend Together Seamlessly.
-
-### Path  
-Journey Begins: Geometry Design, Illustrate The Start Of A Path That Leads Into The Unknown
-Winding Road: Geometry Design, Depict A Curving Road Snaking Through A Mountain Landscape
-Light’S Show The Journey Of Light Moving Across Different Surfaces
-Through Visualize A Narrow Dirt Path Winding Through Dense Forest
-Bridge To Nowhere: Geometry Design, Create An Image Of A Path Or Bridge Leading Into An Empty Space
-Endless Corridor: Geometry Design, Depict An Endless Hallway Stretching Into The Horizon
-Crossing Roads: Geometry Design, Illustrate Two Paths Crossing Each Other, Representing Choices
-Quiet Trail: Geometry Design, Visualize A Tranquil Path Through The Calm Woods At Dusk
-Narrow Passage: Geometry Design, Show A Narrow Path Carved Between Tall Cliffs Or Walls
-Dual Direction: Geometry Design, Create A Scene With Two Diverging Paths Representing Different Directions.
-
-### Horizon  
-Sunset View: Geometry Design, Capture The Sun Setting On The Horizon, Bathing The Sky In Color
-Endless Illustrate A Vast, Open Sky Meeting The Land At The Horizon
-Seaside Dawn: Geometry Design, Show The Horizon Where The Ocean Meets The Sky At The Break Of Dawn
-Expanding Space: Geometry Design, Depict A Scene Where The Horizon Line Extends Infinitely Into The Distance
-Day To Night: Geometry Design, Visualize The Transition Of Time As The Horizon Shifts From Day To Night
-Mountain Range: Geometry Design, Show Distant Mountains Creating A Dramatic Horizon In The Landscape
-Calm Depict A Peaceful Horizon Over A Calm And Expansive Ocean
-Into The Void: Geometry Design, Create A Scene Where The Horizon Fades Into Darkness, Evoking Mystery
-Cloudscape: Geometry Design, Illustrate A Sky Filled With Clouds Meeting The Horizon Line
-Crossroads Ahead: Geometry Design, Depict A Symbolic Horizon Line Where Different Roads Or Paths Meet.
-
-### Radius  
-Expanding Circle: Geometry Design, Show A Circle Expanding Outward, Representing Growth And Reach
-Center Point: Geometry Design, Illustrate A Point At The Center Of A Circle, Where Everything Radiates From
-Circular Expansion: Geometry Design, Create An Image Of Concentric Circles Growing Wider As They Move Outward
-Rippling Water: Geometry Design, Visualize The Expansion Of Ripples Moving Outward From A Single Point
-Light's Reach: Geometry Design, Depict How Light Radiates Outward In A Circular Form, Illuminating Its Surroundings
-Force Field: Geometry Design, Illustrate A Spherical Radius Expanding Outward As A Protective Force Field
-Infinite Space: Geometry Design, Visualize An Infinite Radial Distance From A Central Source
-Circular Motion: Geometry Design, Show An Object Moving Around A Circular Path, Defined By A Radius
-Expanding Universe: Geometry Design, Depict The Expanding Universe With Galaxies Moving Outward From A Central Point
-Boundaries Defined: Geometry Design, Illustrate The Invisible Boundary Created By The Radius Around An Object.
-
+### Reflection
+### Texture
+### Path
+### Horizon
+### Radius
 ### Symmetry  
-Mirror Image: Geometry Design, Create A Design Where One Side Perfectly Mirrors The Other
-Geometric Precision: Geometry Design, Show A Series Of Geometric Shapes Arranged Symmetrically
-Nature's Balance: Geometry Design, Depict The Symmetrical Growth Of A Plant Or Tree
-Architectural Design: Geometry Design, Visualize A Building With Perfectly Symmetrical Elements
-Floral Harmony: Geometry Design, Illustrate The Symmetry Found In The Petals Of A Flower
-Balanced Reflection: Geometry Design, Show The Reflection Of An Object Mirrored Symmetrically On Water
-Wings Spread: Geometry Design, Depict The Symmetrical Spread Of A Bird’S Wings In Flight
-Radial Balance: Geometry Design, Create A Radial Pattern That Demonstrates Perfect Symmetry
-Calm Equilibrium: Geometry Design, Visualize Symmetrical Objects Placed In Perfect Balance To Evoke Calmness
-Mathematical Proportion: Geometry Design, Illustrate The Concept Of Symmetry Found In Mathematical Proportions.
-
 ### Spiral  
-Infinite Growth: Geometry Design, Depict A Spiral Expanding Infinitely In Both Directions
-Shell Formation: Geometry Design, Visualize The Spiral Growth Of A Seashell
-Energy Flow: Geometry Design, Illustrate A Continuous Spiral Of Energy Flowing Outward
-Cosmic Dance: Geometry Design, Show The Spiral Motion Of Galaxies Moving Through Space
-Fibonacci Sequence: Geometry Design, Create A Spiral Based On The Natural Fibonacci Sequence Found In Nature
-Swirling Vortex: Geometry Design, Depict The Twisting Motion Of A Vortex In Water Or Air
-Plant Growth: Geometry Design, Show The Spiral Growth Pattern Of Plants, Like Sunflower Seeds Or Vines
-Concentric Circles: Geometry Design, Illustrate The Gradual Tightening Of Concentric Spirals
-Nautilus Shell: Geometry Design, Visualize The Perfect Spiral Shape Of A Nautilus Shell
-Whirlwind Motion: Geometry Design, Depict A Powerful Whirlwind Spiraling Up Into The Sky.
-
 ### Vertex  
 Central Point: Geometry Design, Illustrate A Central Vertex From Which Lines Radiate Outward
 Angle Formation: Geometry Design, Depict A Sharp Angle Created By Two Lines Meeting At A Vertex
@@ -101,7 +24,7 @@ Star Shape: Geometry Design, Create A Star Formed By Multiple Lines Meeting At A
 Polygonal Grid: Geometry Design, Show A Grid Of Polygons With Vertices Defining The Structure
 Angular Balance: Geometry Design, Depict An Angular Formation Where The Vertex Creates A Sense Of Balance
 Triangular Connection: Geometry Design, Illustrate Three Vertices Connecting To Form A Perfect Triangle
-Converging Paths: Geometry Design, Visualize Multiple Paths Or Lines Converging At A Single Vertex.
+Converging Paths: Geometry Design, Visualize Multiple Paths Or Lines Converging At A Single Vertex
 
 ### Angle  
 Sharp Corner: Geometry Design, Illustrate The Sharp Corner Formed By Two Intersecting Lines
@@ -113,7 +36,7 @@ Reflected Light: Geometry Design, Show The Angle At Which Light Reflects Off A S
 Geometric Precision: Geometry Design, Depict The Perfect Alignment Of Angles Within A Geometric Design
 Expanding Lines: Geometry Design, Create An Image Where Lines Diverge At A Sharp Angle, Expanding Outward
 Intersection Geometry: Geometry Design, Visualize The Angles Formed By Two Lines Intersecting At A Vertex
-Dynamic Balance: Geometry Design, Illustrate How Different Angles Can Create Dynamic Balance Within A Composition.
+Dynamic Balance: Geometry Design, Illustrate How Different Angles Can Create Dynamic Balance Within A Composition
 
 ### Harmony  
 Nature’S Rhythm: Geometry Design, Show The Harmony Found In The Flow Of Nature, Like The Movement Of Wind Through Trees
@@ -125,7 +48,7 @@ Stillness And Motion: Geometry Design, Show The Balance Of Motion And Stillness 
 Yin And Yang: Geometry Design, Illustrate The Balance Of Opposing Elements Forming A Harmonious Whole
 Visual Symmetry: Geometry Design, Create A Visually Symmetrical Design That Feels Peaceful And Harmonious
 Rhythmic Design: Geometry Design, Visualize A Rhythmic Pattern Of Elements Working Together In Harmony
-Tranquil Landscape: Geometry Design, Depict A Serene Landscape With Elements Perfectly Balanced And Harmonious.
+Tranquil Landscape: Geometry Design, Depict A Serene Landscape With Elements Perfectly Balanced And Harmonious
 
 ### Fractal  
 Infinite Detail: Geometry Design, Show The Intricate, Repeating Details In A Fractal Pattern That Never Ends
@@ -137,7 +60,7 @@ Geometric Complexity: Geometry Design, Illustrate A Fractal With Complex Geometr
 Natural Landscapes: Geometry Design, Show How Fractal Geometry Can Be Found In Natural Landscapes, Like Coastlines Or Mountains
 Snowflake Structure: Geometry Design, Create A Fractal Pattern Representing The Intricate Symmetry Of A Snowflake
 Infinite Convergence: Geometry Design, Depict An Endless Convergence Of Lines Or Shapes Forming A Fractal Structure
-Growth And Repetition: Geometry Design, Visualize The Repeated Growth Patterns In A Fractal Design.
+Growth And Repetition: Geometry Design, Visualize The Repeated Growth Patterns In A Fractal Design
 
 ### Growth  
 Organic Form: Geometry Design, Illustrate The Organic Growth Of A Plant Or Tree From A Seed To Maturity
@@ -149,7 +72,7 @@ Spiral Motion: Geometry Design, Illustrate The Spiral Growth Pattern Of Certain 
 Urban Expansion: Geometry Design, Depict The Growth Of A City With New Roads, Buildings, And Infrastructure Expanding Outward
 Expanding Universe: Geometry Design, Show The Growth Of The Universe Through Expanding Galaxies And Stars
 Circular Formation: Geometry Design, Illustrate Growth That Moves Outward In Circular Patterns
-New Beginnings: Geometry Design, Visualize The Start Of Growth, Such As A Sprout Pushing Through The Soil.
+New Beginnings: Geometry Design, Visualize The Start Of Growth, Such As A Sprout Pushing Through The Soil
 
 ### Tiling  
 Perfect Alignment: Geometry Design, Create A Tiled Pattern With Geometric Shapes Perfectly Aligned
@@ -161,7 +84,7 @@ Dynamic Arrangement: Geometry Design, Illustrate A Dynamic Arrangement Of Tiles 
 Intricate Details: Geometry Design, Show The Intricate Detailing In A Tiled Surface, Like A Floor Or Wall
 Geometric Harmony: Geometry Design, Visualize A Harmonious, Balanced Design Built From Repeating Tiles
 Organic Flow: Geometry Design, Depict Tiles Arranged Organically, Flowing With The Natural Curves Of The Space
-Fractal Repetition: Geometry Design, Show A Fractal Design Created By Repetitive Tiling That Grows And Shifts With Scale.
+Fractal Repetition: Geometry Design, Show A Fractal Design Created By Repetitive Tiling That Grows And Shifts With Scale
 
 ### Light  
 Soft Glow: Geometry Design, Illustrate The Soft, Diffused Glow Of Light Shining Through Clouds
@@ -173,7 +96,7 @@ Play Of Shadows: Geometry Design, Show How Light Creates Patterns Of Shadows In 
 Floating Lanterns: Geometry Design, Illustrate Floating Lanterns Casting Soft, Warm Light Across A Serene Night Sky
 Spectrum Shift: Geometry Design, Create A Visual Of Light Shifting Through The Colors Of The Spectrum
 Horizon Glow: Geometry Design, Depict The Light That Emerges From The Horizon At Sunset Or Sunrise
-Radiating Circles: Geometry Design, Show Light Radiating Outward In Concentric Circles, Creating A Sense Of Depth.
+Radiating Circles: Geometry Design, Show Light Radiating Outward In Concentric Circles, Creating A Sense Of Depth
 
 ### Layers  
 Hidden Depths: Geometry Design, Illustrate A Scene Where Each Layer Reveals A New Depth Or Dimension
@@ -185,7 +108,7 @@ Natural Textures: Geometry Design, Show The Layers Of Texture Found In Natural F
 Light And Shadow: Geometry Design, Depict Layers Of Light And Shadow Interacting Across A Surface
 Growing Complexity: Geometry Design, Create An Image Where Each Layer Adds Complexity To A Simple Shape Or Pattern
 Geometric Depth: Geometry Design, Illustrate A Geometric Design With Stacked Layers, Adding Depth And Perspective
-The Earth’S Surface: Geometry Design, Show Layers Of Natural Landforms, Such As Soil, Rock, And Vegetation, Stacked Together.
+The Earth’S Surface: Geometry Design, Show Layers Of Natural Landforms, Such As Soil, Rock, And Vegetation, Stacked Together
 
 ### Balance  
 Equal Weight: Geometry Design, Illustrate Two Opposing Forces Balanced Against Each Other, Maintaining Equilibrium
@@ -197,7 +120,7 @@ Stability And Motion: Geometry Design, Show The Contrast Between Stillness And M
 Weight Distribution: Geometry Design, Create An Image Of Objects Balanced Through Their Weight Distribution Across A Surface
 Yin-Yang Design: Geometry Design, Illustrate The Perfect Balance Of Opposite Forces Using The Yin-Yang Symbol
 Perfect Proportions: Geometry Design, Visualize An Object Balanced Through Perfect Proportions And Measurements
-Inner Depict Balance In Nature Or Human Life, Representing A Sense Of Inner Calm.
+Inner Depict Balance In Nature Or Human Life, Representing A Sense Of Inner Calm
 
 ### Pathway  
 Light Illustrate A Glowing Path Leading Into The Distance, Guided By Light
@@ -209,7 +132,7 @@ Urban Streets: Geometry Design, Illustrate The Busy Streets Of A City, Forming A
 Circular Route: Geometry Design, Show A Circular Pathway That Leads You Back To Where You Started
 Wild Wander: Geometry Design, Create An Image Of A Winding, Untamed Path Through Wild Terrain
 Infinite Road: Geometry Design, Depict A Long, Straight Road That Appears To Go On Endlessly, Symbolizing Life’S Journey
-Through The Fog: Geometry Design, Visualize A Mysterious Path Leading Through A Dense Fog, Adding An Element Of Uncertainty.
+Through The Fog: Geometry Design, Visualize A Mysterious Path Leading Through A Dense Fog, Adding An Element Of Uncertainty
 
 ### Geometry  
 Basic Shapes: Geometry Design, Illustrate The Fundamental Geometric Shapes, Such As Squares, Triangles, And Circles, Interacting
@@ -221,7 +144,7 @@ Curved Lines: Geometry Design, Visualize A Composition Made Entirely Of Flowing,
 Shape Transformation: Geometry Design, Show How Shapes Can Transform And Evolve Through A Series Of Geometric Processes
 Spiraling Design: Geometry Design, Illustrate A Series Of Geometric Shapes Forming A Spiral Pattern
 Cellular Patterns: Geometry Design, Depict Geometric Shapes Forming Intricate Cellular Patterns Like Honeycombs
-Mathematical Beauty: Geometry Design, Show How Geometry Can Create Visually Stunning, Balanced Forms.
+Mathematical Beauty: Geometry Design, Show How Geometry Can Create Visually Stunning, Balanced Forms
 
 ### Space  
 Infinite Depth: Geometry Design, Visualize An Infinite Expanse Stretching Into The Distance, With No Clear Boundary
@@ -233,7 +156,7 @@ Geometric Universe: Geometry Design, Visualize Space As A Geometric Structure, W
 Atmospheric Layers: Geometry Design, Depict The Different Layers Of Earth’S Atmosphere, Stretching Into Space
 Cosmic Balance: Geometry Design, Show How The Forces In Space, Like Gravity, Create A Delicate Balance Between Objects
 Starry Night: Geometry Design, Create A Peaceful Night Sky Filled With Stars, Evoking The Vastness Of Space
-Between Worlds: Geometry Design, Visualize The Space Between Two Distinct Celestial Objects, Creating A Sense Of Emptiness.
+Between Worlds: Geometry Design, Visualize The Space Between Two Distinct Celestial Objects, Creating A Sense Of Emptiness
 
 ### Pattern  
 Repeating Lines: Geometry Design, Illustrate A Design Made From Lines That Repeat In A Consistent Rhythm
@@ -245,7 +168,7 @@ Circular Arrangement: Geometry Design, Create A Design Where Patterns Radiate Ou
 Color Blocks: Geometry Design, Show A Pattern Of Colorful Blocks Repeating In A Structured Formation
 Tiling Effect: Geometry Design, Illustrate How Tiles Can Create A Repeating, Harmonious Pattern On A Surface
 Interwoven Design: Geometry Design, Depict Interwoven Patterns, Where Different Elements Fit Together Seamlessly
-Fractal Repetition: Geometry Design, Visualize A Fractal Pattern That Repeats Itself Infinitely In Smaller And Smaller Scales.
+Fractal Repetition: Geometry Design, Visualize A Fractal Pattern That Repeats Itself Infinitely In Smaller And Smaller Scales
 
 ### Gridlock  
 Urban Congestion: Geometry Design, Illustrate The Complexity Of Traffic And Buildings In A Gridlocked City
@@ -257,7 +180,7 @@ Static Motion: Geometry Design, Depict The Stagnation Caused By A Gridlock, Wher
 Overlapping Lines: Geometry Design, Show The Overlap Of Multiple Lines That Form A Complex, Gridlocked System
 Converging Forces: Geometry Design, Illustrate Multiple Forces Or Elements Converging Into A Single Gridlocked Space
 Imposed Limitations: Geometry Design, Visualize Limitations Created By A Grid Or Structure That Prevents Free Movement
-Stopped Flow: Geometry Design, Depict The Cessation Of Flow Within A System Due To Gridlock.
+Stopped Flow: Geometry Design, Depict The Cessation Of Flow Within A System Due To Gridlock
 
 ### Expansion  
 Expanding Space: Geometry Design, Show How Space Expands Outward, With Objects Growing Larger And More Distant
@@ -269,7 +192,7 @@ Shifting Boundaries: Geometry Design, Create An Image Of Boundaries Expanding, C
 Open Horizons: Geometry Design, Illustrate The Feeling Of Expansion As Horizons Open Up And Stretch Outward
 Cellular Growth: Geometry Design, Visualize The Expansion Of Cells As They Multiply And Grow
 Energy Flow: Geometry Design, Show Energy Expanding And Flowing Through A Series Of Connected Pathways
-Infinite Depth: Geometry Design, Depict A Scene Where Depth Continues To Expand And Stretch Into Infinity.
+Infinite Depth: Geometry Design, Depict A Scene Where Depth Continues To Expand And Stretch Into Infinity
 
 ### Reflection  
 Mirrored Surface: Geometry Design, Visualize A Perfect Reflection Of Objects On A Calm, Still Surface
@@ -281,7 +204,7 @@ Quiet Pond: Geometry Design, Illustrate The Peaceful Reflection Of Surroundings 
 Fragmented Image: Geometry Design, Show A Fractured Reflection Where Elements Are Distorted Or Broken
 Symmetrical Design: Geometry Design, Create A Symmetrical Design Reflected In A Still Surface, Like A Lake Or Mirror
 Surreal World: Geometry Design, Depict An Alternate Reality Reflected In A Surface, Creating A Sense Of Surrealism
-Shifting Perspectives: Geometry Design, Show Reflections That Shift And Change Based On Perspective Or Movement.
+Shifting Perspectives: Geometry Design, Show Reflections That Shift And Change Based On Perspective Or Movement
 
 ### Organic  
 Flowing Curves: Geometry Design, Illustrate The Soft, Natural Curves Found In Organic Forms Like Plants Or Animals
@@ -293,7 +216,7 @@ Fluid Shapes: Geometry Design, Depict Fluid, Shapeless Forms Flowing Through Spa
 Water’S Movement: Geometry Design, Illustrate The Movement Of Water Through A Riverbed Or Ocean, With Natural Organic Flow
 Leaf Veins: Geometry Design, Visualize The Intricate Veins And Shapes Found Within The Leaves Of A Plant
 Animal Forms: Geometry Design, Depict The Natural, Flowing Shapes Of Animal Bodies, Like A Bird's Wings Or A Fish's Fins
-Nature’S Harmony: Geometry Design, Show The Harmonious Balance Found In Natural Environments, Where Everything Has A Place.
+Nature’S Harmony: Geometry Design, Show The Harmonious Balance Found In Natural Environments, Where Everything Has A Place
 
 ### Intersection  
 Crossroads: Geometry Design, Illustrate Two Roads Intersecting, Symbolizing Choices And Opportunities
@@ -305,7 +228,7 @@ Balance Of Opposites: Geometry Design, Show How Opposites Intersect To Create A 
 Complex Network: Geometry Design, Visualize A Complex Network Of Roads Or Lines Intersecting In A Grid-Like Pattern
 Connection Point: Geometry Design, Depict The Connection Where Different Elements, Such As Colors Or Shapes, Intersect
 Elemental Fusion: Geometry Design, Show The Intersection Of The Four Elements—Earth, Air, Water, And Fire—Coming Together
-Time And Space: Geometry Design, Illustrate The Intersection Of Time And Space, Where Moments And Distances Converge.
+Time And Space: Geometry Design, Illustrate The Intersection Of Time And Space, Where Moments And Distances Converge
 
 ### Hexagon  
 Geometric Precision: Geometry Design, Show A Hexagonal Grid Where All The Angles And Shapes Fit Perfectly
@@ -317,7 +240,7 @@ Expanding Form: Geometry Design, Illustrate A Series Of Hexagons Expanding Outwa
 Infinite Grid: Geometry Design, Create An Image Of A Hexagonal Grid That Stretches Infinitely In All Directions
 Organic Growth: Geometry Design, Depict The Organic Growth Of Cells Or Organisms In A Hexagonal Pattern
 Puzzle Pieces: Geometry Design, Visualize A Puzzle Made From Interlocking Hexagonal Pieces
-Cosmic Harmony: Geometry Design, Show How The Shape Of A Hexagon Can Symbolize Balance And Harmony In The Universe.
+Cosmic Harmony: Geometry Design, Show How The Shape Of A Hexagon Can Symbolize Balance And Harmony In The Universe
 
 ### Cube  
 Solid Structure: Geometry Design, Depict A 3d Cube As The Foundation Of A Strong, Solid Structure
@@ -329,7 +252,7 @@ Urban Grid: Geometry Design, Illustrate A City Made Up Of Cube-Like Buildings, F
 Repeating Blocks: Geometry Design, Show Cubes Arranged In A Repeating Pattern That Stretches Outward
 Infinite Structure: Geometry Design, Depict An Infinite Series Of Cubes Stacked On Top Of One Another, Expanding Infinitely
 Perspective Shift: Geometry Design, Illustrate How Cubes Look Different From Various Perspectives—Flat, Angled, Or 3d
-Transparent Form: Geometry Design, Visualize A Transparent Cube With Visible Edges And An Ethereal Quality.
+Transparent Form: Geometry Design, Visualize A Transparent Cube With Visible Edges And An Ethereal Quality
 
 ### Mosaic  
 Colorful Tiles: Geometry Design, Depict A Vibrant Mosaic Made Of Small, Colorful Tiles Forming An Intricate Design
@@ -341,7 +264,7 @@ Geometric Arrangement: Geometry Design, Show A Mosaic Made Up Of Geometric Shape
 Memory In Pieces: Geometry Design, Depict A Personal Memory As A Mosaic, With Fragments Coming Together To Form A Whole
 Water Reflection: Geometry Design, Illustrate The Reflection Of Water In A Mosaic-Like Pattern, Fragmenting The Image
 Urban Art: Geometry Design, Visualize A Street Art Mosaic, Created From Urban Materials And Designs
-Infinite Tile: Geometry Design, Create A Design Where The Mosaic Tiles Seem To Extend Infinitely, Forming A Never-Ending Pattern.
+Infinite Tile: Geometry Design, Create A Design Where The Mosaic Tiles Seem To Extend Infinitely, Forming A Never-Ending Pattern
 
 ### Polyhedron  
 Multi-Faceted Structure: Geometry Design, Illustrate A 3d Polyhedron With Multiple Faces, Angles, And Shapes
@@ -353,7 +276,7 @@ Solid Symmetry: Geometry Design, Create An Image Where Polyhedra Are Arranged Sy
 Cubic Integration: Geometry Design, Depict A Polyhedron Made From Cubes, With Each Face Connected Seamlessly
 Floating In Space: Geometry Design, Show A Polyhedron Suspended In Space, Surrounded By Stars And Distant Galaxies
 Layered Structure: Geometry Design, Illustrate How Multiple Polyhedra Can Be Layered To Form A Complex, Intricate Design
-Mathematical Precision: Geometry Design, Visualize A Polyhedron As An Example Of Mathematical Perfection And Symmetry.
+Mathematical Precision: Geometry Design, Visualize A Polyhedron As An Example Of Mathematical Perfection And Symmetry
 
 ### Crystals  
 Geometric Growth: Geometry Design, Depict A Crystal Growing In Geometric, Symmetrical Patterns
@@ -365,7 +288,7 @@ Radiant Glow: Geometry Design, Illustrate The Radiant Glow Emitted By A Crystal 
 Snowflake Design: Geometry Design, Depict A Snowflake Made Of Intricate Crystalline Formations
 Nature’S Art: Geometry Design, Visualize The Natural Art Found In The Formation Of Crystals Deep Within The Earth
 Reflective Surface: Geometry Design, Show The Reflective Properties Of Crystal Surfaces As They Catch And Reflect Light
-Form And Function: Geometry Design, Depict The Functional Beauty Of Crystals In Nature, Like Their Role In Geology Or Energy Fields.
+Form And Function: Geometry Design, Depict The Functional Beauty Of Crystals In Nature, Like Their Role In Geology Or Energy Fields
 
 ### Prism  
 Light Refraction: Geometry Design, Illustrate How Light Bends And Splits Into Colors When Passing Through A Prism
@@ -377,7 +300,7 @@ Shifting Colors: Geometry Design, Show How Light Passing Through A Prism Creates
 Geometric Form: Geometry Design, Create A Design Focused On The Geometric Beauty Of A Simple Prism Shape
 Light Pathway: Geometry Design, Visualize How Light Travels Through The Prism, Forming Distinct Beams Of Color
 Breaking Light: Geometry Design, Illustrate The Process Of Light Breaking Apart Into Individual Colors Through A Prism
-Abstract Reflection: Geometry Design, Show An Abstract Design Formed By The Reflective Qualities Of A Prism.
+Abstract Reflection: Geometry Design, Show An Abstract Design Formed By The Reflective Qualities Of A Prism
 
 ### Polygon  
 Perfect Angles: Geometry Design, Illustrate A Polygon With Sharp, Clean Angles Forming A Symmetrical Shape
@@ -389,7 +312,7 @@ Infinite Patterns: Geometry Design, Show An Infinite Tessellation Of Polygons Th
 Symmetrical Arrangement: Geometry Design, Illustrate The Beauty Of Symmetry Found In Polygonal Shapes When Aligned In A Structured Pattern
 Shape Transformation: Geometry Design, Depict The Transformation Of A Polygon From One Form To Another, Changing Angles Or Sides
 Fragmented Design: Geometry Design, Show How Polygons Can Be Fragmented Into Smaller Pieces To Form A Larger Design
-Geometric Evolution: Geometry Design, Visualize The Evolution Of Simple Shapes Into More Complex Polygons Over Time.
+Geometric Evolution: Geometry Design, Visualize The Evolution Of Simple Shapes Into More Complex Polygons Over Time
 
 ### Mirage  
 Illusion Of Water: Geometry Design, Create A Desert Scene Where A Mirage Of Water Appears On The Horizon, Distorting The Air
@@ -401,7 +324,7 @@ Reflective Surface: Geometry Design, Show A Mirage Reflected Off The Surface Of 
 Dreamlike Landscape: Geometry Design, Illustrate A Landscape Where Elements Are Distorted, Creating An Otherworldly, Dreamlike Feel
 Fading Illusion: Geometry Design, Depict How A Mirage Fades As The Observer Moves Closer, Revealing The True Landscape Beneath
 Ethereal Presence: Geometry Design, Visualize A Mirage As An Ethereal, Almost Ghostly Presence In A Vast, Open Space
-Optical Trick: Geometry Design, Show How The Environment Tricks The Eyes Into Seeing Something That Isn’T Truly There.
+Optical Trick: Geometry Design, Show How The Environment Tricks The Eyes Into Seeing Something That Isn’T Truly There
 
 ### Geometry  
 Structured Space: Geometry Design, Illustrate A Space Filled With Structured Geometric Shapes Arranged In Harmony
@@ -413,7 +336,7 @@ Spiral Movement: Geometry Design, Illustrate How Shapes Move In A Spiral, Formin
 Geometric Flow: Geometry Design, Show The Flowing Movement Of Geometric Forms Through Space, Connecting In Seamless Patterns
 Fractal Space: Geometry Design, Depict The Fractal Nature Of Geometry, With Shapes Repeating In Infinitely Smaller Forms
 Symmetrical Order: Geometry Design, Visualize How Symmetrical Geometric Shapes Create A Sense Of Order In An Abstract Design
-Three-Dimensional Exploration: Geometry Design, Explore The Depth Of Geometry Through A 3d Design, With Layered Shapes And Forms.
+Three-Dimensional Exploration: Geometry Design, Explore The Depth Of Geometry Through A 3d Design, With Layered Shapes And Forms
 
 ### Equilibrium  
 Balanced Forces: Geometry Design, Illustrate Two Opposing Forces In Perfect Balance, Representing Equilibrium
@@ -425,7 +348,7 @@ Restful Balance: Geometry Design, Show The Balance Between Two Forces In A State
 Natural Balance: Geometry Design, Illustrate The Natural Balance Found In Ecosystems, Where Each Element Plays A Role In Maintaining Stability
 Calm Waters: Geometry Design, Visualize Calm Water, Where The Surface Reflects A Perfect Equilibrium Between Air And Water
 Harmonious Design: Geometry Design, Depict A Design Where Elements Are Perfectly Balanced In Both Form And Color
-Floating Show An Object Or Being Floating In Space, Perfectly Balanced And Free From Disturbance.
+Floating Show An Object Or Being Floating In Space, Perfectly Balanced And Free From Disturbance
 
 ### Geodesic  
 Dome Structure: Geometry Design, Illustrate A Geodesic Dome, Showcasing Its Spherical Design And Interconnected Triangular Segments
@@ -437,7 +360,7 @@ Structural Harmony: Geometry Design, Create An Image Where A Geodesic Form Is Us
 Expanding Web: Geometry Design, Show The Expansion Of A Geodesic Web, Where The Network Grows Outward In A Controlled, Structured Way
 Mathematical Precision: Geometry Design, Depict The Precise Mathematical Calculations Needed To Construct A Geodesic Structure
 Solar Design: Geometry Design, Visualize How Geodesic Shapes Can Be Used In Solar Energy Designs, Maximizing Efficiency And Energy Distribution
-Organic Geometry: Geometry Design, Illustrate How Geodesic Geometry Can Mimic Natural Forms And Structures, Blending With Organic Environments.
+Organic Geometry: Geometry Design, Illustrate How Geodesic Geometry Can Mimic Natural Forms And Structures, Blending With Organic Environments
 
 ### Waves  
 Ocean Rhythm: Geometry Design, Show The Continuous Rhythm Of Ocean Waves Crashing Against The Shore
@@ -449,4 +372,4 @@ Water’S Dance: Geometry Design, Depict The Fluid Dance Of Water As Waves Inter
 Cosmic Ripples: Geometry Design, Visualize Cosmic Waves Traveling Through Space, Affecting The Fabric Of Time And Space
 Energy Surge: Geometry Design, Illustrate The Surge Of Energy As Waves Push Forward With Great Intensity
 Gentle Flow: Geometry Design, Show The Gentle, Calming Flow Of Small Waves On A Tranquil Beach
-High Tide: Geometry Design, Depict The Powerful, Towering Waves Of A High Tide Crashing Against The Shore.
+High Tide: Geometry Design, Depict The Powerful, Towering Waves Of A High Tide Crashing Against The Shore

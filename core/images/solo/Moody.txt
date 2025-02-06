@@ -27,18 +27,7 @@
 ### Adventure
 ### Escape
 ### Serenade  
-### Starry  
-Midnight Cinematic, Moody, Show A Beautiful, Clear Midnight Sky Filled With Stars, Creating A Sense Of Wonder And Infinity
-Celestial Dance: Cinematic, Moody, Illustrate Stars Moving In A Cosmic Dance, Lighting Up The Night Sky With Their Energy
-Under The Cinematic, Moody, Depict A Quiet Moment Where Characters Sit Beneath The Stars, Looking Up At The Vast Universe
-Shooting Cinematic, Moody, Visualize Shooting Stars Streaking Across The Night Sky, Symbolizing Wishes And Possibilities
-Cosmic Glow: Cinematic, Moody, Create A Scene Where The Glow Of Distant Stars Illuminates The Surroundings, Casting A Mystical Light
-Endless Universe: Cinematic, Moody, Show The Infinite Expanse Of The Universe, With Countless Stars Scattered Across The Cosmos
-Night Of Wonders: Cinematic, Moody, Depict A Magical Night Where The Stars Shine Brighter Than Usual, Filling The Night With A Sense Of Awe
-Dreamscape Above: Cinematic, Moody, Illustrate A Dream-Like Scene Where Stars Create Surreal Patterns In The Sky
-Constellations Form: Cinematic, Moody, Show The Formation Of Constellations In The Night Sky, Creating Patterns And Stories Among The Stars
-Moonlit Cinematic, Moody, Visualize The Moon Casting A Soft Glow On The Stars, Creating A Peaceful, Enchanting Atmosphere.
-
+### Starry
 ### Breeze  
 Soft Whisper: Cinematic, Moody, Depict A Soft, Gentle Breeze Rustling Through The Trees, Carrying With It A Peaceful Whisper
 Summer Wind: Cinematic, Moody, Illustrate The Warm, Refreshing Summer Breeze As It Flows Through An Open Field, Bringing Comfort
