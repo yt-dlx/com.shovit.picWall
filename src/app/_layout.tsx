@@ -22,11 +22,6 @@ export default function RootLayout() {
     const initializeApp = async () => {
       if (loaded && !error) {
         await SplashScreen.hideAsync();
-        const RedirectForTesting = false;
-        if (RedirectForTesting) {
-          router.push("/Test");
-          return;
-        }
         if (updateRequired) {
           router.push("/Update");
           return;

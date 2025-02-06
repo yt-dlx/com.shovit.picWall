@@ -1,6 +1,6 @@
 {
   "expo": {
-    "version": "23.0.0",
+    "version": "24.0.0",
     "slug": "picWall",
     "owner": "shovit",
     "name": "picWall",
@@ -13,6 +13,7 @@
       "typedRoutes": true
     },
     "ios": {
+      "googleServicesFile": "./src/assets/GoogleService-Info.plist",
       "supportsTablet": true,
       "bundleIdentifier": "com.shovit.picWall",
       "infoPlist": {
@@ -34,6 +35,7 @@
       }
     },
     "android": {
+      "googleServicesFile": "./src/assets/google-services.json",
       "package": "com.shovit.picWall",
       "adaptiveIcon": {
         "backgroundColor": "#171717",
@@ -42,6 +44,16 @@
       "permissions": ["READ_EXTERNAL_STORAGE", "WRITE_EXTERNAL_STORAGE", "SET_WALLPAPER "]
     },
     "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static"
+          }
+        }
+      ],
+      "@react-native-firebase/app",
+      "@react-native-firebase/auth",
       "expo-router",
       [
         "expo-splash-screen",
@@ -64,7 +76,8 @@
           "androidAppId": "ca-app-pub-8756720176445763~5769468515",
           "iosAppId": "ca-app-pub-8756720176445763~7056593476"
         }
-      ]
+      ],
+      "expo-build-properties"
     ]
   }
 }
